@@ -1,0 +1,26 @@
+# Next.js build output
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# System
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+.next/
+node_modules/
+.env
+tsconfig.tsbuildinfo
+.claude/settings.local.json
+

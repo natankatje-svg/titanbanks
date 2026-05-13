@@ -1,0 +1,155 @@
+================================================================================
+TITANX — ANGLE EXPANSION PROMPT TEMPLATE
+Higgsfield image-to-image | controlled camera rotation
+================================================================================
+
+REFERENCE IMAGES
+----------------
+PRIMARY REFERENCE (realism, lighting, material quality):
+  → TitanX_MASTER.png
+  Reference strength: 0.85–0.90
+  This image defines the ground truth for:
+    - Matte black surface texture and light absorption
+    - Specular highlights on rounded edges
+    - Orange strap color, sheen, and emboss depth
+    - LED dot-matrix display appearance and glow intensity
+    - Overall product proportions and silhouette
+    - Dark premium studio environment and shadow fall-off
+
+GEOMETRY REFERENCES (shape fidelity, detail accuracy):
+  → TitanX_OEM_FRONT.jpeg   — front face, display position, button placement
+  → TitanX_OEM_BACK.jpg     — retractable cable housing, rear panel layout
+  → TitanX_OEM_PORTS.jpg    — exact port configuration: 4× USB-A, 1× USB-C, 1× indicator
+
+
+CAMERA INSTRUCTION
+------------------
+[FILL IN PER GENERATION — replace this block with the target angle]
+
+Example values:
+  "viewed from the left at a 45-degree horizontal angle, slightly elevated camera"
+  "direct front view, camera at product eye level, centered"
+  "top-down overhead view, camera directly above, slight tilt"
+  "three-quarter view from the right, camera at 30 degrees elevation"
+  "close-up macro view of the top port panel, straight-on"
+  "rear three-quarter view from the left, cables and strap visible"
+
+Rule: describe only camera position and angle — never describe product changes.
+
+
+DISPLAY LOCK (read before writing any prompt)
+---------------------------------------------
+The TitanX display is a FIXED INDUSTRIAL UI ELEMENT. It must NOT be re-generated,
+re-interpreted, or redesigned. Treat it as a physical component with a locked appearance.
+
+Exact display anatomy (copy from reference — do not invent):
+  PANEL     : recessed rectangular dark/black panel in upper front face
+  DIGIT FONT: dot-matrix pixel grid — small individual lit pixels forming digits
+              NOT 7-segment, NOT LCD, NOT smooth vector font, NOT handwriting
+  VALUE     : a valid battery percentage — integer between 1 and 100, maximum two digits
+              followed by the % symbol. NEVER above 100. NEVER "188%", "199%", "999%"
+  LAYOUT    : [digit(s)][%] left-to-right — do NOT rearrange or stack
+  ICON      : one small green charging lightning bolt symbol, positioned to the RIGHT
+              of the % symbol — same size, same color, same position as reference
+  BACKGROUND: dark panel behind all digits — digits appear as lit white/grey pixels
+  GLOW      : subtle diffuse glow around the lit pixel area — not a spotlight
+  SPACING   : compact, same character spacing as reference — digits do not float apart
+
+Anti-hallucination rules (enforced, non-negotiable):
+  ✗ No value above 100
+  ✗ No three-digit numbers that exceed 100 (e.g. 188, 199, 256)
+  ✗ No smooth sans-serif or serif digit fonts
+  ✗ No rearranged icon position (icon is always to the right of %, never above or below)
+  ✗ No added lines, no secondary readout, no extra symbols
+  ✗ No redesigned panel shape or size
+  ✗ No LCD-style segment digits
+  ✗ No blinking or motion artifact interpretation
+
+
+POSITIVE PROMPT (use as-is, append camera instruction at [ANGLE])
+-----------------------------------------------------------------
+Product photography of the TitanX powerbank. [ANGLE]. Dark premium studio environment.
+Matte black rectangular body with softly rounded corners, exact same proportions as reference.
+Orange silicone wrist strap with embossed TITANBANKS text, same color (#D4620A range), same width and loop shape.
+LED dot-matrix display on the front face upper panel: recessed dark panel, dot-matrix pixel font digits showing a valid percentage value between 1 and 100, followed by the percent symbol, with one small green lightning bolt icon to the right — exact same layout, same pixel style, same panel position, same spacing as reference. Do not alter this display.
+Small rectangular power button on the right side panel, same position as reference.
+Top face: exactly four USB-A ports and one USB-C port and one small indicator, same layout as reference.
+Rear face: integrated retractable cable housing with two built-in cables (USB-C and Lightning), same rectangular cutout window, same panel layout as reference.
+TITANBANKS logo on the front lower body, same typeface and placement as reference.
+Regulatory marks (FC, CE, recycling symbol) on the side panel, same placement as reference.
+Dark premium studio lighting — single dominant key light from upper left, soft fill, deep background falloff.
+Photorealistic, sharp focus, studio product shot, high-end commercial photography.
+
+
+NEGATIVE PROMPT (always include, do not remove lines)
+-----------------------------------------------------
+redesigned product, different body shape, altered proportions, stretched or compressed form,
+extra ports, fewer ports, differently arranged ports, missing USB-C port, missing USB-A ports,
+different strap color, white strap, grey strap, no strap, different strap shape or width,
+shiny body, glossy finish, metallic finish, chrome, silver,
+different logo, no logo, different brand name, missing TITANBANKS text,
+missing retractable cables, different cable housing, no cutout window on rear,
+bright white background, outdoor lighting, warm ambient light, neon lighting,
+illustration, render style, CGI look, cartoon, sketch, watermark, text overlay,
+low quality, blurry, distorted, overexposed, lens flare on product,
+display hallucination, impossible percentage value, number above 100, three digit number exceeding 100,
+188 percent, 199 percent, 256 percent, 999 percent, any invalid battery percentage,
+smooth font digits, vector font display, serif digits, sans-serif screen font, LCD segments,
+redesigned display, different display layout, different display position, display moved,
+icon above percentage, icon below percentage, icon on left side of digits,
+extra display lines, secondary readout, dual screen, additional text on display,
+oversized display panel, display shape changed, display proportions altered,
+blinking digits, motion blur on display, glowing display surround
+
+
+CONSISTENCY CHECKLIST (verify before moving to approved/)
+----------------------------------------------------------
+Before approving any output, confirm each item against TitanX_MASTER.png:
+
+  [ ] Body shape — rectangular, same proportions, same corner radius
+  [ ] Surface — matte black, no unexpected sheen or color shift
+  [ ] Strap — orange (#D4620A range), correct width, text embossed and readable
+
+  DISPLAY (auto-reject if any item fails):
+  [ ] Panel position — recessed, upper front face, same location as reference
+  [ ] Panel proportions — same width and height ratio as reference, not enlarged or shrunk
+  [ ] Font style — dot-matrix pixel grid ONLY — reject if smooth, serif, or LCD-segment
+  [ ] Digit value — integer between 1–100 followed by % — REJECT if value exceeds 100
+  [ ] Green icon — small lightning bolt, positioned to the RIGHT of the % symbol
+  [ ] Icon size — small, proportional to digit height — reject if oversized or missing
+  [ ] Digit spacing — compact, same as reference — reject if digits are floating apart
+  [ ] No extra lines — single-line readout only — reject if secondary text is present
+  [ ] Background — dark panel behind digits — reject if panel color changed
+
+  [ ] Power button — present, correct side (right), correct position
+  [ ] Ports (if visible) — count matches: 4× USB-A + 1× USB-C, same layout
+  [ ] Cables (if visible) — two retractable, correct housing and cutout
+  [ ] Logo — TITANBANKS, same placement, same style
+  [ ] Lighting — dark studio, key light from upper left, deep shadow falloff
+  [ ] Overall — no elements added, no elements removed, no redesign
+
+
+USAGE INSTRUCTIONS
+------------------
+1. Upload TitanX_MASTER.png via higgsfield: media_upload → note the media_id
+2. Copy this template
+3. Replace [ANGLE] in the positive prompt with your target camera position
+4. Call higgsfield: generate_image with:
+     reference_image_id = {media_id from step 1}
+     reference_strength = 0.85
+     prompt            = {positive prompt with angle filled in}
+     negative_prompt   = {negative prompt block above}
+5. Save raw output to: assets/titanx/outputs/candidates/
+   Filename: titanx_{angle}_{descriptor}_v{version}.png
+6. Run consistency checklist
+7. On pass → move to assets/titanx/angles/{subfolder}/
+   On fail → move to assets/titanx/outputs/rejected/ and note which checklist items failed
+
+
+================================================================================
+VERSION: 1.1 | PRIMARY REFERENCE: TitanX_MASTER.png | DO NOT MODIFY LOCKED SECTIONS
+CHANGELOG: v1.1 — Added DISPLAY LOCK section, expanded negative prompt with
+           anti-hallucination constraints, expanded checklist with display sub-checks.
+           Root cause: v02/v04 hallucinated "188%" due to display being treated as
+           generative text. Display is now declared a fixed industrial UI element.
+================================================================================
