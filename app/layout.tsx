@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Barlow_Condensed, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
+import EcwidProvider from '@/components/EcwidProvider';
 import './globals.css';
 
 const barlowCondensed = Barlow_Condensed({
@@ -59,7 +60,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl" className={`${barlowCondensed.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
-      <body className="bg-[#080808] text-white antialiased">{children}</body>
+      <body className="bg-[#080808] text-white antialiased">
+        <EcwidProvider>{children}</EcwidProvider>
+      </body>
     </html>
   );
 }

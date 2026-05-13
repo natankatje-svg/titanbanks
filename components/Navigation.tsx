@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { useEcwid } from './EcwidProvider';
 
 const navLinks = [
   { label: 'Functies',  href: '#functies',  id: 'functies'  },
@@ -27,6 +28,7 @@ function Logo() {
 }
 
 export default function Navigation() {
+  const { addToCart } = useEcwid();
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
   const [activeId, setActiveId]   = useState('');
@@ -92,9 +94,9 @@ export default function Navigation() {
         </div>
 
         <div className="hidden md:flex relative">
-          <a href="#bestel" className="btn-orange" style={{ padding: '0.6rem 1.6rem', fontSize: '0.85rem' }}>
+          <button onClick={addToCart} className="btn-orange" style={{ padding: '0.6rem 1.6rem', fontSize: '0.85rem' }}>
             Bestel Nu
-          </a>
+          </button>
           <span
             className="absolute -top-2.5 -right-2.5 font-mono-titan text-white leading-none rounded-full px-1.5 py-0.5"
             style={{ background: '#FF8C00', fontSize: '0.65rem', letterSpacing: '0.06em' }}
@@ -136,16 +138,15 @@ export default function Navigation() {
                   {link.label}
                 </motion.a>
               ))}
-              <motion.a
-                href="#bestel"
+              <motion.button
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.22 }}
                 className="btn-orange mt-2 justify-center"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => { addToCart(); setMenuOpen(false); }}
               >
                 Bestel Nu
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
         )}

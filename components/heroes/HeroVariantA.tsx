@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { Zap, ArrowDown, BatteryCharging, Sun } from 'lucide-react';
+import { useEcwid } from '../EcwidProvider';
 
 const badges = [
   { label: '50.000mAh', color: '#FF8C00' },
@@ -14,6 +15,7 @@ const badges = [
 ];
 
 export default function HeroVariantA() {
+  const { addToCart } = useEcwid();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 140]);
@@ -89,10 +91,10 @@ export default function HeroVariantA() {
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
             className="flex flex-col sm:flex-row gap-4 mb-10 justify-center lg:justify-start"
           >
-            <a href="#bestel" className="btn-orange">
+            <button onClick={addToCart} className="btn-orange">
               <Zap className="w-5 h-5 fill-white" />
               Bestel Nu
-            </a>
+            </button>
             <a href="#functies" className="btn-ghost">
               Bekijk Functies
             </a>

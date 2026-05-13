@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { BatteryCharging, Zap, Gauge, Link2, Sun, Wind, ArrowRight } from 'lucide-react';
+import { useEcwid } from './EcwidProvider';
 
 const features = [
   {
@@ -71,6 +72,7 @@ const features = [
 ];
 
 export default function Features() {
+  const { addToCart } = useEcwid();
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.06 });
   const cardRef = useRef<HTMLDivElement>(null);
@@ -230,14 +232,14 @@ export default function Features() {
             Overtuigd? Bestel de Titan X vandaag —{' '}
             <span style={{ color: '#FF8C00' }}>−31% korting</span>, gratis verzending.
           </p>
-          <a
-            href="#bestel"
+          <button
+            onClick={addToCart}
             className="btn-ghost flex-shrink-0 flex items-center gap-2"
             style={{ padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}
           >
             Naar bestelling
             <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { Zap, Shield, RotateCcw, Truck } from 'lucide-react';
+import { useEcwid } from './EcwidProvider';
 
 const guarantees = [
   { icon: Shield, label: '2 jaar garantie' },
@@ -13,6 +14,7 @@ const guarantees = [
 ];
 
 export default function FinalCTA() {
+  const { addToCart } = useEcwid();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
@@ -151,10 +153,10 @@ export default function FinalCTA() {
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10 justify-center lg:justify-start">
-              <a href="#" className="btn-orange flex items-center gap-2.5 px-10 py-5 text-xl">
+              <button onClick={addToCart} className="btn-orange flex items-center gap-2.5 px-10 py-5 text-xl">
                 <Zap className="w-5 h-5 fill-white text-white" />
                 Bestel Titan X
-              </a>
+              </button>
               <a
                 href="#reviews"
                 className="btn-ghost flex items-center justify-center px-8 py-5 text-lg"

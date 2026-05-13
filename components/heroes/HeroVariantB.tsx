@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { Zap, Check, ChevronDown } from 'lucide-react';
+import { useEcwid } from '../EcwidProvider';
 
 const trust = [
   'Gratis verzending',
@@ -19,6 +20,7 @@ const specs = [
 ];
 
 export default function HeroVariantB() {
+  const { addToCart } = useEcwid();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const contentY    = useTransform(scrollYProgress, [0, 1], [0, 55]);
@@ -228,10 +230,10 @@ export default function HeroVariantB() {
             </div>
             <span className="font-body text-gray-600 text-[10px]">incl. BTW</span>
           </div>
-          <a href="#bestel" className="btn-orange w-full sm:w-auto">
+          <button onClick={addToCart} className="btn-orange w-full sm:w-auto">
             <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
             Bestel Nu
-          </a>
+          </button>
         </motion.div>
 
         {/* Secondary CTA */}

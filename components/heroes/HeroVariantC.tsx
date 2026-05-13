@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { Zap, ArrowDown, Shield, Wifi } from 'lucide-react';
+import { useEcwid } from '../EcwidProvider';
 
 const features = [
   { icon: Zap,    label: 'PD 22.5W Fast Charge', color: '#EAB308' },
@@ -12,6 +13,7 @@ const features = [
 ];
 
 export default function HeroVariantC() {
+  const { addToCart } = useEcwid();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const bgY = useTransform(scrollYProgress, [0, 1], [0, 120]);
@@ -115,10 +117,10 @@ export default function HeroVariantC() {
               variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
-              <a href="#bestel" className="btn-orange">
+              <button onClick={addToCart} className="btn-orange">
                 <Zap className="w-5 h-5 fill-white" />
                 Bestel Nu
-              </a>
+              </button>
               <a href="#functies" className="btn-ghost">
                 Meer Info
               </a>

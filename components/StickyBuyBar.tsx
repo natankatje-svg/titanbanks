@@ -3,8 +3,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Star } from 'lucide-react';
+import { useEcwid } from './EcwidProvider';
 
 export default function StickyBuyBar() {
+  const { addToCart } = useEcwid();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -45,14 +47,14 @@ export default function StickyBuyBar() {
                   <span className="font-body text-gray-700 text-[0.58rem]">incl. BTW</span>
                 </div>
               </div>
-              <a
-                href="#bestel"
+              <button
+                onClick={addToCart}
                 className="btn-orange flex-shrink-0"
                 style={{ padding: '0.75rem 1.5rem', fontSize: '0.85rem' }}
               >
                 <Zap className="w-3.5 h-3.5 fill-white" />
                 Bestel Nu
-              </a>
+              </button>
             </div>
           </div>
         </motion.div>
