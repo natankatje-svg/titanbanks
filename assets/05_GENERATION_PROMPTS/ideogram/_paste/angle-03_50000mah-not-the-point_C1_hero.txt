@@ -1,0 +1,41 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IDEOGRAM SETTINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Model:        Ideogram 2.0 (or latest stable)
+Aspect ratio: 9:16
+Style:        Realistic
+Magic Prompt: OFF
+Rendering:    Quality (not Turbo)
+Generate:     4 variants
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROMPT  →  paste into the main prompt box
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A premium 9:16 vertical product advertisement.
+
+TEXT IN IMAGE — render exactly as written, clean modern sans-serif, white on near-black background:
+
+Top center, small caps: "TITANBANKS"
+Below it, smaller, light grey: "Titan X · Coming Soon"
+Mid-upper, very large, centered: "50,000 mAh."
+Just below the headline, smaller, centered: "But that is not the point."
+Bottom center, white text inside a small matte-black pill with a thin orange border: "Discover the build"
+
+SCENE — below the typography:
+
+A matte black TITANBANKS Titan X 50,000 mAh powerbank stands upright dead-center on a barely-visible reflective plinth at a slight low-angle 3/4 view. The powerbank is a chunky rectangular brick — substantial body, taller than wide, NOT slim, NOT smartphone-shaped. Top face shows a small "TITANBANKS" wordmark and an LED dot-matrix display window reading "100%" with a tiny green charge icon. The display is on the TOP face of the brick, not the side face. The brick body is otherwise unmarked. The orange woven carry loop with embossed "POWER BANK" text drapes to the side, falling downward under gravity — the embossed text "POWER BANK" appears ONLY on the loop, never on the brick body.
+
+Six clearly visible but faint white architectural-sketch outline drawings of devices are arranged in a symmetric V-flanking pattern behind the product — visible enough to read as device silhouettes, faint enough to not compete with the powerbank. Render them as thin white line drawings, like blueprint or pencil sketches on the dark background: left column top-to-bottom = smartphone outline, earbuds case outline, camera outline; right column = tablet outline, smartwatch outline, drone controller outline. The silhouettes carry NO recognizable brand logos. Single warm orange rim light (#FF6B00) from camera right grazes the brick. Deep neutral fill from camera left. Background near-black (#0A0A0A) with subtle radial vignette. Centered axis composition. Cinematic low-key, silent-luxury, Bang & Olufsen tier.
+
+IMPORTANT: render the spec headline ONLY in the typography block at the top of the frame. Do NOT repeat the product name or capacity anywhere else in the image. The plinth must be unmarked. No museum-style nameplate. No label under the product.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEGATIVE  →  paste into the negative prompt box
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+people, hands, body parts, extra ports, extra buttons, fake LED panels, secondary screens, fake labels, extra cables on the brick, second carry loop, both short ends visible, recognizable third-party brand logos on the silhouettes, full-color devices, bright opaque silhouettes, missing silhouettes, no silhouettes at all, airplane, airport, TSA, RGB lighting, neon, white background, urgency timer, discount badge, percentage off, marketing slogans beyond the specified text, watermark, second logo, misspelled TITANBANKS, missing comma in "50,000", "50000 mAh" written without comma, stretched proportions, port doubling, plastic look, extra text, garbled text, repeated text, charging-speed callout, wattage number, Micro-USB functional claim text, museum-style nameplate, plinth label, text on the plinth, label under the product, "TITAN X" repeated below the brick, "50,000 mAh" repeated below the brick, display on the side face, text on the brick body, embossing on the brick, "POWER BANK" text on the brick, slim phone, smartphone shape, handheld phone
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAVE OUTPUTS TO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+C:\Users\natan\TitanBanks\assets\06_GENERATED_OUTPUTS\ideogram\inbox\
+Filename pattern: ideogram_angle-03_C1_hero_v2.png

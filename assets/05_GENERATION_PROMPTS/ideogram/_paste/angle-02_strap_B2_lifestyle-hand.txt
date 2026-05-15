@@ -1,0 +1,40 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IDEOGRAM SETTINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Model:        Ideogram 2.0 (or latest stable)
+Aspect ratio: 4:5  (if not available, use 3:4)
+Style:        Realistic
+Magic Prompt: OFF
+Rendering:    Quality (not Turbo)
+Generate:     4 variants
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROMPT  →  paste into the main prompt box
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A premium 4:5 vertical lifestyle product advertisement.
+
+TEXT IN IMAGE — render exactly:
+
+Top center, small caps: "TITANBANKS"
+Upper-left third, very large, left-aligned: "The strap people ask about."
+Below it, small, left-aligned: "Titan X · Coming Soon"
+Bottom-right, white text in matte-black pill with thin orange border: "Coming Soon"
+
+EMBOSSED TEXT ON THE CARRY LOOP — render exactly: "POWER BANK" (uppercase, sans-serif, two words with a space, embossed horizontally — not vertical, not stacked, not one word). This embossed text appears ONLY on the orange woven carry loop strap. It does NOT appear anywhere on the brick body.
+
+CRITICAL TEXT PLACEMENT RULE: the matte black brick body is UNMARKED except for the small "TITANBANKS" wordmark on the top face. The brick body has NO other text, NO embossing, NO labels, NO "POWER BANK" or "TOWER BANK" text on its face — that text lives only on the loop. Render the wordmark with all letters including the trailing S: T-I-T-A-N-B-A-N-K-S.
+
+SCENE:
+
+A single human hand enters the frame from upper-right and lifts the TITANBANKS Titan X matte black 50,000 mAh powerbank by its orange woven carry loop. The powerbank is a chunky rectangular brick — substantial body, NOT a slim handheld, NOT a smartphone form factor. Only the hand and a portion of the forearm are visible — no face, no shoulder, no second hand. The hand is neutral-toned, well-groomed, no rings, no nail polish, no watch, no jewelry, no tattoos. Index and middle finger hooked through the loop; the loop bears the powerbank's full weight and drapes downward under gravity. The matte black powerbank hangs at a 3/4 off-axis angle. Top face shows the small "TITANBANKS" wordmark and an LED display reading "100%" with a small green charge icon — the display is on the TOP face of the brick, not the side face. Single warm orange rim light (#FF6B00) from camera right grazes the carry loop and the back edge of the brick. Background: deep matte black gradient (#0A0A0A to #1A1A1A) with a faint horizon glow. Hand and product occupy right two-thirds; left third clear for typography. Cinematic, low-key, premium.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEGATIVE  →  paste into the negative prompt box
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+full body, full arm, shoulder, face, head, second hand, multiple hands, hand at the brick body, rings, watches, nail polish, jewelry, tattoos, extra ports, extra buttons, fake LED panels, secondary screens, fake labels, extra cables, second carry loop, misspelled embossing, extra text on the loop, "POWERBANK" as one word, vertical text on the loop, stacked letters on the loop, additional small label on the strap, "100%" tag on the strap, both short ends visible, airplane, airport, TSA, RGB, neon, white background, urgency timer, discount badge, percentage off, watermark, second logo, recognizable third-party brand logos, charging-speed callout, wattage number, Micro-USB functional claim text, extra text, repeated text, garbled text, display on the side face, text on the brick body, text on the brick face, embossing on the brick, embossed letters on the brick body, "POWER BANK" text on the brick, "TOWER BANK" text anywhere, large text on the powerbank face, slim phone, smartphone shape, handheld phone, sleek slim form factor, "TITANBANK" without trailing S, missing letter from TITANBANKS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAVE OUTPUTS TO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+C:\Users\natan\TitanBanks\assets\06_GENERATED_OUTPUTS\ideogram\inbox\
+Filename pattern: ideogram_angle-02_B2_lifestyle_v2.png

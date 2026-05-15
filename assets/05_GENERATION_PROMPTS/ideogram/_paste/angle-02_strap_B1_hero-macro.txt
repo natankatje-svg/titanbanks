@@ -1,0 +1,40 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IDEOGRAM SETTINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Model:        Ideogram 2.0 (or latest stable)
+Aspect ratio: 4:5  (if not available, use 3:4)
+Style:        Realistic
+Magic Prompt: OFF
+Rendering:    Quality (not Turbo)
+Generate:     4 variants
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROMPT  →  paste into the main prompt box
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A premium 4:5 vertical product advertisement.
+
+TEXT IN IMAGE — render exactly, clean modern sans-serif, white on near-black background:
+
+Top center, small caps: "TITANBANKS"
+Upper-left third, very large, left-aligned: "The strap people ask about."
+Just below, small, left-aligned: "Titan X · Coming Soon"
+Bottom-right, white text inside a small matte-black pill with a thin orange border: "Coming Soon"
+
+EMBOSSED TEXT ON THE CARRY LOOP — render exactly: "POWER BANK" (uppercase, sans-serif, two words with a space, embossed horizontally into the orange woven fabric — not vertical, not stacked, not one word). This embossed text appears ONLY on the orange woven carry loop strap. It does NOT appear anywhere on the brick body.
+
+CRITICAL TEXT PLACEMENT RULE: the matte black brick body is UNMARKED except for the small "TITANBANKS" wordmark on the top face. The brick body has NO other text, NO embossing, NO labels, NO "POWER BANK" text on its face — that text lives only on the loop.
+
+SCENE — right two-thirds of the frame:
+
+A matte black TITANBANKS Titan X 50,000 mAh powerbank lies on its side at a 3/4 off-axis angle in the right-center of the frame. The powerbank is a chunky rectangular brick — substantial body, NOT a slim handheld, NOT a smartphone form factor. The hero subject is its orange woven carry loop, draping prominently in the foreground, large and close to camera, catching a strong directional warm orange rim light (#FF6B00). The loop's woven texture is sharp and tactile, individual fibers visible in macro detail. The embossed "POWER BANK" text on the loop is clearly legible. The matte black brick body recedes into shadow on the left; the small "TITANBANKS" wordmark on the top face is just legible. If the LED display is in frame, it reads "100%" on the TOP face of the brick (not the side face). A single sharp diagonal light streak runs across the floor plane from upper-left to lower-right behind the product (catwalk lighting). Background: deep matte black gradient (#0A0A0A to #1A1A1A) with a faint horizon glow. No visible plinth. Carry loop in critical focus, brick body in gentle bokeh.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEGATIVE  →  paste into the negative prompt box
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+people, hands, fingers, body parts, extra ports, extra buttons, fake LED panels, secondary screens, fake labels, extra cables, second carry loop, two carry loops, misspelled or extra text on the loop, "POWERBANK" written as one word on the loop, vertical text on the loop, stacked letters on the loop, additional small label on the strap, "100%" tag on the strap, garbled text, both short ends visible, airplane, airport, TSA, RGB lighting, neon, white background, warm-wall environment, urgency timer, discount badge, percentage off, watermark, second logo, misspelled TITANBANKS, stretched proportions, port doubling, plastic look, extra text, repeated text, charging-speed callout, wattage number, Micro-USB functional claim text, display on the side face, text on the brick body, text on the brick face, embossing on the brick, embossed letters on the brick body, "POWER BANK" text on the brick, "TOWER BANK" text anywhere, large text on the powerbank face, slim phone, smartphone shape, handheld phone, sleek slim form factor
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAVE OUTPUTS TO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+C:\Users\natan\TitanBanks\assets\06_GENERATED_OUTPUTS\ideogram\inbox\
+Filename pattern: ideogram_angle-02_B1_macro_v2.png

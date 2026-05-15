@@ -1,0 +1,37 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IDEOGRAM SETTINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Model:        Ideogram 2.0 (or latest stable)
+Aspect ratio: 9:16
+Style:        Realistic
+Magic Prompt: OFF
+Rendering:    Quality (not Turbo)
+Generate:     4 variants
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROMPT  →  paste into the main prompt box
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A premium 9:16 vertical product advertisement.
+
+TEXT IN IMAGE — render exactly as written, in a clean modern sans-serif similar to PP Neue Montreal, white on near-black background:
+
+Top center, small caps: "TITANBANKS"
+Below it, smaller, light grey: "Titan X · Coming Soon"
+Mid-upper, very large, centered: "Never at 0."
+Below the headline, small, centered: "While the world looks for an outlet, you keep going."
+Bottom center, white text inside a small matte-black pill with a thin orange border: "Join the Waitlist"
+
+SCENE — below the typography, in the lower half of the frame:
+
+A matte black TITANBANKS Titan X 50,000 mAh powerbank standing upright on a barely-visible reflective plinth, shown at a 3/4 off-axis angle. Top face shows a small "TITANBANKS" wordmark and an LED dot-matrix display window reading "100%" with a tiny green charge icon. Orange woven carry loop with embossed "POWER BANK" text drapes naturally to the side, falling downward under gravity. Single warm orange rim light (#FF6B00) grazes the right edge from camera right. Faint cool fill from camera left. Background near-black (#0A0A0A) with a soft radial vignette and a faint warm underglow beneath the product. Centered axis composition. Cinematic low-key, silent-luxury aesthetic.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEGATIVE  →  paste into the negative prompt box
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+people, hands, fingers, body parts, faces, extra ports, extra buttons, fake LED panels, secondary screens, fake labels, extra cables, second carry loop, both short ends of the powerbank visible, airplane, airport, TSA, RGB lighting, neon, rainbow, bokeh balls, white background, generic powerbank, urgency timer, discount badge, percentage off, countdown, date window, marketing slogans beyond the specified text, watermark, second logo, misspelled wordmark, stretched proportions, port doubling, plastic look, extra text, repeated text, garbled text, charging-speed callout, wattage number, Micro-USB functional claim text, museum-style nameplate, plinth label, text on the plinth, label under the product
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAVE OUTPUTS TO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+C:\Users\natan\TitanBanks\assets\06_GENERATED_OUTPUTS\ideogram\inbox\
+Filename pattern: ideogram_angle-01_A1_hero_<n>.png
