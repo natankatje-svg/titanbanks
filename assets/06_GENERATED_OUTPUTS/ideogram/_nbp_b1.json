@@ -1,0 +1,28 @@
+[
+  {
+    "id": "7a47b05d-4070-40f2-81df-e88ad5e311ed",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_090516_7a47b05d-4070-40f2-81df-e88ad5e311ed.png",
+    "created_at": 1778835916.006566,
+    "params": {
+      "width": 1792,
+      "height": 2400,
+      "aspect_ratio": "3:4",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "b57a137f-c802-4fcb-8a6a-295ee8fde497",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/b57a137f-c802-4fcb-8a6a-295ee8fde497.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "Premium 3:4 vertical macro hero shot using the exact powerbank from the reference image. Preserve its two-part design proportions, glossy display panel, TITANBANKS wordmark on the front face, and especially the orange woven carry loop with POWER BANK printed on it. The carry loop is the hero subject of this shot - large in the foreground, draping naturally, catching strong warm orange rim light. Loop fibers visible in macro detail. Powerbank lies on its side at 3/4 off-axis angle, brick body in gentle shadow. Sharp diagonal light streak across the floor plane behind the product. Background deep matte black gradient. No visible plinth. In-image typography clean white modern sans-serif: top center small caps TITANBANKS, upper-left third very large left-aligned The strap people ask about with period, below small left-aligned Titan X Coming Soon, bottom-right white text in matte-black pill with thin orange border Coming Soon. Cinematic silent-luxury aesthetic."
+    }
+  }
+]

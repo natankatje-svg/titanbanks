@@ -1,0 +1,14 @@
+{
+  "file": "angle-01_never-at-0_A2_lifestyle-backpack.txt",
+  "aspect": "9x16",
+  "seed": 1646009266,
+  "elapsed_s": 9.8,
+  "url": "https://ideogram.ai/api/images/ephemeral/J0XIaPTlWIqNtD0Nu2cgvg.png?exp=1778899910&sig=b442f1352169362083075f28cf5ec2baffe1d34a395b461b0b7c099335d03011",
+  "saved": "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\inbox\\ideogram_angle-01_A2_lifestyle_v3.png",
+  "style_refs": [
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-18_marketplace-front-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-19_marketplace-side-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-20_marketplace-top-down-ports-nbpro.jpg"
+  ],
+  "geometry_corrected": true
+}

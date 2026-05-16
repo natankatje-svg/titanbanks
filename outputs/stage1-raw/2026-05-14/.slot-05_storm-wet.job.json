@@ -1,0 +1,38 @@
+[
+  {
+    "id": "5028e952-5eef-404c-8239-3b925cd1837f",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260514_124333_5028e952-5eef-404c-8239-3b925cd1837f.png",
+    "created_at": 1778762613.599239,
+    "params": {
+      "width": 2048,
+      "height": 2048,
+      "aspect_ratio": "1:1",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "1467ab3c-4a44-4eb7-bcd3-70318002d90b",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/1467ab3c-4a44-4eb7-bcd3-70318002d90b.png",
+          "type": "media_input"
+        },
+        {
+          "id": "d7e2d4da-3c3f-49fd-b7de-c49125e5924d",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/d7e2d4da-3c3f-49fd-b7de-c49125e5924d.png",
+          "type": "media_input"
+        },
+        {
+          "id": "aa4d838c-334a-47a7-98c7-441c29124792",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/aa4d838c-334a-47a7-98c7-441c29124792.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "PRODUCT (LOCKED — replicate from reference images, do not redesign): The subject is the Titan X powerbank shown in the three reference images. Reproduce the product EXACTLY as photographed: keep the matte black body and the glossy black front panel with rounded corners, the display position on the glossy panel showing \"188%\" in white dot-matrix with the small green charge icon, the exact port arrangement on the top short face, the exact rear short face with flashlight aperture and two retractable cables, the bright orange woven carry loop hanging from the upper-left of the left side face, and the TITANBANKS wordmarks in their original subtle grey/white laser-etch positions. Do not add, remove, relocate, or restyle any feature of the product. Do not change the carry loop color. Do not redesign the side-face engravings. ORIENTATION LOCK: port-face and rear-face are on opposite short ends, never simultaneously visible. SCENE: stormy atmospheric product photography, the powerbank stands on a wet dark slate surface with shallow rain puddles reflecting it, fine rain droplets clinging to the matte body and beading on the glossy front panel, a single warm rim light from camera-right at low angle catches the water droplets and the right edge of the brick against a deep grey-blue moody fog background, cinematic outdoor expedition gear vibe, rugged durable tone, the \"188%\" display glows softly through the droplets. NEGATIVE: no matte front, no flat front panel, no relocated display, no invented ports or buttons, no new icons or text, no red or pink or brown carry loop, no garbled wordmark, no extra TITANBANKS instances, no marketing text overlays, no hands, no people, no RGB, no neon, no crushed shadows on the product body so the matte surface and laser-etch details remain readable, no over-darkened product."
+    }
+  }
+]

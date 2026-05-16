@@ -1,0 +1,43 @@
+[
+  {
+    "id": "8a9a6de4-22dc-4d50-982d-2a70f93d280b",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260514_135319_8a9a6de4-22dc-4d50-982d-2a70f93d280b.png",
+    "created_at": 1778766799.193856,
+    "params": {
+      "width": 2048,
+      "height": 2048,
+      "aspect_ratio": "1:1",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "90c1229a-f2ed-4e60-9085-1072e4a3a447",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/90c1229a-f2ed-4e60-9085-1072e4a3a447.png",
+          "type": "media_input"
+        },
+        {
+          "id": "752ad1ae-067b-4122-bd01-a2aadcf3d8c0",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/752ad1ae-067b-4122-bd01-a2aadcf3d8c0.png",
+          "type": "media_input"
+        },
+        {
+          "id": "735c7c22-5dc1-4a73-a52c-63a6d7ccd702",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/735c7c22-5dc1-4a73-a52c-63a6d7ccd702.png",
+          "type": "media_input"
+        },
+        {
+          "id": "6d114976-8d07-41e5-8611-05196d896c8e",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/6d114976-8d07-41e5-8611-05196d896c8e.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "Take the Titan X powerbank EXACTLY as shown in the FIRST reference image (Z10C-4 _3.jpg, the OEM flashlight-on shot) — preserve the exact brick orientation, the exact rear-angled framing showing the rectangular flashlight aperture emitting a focused warm-white beam, the exact carry loop position on the left side face, the exact body proportions, and the exact relative position of every feature. The other reference images confirm product identity from other angles but the first reference defines the framing for this output. ONLY change the environment and lighting around the product: replace the original studio backdrop with a cinematic brand-identity scene — a dark raw concrete surface and deep matte black void background, moody atmospheric haze visible in the flashlight beam, single subtle ambient rim light on the brick edges from camera-right, deep shadow falloff, premium silent-luxury electronics campaign mood in the manner of Nothing and Bang & Olufsen product launches, sharp contact shadow under the brick. Do not modify the product itself in any way, do not re-orient the brick, do not move the carry loop, do not change the flashlight beam angle, do not stretch or distort the body. NEGATIVE: no people, no hands, no marketing text, no RGB, no neon, no flat or pasted-in look, no inconsistent lighting."
+    }
+  }
+]

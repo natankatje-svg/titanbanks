@@ -1,0 +1,13 @@
+{
+  "label": "C1 dark refs no silhouettes",
+  "aspect": "9x16",
+  "seed": 1498669036,
+  "elapsed_s": 9.9,
+  "url": "https://ideogram.ai/api/images/ephemeral/Z6wvqgORX_GhpnW7VOQIRQ.png?exp=1778900444&sig=f6bcdefe9cb275c189cd626b34ce5da944caf35ec7c3e0cf16b9c99c8ca54675",
+  "saved": "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\inbox\\ideogram_angle-03_C1_hero_v4_dark.png",
+  "refs": [
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-06_warm-orange-rim-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-10_display-macro-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-09_material-macro-body-nbpro.jpg"
+  ]
+}

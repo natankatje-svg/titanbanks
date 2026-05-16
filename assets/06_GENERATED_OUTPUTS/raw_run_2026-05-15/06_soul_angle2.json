@@ -1,0 +1,27 @@
+[
+  {
+    "id": "f60d4946-b9dd-4072-b5bb-ec18700b853c",
+    "status": "completed",
+    "display_name": "Soul Cinematic",
+    "job_set_type": "soul_cinematic",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_011920_f60d4946-b9dd-4072-b5bb-ec18700b853c.png",
+    "created_at": 1778807960.600415,
+    "params": {
+      "prompt": "A premium product hero photograph of the TITANBANKS Titan X powerbank lying on its side at a 3/4 off-axis angle in the right-center of a 4:5 vertical frame. The hero subject is the orange woven carry loop with embossed POWER BANK text — the loop drapes naturally over the front face of the brick and catches a strong directional warm orange rim light (#FF6B00). The loop's woven texture is sharp and tactile in macro detail, with individual fibers visible. The matte black powerbank body recedes into shadow on the left side; the small TITANBANKS wordmark on the top face is just legible. The LED display, if in frame, reads \"100%\". A sharp diagonal light streak runs across the floor plane from upper-left to lower-right behind the product, low-angle hard light grazing the floor (catwalk lighting effect). Background is a deep matte black gradient (#0A0A0A to #1A1A1A) with a subtle horizon glow at the back. No visible plinth. Composition leaves the upper-left third clear for typography overlay added in post. Cinematic, low-key, silent-luxury aesthetic. Medium format, 100mm macro lens equivalent, shallow depth of field with the carry loop in critical focus and the brick body falling into gentle bokeh. Photorealistic, premium press-shot quality. No people, no hands, no fingers, no body parts. No extra ports, no extra buttons, no fake LED panels, no secondary screens, no fake labels, no extra cables on the brick, no second carry loop. The embossed text on the loop must read exactly \"POWER BANK\" — no other text, no misspelling. Do not show both short ends in one frame. No airplane, no airport, no TSA. No RGB, no neon, no rainbow, no bokeh balls, no white background, no warm-wall environment. No urgency timer, no discount badge, no percentage off, no marketing slogans burnt in, no watermark, no logo other than TITANBANKS. No stretched proportions, no port-doubling, no plastic look.",
+      "width": 1536,
+      "height": 2048,
+      "batch_size": 1,
+      "seed": 452001,
+      "enhance_prompt": false,
+      "quality": "1080p",
+      "style_id": "5fbabfac-d27b-4751-b550-fea356ed55ac",
+      "style": {
+        "id": "5fbabfac-d27b-4751-b550-fea356ed55ac",
+        "name": "General",
+        "url": "https://cdn.higgsfield.ai/soul-cinematic-style/5f42a585-8ddb-4a06-96c6-682afce0afa1.webp",
+        "strength": 1.0
+      },
+      "style_strength": null
+    }
+  }
+]

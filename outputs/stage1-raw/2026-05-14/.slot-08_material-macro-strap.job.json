@@ -1,0 +1,43 @@
+[
+  {
+    "id": "e521cfd5-5d3d-46ac-b827-533b764423d2",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260514_132040_e521cfd5-5d3d-46ac-b827-533b764423d2.png",
+    "created_at": 1778764840.011716,
+    "params": {
+      "width": 2048,
+      "height": 2048,
+      "aspect_ratio": "1:1",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "daa41154-eaf6-42d7-9ab2-fff1cd2c433f",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/daa41154-eaf6-42d7-9ab2-fff1cd2c433f.png",
+          "type": "media_input"
+        },
+        {
+          "id": "e6fd9af4-378b-43da-8179-c8a8962deb0e",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/e6fd9af4-378b-43da-8179-c8a8962deb0e.png",
+          "type": "media_input"
+        },
+        {
+          "id": "cf66f51c-8665-475a-9832-1768d1039403",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/cf66f51c-8665-475a-9832-1768d1039403.png",
+          "type": "media_input"
+        },
+        {
+          "id": "e29d0d18-bd49-4313-add1-bb7f2fc64372",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/e29d0d18-bd49-4313-add1-bb7f2fc64372.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "PRODUCT (LOCKED — replicate from reference images, do not redesign): The subject is the Titan X powerbank shown in the four reference images. Reproduce the product EXACTLY as photographed across those references: keep the matte black body and the glossy black front panel with rounded corners, the display position on the glossy panel showing \"188%\" in white dot-matrix with the small green charge icon, the exact port arrangement on the top short face, the exact rear short face with flashlight aperture and two retractable cables, the bright orange woven carry loop hanging from the upper-left of the left side face, and the TITANBANKS wordmarks in their original subtle grey/white laser-etch positions which are: one on the lower-front face beneath the display, and one on the lower portion of the right-side face beneath the spec block — never on the left side face. The brick is a substantial three-dimensional rectangular box with significant depth and thickness — NOT thin or flat. The brick proportions, aspect ratio, body width, body height, body depth/thickness match the reference images exactly — do not stretch, squash, elongate, taper, fatten, narrow, thin, flatten, or distort. Do not add, remove, relocate, or restyle any feature. Do not change the carry loop color. ORIENTATION LOCK: port-face and rear-face are on opposite short ends, never simultaneously visible. Cables in the rear-face emerge from the SHORT end of the brick, NEVER from a long side edge. SCENE: extreme macro material study of the bright orange woven nylon carry-loop strap shown HORIZONTALLY across the frame from left to right, the macro crop frames a section of the strap that shows ONLY the woven orange fibers and weave pattern in razor-sharp detail with no printed text or letters visible anywhere in the crop, the printed \"POWER BANK\" lettering area of the strap is NOT in this crop, pure orange fiber texture only, the brick body is mostly out of frame with at most a soft defocused suggestion of matte black behind, dramatic side raking light bringing out fiber texture, very shallow depth of field, premium textile feature shot. NEGATIVE: no matte front, no flat front panel, no relocated display, no invented ports or buttons, no new icons or text, no red or pink or brown carry loop, no garbled wordmark, no extra TITANBANKS instances, no TITANBANKS on the left side face, no logo on the carry-loop side, no marketing text overlays, no hands, no people, no RGB, no neon, no crushed shadows on the product body, no over-darkened product, no stretched or squashed body, no narrowed or fattened brick, no thinned or flattened brick, no widened brick, no incorrect brick proportions, no elongated or shortened brick, no cables emerging from a long edge of the brick."
+    }
+  }
+]

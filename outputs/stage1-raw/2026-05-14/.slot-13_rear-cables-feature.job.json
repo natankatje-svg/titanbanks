@@ -1,0 +1,43 @@
+[
+  {
+    "id": "e3d9ae41-8461-46a6-82c5-010f5cf10cd3",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260514_134215_e3d9ae41-8461-46a6-82c5-010f5cf10cd3.png",
+    "created_at": 1778766135.023405,
+    "params": {
+      "width": 2048,
+      "height": 2048,
+      "aspect_ratio": "1:1",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "df9c96c9-bd81-461c-b83e-4767b424610a",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/df9c96c9-bd81-461c-b83e-4767b424610a.png",
+          "type": "media_input"
+        },
+        {
+          "id": "c4c8def1-6753-4aea-bcbe-18bd10d4609f",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/c4c8def1-6753-4aea-bcbe-18bd10d4609f.png",
+          "type": "media_input"
+        },
+        {
+          "id": "08173fe5-0523-426f-88b0-8ea9dcf2db5a",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/08173fe5-0523-426f-88b0-8ea9dcf2db5a.png",
+          "type": "media_input"
+        },
+        {
+          "id": "69dc4c96-b28a-4aa3-9a94-954fb6d7347c",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/69dc4c96-b28a-4aa3-9a94-954fb6d7347c.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "PRODUCT (LOCKED — replicate from reference images, do not redesign): The subject is the Titan X powerbank shown in the four reference images. Real-world dimensions: approximately 14.8 cm tall, 6.9 cm wide, 6.8 cm deep — a compact handheld-sized object roughly the size of a small hardcover paperback book. Reproduce the product EXACTLY as photographed: keep the matte black body and the glossy black front panel with rounded corners, the display position on the glossy panel showing \"188%\" in white dot-matrix with the small green charge icon, the exact port arrangement on the top short face, the exact rear short face with flashlight aperture, the bright orange woven carry loop hanging from the upper-left of the left side face, and the TITANBANKS wordmarks in their correct laser-etch positions (lower-front face and lower-right-side face only — never on the left side face which carries only the orange carry loop). The brick is a substantial three-dimensional rectangular box with significant depth and thickness — NOT thin or flat. The brick proportions, aspect ratio, width, height, depth and overall geometry match references exactly — do not stretch, squash, elongate, taper, fatten, narrow, thin, flatten, widen, or distort. Do not add, remove, relocate, or restyle any feature. Do not change the carry loop color. ORIENTATION LOCK: port-face (top short end with ports) and rear-face (opposite short end with flashlight aperture) are on OPPOSITE short ends and are NEVER simultaneously visible. The display is on the FRONT LONG face — it is NEVER on the same face as the flashlight aperture. SCENE: clean studio product hero shot of the Titan X powerbank standing upright in three-quarter view on a dark matte surface, NO cables visible anywhere in the frame, NO cables extended, the rear short end of the brick is angled away from the camera so the cable area is not the focus, the front face with the \"188%\" display is partially visible to the camera, single soft key light from camera-left grazes the matte body and the glossy front panel, the orange carry loop is visible on the left side face, the brick preserves its full reference shape, proportions and substantial body depth, cinematic premium electronics hero photography, dark moody minimal background with very subtle gradient. NEGATIVE: no matte front, no flat front panel, no relocated display, no display and flashlight merged on the same face, no invented ports or buttons, no new icons or text, no red or pink or brown carry loop, no garbled wordmark, no extra TITANBANKS instances, no TITANBANKS on the left side face, no marketing text overlays, no hands, no people, no RGB, no neon, no crushed shadows on the product body, no over-darkened product, no stretched or squashed body, no narrowed or fattened brick, no thinned or flattened brick, no widened brick, no incorrect brick proportions, no oversized brick relative to environment, no pasted-in appearance, no floating product without contact shadow, no inconsistent lighting between product and scene."
+    }
+  }
+]

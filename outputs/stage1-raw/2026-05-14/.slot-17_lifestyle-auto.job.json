@@ -1,0 +1,43 @@
+[
+  {
+    "id": "aab8ec43-7660-4f0e-9378-45b41396bfeb",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260514_135320_aab8ec43-7660-4f0e-9378-45b41396bfeb.png",
+    "created_at": 1778766800.782736,
+    "params": {
+      "width": 2048,
+      "height": 2048,
+      "aspect_ratio": "1:1",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "cc75e054-8572-4500-8cd0-0550d14a0e3d",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/cc75e054-8572-4500-8cd0-0550d14a0e3d.png",
+          "type": "media_input"
+        },
+        {
+          "id": "a3d87fdd-44be-41f4-8ab7-cf2733e3427a",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/a3d87fdd-44be-41f4-8ab7-cf2733e3427a.png",
+          "type": "media_input"
+        },
+        {
+          "id": "a324a004-988d-48c4-a11b-4410cf4928b3",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/a324a004-988d-48c4-a11b-4410cf4928b3.png",
+          "type": "media_input"
+        },
+        {
+          "id": "6f695405-729b-4c78-a819-d33f03d64dbe",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/6f695405-729b-4c78-a819-d33f03d64dbe.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "PRODUCT (LOCKED — replicate from reference images, do not redesign): The subject is the Titan X powerbank shown in the four reference images. Real-world dimensions: 14.8 cm tall by 6.9 cm wide by 6.8 cm deep — a compact handheld-sized object that fits comfortably in one hand, roughly the size of a small hardcover book or a half-litre water bottle. Reproduce the product exactly as photographed: matte black body, glossy black front panel with rounded corners, \"188%\" display, port arrangement on top short face, flashlight aperture and retractable cables on opposite rear short face, bright orange woven carry loop on the upper-left of the left side face, TITANBANKS wordmarks on lower-front and lower-right-side only — never on the left side. The brick is a substantial 3D rectangular box with full reference depth, not thin or flat. Brick proportions, width, height, depth and overall geometry match references precisely.\n\nSCENE: lifestyle in-context product photography of the Titan X powerbank placed naturally on the leather centre console of a premium dark-interior modern car at night. CRITICAL SCALE: the powerbank measures only 14.8 cm tall and 6.9 cm wide — it is SMALLER than the gear shifter knob beside it, SMALLER in diameter than a standard car cup holder, and would fit inside a closed adult hand. In this composition the powerbank occupies roughly 15 to 20 percent of the visible centre console area at most, not dominating the frame, with the surrounding car interior (gear shifter at correct ~12 cm height, cup holders at correct ~7 cm diameter, dashboard, infotainment knobs) clearly larger or comparable to it. The brick is fully INTEGRATED into the scene — not a flat cutout pasted on top. The same ambient lighting from the dashboard glow and city lights through the windscreen falls on the brick AND the leather console AND the gear shifter with consistent direction, intensity, color temperature, and softness. The brick has a soft natural contact shadow on the leather beneath it that matches the shadows cast by the gear shifter and other interior elements. Subtle leather grain reflections, soft amber and cool blue ambient glow across all surfaces equally. Deep night atmosphere outside. The brick is in sharp focus, but the lighting integration matches the rest of the frame perfectly. No people, no hands.\n\nNEGATIVE: no oversized brick, no brick larger than the gear shifter knob, no brick dominating the console, no pasted-in look, no floating brick, no isolated brick lighting, no inconsistent lighting between brick and scene, no missing contact shadow, no people, no hands, no marketing text, no RGB, no flat brick, no thin brick, no narrowed body, no stretched body, no incorrect proportions."
+    }
+  }
+]

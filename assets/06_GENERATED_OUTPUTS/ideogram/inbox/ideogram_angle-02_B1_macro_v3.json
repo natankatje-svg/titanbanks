@@ -1,0 +1,14 @@
+{
+  "file": "angle-02_strap_B1_hero-macro.txt",
+  "aspect": "3x4",
+  "seed": 675955324,
+  "elapsed_s": 10.3,
+  "url": "https://ideogram.ai/api/images/ephemeral/CxTkO4UcWGGJbkgIxQSQ0g.png?exp=1778899910&sig=7913f03afeeb25cb468b3a646f2cc93f1aa57737ecb71c7df6129951302b9285",
+  "saved": "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\inbox\\ideogram_angle-02_B1_macro_v3.png",
+  "style_refs": [
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-18_marketplace-front-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-19_marketplace-side-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-20_marketplace-top-down-ports-nbpro.jpg"
+  ],
+  "geometry_corrected": true
+}

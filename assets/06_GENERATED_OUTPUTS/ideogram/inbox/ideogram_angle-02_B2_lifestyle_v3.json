@@ -1,0 +1,14 @@
+{
+  "file": "angle-02_strap_B2_lifestyle-hand.txt",
+  "aspect": "3x4",
+  "seed": 269186746,
+  "elapsed_s": 9.8,
+  "url": "https://ideogram.ai/api/images/ephemeral/i3zii-uQVIOGKJYoK3DOig.png?exp=1778899910&sig=7ddb71d75c1b06cb7d85e5633d39e86cf7204a632949d88a7a63a7ac13ca04ea",
+  "saved": "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\inbox\\ideogram_angle-02_B2_lifestyle_v3.png",
+  "style_refs": [
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-18_marketplace-front-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-19_marketplace-side-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-20_marketplace-top-down-ports-nbpro.jpg"
+  ],
+  "geometry_corrected": true
+}

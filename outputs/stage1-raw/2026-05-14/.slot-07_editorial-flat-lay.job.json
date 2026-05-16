@@ -1,0 +1,38 @@
+[
+  {
+    "id": "92126c22-94b9-4e5b-8a2e-928cda0a772a",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260514_125807_92126c22-94b9-4e5b-8a2e-928cda0a772a.png",
+    "created_at": 1778763487.737953,
+    "params": {
+      "width": 2048,
+      "height": 2048,
+      "aspect_ratio": "1:1",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "3a2862cd-7331-4266-86c9-b4c422af3a38",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/3a2862cd-7331-4266-86c9-b4c422af3a38.png",
+          "type": "media_input"
+        },
+        {
+          "id": "936ba752-bbb0-4b7e-9fa2-07762f519cbb",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/936ba752-bbb0-4b7e-9fa2-07762f519cbb.png",
+          "type": "media_input"
+        },
+        {
+          "id": "cccda155-5e3e-43f6-bac1-b694c283259d",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/cccda155-5e3e-43f6-bac1-b694c283259d.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "PRODUCT (LOCKED — replicate from reference images, do not redesign): The subject is the Titan X powerbank shown in the three reference images. Reproduce the product EXACTLY as photographed: keep the matte black body and the glossy black front panel with rounded corners, the display position on the glossy panel showing \"188%\" in white dot-matrix with the small green charge icon, the exact port arrangement on the top short face, the exact rear short face with flashlight aperture and two retractable cables, the bright orange woven carry loop hanging from the upper-left of the left side face, and the TITANBANKS wordmarks in their original subtle grey/white laser-etch positions which are: one on the lower-front face beneath the display, and one on the lower portion of the right-side face beneath the spec block — never on the left side face (the left side face carries only the orange carry loop and is otherwise plain matte black). The brick proportions, aspect ratio, and overall body geometry match the reference images exactly — do not stretch, squash, elongate, taper, fatten, narrow, or distort the body in any direction. Do not add, remove, relocate, or restyle any feature of the product. Do not change the carry loop color. Do not redesign the side-face engravings. ORIENTATION LOCK: port-face and rear-face are on opposite short ends, never simultaneously visible. SCENE: editorial top-down flat-lay product photography, the camera is directly overhead in true top-down view, the powerbank lies flat on its back on a dark slate or charcoal linen surface with the glossy front face fully facing the camera, the port-face short end is positioned toward the UPPER edge of the frame and never toward the bottom of the frame, soft directional natural daylight from the side casts a long subtle shadow, minimalist composition with at most one small dark secondary object (a dark leather passport cover or dark stainless travel watch) in one corner for scale and lifestyle context, magazine editorial style in the manner of Kinfolk and Aesop, monochrome warm-grey palette, premium silent-luxury mood. NEGATIVE: no matte front, no flat front panel, no relocated display, no invented ports or buttons, no new icons or text, no red or pink or brown carry loop, no garbled wordmark, no extra TITANBANKS instances, no TITANBANKS on the left side face, no logo on the carry-loop side, no marketing text overlays, no hands, no people, no RGB, no neon, no crushed shadows on the product body so the matte surface and laser-etch details remain readable, no over-darkened product, no stretched or squashed body, no narrowed or fattened brick, no incorrect brick proportions, no elongated or shortened brick."
+    }
+  }
+]

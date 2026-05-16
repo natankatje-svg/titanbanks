@@ -1,0 +1,21 @@
+[
+  {
+    "id": "6715b724-7576-4a3e-902d-45eb62633691",
+    "status": "completed",
+    "display_name": "GPT Image 2",
+    "job_set_type": "imagegen_2_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_011906_6715b724-7576-4a3e-902d-45eb62633691.png",
+    "created_at": 1778807946.34988,
+    "params": {
+      "width": 1520,
+      "height": 2688,
+      "prompt": "Premium 9:16 vertical product advertisement. A matte black TITANBANKS Titan X 50,000 mAh powerbank stands upright on a barely-visible reflective plinth in the lower half of the frame, 3/4 off-axis angle. The top face shows a small \"TITANBANKS\" wordmark and an LED dot-matrix display window reading \"100%\" with a tiny green charge icon. An orange woven carry loop with embossed \"POWER BANK\" text drapes naturally to the side. Material is matte black metal with a subtle satin micro-grain finish. Single warm orange rim light (#FF6B00) grazes the right edge from camera right; faint cool fill from camera left. Background is deep near-black (#0A0A0A) with a soft radial vignette and a faint warm underglow halo beneath the product. Centered axis composition, generous negative space in the upper 50%. Cinematic, low-key, silent-luxury aesthetic — Bang & Olufsen tier.\n\nTEXT IN IMAGE — render exactly as written, in a clean modern white sans-serif:\n— Top center, small caps: \"TITANBANKS\"\n— Below it, smaller, light grey: \"Titan X · Coming Soon\"\n— Mid-upper third, very large centered: \"Never at 0.\"\n— Just below, small centered: \"While the world looks for an outlet, you keep going.\"\n— Bottom center, white text inside a small matte-black pill with a thin orange border: \"Join the Waitlist\"\n\nDO NOT INCLUDE: people, hands, body parts, extra ports, extra buttons, extra cables, secondary screens, fake labels, second logo, urgency timers, date windows, percentage-off badges, RGB lighting, neon, rainbow, bokeh balls, white background, airplane, airport, TSA, watermarks. Do not show both short ends of the powerbank in the same frame. Logo spelling must be exactly TITANBANKS. Display reads exactly \"100%\".",
+      "medias": [],
+      "aspect_ratio": "9:16",
+      "quality": "high",
+      "resolution": "2k",
+      "model": "videotape-alpha",
+      "reference_elements": []
+    }
+  }
+]

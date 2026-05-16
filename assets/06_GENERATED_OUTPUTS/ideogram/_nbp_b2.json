@@ -1,0 +1,28 @@
+[
+  {
+    "id": "29f1cde3-295d-423b-bc40-5eca5693e2f6",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_090525_29f1cde3-295d-423b-bc40-5eca5693e2f6.png",
+    "created_at": 1778835925.965388,
+    "params": {
+      "width": 1792,
+      "height": 2400,
+      "aspect_ratio": "3:4",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "51769819-6f26-4230-9bb7-54d64802290a",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/51769819-6f26-4230-9bb7-54d64802290a.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "Premium 3:4 vertical lifestyle hand-on-strap shot using the exact powerbank from the reference image. Preserve its two-part design proportions, glossy display showing 100 percent with green charge icon, TITANBANKS wordmark on front face, and orange woven carry loop with POWER BANK text. A single human hand enters the frame from upper-right and lifts the powerbank by its orange carry loop. Only the hand and forearm visible - no face, no shoulder, no second hand, no rings, no watch, no jewelry. Index and middle finger hooked through the loop, the loop bears the full weight. Single warm orange rim light from camera right grazes the loop and back edge of brick. Background deep matte black gradient with faint horizon glow. Hand and product right two-thirds, left third clear for typography. In-image typography clean white modern sans-serif: top center small caps TITANBANKS, upper-left third very large left-aligned The strap people ask about with period, below small left-aligned Titan X Coming Soon, bottom-right white text in matte-black pill with thin orange border Coming Soon. Cinematic low-key premium."
+    }
+  }
+]

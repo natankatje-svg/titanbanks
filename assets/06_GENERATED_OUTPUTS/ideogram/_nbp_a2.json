@@ -1,0 +1,28 @@
+[
+  {
+    "id": "9893f5bd-671d-400d-aeae-926ddd60ff86",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_090501_9893f5bd-671d-400d-aeae-926ddd60ff86.png",
+    "created_at": 1778835901.152254,
+    "params": {
+      "width": 1536,
+      "height": 2752,
+      "aspect_ratio": "9:16",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "4f061e09-21f3-4635-adc1-6b20c4471045",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/4f061e09-21f3-4635-adc1-6b20c4471045.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "Premium 9:16 vertical lifestyle product advertisement using the exact powerbank from the reference image. Preserve its two-part design with overhanging port-cap, proportions, glossy display panel showing 100 percent with green charge icon, TITANBANKS wordmark on bottom of front face, and orange woven carry loop with POWER BANK printed on it. Place the powerbank on top of a folded charcoal-grey premium backpack on a dark concrete bench at dusk in a quiet urban setting. The carry loop hangs over the side. Single warm orange rim light. Background deep blurred urban dusk near-black with faint distant warm window glow. No people no hands. In-image typography clean white modern sans-serif: top center small caps TITANBANKS, below smaller light grey Titan X Coming Soon, mid-upper very large centered Never at 0 with period, below small centered Built for long days without an outlet, bottom center white text in matte-black pill with thin orange border Join the Waitlist. Cinematic calm premium."
+    }
+  }
+]

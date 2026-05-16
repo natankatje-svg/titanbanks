@@ -1,0 +1,28 @@
+[
+  {
+    "id": "c6bb9e4b-f51d-448b-8b8d-332030d5f73e",
+    "status": "completed",
+    "display_name": "Nano Banana Pro",
+    "job_set_type": "nano_banana_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_090301_c6bb9e4b-f51d-448b-8b8d-332030d5f73e.png",
+    "created_at": 1778835781.269377,
+    "params": {
+      "width": 1536,
+      "height": 2752,
+      "aspect_ratio": "9:16",
+      "resolution": "2k",
+      "batch_size": 1,
+      "input_images": [
+        {
+          "id": "09e5a5c2-c567-4569-89b3-cefbcf4d5b3b",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/09e5a5c2-c567-4569-89b3-cefbcf4d5b3b.png",
+          "type": "media_input"
+        }
+      ],
+      "input_image": null,
+      "application": null,
+      "surface": null,
+      "prompt": "Premium 9:16 vertical product advertisement using the exact powerbank from the reference image. Preserve its proportions, the two-part design with overhanging port-cap on top, the glossy black recessed display panel showing 100 percent with a small green charge icon, the small TITANBANKS wordmark on the front face, and the orange woven carry loop with POWER BANK printed on it attached at the left edge mid-height. Place the powerbank upright on a barely-visible reflective plinth in the lower half of the frame at a 3/4 off-axis angle. Single warm orange rim light from camera right. Background deep near-black with soft radial vignette and subtle warm underglow. Centered axis composition with negative space upper half. In-image typography rendered in clean white modern sans-serif: top center small caps TITANBANKS, below smaller light grey Titan X Coming Soon, mid-upper very large centered Never at 0 with period, below small centered While the world looks for an outlet you keep going, bottom center white text in matte-black pill with thin orange border Join the Waitlist. Cinematic low-key silent-luxury aesthetic."
+    }
+  }
+]

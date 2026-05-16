@@ -1,0 +1,14 @@
+{
+  "file": "angle-03_50000mah-not-the-point_C1_hero.txt",
+  "aspect": "9x16",
+  "seed": 135129598,
+  "elapsed_s": 9.9,
+  "url": "https://ideogram.ai/api/images/ephemeral/GyFie55xUBGB5wnzHGtetg.png?exp=1778899910&sig=f18fa93b8d94c156976e0d2a74080a60dcf22029e37df6c827e386acc33c4b49",
+  "saved": "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\inbox\\ideogram_angle-03_C1_hero_v3.png",
+  "style_refs": [
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-18_marketplace-front-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-19_marketplace-side-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-20_marketplace-top-down-ports-nbpro.jpg"
+  ],
+  "geometry_corrected": true
+}

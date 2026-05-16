@@ -1,0 +1,21 @@
+[
+  {
+    "id": "ce797689-1504-48e8-8e67-18d90e136c35",
+    "status": "completed",
+    "display_name": "GPT Image 2",
+    "job_set_type": "imagegen_2_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_011911_ce797689-1504-48e8-8e67-18d90e136c35.png",
+    "created_at": 1778807951.728328,
+    "params": {
+      "width": 1744,
+      "height": 2336,
+      "prompt": "Premium product advertisement, vertical 3:4 aspect, hero subject = the orange woven carry loop. A matte black TITANBANKS Titan X 50,000 mAh powerbank lies on its side at a 3/4 off-axis angle in the right-center of the frame. The hero subject is its orange woven carry loop, which drapes naturally over the front face and catches a strong directional warm orange rim light (#FF6B00). The loop's woven texture is sharp and tactile, individual fibers visible in macro detail. The embossed text on the loop reads exactly \"POWER BANK\" (uppercase). The matte black powerbank body recedes into shadow on the left; the small \"TITANBANKS\" wordmark on the top face is just legible. If the LED display is in frame, it reads \"100%\". A sharp diagonal light streak runs across the floor plane from upper-left to lower-right behind the product, low-angle hard light grazing the floor (catwalk lighting effect). Background is a deep matte black gradient (#0A0A0A to #1A1A1A) with a faint horizon glow at the back. No visible plinth. Carry loop in critical focus, brick body in gentle bokeh. Silent-luxury aesthetic.\n\nTEXT IN IMAGE — render exactly, white modern sans-serif:\n— Top center, small caps: \"TITANBANKS\"\n— Upper-left third, very large left-aligned: \"The strap people ask about.\"\n— Just below, small left-aligned: \"Titan X · Coming Soon\"\n— Bottom-right, white text in matte-black pill with thin orange border: \"Coming Soon\"\n\nDO NOT INCLUDE: people, hands, fingers, body parts, extra ports, extra buttons, extra cables, secondary screens, fake labels, second carry loop, second logo, misspelled \"POWER BANK\", \"POWERBANK\" written as one word, urgency timers, date windows, percentage-off badges, RGB lighting, neon, white background, warm-wall environment, airplane, airport, TSA, watermarks. Logo spelling exactly TITANBANKS.",
+      "medias": [],
+      "aspect_ratio": "3:4",
+      "quality": "high",
+      "resolution": "2k",
+      "model": "videotape-alpha",
+      "reference_elements": []
+    }
+  }
+]

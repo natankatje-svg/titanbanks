@@ -1,0 +1,5 @@
+
+## 2026-05-15 05:48:42
+From Telegram (campaign-wide geometry refinement, msg 11):
+
+> De powerbank moet beter overeenkomen met het OEM origineel. Belangrijk: (1) de brick is een TWEE-DELIG ontwerp — een hogere main body PLUS een aparte BREDERE port-module cap erbovenop die overhangt aan alle zijden, dat moet duidelijk zichtbaar zijn. (2) Proporties: hoogte:breedte:diepte ongeveer 1.85:1.0:0.55 — substantieel maar NIET smartphone-slank. (3) Display panel is een GLOSSY PIANO-BLACK recessed panel in de bovenste derde van de FRONT face met '100%' in witte LED dot-matrix + klein groen charge icoon ernaast. (4) De carry loop is een BREDE oranje webbing strap (~25mm, twee vingers breed), NIET een dun touwtje. Loop is bevestigd aan een recessed mounting slot op de LINKER zijkant van de front face mid-height. (5) TITANBANKS wordmark staat klein onderaan-midden van de front face, witte/zilver kleur, subtiel — niet groot of dominant. (6) Volg deze proporties en plaatsing exact zoals in de OEM reference photos.

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "d369ba0c-d1b9-4290-97ae-cc8f10a38202",
+    "status": "completed",
+    "display_name": "Soul Cinematic",
+    "job_set_type": "soul_cinematic",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_011917_d369ba0c-d1b9-4290-97ae-cc8f10a38202.png",
+    "created_at": 1778807957.377812,
+    "params": {
+      "prompt": "A premium product hero photograph of the TITANBANKS Titan X powerbank, shot in a deep matte-black studio. The powerbank stands upright on an unseen reflective plinth in the lower 50% of a 9:16 vertical frame, slightly off-axis 3/4 angle so the small TITANBANKS wordmark and the LED dot-matrix display window on the top face are clearly visible. The display is lit and reads \"100%\" with a small green charge icon. The orange woven carry loop with embossed POWER BANK text drapes naturally to the side. Material is deep matte black metal with subtle satin micro-grain. Single warm orange rim light (#FF6B00) acting as directional key from camera right; faint cool fill from camera left. Background is near-black (#0A0A0A) with a soft radial vignette and a barely-visible warm underglow halo beneath the product. Generous negative space in the upper 50% of the frame, reserved for typography overlay added in post. Centered axis composition. Cinematic, low-key, silent-luxury aesthetic — Bang & Olufsen tier, closer to Nothing brand than gaming hardware. Shot on medium format, 85mm lens equivalent, shallow depth of field, deep neutral blacks, slight orange highlight roll-off, sensor noise minimal. Photorealistic. No people, no hands, no body parts. No extra ports, no extra buttons, no fake LED panels, no secondary screens, no fake labels, no extra cables on the brick body, no second carry loop. Do not show both short ends of the powerbank in the same frame. No airplane, no airport, no TSA. No RGB lighting, no neon, no rainbow, no bokeh balls, no white background. No urgency timer, no discount badge, no percentage off, no marketing text or slogans burnt into the image, no watermark, no logo other than TITANBANKS. No stretched proportions, no port-doubling. The display must read \"100%\".",
+      "width": 1152,
+      "height": 2048,
+      "batch_size": 1,
+      "seed": 252260,
+      "enhance_prompt": false,
+      "quality": "1080p",
+      "style_id": "5fbabfac-d27b-4751-b550-fea356ed55ac",
+      "style": {
+        "id": "5fbabfac-d27b-4751-b550-fea356ed55ac",
+        "name": "General",
+        "url": "https://cdn.higgsfield.ai/soul-cinematic-style/5f42a585-8ddb-4a06-96c6-682afce0afa1.webp",
+        "strength": 1.0
+      },
+      "style_strength": null
+    }
+  }
+]

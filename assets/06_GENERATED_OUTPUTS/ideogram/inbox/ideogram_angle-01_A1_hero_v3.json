@@ -1,0 +1,14 @@
+{
+  "file": "angle-01_never-at-0_A1_hero.txt",
+  "aspect": "9x16",
+  "seed": 143193188,
+  "elapsed_s": 9.9,
+  "url": "https://ideogram.ai/api/images/ephemeral/wPND6XOgXhabK_AeJ4WvNQ.png?exp=1778899910&sig=73345184862909cdd592927408fe720adbed8ad6c9311c5969c10ae475645a0d",
+  "saved": "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\inbox\\ideogram_angle-01_A1_hero_v3.png",
+  "style_refs": [
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-18_marketplace-front-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-19_marketplace-side-3q-nbpro.jpg",
+    "C:\\Users\\natan\\TitanBanks\\assets\\06_GENERATED_OUTPUTS\\ideogram\\_refs_resized\\slot-20_marketplace-top-down-ports-nbpro.jpg"
+  ],
+  "geometry_corrected": true
+}

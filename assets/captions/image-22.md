@@ -1,0 +1,22 @@
+# Image 22
+
+**File**: `hf_20260511_181024_55b508cd-93e6-4b78-a621-8f985c358259.png`
+**Set**: v1 Higgsfield-output
+**Intent**: Style reference — campaign-grade warm-rim hero (strongest v1 brand-aligned shot)
+
+## Visual description
+Three-quarter hero of the Titan X standing upright on a dark plinth with a dramatic warm-orange backlight from the upper-right behind the brick, casting a soft amber halo around the silhouette and warming the orange woven carry loop. LED display reads "100%" with the green charge icon (v1 source value — generated output should still be "188%" per canonical). The carry loop hangs from the left side, the "POWER BANK" print clearly legible in reverse. Visible right side face: recessed power button near the top, certification icon row (FCC, CE, Recycle triangle, crossed-out wheelie bin), stacked laser-engraved spec block. TITANBANKS wordmark on the lower front face below the display. Foreground plinth is cool/dark, picking up subtle warm spill at the edges.
+
+## Product accuracy notes
+Canonical Titan X powerbank, 50,000 mAh. Layout matches Image 8 canonical. Two TITANBANKS wordmarks total (front-lower + side-lower) — note the v1 source frame appears to show a slightly garbled secondary wordmark on the side face; in generated output, both must read TITANBANKS exactly. Display readout in generated output: "188%" with the small green charge icon (not "100" from this v1 source). Port and cable layouts as canonical: port-end face = 4 USB-A + 1 USB-C input + 1 Micro USB input; rear-end face = flashlight aperture + 2 retractable output cables (USB-C and Lightning).
+
+## Style / background reference
+Strongest warm-backlight cinematic reference in the v1 set. Dark plinth, dark cool foreground, dramatic warm-orange rim/backlight from the upper-right behind the brick, the orange carry loop glowing in the spill. Brand-aligned with the brand-doc "oranje verschijnt spaarzaam, als een accentlamp die aangaat" principle. Use this as the primary template for "campaign-grade warm rim" hero compositions.
+
+## Negative constraints
+Do NOT carry "100%" from this v1 source into generated output — generated display must read "188%". Do NOT replicate any garbled or misspelled wordmark on the side face — TITANBANKS must be spelled correctly in both occurrences. Do not let the amber backlight bleed into a full warm scene — keep the foreground cool and dark, amber confined to the backlight zone. Do not add or remove ports. Do not stretch brick proportions. No marketing text overlays, no slogans, no watermarks, no neon, no RGB, no second device, no hands, no people, no props.
+
+## Final ComfyUI caption
+```
+Titan X powerbank, matte black rectangular brick standing upright on a dark plinth, three-quarter hero angle, dark cinematic studio with a deep black background and a dramatic warm-orange rim/backlight from the upper-right behind the brick casting a soft amber halo around the silhouette, dark cool foreground and plinth with subtle warm spill at the edges, port-end short face at the top showing exactly four USB-A output ports (one accented in deeper purple/blue as the quick-charge port), one USB-C input port and one smaller Micro USB input port, LED dot-matrix display on the upper front face reading "188%" with a small green charge icon (all-segments-on test pattern), small TITANBANKS wordmark in faint light grey laser-etch along the lower front face beneath the display, orange woven POWER BANK carry loop hanging prominently from the left side of the brick with the printed text legible in reverse and glowing slightly in the warm spill light, on the visible right side face a recessed power button near the top, a horizontal row of small laser-engraved certification icons (FCC, CE, Recycle triangle, crossed-out wheelie bin) below it, a tightly stacked laser-engraved spec block (ITEM, MODEL, CAPACITY, INPUT1, INPUT2, OUTPUT1 through OUTPUT5, Made In China) in faint light grey laser-etched on matte black further below, and a second small TITANBANKS wordmark along the lower portion of the side face, two retractable output cables (USB-C and Lightning) on the opposite rear-end short face out of frame, premium cinematic campaign-grade warm-rim hero product photography, moody, sparing use of orange as an accent, no marketing text overlays, no extra ports, no extra buttons, no secondary display, do not change the display readout away from "188%", spell TITANBANKS correctly
+```

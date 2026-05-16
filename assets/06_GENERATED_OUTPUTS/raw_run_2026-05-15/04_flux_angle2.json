@@ -1,0 +1,23 @@
+[
+  {
+    "id": "e7229f6d-db77-46c2-b89f-68f3d8accef1",
+    "status": "completed",
+    "display_name": "FLUX.2",
+    "job_set_type": "flux_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DENOuow9eTXjO6tScpelkVMwI6/hf_20260515_011915_e7229f6d-db77-46c2-b89f-68f3d8accef1.png",
+    "created_at": 1778807955.299065,
+    "params": {
+      "prompt": "Premium product advertisement photograph, vertical 3:4 aspect. Hero subject = an orange woven carry loop with embossed uppercase text reading exactly \"POWER BANK\" attached to the TITANBANKS Titan X matte black 50,000 mAh powerbank. The powerbank lies on its side at a 3/4 off-axis angle in the right-center of the frame. The orange woven carry loop drapes naturally over the front face of the brick and catches a strong directional warm orange rim light, hex #FF6B00. The loop's woven texture is sharp and tactile, individual fibers visible in macro detail. The matte black powerbank body recedes into shadow on the left side; small \"TITANBANKS\" wordmark on the top face just legible. If the LED display is in frame, it reads \"100%\". Single sharp diagonal light streak runs across the floor plane from upper-left to lower-right behind the product, low-angle hard light grazing the floor (catwalk lighting). Background deep matte black gradient from hex #0A0A0A to #1A1A1A with a faint horizon glow at the back. No visible plinth. Carry loop in critical focus, brick body in gentle bokeh, shallow depth of field, medium format, 100mm macro lens equivalent. Photorealistic matte metal with satin micro-grain finish. Silent-luxury aesthetic, Bang & Olufsen tier press shot.\n\nIn-image typography (render exactly): top center small white \"TITANBANKS\"; upper-left third very large left-aligned white \"The strap people ask about.\"; just below small white \"Titan X · Coming Soon\"; bottom-right matte black pill with thin orange border containing white text \"Coming Soon\".\n\nNegative: people, hands, fingers, body parts, extra ports, extra buttons, fake LED panels, secondary screens, fake labels, extra cables, second carry loop, two carry loops, misspelled \"POWER BANK\", \"POWERBANK\" as one word, both short ends visible, airplane, airport, TSA, RGB lighting, neon, white background, warm-wall environment, urgency timer, discount badge, percentage off, watermark, second logo, misspelled TITANBANKS, plastic look, fingerprints, dust.",
+      "seed": 953483,
+      "width": 1440,
+      "height": 1920,
+      "batch_size": 1,
+      "resolution": "2k",
+      "input_images": [],
+      "aspect_ratio": "3:4",
+      "model": "max",
+      "steps": null,
+      "cfg": null
+    }
+  }
+]

@@ -1,0 +1,10 @@
+Premium 9:16 vertical product advertisement. A matte black TITANBANKS Titan X 50,000 mAh powerbank stands upright dead-center on a barely-visible reflective plinth at a slight low-angle 3/4 view. Top face shows a small "TITANBANKS" wordmark and an LED dot-matrix display window reading "100%" with a tiny green charge icon. An orange woven carry loop with embossed "POWER BANK" text drapes to the side. Six extremely faint device silhouettes are arranged in a symmetric V-flanking pattern behind the product at very low opacity (almost invisible, like a dark constellation): left column top-to-bottom = smartphone outline, earbuds case outline, camera outline; right column = tablet outline, smartwatch outline, drone controller outline. Silhouettes are ghostly outlines only, no recognizable third-party brand logos. Single warm orange rim light (#FF6B00) from camera right; deep neutral fill from camera left. Background near-black (#0A0A0A) with subtle radial vignette. Centered axis composition. Generous negative space in the upper third. Cinematic low-key, silent-luxury aesthetic, Bang & Olufsen tier.
+
+TEXT IN IMAGE — render exactly, white modern sans-serif:
+— Top center, small caps: "TITANBANKS"
+— Below it, smaller, light grey: "Titan X · Coming Soon"
+— Mid-upper, very large centered: "50,000 mAh."
+— Just below, smaller centered: "But that is not the point."
+— Bottom center, white text in matte-black pill with thin orange border: "Discover the build"
+
+DO NOT INCLUDE: people, hands, body parts, extra ports, extra buttons, extra cables on the brick, secondary screens, fake labels, second logo, recognizable third-party brand logos on the silhouettes, full-color devices, opaque silhouettes, urgency timers, date windows, percentage-off badges, RGB lighting, neon, rainbow, bokeh balls, white background, airplane, airport, TSA, watermark, charging-speed callouts, wattage numbers. Do not show both short ends. Logo spelling exactly TITANBANKS. Headline must include both the comma and the period.
