@@ -1,0 +1,16 @@
+# Internal assets / generation outputs — never needed in the live deploy.
+assets/
+outputs/
+prompts/
+docs/
+_backup_*/
+website/
+
+# Internal docs & training data
+*.docx
+WEBSHOP_REDESIGN_PROMPT.md
+MIGRATION_REPORT_*.md
+
+# Local-only configs
+.claude/
+.env.local
