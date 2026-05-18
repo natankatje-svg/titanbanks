@@ -28,22 +28,6 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden bg-[#050505] clip-diag-down"
       style={{ paddingBottom: 'calc(5vw + 2rem)' }}
     >
-      {/* Ambient background video — Particle Drift loop. Mobile relies on
-          object-cover center-crop of the same 16:9 source. Falls back to
-          poster when prefers-reduced-motion is set or the video fails. */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/hero/titan-x-particle-drift-poster.jpg"
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover opacity-60 motion-reduce:hidden pointer-events-none"
-      >
-        <source src="/hero/titan-x-particle-drift-16x9.mp4" type="video/mp4" />
-      </video>
-
       {/* Grid + radial atmosphere */}
       <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none"

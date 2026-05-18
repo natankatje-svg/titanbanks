@@ -54,17 +54,20 @@ export default function HeroVariantB() {
       onMouseLeave={handleMouseLeave}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] text-white"
     >
-      {/* Layer 0 — video, placed directly in section (no motion wrapper to avoid positioning override) */}
+      {/* Layer 0 — Particle Drift ambient background video. Mobile uses
+          object-cover center-crop of the same 16:9 source. */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        poster="/images/product-dark.jpg"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        preload="metadata"
+        poster="/hero/titan-x-particle-drift-poster.jpg"
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover object-center motion-reduce:hidden pointer-events-none"
         style={{ zIndex: 0 }}
       >
-        <source src="/videos/hero-product.mp4" type="video/mp4" />
+        <source src="/hero/titan-x-particle-drift-16x9.mp4" type="video/mp4" />
       </video>
 
       {/* Layer 1 — base dark overlay */}
