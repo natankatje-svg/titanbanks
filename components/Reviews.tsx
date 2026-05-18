@@ -33,7 +33,7 @@ const reviews = [
     avatar: 'DK',
     rating: 5,
     title: '"Mijn laptop en phone altijd opgeladen."',
-    text: 'Ik werk vanuit cafés en treinen. De 22.5W fast charge houdt mijn MacBook en iPhone tegelijk bijgetankt. Die LED display is geweldig — precies weten wat er nog in zit.',
+    text: 'Ik werk vanuit cafés en treinen. De fast charging houdt mijn MacBook en iPhone tegelijk bijgetankt. Die LED display is geweldig — precies weten wat er nog in zit.',
     location: 'Amsterdam, NL',
     accent: '#FFD700',
     platform: 'Trustpilot',

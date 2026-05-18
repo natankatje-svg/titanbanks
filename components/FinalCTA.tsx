@@ -73,7 +73,7 @@ export default function FinalCTA() {
               >
                 <Image
                   src="/images/product-isometric.jpg"
-                  alt="Titan X 50.000mAh premium powerbank met smart LED display, PD 22.5W fast charge en ingebouwde kabels"
+                  alt="Titan X 50.000 mAh premium powerbank met smart LED display en ingebouwde retractable kabels"
                   width={520}
                   height={480}
                   className="object-contain w-full h-auto"
@@ -115,8 +115,8 @@ export default function FinalCTA() {
             </h2>
 
             <p className="font-body text-gray-400 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
-              De Titan X is de enige powerbank die je ooit nog nodig hebt. 50.000mAh,
-              fast charge, LED display, zaklamp en ingebouwde kabels — alles in één premium device.
+              De Titan X is de enige powerbank die je ooit nog nodig hebt. 50.000 mAh,
+              fast charging, LED display, zaklamp en ingebouwde retractable kabels — alles in één premium device.
             </p>
 
             {/* Stock signal */}

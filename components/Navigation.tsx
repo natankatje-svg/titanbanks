@@ -6,12 +6,17 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { useEcwid } from './EcwidProvider';
 
-const navLinks = [
+const navLinksDefault = [
   { label: 'Functies',  href: '#functies',  id: 'functies'  },
   { label: 'Gebruik',   href: '#gebruik',   id: 'gebruik'   },
   { label: 'Showcase',  href: '#showcase',  id: 'showcase'  },
   { label: 'Reviews',   href: '#reviews',   id: 'reviews'   },
   { label: 'FAQ',       href: '#faq',       id: 'faq'       },
+];
+
+const navLinksTeaser = [
+  { label: 'Specs',     href: '#capacity',  id: 'capacity'  },
+  { label: 'Waitlist',  href: '#waitlist',  id: 'waitlist'  },
 ];
 
 function Logo() {
@@ -27,11 +32,12 @@ function Logo() {
   );
 }
 
-export default function Navigation() {
+export default function Navigation({ mode = 'shop' }: { mode?: 'shop' | 'teaser' }) {
   const { addToCart } = useEcwid();
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
   const [activeId, setActiveId]   = useState('');
+  const navLinks = mode === 'teaser' ? navLinksTeaser : navLinksDefault;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -61,7 +67,7 @@ export default function Navigation() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#050505]/95 backdrop-blur-xl border-b border-white/[0.05]' : 'bg-transparent'
+        scrolled ? 'bg-black/95 backdrop-blur-xl border-b border-white/[0.05]' : 'bg-transparent'
       }`}
     >
       <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-[height] duration-300 ${scrolled ? 'h-16' : 'h-20'}`}>
@@ -94,15 +100,23 @@ export default function Navigation() {
         </div>
 
         <div className="hidden md:flex relative">
-          <button onClick={addToCart} className="btn-orange" style={{ padding: '0.6rem 1.6rem', fontSize: '0.85rem' }}>
-            Bestel Nu
-          </button>
-          <span
-            className="absolute -top-2.5 -right-2.5 font-mono-titan text-white leading-none rounded-full px-1.5 py-0.5"
-            style={{ background: '#FF8C00', fontSize: '0.65rem', letterSpacing: '0.06em' }}
-          >
-            −31%
-          </span>
+          {mode === 'teaser' ? (
+            <a href="#waitlist" className="btn-orange" style={{ padding: '0.6rem 1.6rem', fontSize: '0.85rem' }}>
+              Join waitlist
+            </a>
+          ) : (
+            <>
+              <button onClick={addToCart} className="btn-orange" style={{ padding: '0.6rem 1.6rem', fontSize: '0.85rem' }}>
+                Bestel Nu
+              </button>
+              <span
+                className="absolute -top-2.5 -right-2.5 font-mono-titan text-white leading-none rounded-full px-1.5 py-0.5"
+                style={{ background: '#FF8C00', fontSize: '0.65rem', letterSpacing: '0.06em' }}
+              >
+                −31%
+              </span>
+            </>
+          )}
         </div>
 
         <button
@@ -138,15 +152,28 @@ export default function Navigation() {
                   {link.label}
                 </motion.a>
               ))}
-              <motion.button
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.22 }}
-                className="btn-orange mt-2 justify-center"
-                onClick={() => { addToCart(); setMenuOpen(false); }}
-              >
-                Bestel Nu
-              </motion.button>
+              {mode === 'teaser' ? (
+                <motion.a
+                  href="#waitlist"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.22 }}
+                  className="btn-orange mt-2 justify-center"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Join waitlist
+                </motion.a>
+              ) : (
+                <motion.button
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.22 }}
+                  className="btn-orange mt-2 justify-center"
+                  onClick={() => { addToCart(); setMenuOpen(false); }}
+                >
+                  Bestel Nu
+                </motion.button>
+              )}
             </div>
           </motion.div>
         )}

@@ -15,8 +15,8 @@ const trust = [
 
 const specs = [
   { value: '50.000', unit: 'mAh', label: 'Capaciteit'  },
-  { value: '22.5',   unit: 'W',   label: 'Fast charge' },
-  { value: '5',      unit: '×',   label: 'Poorten'     },
+  { value: '6',      unit: '×',   label: 'Devices'     },
+  { value: 'LED',    unit: '',    label: 'Display'     },
 ];
 
 export default function HeroVariantB() {
@@ -157,8 +157,8 @@ export default function HeroVariantB() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="font-body text-gray-300 text-base leading-relaxed mb-8 max-w-md"
         >
-          50.000mAh premium power met ingebouwde kabels, LED-zaklamp,
-          PD 22.5W fast charge en 5 poorten. Eén powerbank voor alles.
+          50.000 mAh premium power met ingebouwde retractable kabels, LED-zaklamp
+          en fast charging. Eén powerbank voor zes apparaten tegelijk.
         </motion.p>
 
         {/* Product image — spotlit */}
@@ -186,7 +186,7 @@ export default function HeroVariantB() {
           />
           <Image
             src="/images/product-hero.jpg"
-            alt="TitanBanks Titan X 50.000mAh powerbank met smart LED display, fast charge en ingebouwde kabels"
+            alt="TitanBanks Titan X 50.000 mAh powerbank met smart LED display en ingebouwde retractable kabels"
             width={900}
             height={1060}
             className="relative z-10 h-auto object-contain"

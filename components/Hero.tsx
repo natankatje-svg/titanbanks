@@ -8,7 +8,7 @@ import { useEcwid } from './EcwidProvider';
 
 const badges = [
   { label: '50.000mAh', color: '#FF8C00' },
-  { label: 'PD 22.5W', color: '#0EB5C8' },
+  { label: '6 Devices', color: '#0EB5C8' },
   { label: 'Smart Display', color: '#EAB308' },
   { label: 'LED Flashlight', color: '#FF8C00' },
   { label: 'Outdoor Strap', color: '#0EB5C8' },
@@ -28,6 +28,22 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden bg-[#050505] clip-diag-down"
       style={{ paddingBottom: 'calc(5vw + 2rem)' }}
     >
+      {/* Ambient background video — Particle Drift loop. Mobile relies on
+          object-cover center-crop of the same 16:9 source. Falls back to
+          poster when prefers-reduced-motion is set or the video fails. */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/hero/titan-x-particle-drift-poster.jpg"
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-60 motion-reduce:hidden pointer-events-none"
+      >
+        <source src="/hero/titan-x-particle-drift-16x9.mp4" type="video/mp4" />
+      </video>
+
       {/* Grid + radial atmosphere */}
       <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none"
@@ -76,8 +92,8 @@ export default function Hero() {
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
             className="font-body text-gray-400 text-base lg:text-lg leading-relaxed mb-10 max-w-md mx-auto lg:mx-0"
           >
-            <span className="text-white font-semibold">50.000mAh</span> premium energie. PD 22.5W
-            fast charge, smart LED display, ingebouwde kabels, LED flashlight. Gebouwd voor mensen die
+            <span className="text-white font-semibold">50.000 mAh</span> premium energie. Fast charging,
+            smart LED display, ingebouwde retractable kabels en LED flashlight. Gebouwd voor mensen die
             verder gaan.
           </motion.p>
 
@@ -191,9 +207,9 @@ export default function Hero() {
           >
             <div className="flex items-center gap-2 mb-0.5">
               <Zap className="w-3 h-3 flex-shrink-0" style={{ color: '#0EB5C8' }} />
-              <div className="font-display text-sm uppercase tracking-wide" style={{ color: '#0EB5C8' }}>22.5W Fast Charge</div>
+              <div className="font-display text-sm uppercase tracking-wide" style={{ color: '#0EB5C8' }}>Fast Charge</div>
             </div>
-            <div className="font-mono-titan text-gray-500 text-xs pl-5">PD + QC 3.0</div>
+            <div className="font-mono-titan text-gray-500 text-xs pl-5">USB-C ready</div>
           </motion.div>
 
           <motion.div

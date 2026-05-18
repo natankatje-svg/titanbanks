@@ -25,42 +25,42 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Titan X Powerbank – 50.000mAh | TitanBanks',
+  title: 'Titan X — 50.000 mAh Power Bank | TitanBanks',
   description:
-    'De meest krachtige powerbank ooit. 50.000mAh, PD 22.5W fast charge, smart LED display, ingebouwde kabels en LED flashlight. Gebouwd voor reizigers, avonturiers en professionals.',
-  keywords: 'powerbank, titan x, titanbanks, 50000mah, fast charge, outdoor powerbank, reizen',
-  metadataBase: new URL('https://www.titanbanks.nl'),
+    'The Titan X by TitanBanks. 50.000 mAh. Six devices at once. Built for festivals, road trips, and workdays without an outlet.',
+  keywords: 'powerbank, titan x, titanbanks, 50000mah, high capacity powerbank, outdoor powerbank',
+  metadataBase: new URL('https://titan-banks.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Titan X – Nooit Meer Zonder Stroom | TitanBanks',
-    description: '50.000mAh premium powerbank met fast charging, smart display en ingebouwde kabels. Gratis verzending. 30 dagen retour.',
+    title: 'Titan X — TITANBANKS',
+    description: '50.000 mAh. Six devices at once. The drop is coming.',
     type: 'website',
-    url: 'https://www.titanbanks.nl',
+    url: 'https://titan-banks.com',
     siteName: 'TitanBanks',
-    locale: 'nl_NL',
+    locale: 'en_US',
     images: [
       {
-        url: '/images/feature-marketing.jpg',
+        url: '/images/titanx/hero-never-at-0.png',
         width: 1200,
         height: 630,
-        alt: 'Titan X – 50.000mAh Premium Powerbank | TitanBanks',
+        alt: 'Titan X — 50.000 mAh power bank by TITANBANKS',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Titan X – Nooit Meer Zonder Stroom | TitanBanks',
-    description: '50.000mAh premium powerbank met fast charging, smart LED display en ingebouwde kabels.',
-    images: ['/images/feature-marketing.jpg'],
+    title: 'Titan X — TITANBANKS',
+    description: '50.000 mAh. Six devices at once. The drop is coming.',
+    images: ['/images/titanx/hero-never-at-0.png'],
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl" className={`${barlowCondensed.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
-      <body className="bg-[#080808] text-white antialiased">
+      <body className="bg-black text-white antialiased">
         <EcwidProvider>{children}</EcwidProvider>
       </body>
     </html>

@@ -7,8 +7,8 @@ import { Zap, ArrowDown, BatteryCharging, Sun } from 'lucide-react';
 import { useEcwid } from '../EcwidProvider';
 
 const badges = [
-  { label: '50.000mAh', color: '#FF8C00' },
-  { label: 'PD 22.5W', color: '#0EB5C8' },
+  { label: '50.000 mAh', color: '#FF8C00' },
+  { label: '6 Devices', color: '#0EB5C8' },
   { label: 'Smart Display', color: '#EAB308' },
   { label: 'LED Flashlight', color: '#FF8C00' },
   { label: 'Outdoor Strap', color: '#0EB5C8' },
@@ -70,9 +70,9 @@ export default function HeroVariantA() {
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
             className="font-body text-gray-400 text-base lg:text-lg leading-relaxed mb-10 max-w-md mx-auto lg:mx-0"
           >
-            <span className="text-white font-semibold">50.000mAh</span> premium energie. PD 22.5W
-            fast charge, smart LED display, ingebouwde kabels, LED flashlight. Gebouwd voor mensen die
-            verder gaan.
+            <span className="text-white font-semibold">50.000 mAh</span> premium energie. Fast charging,
+            smart LED display, ingebouwde retractable kabels en LED flashlight. Zes apparaten tegelijk.
+            Gebouwd voor mensen die verder gaan.
           </motion.p>
 
           <motion.div
@@ -153,9 +153,9 @@ export default function HeroVariantA() {
           >
             <div className="flex items-center gap-2 mb-0.5">
               <Zap className="w-3 h-3 flex-shrink-0" style={{ color: '#0EB5C8' }} />
-              <div className="font-display text-sm uppercase tracking-wide" style={{ color: '#0EB5C8' }}>22.5W Fast Charge</div>
+              <div className="font-display text-sm uppercase tracking-wide" style={{ color: '#0EB5C8' }}>Fast Charge</div>
             </div>
-            <div className="font-mono-titan text-gray-500 text-xs pl-5">PD + QC 3.0</div>
+            <div className="font-mono-titan text-gray-500 text-xs pl-5">USB-C ready</div>
           </motion.div>
 
           <motion.div

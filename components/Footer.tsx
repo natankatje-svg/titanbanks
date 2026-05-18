@@ -21,7 +21,7 @@ function FooterLogo() {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#080808] border-t border-white/[0.05]">
+    <footer className="relative bg-black border-t border-white/[0.05]">
       <div className="h-[1px] bg-gradient-to-r from-transparent via-[#FF8C00]/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">

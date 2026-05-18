@@ -10,20 +10,16 @@ const faqs = [
     a: 'De Titan X heeft een capaciteit van 50.000mAh. Afhankelijk van het type smartphone kun je een moderne iPhone of Android gemiddeld 10–12 keer volledig opladen. Een tablet laad je 3–5 keer volledig op. Voor oudere of kleinere telefoons zijn nog meer oplaadcycli mogelijk.',
   },
   {
-    q: 'Is de Titan X toegestaan in het vliegtuig?',
-    a: 'De Titan X heeft een capaciteit van 185Wh. Lithium-accu\'s tot 100Wh zijn doorgaans zonder beperkingen toegestaan als handbagage. Accu\'s van 100–160Wh vereisen goedkeuring van de luchtvaartmaatschappij. Accu\'s boven de 160Wh — waaronder de Titan X — zijn bij de meeste luchtvaartmaatschappijen niet toegestaan aan boord. Check altijd de regels van jouw luchtvaartmaatschappij vóór vertrek en bewaar de powerbank in handbagage, nooit in het ruim.',
-  },
-  {
     q: 'Hoe werkt het fast charging systeem?',
-    a: 'De Titan X ondersteunt zowel Power Delivery (PD) 22.5W als Quick Charge (QC) 3.0. Sluit je een compatibel apparaat aan via de USB-C poort, dan detecteert de Titan X automatisch het snelste laadprotocol en geeft maximaal 22.5W af. Voor smartphones die QC 3.0 ondersteunen, verloopt het opladen via USB-A net zo snel. Zonder fast charge-compatibel apparaat wordt gewoon standaardsnelheid gebruikt.',
+    a: 'De Titan X ondersteunt fast charging via de USB-C poort. Sluit een compatibel apparaat aan en de Titan X detecteert automatisch het juiste laadprotocol. Zonder fast-charge-compatibel apparaat wordt op standaardsnelheid geladen.',
   },
   {
     q: 'Welke apparaten kan ik opladen met de Titan X?',
-    a: 'De Titan X is geschikt voor vrijwel alle USB-apparaten: smartphones (iPhone, Android), tablets (iPad, Samsung), laptops (via USB-C PD), Nintendo Switch, Bluetooth oordopjes, smartwatches, camera\'s, GoPro\'s en meer. Door de 5 uitgangspoorten kun je tot 5 apparaten tegelijkertijd opladen.',
+    a: 'De Titan X is geschikt voor vrijwel alle USB-apparaten: smartphones (iPhone, Android), tablets, laptops (via USB-C), Nintendo Switch, Bluetooth oordopjes, smartwatches, camera\'s, GoPro\'s en meer. Dankzij 4 poorten en 2 ingebouwde retractable kabels laad je tot 6 apparaten tegelijk op.',
   },
   {
     q: 'Hoe lang duurt het opladen van de Titan X zelf?',
-    a: 'Het opladen van de Titan X zelf duurt via de USB-C ingang (PD 22.5W input) gemiddeld 8–10 uur voor een volledige oplaadcyclus van 0% naar 100%. Via een standaard USB-A charger duurt dit langer (12–16 uur). We raden aan de Titan X \'s nachts op te laden zodat hij overdag altijd klaar is.',
+    a: 'Een volledige laadcyclus van 0% naar 100% via de USB-C ingang duurt gemiddeld 8–10 uur. Via een standaard USB-A charger duurt dit langer (12–16 uur). We raden aan de Titan X \'s nachts op te laden zodat hij overdag altijd klaar is.',
   },
   {
     q: 'Heeft de Titan X een garantie?',
@@ -119,7 +115,7 @@ export default function FAQ() {
           <p className="font-body text-gray-400 text-lg leading-relaxed">
             Staat jouw vraag er niet bij?{' '}
             <a
-              href="mailto:info@titanbanks.nl"
+              href="mailto:hello@titan-banks.com"
               className="text-[#0EB5C8] underline underline-offset-2 hover:text-white transition-colors duration-200"
             >
               Mail ons

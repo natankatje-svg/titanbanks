@@ -7,9 +7,9 @@
   --font-body: var(--font-body);
   --font-mono: var(--font-mono);
 
-  --c-bg:        #080808;
-  --c-surface:   #111111;
-  --c-surface-2: #1a1a1a;
+  --c-bg:        #000000;
+  --c-surface:   #0a0a0a;
+  --c-surface-2: #141414;
   --c-orange:    #FF8C00;
   --c-orange-2:  #E07800;
   --c-teal:      #0EB5C8;
@@ -53,7 +53,7 @@ body::after {
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-track { background: #000000; }
 ::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,140,0,0.3); }
 
@@ -95,6 +95,44 @@ body::after {
   margin-top: -5vw;
   padding-top: calc(5vw + 4rem);
   padding-bottom: calc(5vw + 4rem);
+}
+
+/* ── Product image bleed — pure-black PNG fades into site bg ── */
+.product-bleed {
+  /* Screen blend: pure-black pixels in the PNG add 0 to the page bg,
+     so the rectangular frame disappears; only product + highlights survive. */
+  mix-blend-mode: screen;
+  /* Radial mask softens any residual rim into the page (belt and braces). */
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at center, #000 55%, transparent 95%);
+          mask-image: radial-gradient(ellipse 75% 75% at center, #000 55%, transparent 95%);
+}
+.product-bleed-cover {
+  /* For full-bleed lifestyle covers (object-cover). Edges fade horizontally only. */
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%),
+                      linear-gradient(to bottom, transparent 0%, #000 15%, #000 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%),
+                      linear-gradient(to bottom, transparent 0%, #000 15%, #000 80%, transparent 100%);
+          mask-composite: intersect;
+}
+
+/* ── Orange ambient halo — section-transition glow (replaces hard dividers) ── */
+.halo-orange {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(80px);
+  mix-blend-mode: screen;
+  background: radial-gradient(circle, rgba(255,140,0,0.32) 0%, rgba(255,140,0,0.10) 45%, transparent 75%);
+}
+.halo-orange-soft {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(120px);
+  mix-blend-mode: screen;
+  background: radial-gradient(circle, rgba(255,140,0,0.18) 0%, rgba(255,140,0,0.05) 50%, transparent 80%);
 }
 
 /* ── Glow utilities ── */

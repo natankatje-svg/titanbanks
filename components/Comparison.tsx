@@ -8,12 +8,12 @@ type CellValue = 'yes' | 'no' | 'partial' | string;
 
 const rows: { feature: string; titanX: CellValue; standard: CellValue }[] = [
   { feature: 'Capaciteit',                       titanX: '50.000 mAh',  standard: '10.000 mAh' },
-  { feature: 'Fast Charging (PD 22.5W)',          titanX: 'yes',         standard: 'partial'     },
+  { feature: 'Fast Charging',                     titanX: 'yes',         standard: 'partial'     },
   { feature: 'Smart LED Percentage Display',      titanX: 'yes',         standard: 'no'          },
   { feature: 'Ingebouwde kabels (2×)',            titanX: 'yes',         standard: 'no'          },
   { feature: 'LED Flashlight',                    titanX: 'yes',         standard: 'no'          },
   { feature: 'Outdoor Strap Houder',              titanX: 'yes',         standard: 'no'          },
-  { feature: 'Aantal output poorten',             titanX: '5 poorten',   standard: '2 poorten'   },
+  { feature: 'Aantal output poorten',             titanX: '6 (4 + 2 cables)', standard: '2 poorten' },
   { feature: 'Meerdere apparaten tegelijk',       titanX: 'yes',         standard: 'partial'     },
   { feature: 'Premium build quality',             titanX: 'yes',         standard: 'no'          },
   { feature: 'Garantie',                          titanX: '2 jaar',      standard: 'Onbekend'    },

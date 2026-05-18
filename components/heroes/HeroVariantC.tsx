@@ -7,8 +7,8 @@ import { Zap, ArrowDown, Shield, Wifi } from 'lucide-react';
 import { useEcwid } from '../EcwidProvider';
 
 const features = [
-  { icon: Zap,    label: 'PD 22.5W Fast Charge', color: '#EAB308' },
-  { icon: Shield, label: '18-maanden garantie',   color: '#0EB5C8' },
+  { icon: Zap,    label: 'Fast Charge',            color: '#EAB308' },
+  { icon: Shield, label: '2 jaar garantie',        color: '#0EB5C8' },
   { icon: Wifi,   label: 'Smart LED Display',      color: '#FF8C00' },
 ];
 
