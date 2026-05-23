@@ -2,50 +2,52 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Plane, Mountain, Music2, Gamepad2, Briefcase, AlertTriangle } from 'lucide-react';
+import { Car, Mountain, Music2, Gamepad2, Briefcase, AlertTriangle } from 'lucide-react';
 
+// Geen luchtvaart-iconen of -copy: 50.000 mAh ≈ 185 Wh, boven de ICAO-limiet
+// voor cabine-batterijen. Wel road trips, festivals, outdoor, werk, gaming, noodsituaties.
 const useCases = [
   {
-    Icon: Plane,
-    title: 'Reizen',
-    sub: 'Voor de globetrotter',
+    Icon: Car,
+    title: 'Road trips',
+    sub: 'Voor de overlander',
     accent: '#0EB5C8',
-    description: 'Van Amsterdam naar Bangkok zonder stressmoment. De Titan X laadt je telefoon, tablet en koptelefoon op één vlucht.',
+    description: 'Off-grid weken op de baan? Camera, telefoon en speakers blijven aan via Titan X. Eén power bank voor de hele rit.',
   },
   {
     Icon: Mountain,
     title: 'Outdoor',
     sub: 'Voor de avonturier',
     accent: '#4ade80',
-    description: 'GPS, camera, zaklamp — gevoed door de Titan X. De LED flashlight is je noodfunctie als de zon ondergaat.',
+    description: 'GPS, camera, zaklamp — gevoed door Titan X. De ingebouwde zaklamp is je back-up als de zon ondergaat.',
   },
   {
     Icon: Music2,
     title: 'Festivals',
     sub: 'Non-stop genieten',
     accent: '#a855f7',
-    description: 'Drie dagen festival, nul zorgen. De ingebouwde kabels laden je telefoon razendsnel op.',
+    description: 'Drie dagen festival, nul zorgen. 50.000 mAh houdt je telefoon, oordopjes en camera de hele rit aan.',
   },
   {
     Icon: Gamepad2,
     title: 'Gaming',
     sub: 'Voor creators & gamers',
-    accent: '#FF8C00',
-    description: 'Stream, game en maak content zonder onderbreking. Fast charge als je pauze hebt.',
+    accent: '#FF6B00',
+    description: 'Stream, game en maak content zonder onderbreking. Snellaad in je pauze.',
   },
   {
     Icon: Briefcase,
     title: 'Werk & School',
     sub: 'Voor de professional',
     accent: '#EAB308',
-    description: 'Laptop bijna leeg in de trein? De Titan X laadt ook laptops en tablets op.',
+    description: 'Laptop bijna leeg in de trein? Titan X laadt ook laptops en tablets via USB-C.',
   },
   {
     Icon: AlertTriangle,
     title: 'Noodgevallen',
     sub: 'Altijd bereikbaar',
     accent: '#f43f5e',
-    description: 'Stroomuitval, autopech of noodsituatie — LED flashlight geeft noodlicht. 50.000mAh geeft je dagen energie.',
+    description: 'Stroomuitval, autopech of onverwacht donker — ingebouwde zaklamp geeft licht. 50.000 mAh geeft je dagen energie.',
   },
 ];
 
@@ -58,7 +60,7 @@ export default function UseCases() {
       {/* Ambient center glow */}
       <div
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse, rgba(255,140,0,0.03) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse, rgba(255,107,0,0.03) 0%, transparent 65%)' }}
       />
       {/* Bottom fade into ProductShowcase */}
       <div
@@ -76,7 +78,7 @@ export default function UseCases() {
           className="mb-16 text-center"
         >
           <div className="section-label mb-4 flex items-center gap-3 justify-center">
-            <div className="w-6 h-px bg-[#FF8C00]" />
+            <div className="w-6 h-px bg-[#FF6B00]" />
             <span>04 — Gebruik</span>
           </div>
           <h2 className="font-display uppercase text-white mb-4" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', lineHeight: 0.88 }}>

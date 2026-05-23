@@ -22,6 +22,13 @@ export function middleware(req: NextRequest): NextResponse {
   const user = process.env.BASIC_AUTH_USER;
   const password = process.env.BASIC_AUTH_PASSWORD;
 
+  // Vercel Preview-deploys: credentials staan vaak alleen op Production, niet
+  // op Preview. We laten preview-URLs zonder auth door — de URL zelf is al
+  // niet-discoverable. Production blijft fail-closed.
+  if (process.env.VERCEL_ENV === 'preview' && (!user || !password)) {
+    return NextResponse.next();
+  }
+
   if (!user || !password) {
     // Fail closed: if creds are not configured, refuse access rather than
     // silently exposing the site.

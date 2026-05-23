@@ -53,7 +53,7 @@ export default function WaitlistForm() {
           height: 'min(900px, 95vw)',
           transform: 'translate(-50%, -50%)',
           background:
-            'radial-gradient(circle, rgba(255,140,0,0.20) 0%, rgba(255,140,0,0.06) 40%, transparent 75%)',
+            'radial-gradient(circle, rgba(255,107,0,0.20) 0%, rgba(255,107,0,0.06) 40%, transparent 75%)',
           filter: 'blur(100px)',
           mixBlendMode: 'screen',
         }}
@@ -65,9 +65,9 @@ export default function WaitlistForm() {
         className="relative max-w-xl mx-auto px-6 text-center"
       >
         <div className="section-label mb-5 flex items-center gap-3 justify-center">
-          <div className="w-6 h-px bg-[#FF8C00]" />
+          <div className="w-6 h-px bg-[#FF6B00]" />
           <span>05 · Waitlist</span>
-          <div className="w-6 h-px bg-[#FF8C00]" />
+          <div className="w-6 h-px bg-[#FF6B00]" />
         </div>
         <h2
           className="font-display uppercase text-white mb-5"
@@ -77,7 +77,7 @@ export default function WaitlistForm() {
         </h2>
         <div
           className="h-[2px] w-24 mx-auto mb-7 origin-center"
-          style={{ background: 'linear-gradient(to right, transparent, #FF8C00, transparent)' }}
+          style={{ background: 'linear-gradient(to right, transparent, #FF6B00, transparent)' }}
         />
         <p className="font-body text-gray-400 text-lg leading-relaxed mb-10 max-w-md mx-auto">
           Waitlist gets the link before launch. Limited first run.
@@ -110,7 +110,7 @@ export default function WaitlistForm() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={status === 'submitting'}
-                    className="flex-1 bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white font-body placeholder:text-gray-600 focus:outline-none focus:border-[#FF8C00]/60 focus:ring-1 focus:ring-[#FF8C00]/30 transition-colors"
+                    className="flex-1 bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white font-body placeholder:text-gray-600 focus:outline-none focus:border-[#FF6B00]/60 focus:ring-1 focus:ring-[#FF6B00]/30 transition-colors"
                   />
                   <button
                     type="submit"
@@ -141,9 +141,9 @@ export default function WaitlistForm() {
               >
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center mb-4"
-                  style={{ background: 'rgba(255,140,0,0.12)', border: '1px solid rgba(255,140,0,0.3)' }}
+                  style={{ background: 'rgba(255,107,0,0.12)', border: '1px solid rgba(255,107,0,0.3)' }}
                 >
-                  <Check className="w-6 h-6" style={{ color: '#FF8C00' }} />
+                  <Check className="w-6 h-6" style={{ color: '#FF6B00' }} />
                 </div>
                 <h3 className="font-display uppercase text-white text-2xl mb-2">You&rsquo;re on the list.</h3>
                 <p className="font-body text-gray-400 max-w-sm">We&rsquo;ll email once. Then never again, unless you ask.</p>

@@ -6,17 +6,18 @@ import { Check, X, Minus } from 'lucide-react';
 
 type CellValue = 'yes' | 'no' | 'partial' | string;
 
+// Standaard kolom = typische €30 generieke 10.000 mAh power bank.
+// Geen verzonnen claims voor de standaard — alleen wat algemeen waar is.
 const rows: { feature: string; titanX: CellValue; standard: CellValue }[] = [
-  { feature: 'Capaciteit',                       titanX: '50.000 mAh',  standard: '10.000 mAh' },
-  { feature: 'Fast Charging',                     titanX: 'yes',         standard: 'partial'     },
-  { feature: 'Smart LED Percentage Display',      titanX: 'yes',         standard: 'no'          },
-  { feature: 'Ingebouwde kabels (2×)',            titanX: 'yes',         standard: 'no'          },
-  { feature: 'LED Flashlight',                    titanX: 'yes',         standard: 'no'          },
-  { feature: 'Outdoor Strap Houder',              titanX: 'yes',         standard: 'no'          },
-  { feature: 'Aantal output poorten',             titanX: '6 (4 + 2 cables)', standard: '2 poorten' },
-  { feature: 'Meerdere apparaten tegelijk',       titanX: 'yes',         standard: 'partial'     },
-  { feature: 'Premium build quality',             titanX: 'yes',         standard: 'no'          },
-  { feature: 'Garantie',                          titanX: '2 jaar',      standard: 'Onbekend'    },
+  { feature: 'Capaciteit',                    titanX: '50.000 mAh',         standard: '10.000 mAh' },
+  { feature: 'Snellaad',                      titanX: 'yes',                standard: 'partial'    },
+  { feature: 'LED-display exact %',           titanX: 'yes',                standard: 'no'         },
+  { feature: 'Ingebouwde zaklamp',            titanX: 'yes',                standard: 'no'         },
+  { feature: 'Output poorten',                titanX: '4× USB-A · 1× USB-C', standard: '1–2 poorten' },
+  { feature: 'Devices tegelijk',              titanX: 'tot 6',              standard: '1–2'        },
+  { feature: 'Matte black build',             titanX: 'yes',                standard: 'no'         },
+  { feature: 'Draaglus',                      titanX: 'yes',                standard: 'no'         },
+  { feature: 'Garantie',                      titanX: '2 jaar',             standard: '1 jaar'     },
 ];
 
 function Cell({ value, isTitan }: { value: CellValue; isTitan: boolean }) {

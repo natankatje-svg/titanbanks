@@ -60,9 +60,9 @@ export default function HeroTeaser() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex items-center gap-3 mb-8 justify-center"
         >
-          <div className="h-px w-7" style={{ background: 'linear-gradient(to right, transparent, #FF8C00)' }} />
+          <div className="h-px w-7" style={{ background: 'linear-gradient(to right, transparent, #FF6B00)' }} />
           <span className="section-label tracking-[0.22em]">TITANBANKS · Titan X</span>
-          <div className="h-px w-7" style={{ background: 'linear-gradient(to left, transparent, #FF8C00)' }} />
+          <div className="h-px w-7" style={{ background: 'linear-gradient(to left, transparent, #FF6B00)' }} />
         </motion.div>
 
         <motion.h1
@@ -85,7 +85,7 @@ export default function HeroTeaser() {
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
           className="h-[2px] w-24 mb-7 mx-auto origin-center"
-          style={{ background: 'linear-gradient(to right, transparent, #FF8C00, transparent)' }}
+          style={{ background: 'linear-gradient(to right, transparent, #FF6B00, transparent)' }}
         />
 
         <motion.p

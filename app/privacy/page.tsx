@@ -13,7 +13,7 @@ export default function PrivacyPage() {
       <Navigation mode="teaser" />
       <section className="max-w-3xl mx-auto px-6 pt-32 pb-24">
         <div className="section-label mb-4 flex items-center gap-3">
-          <div className="w-6 h-px bg-[#FF8C00]" />
+          <div className="w-6 h-px bg-[#FF6B00]" />
           <span>Privacy</span>
         </div>
         <h1

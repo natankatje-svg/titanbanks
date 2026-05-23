@@ -27,7 +27,7 @@ const usps: Usp[] = [
     metric: '6',
     metricSub: 'devices · at once',
     headline: 'Six devices. One power bank.',
-    body: '4 ports. 2 built-in retractable cables. All in parallel.',
+    body: '4× USB-A · 1× USB-C · 1× Micro-USB input. All in parallel.',
   },
   {
     id: 'display-control',
@@ -69,7 +69,7 @@ function UspBlock({ usp, index }: { usp: Usp; index: number }) {
           height: 'min(720px, 80vw)',
           transform: 'translateY(-50%)',
           background:
-            'radial-gradient(circle, rgba(255,140,0,0.18) 0%, rgba(255,140,0,0.05) 45%, transparent 75%)',
+            'radial-gradient(circle, rgba(255,107,0,0.18) 0%, rgba(255,107,0,0.05) 45%, transparent 75%)',
           filter: 'blur(100px)',
           mixBlendMode: 'screen',
         }}
@@ -90,7 +90,7 @@ function UspBlock({ usp, index }: { usp: Usp; index: number }) {
               style={{
                 fontSize: 'clamp(5rem, 18vw, 14rem)',
                 letterSpacing: '-0.04em',
-                textShadow: '0 0 80px rgba(255,140,0,0.18)',
+                textShadow: '0 0 80px rgba(255,107,0,0.18)',
               }}
             >
               {usp.metric}
@@ -113,7 +113,7 @@ function UspBlock({ usp, index }: { usp: Usp; index: number }) {
             className="lg:col-span-5"
           >
             <div className="section-label mb-4 flex items-center gap-3">
-              <div className="w-6 h-px bg-[#FF8C00]" />
+              <div className="w-6 h-px bg-[#FF6B00]" />
               <span>{usp.eyebrow}</span>
             </div>
             <h2
@@ -128,7 +128,7 @@ function UspBlock({ usp, index }: { usp: Usp; index: number }) {
             </h2>
             <div
               className="h-[2px] w-16 mb-5 origin-left"
-              style={{ background: 'linear-gradient(to right, #FF8C00, transparent)' }}
+              style={{ background: 'linear-gradient(to right, #FF6B00, transparent)' }}
             />
             <p className="font-body text-gray-400 text-base lg:text-lg leading-relaxed max-w-md">
               {usp.body}

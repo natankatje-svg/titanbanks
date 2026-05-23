@@ -1,0 +1,52 @@
+[
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 1/10 — Design tokens & fonts*\n\nIn de brand-bron staat een ander palet/typografie dan wat de code nu gebruikt. We moeten kiezen welke canoniek is.\n\nA. *Brand-bron volgen* — PP Neue Montreal / Söhne / Geist (premium sans-serif), bg `#0A0A0A`, surface `#1A1A1A`, accent `#FF6B00` (spaarzaam), tekst `#F5F5F5`. Past op silent-luxury.\n\nB. *Pragmatisch: huidige fonts behouden* — Barlow Condensed + Plus Jakarta + DM Mono (gratis via Google), maar wel brand-kleuren #0A0A0A / #FF6B00 / etc.\n\nC. *Hybride* — brand kleuren, huidige fonts, CLAUDE.md updaten zodat het kloppend is. Snelste pad.\n\nD. Stuur eigen input."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 2/10 — Definitieve verkoopprijs*\n\nDe brand-guideline staat op €60–70, maar de placeholder in de code is €89,95 met -31% korting van €129,95. Wat wordt de echte launch-prijs?\n\nA. €69 ronde prijs, geen anchor\n\nB. €79 met anchor van €99 (echt post-launch prijs €99)\n\nC. €89 met anchor van €119 (premium positionering)\n\nD. Stuur eigen input (bv. exact bedrag of strategie)."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 3/10 — Snellaad wattage*\n\nTot dat dit bevestigd is, communiceren we GEEN wattage. Wat is de bevestigde piek-snellaad output?\n\nA. 18W (standaard USB-C PD)\n\nB. 22.5W (Huawei SuperCharge tier)\n\nC. 30W+ (premium snellaad)\n\nD. Onbekend — laat 'snelladen' zonder getal staan."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 4/10 — Micro-USB poort: output of input-only?*\n\nDe Micro-USB poort bestaat fysiek. Brand-context zegt: NIET claimen als output tot bevestigd. Wat is de echte capability?\n\nA. Input-only (alleen voor het opladen van de power bank zelf)\n\nB. Bidirectioneel (kan ook devices opladen)\n\nC. Weet ik nog niet — laat 'Micro-USB voor input' staan.\n\nD. Stuur eigen input."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 5/10 — Gewicht & afmetingen*\n\nNu staat overal `[GEWICHT]g · [AFMETINGEN]mm` als TODO. Wat zijn de echte specs?\n\nA. Ongeveer 1.000g / 175 × 85 × 35mm (typisch voor 50k mAh)\n\nB. Ongeveer 1.200g / 180 × 90 × 40mm (zwaarder/groter)\n\nC. Exacte cijfers stuur ik in vrije tekst (D)\n\nD. Stuur eigen input — exacte cijfers."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 6/10 — Retour- en shippingbeleid*\n\nDeze tekst stond hardcoded in de code maar is niet bevestigd in voorwaarden:\n\nA. *30 dagen retour + gratis verzending NL/BE* (zoals nu beloofd) — bevestig dat deze policy ook echt op de winkelvoorwaarden komt\n\nB. *14 dagen retour + gratis verzending alleen NL* — strakker\n\nC. *Geen gratis retour, wel 30 dagen herroepingsrecht (wettelijk)* — meest pragmatisch\n\nD. Stuur eigen input — beschrijf zelf wat je beleid wordt."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 7/10 — KvK + vestigingsadres voor footer*\n\nDe footer toonde `[KVK_NUMMER]` en `[VESTIGINGSADRES]` als placeholders. Wat moet daar staan?\n\nA. NamaCorp VOF KvK-nummer + adres (uit jouw VOF) — *stuur in D*\n\nB. Nieuwe entiteit voor TitanBanks (BV?) — nog op te richten\n\nC. Voorlopig zonder KvK/adres tonen (juridisch risico onder Wet Handelsregister) — maar wel e-mail voor contact\n\nD. Stuur eigen input — geef KvK-nummer en adres."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 8/10 — Certificeringen*\n\nVoor power-bank trust signals zijn certificeringen sterk (Baymard). Welke heeft Titan X echt?\n\nA. CE + FCC + RoHS + UN38.3 (volledige set — internationaal verkocht)\n\nB. CE + RoHS (alleen EU-essentieel)\n\nC. Geen certificering bevestigd — niet tonen tot we het zeker weten\n\nD. Stuur eigen input — geef de bevestigde lijst."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 9/10 — Cell-leverancier (engineering credential)*\n\nPower-bank kopers letten op cell-kwaliteit. Welke leverancier zit erin?\n\nA. Panasonic NCR (premium positionering)\n\nB. LG INR (premium positionering)\n\nC. Samsung INR / SDI (premium)\n\nD. Generic / niet bevestigd — niet tonen tot zeker."
+  },
+  {
+    "chat_id": 715863505,
+    "parse_mode": "Markdown",
+    "text": "*Vraag 10/10 — Retractable kabels en SOS-modus*\n\nTwee features die in de oude code voorkwamen, maar niet in de brand-spec van het product. Bestaan ze fysiek?\n\nA. *Beide bestaan* — ingebouwde USB-C + Lightning kabels, en flashlight heeft SOS-modus\n\nB. *Alleen flashlight + SOS* — kabels zitten er niet in\n\nC. *Geen van beide* — product heeft alleen losse poorten en standaard zaklamp\n\nD. Stuur eigen input."
+  }
+]

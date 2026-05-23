@@ -10,7 +10,7 @@
   --c-bg:        #000000;
   --c-surface:   #0a0a0a;
   --c-surface-2: #141414;
-  --c-orange:    #FF8C00;
+  --c-orange:    #FF6B00;
   --c-orange-2:  #E07800;
   --c-teal:      #0EB5C8;
   --c-gold:      #EAB308;
@@ -55,7 +55,7 @@ body::after {
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #000000; }
 ::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,140,0,0.3); }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,107,0,0.3); }
 
 /* ── Glass card ── */
 .glass-card {
@@ -124,7 +124,7 @@ body::after {
   border-radius: 9999px;
   filter: blur(80px);
   mix-blend-mode: screen;
-  background: radial-gradient(circle, rgba(255,140,0,0.32) 0%, rgba(255,140,0,0.10) 45%, transparent 75%);
+  background: radial-gradient(circle, rgba(255,107,0,0.32) 0%, rgba(255,107,0,0.10) 45%, transparent 75%);
 }
 .halo-orange-soft {
   position: absolute;
@@ -132,12 +132,12 @@ body::after {
   border-radius: 9999px;
   filter: blur(120px);
   mix-blend-mode: screen;
-  background: radial-gradient(circle, rgba(255,140,0,0.18) 0%, rgba(255,140,0,0.05) 50%, transparent 80%);
+  background: radial-gradient(circle, rgba(255,107,0,0.18) 0%, rgba(255,107,0,0.05) 50%, transparent 80%);
 }
 
 /* ── Glow utilities ── */
-.glow-orange { box-shadow: 0 0 40px rgba(255,140,0,0.2), 0 0 80px rgba(255,140,0,0.08); }
-.glow-orange-strong { box-shadow: 0 0 60px rgba(255,140,0,0.4), 0 0 120px rgba(255,140,0,0.15); }
+.glow-orange { box-shadow: 0 0 40px rgba(255,107,0,0.2), 0 0 80px rgba(255,107,0,0.08); }
+.glow-orange-strong { box-shadow: 0 0 60px rgba(255,107,0,0.4), 0 0 120px rgba(255,107,0,0.15); }
 .glow-teal { box-shadow: 0 0 40px rgba(14,181,200,0.15), 0 0 80px rgba(14,181,200,0.05); }
 .glow-teal-strong { box-shadow: 0 0 60px rgba(14,181,200,0.3), 0 0 120px rgba(14,181,200,0.1); }
 .glow-cyan { box-shadow: 0 0 40px rgba(14,181,200,0.15), 0 0 80px rgba(14,181,200,0.05); }
@@ -145,7 +145,7 @@ body::after {
 
 /* ── Gradient text utilities ── */
 .text-gradient-orange {
-  background: linear-gradient(135deg, #FF8C00 0%, #EAB308 100%);
+  background: linear-gradient(135deg, #FF6B00 0%, #EAB308 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -192,7 +192,7 @@ body::after {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #FF8C00, #FFA020);
+  background: linear-gradient(135deg, #FF6B00, #FFA020);
   color: #fff;
   font-family: var(--font-display), sans-serif;
   font-weight: 800;
@@ -202,19 +202,19 @@ body::after {
   padding: 1rem 2.5rem;
   border-radius: 9999px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 30px rgba(255,140,0,0.35);
+  box-shadow: 0 8px 30px rgba(255,107,0,0.35);
   will-change: transform;
 }
 .btn-orange:hover {
   transform: scale(1.04);
-  box-shadow: 0 14px 44px rgba(255,140,0,0.58);
+  box-shadow: 0 14px 44px rgba(255,107,0,0.58);
 }
 .btn-orange:active {
   transform: scale(0.97);
-  box-shadow: 0 6px 20px rgba(255,140,0,0.3);
+  box-shadow: 0 6px 20px rgba(255,107,0,0.3);
 }
 .btn-orange:focus-visible {
-  outline: 2px solid rgba(255,140,0,0.7);
+  outline: 2px solid rgba(255,107,0,0.7);
   outline-offset: 3px;
 }
 
@@ -306,7 +306,7 @@ body::after {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(255,140,0,0.6), transparent, rgba(234,179,8,0.4));
+  background: linear-gradient(135deg, rgba(255,107,0,0.6), transparent, rgba(234,179,8,0.4));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;

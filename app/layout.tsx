@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Barlow_Condensed, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
 import EcwidProvider from '@/components/EcwidProvider';
+import GA4Loader from '@/components/GA4Loader';
 import './globals.css';
 
 const barlowCondensed = Barlow_Condensed({
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl" className={`${barlowCondensed.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
       <body className="bg-black text-white antialiased">
+        <GA4Loader />
         <EcwidProvider>{children}</EcwidProvider>
       </body>
     </html>

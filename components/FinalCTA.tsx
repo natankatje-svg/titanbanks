@@ -5,13 +5,29 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { Zap, Shield, RotateCcw, Truck } from 'lucide-react';
 import { useEcwid } from './EcwidProvider';
+import {
+  BRAND,
+  SPECS,
+  TBD,
+  LAUNCH_STATE,
+  safe,
+  priceLabel,
+  anchorPriceLabel,
+  capacityLabel,
+} from '@/lib/product-claims';
 
-const guarantees = [
-  { icon: Shield, label: '2 jaar garantie' },
-  { icon: RotateCcw, label: '30 dagen retour' },
-  { icon: Truck, label: 'Gratis verzending' },
-  { icon: Zap, label: 'Snel geleverd' },
+const guarantees: Array<{ icon: typeof Shield; label: string }> = [
+  { icon: Shield, label: `${SPECS.warrantyYears.value} jaar garantie` },
 ];
+
+const returnDays = safe(TBD.returnPolicyDays);
+if (returnDays && returnDays > 0) {
+  guarantees.push({ icon: RotateCcw, label: `${returnDays} dagen retour` });
+}
+const shippingCountries = safe(TBD.freeShippingCountries);
+if (shippingCountries && shippingCountries.length > 0) {
+  guarantees.push({ icon: Truck, label: `Gratis verzending ${shippingCountries.join(' / ')}` });
+}
 
 export default function FinalCTA() {
   const { addToCart } = useEcwid();
@@ -25,19 +41,19 @@ export default function FinalCTA() {
       id="bestel"
       ref={ref}
       className="relative py-28 lg:py-40 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #080808 0%, #0a0a0a 50%, #080808 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0A0A0A 0%, #0a0a0a 50%, #0A0A0A 100%)' }}
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,140,0,0.04)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,107,0,0.04)_0%,transparent_70%)]" />
       <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#080808] to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#080808] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0A0A0A] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
 
       {/* Ambient glow rings — CSS animated for compositor-thread perf */}
       <div className="ring-pulse-inner absolute left-1/2 top-1/2 w-[600px] h-[600px] rounded-full border pointer-events-none"
-        style={{ borderColor: 'rgba(255,140,0,0.2)' }} />
+        style={{ borderColor: 'rgba(255,107,0,0.2)' }} />
       <div className="ring-pulse-outer absolute left-1/2 top-1/2 w-[900px] h-[900px] rounded-full border pointer-events-none"
-        style={{ borderColor: 'rgba(255,140,0,0.1)' }} />
+        style={{ borderColor: 'rgba(255,107,0,0.1)' }} />
 
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -55,7 +71,7 @@ export default function FinalCTA() {
                 className="glow-pulse absolute inset-[8%] rounded-full blur-3xl pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse at 50% 55%, rgba(255,140,0,0.22) 0%, rgba(255,140,0,0.08) 50%, transparent 75%)',
+                    'radial-gradient(ellipse at 50% 55%, rgba(255,107,0,0.22) 0%, rgba(255,107,0,0.08) 50%, transparent 75%)',
                   animationDuration: '6s',
                 }}
               />
@@ -84,7 +100,7 @@ export default function FinalCTA() {
               {/* Stage floor glow — warme grondreflectie onder powerbank */}
               <div
                 className="absolute bottom-4 left-1/2 -translate-x-1/2 h-10 blur-2xl pointer-events-none"
-                style={{ width: '55%', background: 'rgba(255,140,0,0.25)' }}
+                style={{ width: '55%', background: 'rgba(255,107,0,0.25)' }}
               />
             </div>
           </motion.div>
@@ -98,10 +114,10 @@ export default function FinalCTA() {
           >
             {/* Eyebrow */}
             <div className="section-label mb-6 flex items-center gap-3">
-              <div className="w-6 h-px bg-[#FF8C00]" />
+              <div className="w-6 h-px bg-[#FF6B00]" />
               <span>12 — Bestel Nu</span>
               <span className="relative flex h-2 w-2">
-                <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#FF8C00' }} />
+                <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#FF6B00' }} />
               </span>
             </div>
 
@@ -110,58 +126,59 @@ export default function FinalCTA() {
               className="font-display uppercase leading-[0.88] mb-6"
               style={{ fontSize: 'clamp(2.8rem, 6vw, 5rem)' }}
             >
-              <span className="block text-white">BESTEL VANDAAG.</span>
-              <span className="block text-gradient-orange">MORGEN IN HUIS.</span>
+              {LAUNCH_STATE.waitlistMode ? (
+                <>
+                  <span className="block text-white">{BRAND.product.toUpperCase()}</span>
+                  <span className="block text-gradient-orange">DE EERSTE BATCH.</span>
+                </>
+              ) : (
+                <>
+                  <span className="block text-white">BESTEL {BRAND.product.toUpperCase()}</span>
+                  <span className="block text-gradient-orange">EN BEN ER KLAAR VOOR.</span>
+                </>
+              )}
             </h2>
 
             <p className="font-body text-gray-400 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
-              De Titan X is de enige powerbank die je ooit nog nodig hebt. 50.000 mAh,
-              fast charging, LED display, zaklamp en ingebouwde retractable kabels — alles in één premium device.
+              {capacityLabel()}. {SPECS.simultaneousDevices.value} devices tegelijk. LED-display
+              met exact percentage. Matte black. Gebouwd voor wie niet kan stoppen.
             </p>
 
-            {/* Stock signal */}
-            <div className="flex flex-col gap-1.5 mb-5 items-center lg:items-start">
-              <div className="flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#4ade80' }} />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
-                </span>
-                <span className="font-mono-titan text-[0.68rem] uppercase tracking-widest text-green-400">Op voorraad — vandaag besteld, morgen in huis</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Truck className="w-3 h-3 text-gray-700 flex-shrink-0" />
-                <span className="font-mono-titan text-[0.63rem] uppercase tracking-widest text-gray-600">
-                  Bestel voor <span className="text-gray-400">23:59</span> → morgen in huis
-                </span>
-              </div>
-            </div>
-
-            {/* Price */}
-            <div className="flex flex-col items-center lg:items-start gap-1 mb-8">
-              <div className="flex items-baseline gap-4 justify-center lg:justify-start">
-                <span className="font-display text-white" style={{ fontSize: '3.5rem', lineHeight: 1 }}>€89,95</span>
-                <span className="font-body text-gray-600 text-xl line-through">€129,95</span>
-                <div
-                  className="rounded-full px-3 py-1"
-                  style={{ background: 'rgba(255,140,0,0.12)', border: '1px solid rgba(255,140,0,0.28)' }}
-                >
-                  <span className="font-mono-titan text-sm" style={{ color: '#FF8C00' }}>−31%</span>
+            {/* Price block — alleen renderen wanneer CONFIRMED */}
+            {priceLabel() && (
+              <div className="flex flex-col items-center lg:items-start gap-1 mb-8">
+                <div className="flex items-baseline gap-4 justify-center lg:justify-start">
+                  <span className="font-display text-white" style={{ fontSize: '3.5rem', lineHeight: 1 }}>
+                    {priceLabel()}
+                  </span>
+                  {anchorPriceLabel() && (
+                    <span className="font-body text-gray-600 text-xl line-through">
+                      {anchorPriceLabel()}
+                    </span>
+                  )}
                 </div>
+                <span className="font-body text-gray-600 text-xs">incl. BTW</span>
               </div>
-              <span className="font-body text-gray-600 text-xs">incl. BTW</span>
-            </div>
+            )}
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10 justify-center lg:justify-start">
-              <button onClick={addToCart} className="btn-orange flex items-center gap-2.5 px-10 py-5 text-xl">
-                <Zap className="w-5 h-5 fill-white text-white" />
-                Bestel Titan X
-              </button>
+              {LAUNCH_STATE.waitlistMode ? (
+                <a href="#waitlist" className="btn-orange flex items-center gap-2.5 px-10 py-5 text-xl">
+                  <Zap className="w-5 h-5 fill-white text-white" />
+                  Join waitlist
+                </a>
+              ) : (
+                <button onClick={addToCart} className="btn-orange flex items-center gap-2.5 px-10 py-5 text-xl">
+                  <Zap className="w-5 h-5 fill-white text-white" />
+                  Bestel {BRAND.product}
+                </button>
+              )}
               <a
-                href="#reviews"
+                href="#functies"
                 className="btn-ghost flex items-center justify-center px-8 py-5 text-lg"
               >
-                Lees reviews
+                Bekijk specs
               </a>
             </div>
 
@@ -171,9 +188,9 @@ export default function FinalCTA() {
                 <div key={label} className="flex items-center gap-2.5 glass-card rounded-2xl px-4 py-3">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'rgba(255,140,0,0.1)' }}
+                    style={{ background: 'rgba(255,107,0,0.1)' }}
                   >
-                    <Icon className="w-5 h-5" style={{ color: '#FF8C00' }} />
+                    <Icon className="w-5 h-5" style={{ color: '#FF6B00' }} />
                   </div>
                   <span className="font-body text-gray-300 text-sm font-medium">{label}</span>
                 </div>

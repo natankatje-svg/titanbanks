@@ -24,3 +24,5 @@ node_modules/
 tsconfig.tsbuildinfo
 .claude/settings.local.json
 
+
+.vercel

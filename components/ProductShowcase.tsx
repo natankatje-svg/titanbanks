@@ -8,51 +8,51 @@ import { Zap, Gauge, Sun, Link2, Check } from 'lucide-react';
 const showcaseItems = [
   {
     id: 'display',
-    eyebrow: '05 — Smart LED Display',
-    title: 'ALTIJD PRECIES WETEN HOEVEEL STROOM JE HEBT.',
-    description: 'Het smart LED-display toont exact het batterijpercentage. Of je nu op reis bent of thuis: geen gok meer.',
-    bullets: ['Exact percentage in één oogopslag', 'Helder leesbaar in donker én daglicht', 'Toont in- en uitlaadstatus realtime'],
+    eyebrow: '05 — LED-display',
+    title: 'EXACT PERCENTAGE. ALTIJD.',
+    description: 'LED-display met exact batterijpercentage. Geen 4-bars schatting — een nummer.',
+    bullets: ['Exact percentage in één oogopslag', 'Leesbaar in donker én daglicht', 'In- en uitlaadstatus realtime'],
     accent: '#0EB5C8',
     icon: Gauge,
     imageSide: 'right',
     image: '/images/product-hero.jpg',
-    imageAlt: 'Titan X smart LED display toont exact batterijpercentage en oplaadstatus in real-time',
+    imageAlt: 'Titan X LED-display toont exact batterijpercentage',
   },
   {
     id: 'multidevice',
-    eyebrow: '06 — Multi-Device',
-    title: 'VAN SMARTPHONE TOT TABLET. ALLES OP ÉÉN LADING.',
-    description: 'Telefoon, tablet, handheld console, oordopjes — de Titan X laadt ze allemaal tegelijk. Vijf poorten, één powerbank.',
-    bullets: ['Tot 5 apparaten tegelijkertijd', 'USB-C PD + meerdere USB-A outputs', '50.000mAh = 12× een smartphone'],
+    eyebrow: '06 — Multi-device',
+    title: 'TOT 6 DEVICES TEGELIJK.',
+    description: 'Smartphone, tablet, oordopjes, camera, laptop — alles tegelijk via 4× USB-A, 1× USB-C en Micro-USB input.',
+    bullets: ['Tot 6 apparaten tegelijkertijd', 'USB-C output voor snellaad', '50.000 mAh capaciteit'],
     accent: '#EAB308',
     icon: Zap,
     imageSide: 'left',
     image: '/images/feature-multidevice.jpg',
-    imageAlt: 'Titan X 50.000mAh powerbank laadt smartphone, tablet en laptop tegelijk op via 5 poorten',
+    imageAlt: 'Titan X laadt smartphone, tablet en laptop tegelijk via meerdere poorten',
   },
   {
     id: 'strap',
-    eyebrow: '07 — Outdoor Strap',
-    title: 'VASTGEMAAKT AAN JE RUGZAK. ALTIJD BIJ JE.',
-    description: 'De oranje strap maakt de Titan X bevestigbaar aan elke rugzak, tas of riem. Compact, krachtig, altijd klaar.',
-    bullets: ['Premium oranje carabiner strap', 'Geschikt voor rugzakken, tassen en riemen', 'Compact design — groot genoeg voor 50.000mAh'],
-    accent: '#FF8C00',
+    eyebrow: '07 — Draaglus',
+    title: 'KLIK VAST. PAK MEE.',
+    description: 'Oranje gevlochten draaglus met embossed "POWER BANK". Bevestigbaar aan rugzak, tas of riem.',
+    bullets: ['Oranje gevlochten draaglus', 'Bevestigbaar aan rugzak of tas', 'Embossed wordmark'],
+    accent: '#FF6B00',
     icon: Link2,
     imageSide: 'right',
     image: '/images/product-angle.jpg',
-    imageAlt: 'Titan X powerbank met oranje outdoor carabiner strap bevestigd aan rugzak',
+    imageAlt: 'Titan X met oranje gevlochten draaglus bevestigd aan rugzak',
   },
   {
     id: 'flashlight',
-    eyebrow: '08 — LED Flashlight',
-    title: 'KRACHTIG LICHT. ALTIJD BIJ JE.',
-    description: 'De ingebouwde ultra-bright LED flashlight is een volwaardige zaklamp. Camping, pech, noodgeval: altijd verlicht.',
-    bullets: ['Ultra-bright LED beam', '3 standen: hoog · laag · SOS', 'Geactiveerd met één druk'],
+    eyebrow: '08 — Zaklamp',
+    title: 'INGEBOUWD. ALTIJD BIJ.',
+    description: 'Krachtige ingebouwde zaklamp. Camping, pech, donker — een druk op de knop.',
+    bullets: ['Krachtige LED-beam', 'Werkt onafhankelijk van laden', 'Eén druk om te activeren'],
     accent: '#EAB308',
     icon: Sun,
     imageSide: 'left',
     image: '/images/feature-flashlight.jpg',
-    imageAlt: 'Titan X ingebouwde ultra-bright LED flashlight met SOS modus voor noodsituaties',
+    imageAlt: 'Titan X ingebouwde zaklamp',
   },
 ];
 
@@ -126,7 +126,7 @@ export default function ProductShowcase() {
   const inView = useInView(headerRef, { once: true, amount: 0.4 });
 
   return (
-    <section id="showcase" className="relative py-24 lg:py-36 bg-[#080808] overflow-hidden">
+    <section id="showcase" className="relative py-24 lg:py-36 bg-[#0A0A0A] overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 space-y-16 sm:space-y-24 lg:space-y-36">
         <motion.div
@@ -152,9 +152,9 @@ export default function ProductShowcase() {
               <div className="flex items-center justify-center gap-3">
                 <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.04)' }} />
                 <div className="flex gap-1.5">
-                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,140,0,0.2)' }} />
-                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,140,0,0.4)' }} />
-                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,140,0,0.2)' }} />
+                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,107,0,0.2)' }} />
+                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,107,0,0.4)' }} />
+                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,107,0,0.2)' }} />
                 </div>
                 <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.04)' }} />
               </div>

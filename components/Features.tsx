@@ -3,69 +3,87 @@
 import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { BatteryCharging, Zap, Gauge, Link2, Sun, Wind, ArrowRight } from 'lucide-react';
+import { BatteryCharging, Zap, Gauge, Plug, Sun, Wind, ArrowRight } from 'lucide-react';
 import { useEcwid } from './EcwidProvider';
+import {
+  BRAND,
+  SPECS,
+  TBD,
+  LAUNCH_STATE,
+  safe,
+  capacityLabel,
+  portsLabel,
+} from '@/lib/product-claims';
+
+const hasRetractableCables = safe(TBD.hasRetractableCables) ?? false;
 
 const features = [
   {
     icon: BatteryCharging,
     color: '#0EB5C8',
-    title: '50.000mAh',
-    sub: 'Massive Capaciteit',
-    description: 'Laad je smartphone tot 12× op. iPad, laptop, camera — allemaal op één lading.',
-    badge: '12× opladen',
+    title: capacityLabel(),
+    sub: 'Capaciteit',
+    description: `Het verschil tussen "vandaag" en "deze week". Tot ${SPECS.simultaneousDevices.value} devices tegelijk laden via ${portsLabel()}.`,
+    badge: `${SPECS.simultaneousDevices.value} devices tegelijk`,
     image: '/images/product-isometric.jpg',
     large: true,
   },
   {
     icon: Zap,
     color: '#EAB308',
-    title: 'Fast Charge',
-    sub: 'Snel laden',
-    description: 'Laad in, laad uit — zonder de cable in de gaten te houden.',
-    badge: 'Snelheid op verzoek',
+    title: 'Snellaad',
+    sub: 'Power on demand',
+    description: 'Power waar je hem nodig hebt, op het moment dat je hem nodig hebt.',
+    badge: 'Snel laden',
     image: null,
     large: false,
   },
   {
     icon: Gauge,
     color: '#0EB5C8',
-    title: 'Smart Display',
-    sub: 'LED Percentage',
-    description: 'Exact batterijpercentage — geen gok meer. Altijd precies weten wat er in zit.',
+    title: 'LED-display',
+    sub: 'Exact percentage',
+    description: 'Geen 4-bars gok. Het exacte percentage, altijd zichtbaar.',
     badge: '% in één oogopslag',
     image: '/images/product-hero.jpg',
-    imageAlt: 'Titan X smart LED display toont exact batterijpercentage van de powerbank',
+    imageAlt: 'Titan X LED-display met exact batterijpercentage',
     large: false,
   },
-  {
-    icon: Link2,
-    color: '#FF8C00',
-    title: 'Kabels Ingebouwd',
-    sub: 'USB-C & Lightning',
-    description: 'Nooit meer losse kabels kwijtraken. Altijd klaar om te laden.',
-    badge: '2 kabels ingebouwd',
-    image: '/images/product-angle.jpg',
-    imageAlt: 'Titan X ingebouwde USB-C en Lightning kabels — nooit meer losse kabels kwijt',
-    large: false,
-  },
+  // "Kabels ingebouwd" alleen tonen als bevestigd
+  ...(hasRetractableCables
+    ? [
+        {
+          icon: Plug,
+          color: '#FF6B00',
+          title: 'Kabels aan boord',
+          sub: 'Niet zoeken',
+          description: 'Nooit meer een losse kabel zoeken. Ze zitten in het product.',
+          badge: 'Ingebouwd',
+          image: '/images/product-angle.jpg',
+          imageAlt: 'Titan X ingebouwde kabels',
+          large: false,
+        },
+      ]
+    : [
+        {
+          icon: Plug,
+          color: '#FF6B00',
+          title: portsLabel(),
+          sub: 'Connectiviteit',
+          description: `${SPECS.portsUsbA.value}× USB-A · ${SPECS.portsUsbC.value}× USB-C · ${SPECS.portsMicroUsb.value}× Micro-USB voor input. Alles wat je hebt, past.`,
+          badge: 'Poorten',
+          image: '/images/product-ports.jpg',
+          imageAlt: 'Titan X poorten — USB-A, USB-C en Micro-USB',
+          large: false,
+        },
+      ]),
   {
     icon: Sun,
     color: '#EAB308',
-    title: 'LED Flashlight',
-    sub: 'Ultra-bright',
-    description: 'Krachtige ingebouwde zaklamp. SOS-modus, hoog/laag, één druk.',
-    badge: 'Ultra-bright beam',
-    image: null,
-    large: false,
-  },
-  {
-    icon: Wind,
-    color: '#FF8C00',
-    title: 'Outdoor Strap',
-    sub: 'Clip & Go',
-    description: 'Vastmaakbaar aan elke rugzak of riem. Nooit zonder stroom onderweg.',
-    badge: 'Outdoor ready',
+    title: 'Ingebouwde zaklamp',
+    sub: 'Wanneer je hem nodig hebt',
+    description: 'Krachtige zaklamp ingebouwd. Een druk op de knop.',
+    badge: 'On board',
     image: null,
     large: false,
   },
@@ -90,7 +108,7 @@ export default function Features() {
       {/* Ambient top glow */}
       <div
         className="absolute -top-px left-1/2 -translate-x-1/2 w-[900px] h-[280px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.055) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.055) 0%, transparent 65%)' }}
       />
       {/* Bottom fade into FlashlightSection */}
       <div
@@ -141,21 +159,29 @@ export default function Features() {
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 60%, #111111)' }} />
             </div>
             <div className="p-7 flex flex-col flex-1" style={{ position: 'relative', zIndex: 1 }}>
-              <span className="font-mono-titan text-xs uppercase tracking-widest mb-3" style={{ color: '#0EB5C8' }}>12× opladen</span>
-              <h3 className="font-display uppercase text-white mb-2" style={{ fontSize: '2.2rem', lineHeight: 0.9 }}>50.000<br />mAh</h3>
+              <span className="font-mono-titan text-xs uppercase tracking-widest mb-3" style={{ color: '#0EB5C8' }}>
+                {SPECS.simultaneousDevices.value} devices tegelijk
+              </span>
+              <h3 className="font-display uppercase text-white mb-2" style={{ fontSize: '2.2rem', lineHeight: 0.9 }}>
+                {SPECS.capacityMah.value.toLocaleString('nl-NL')}<br />mAh
+              </h3>
               <p className="font-body text-gray-500 text-sm leading-relaxed mt-3">
-                Laad je smartphone tot 12× op. iPad, laptop, camera — allemaal op één lading. De Titan X is de krachtcentrale die je overal meeneemt.
+                {SPECS.capacityMah.value.toLocaleString('nl-NL')} mAh in matte black. {portsLabel()}.
+                Tot {SPECS.simultaneousDevices.value} devices tegelijk. De krachtcentrale die je niet ziet aankomen.
               </p>
               <div className="mt-auto pt-5 border-t border-white/[0.06] flex items-center gap-2">
                 <BatteryCharging className="w-4 h-4" style={{ color: '#0EB5C8' }} />
-                {/* TODO: replace [GEWICHT] and [AFMETINGEN] with real product specs */}
-              <span className="font-mono-titan text-xs text-gray-600">50.000 mAh · 185 Wh · [GEWICHT]g · [AFMETINGEN]mm</span>
+                <span className="font-mono-titan text-xs text-gray-600">
+                  {capacityLabel()} · {portsLabel()}
+                  {safe(TBD.weightGrams) ? ` · ${safe(TBD.weightGrams)}g` : ''}
+                  {safe(TBD.dimensionsMm) ? ` · ${safe(TBD.dimensionsMm)}` : ''}
+                </span>
               </div>
             </div>
           </motion.div>
 
-          {/* Right col: 2×2 small cards */}
-          {features.slice(1, 5).map((feat, i) => {
+          {/* Right col: 2×2 small cards (skip first = large) */}
+          {features.slice(1).map((feat, i) => {
             const Icon = feat.icon;
             return (
               <motion.div
@@ -197,31 +223,8 @@ export default function Features() {
             );
           })}
 
-          {/* Last card — full width bottom */}
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="lg:col-span-1 group glass-card rounded-3xl p-6 flex flex-col relative overflow-hidden"
-          >
-            <div className="absolute inset-0 pointer-events-none rounded-3xl"
-              style={{ background: 'radial-gradient(circle at 30% 40%, rgba(255,140,0,0.04) 0%, transparent 60%)' }}
-            />
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-              style={{ background: 'radial-gradient(circle at 30% 40%, rgba(255,140,0,0.10) 0%, transparent 60%)' }}
-            />
-            <div className="flex items-start justify-between mb-3">
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,140,0,0.1)', border: '1px solid rgba(255,140,0,0.2)' }}>
-                <Wind className="w-5 h-5" style={{ color: '#FF8C00' }} />
-              </div>
-              <span className="font-mono-titan text-[10px] uppercase tracking-widest" style={{ color: '#FF8C00' }}>Outdoor ready</span>
-            </div>
-            <h3 className="font-display uppercase text-white text-2xl leading-none mb-1">Strap Holder</h3>
-            <p className="font-mono-titan text-xs mb-3" style={{ color: '#FF8C00' }}>Clip & Go</p>
-            <p className="font-body text-gray-500 text-sm leading-relaxed">Vastmaakbaar aan elke rugzak of riem. De oranje strap is meer dan een handgreep — het is jouw lifeline.</p>
-          </motion.div>
         </div>
-        {/* Mid-page CTA nudge */}
+        {/* Mid-page CTA nudge — geen fake discount, geen onbevestigde shipping-belofte */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -229,17 +232,29 @@ export default function Features() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16 pt-14 border-t border-white/[0.05]"
         >
           <p className="font-body text-gray-500 text-sm text-center sm:text-left">
-            Overtuigd? Bestel de Titan X vandaag —{' '}
-            <span style={{ color: '#FF8C00' }}>−31% korting</span>, gratis verzending.
+            {LAUNCH_STATE.waitlistMode
+              ? `${BRAND.product} is pre-launch — kom op de waitlist en mis de eerste batch niet.`
+              : `Klaar voor ${BRAND.product}? Bekijk de specs en bestel.`}
           </p>
-          <button
-            onClick={addToCart}
-            className="btn-ghost flex-shrink-0 flex items-center gap-2"
-            style={{ padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}
-          >
-            Naar bestelling
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          {LAUNCH_STATE.waitlistMode ? (
+            <a
+              href="#waitlist"
+              className="btn-ghost flex-shrink-0 flex items-center gap-2"
+              style={{ padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}
+            >
+              Join waitlist
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          ) : (
+            <button
+              onClick={addToCart}
+              className="btn-ghost flex-shrink-0 flex items-center gap-2"
+              style={{ padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}
+            >
+              Naar bestelling
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          )}
         </motion.div>
       </div>
     </section>

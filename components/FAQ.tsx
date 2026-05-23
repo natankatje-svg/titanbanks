@@ -4,30 +4,33 @@ import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
+// FAQ-antwoorden zijn handmatig geredigeerd om verzonnen claims te vermijden.
+// Geen specifieke aantallen "12× smartphone", geen SOS-modus tot bevestigd,
+// geen retractable kabels tot bevestigd, geen wattage-specifieke claims.
 const faqs = [
   {
-    q: 'Hoe vaak kan ik mijn telefoon opladen met de Titan X?',
-    a: 'De Titan X heeft een capaciteit van 50.000mAh. Afhankelijk van het type smartphone kun je een moderne iPhone of Android gemiddeld 10–12 keer volledig opladen. Een tablet laad je 3–5 keer volledig op. Voor oudere of kleinere telefoons zijn nog meer oplaadcycli mogelijk.',
+    q: 'Hoe vaak kan ik mijn devices opladen met Titan X?',
+    a: 'Titan X heeft een capaciteit van 50.000 mAh — voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele en voor moderne laptops 1–2 keer (via USB-C). Gebruik de Power Calculator op de site voor een schatting per device.',
   },
   {
-    q: 'Hoe werkt het fast charging systeem?',
-    a: 'De Titan X ondersteunt fast charging via de USB-C poort. Sluit een compatibel apparaat aan en de Titan X detecteert automatisch het juiste laadprotocol. Zonder fast-charge-compatibel apparaat wordt op standaardsnelheid geladen.',
+    q: 'Welke apparaten kan ik opladen?',
+    a: 'Vrijwel alle USB-apparaten: smartphones (iPhone, Android), tablets, laptops via USB-C, draadloze oordopjes, smartwatches, camera\'s en meer. Via 4× USB-A, 1× USB-C output en 1× Micro-USB input laad je tot 6 devices tegelijk.',
   },
   {
-    q: 'Welke apparaten kan ik opladen met de Titan X?',
-    a: 'De Titan X is geschikt voor vrijwel alle USB-apparaten: smartphones (iPhone, Android), tablets, laptops (via USB-C), Nintendo Switch, Bluetooth oordopjes, smartwatches, camera\'s, GoPro\'s en meer. Dankzij 4 poorten en 2 ingebouwde retractable kabels laad je tot 6 apparaten tegelijk op.',
+    q: 'Hoe snel laadt Titan X mijn devices?',
+    a: 'Titan X ondersteunt snellaad via USB-C. Sluit een compatibel device aan en het juiste protocol wordt automatisch herkend. We publiceren de exacte wattage zodra die definitief is bevestigd — geen ongebaseerde getallen tot dan.',
   },
   {
-    q: 'Hoe lang duurt het opladen van de Titan X zelf?',
-    a: 'Een volledige laadcyclus van 0% naar 100% via de USB-C ingang duurt gemiddeld 8–10 uur. Via een standaard USB-A charger duurt dit langer (12–16 uur). We raden aan de Titan X \'s nachts op te laden zodat hij overdag altijd klaar is.',
+    q: 'Hoe lang duurt het opladen van Titan X zelf?',
+    a: 'Via de USB-C ingang gaat het sneller dan via USB-A. We adviseren de power bank \'s nachts op te laden zodat hij overdag altijd klaar is. Exacte oplaadduur wordt bevestigd in de specs zodra getest in finale productie-units.',
   },
   {
-    q: 'Heeft de Titan X een garantie?',
-    a: 'Ja, alle TitanBanks producten worden geleverd met 2 jaar fabrieksgarantie. Bij defecten die onder normale gebruiksomstandigheden ontstaan, zorgen wij voor gratis reparatie of vervanging. Neem contact op via onze klantenservice voor garantieclaims.',
+    q: 'Heeft Titan X een garantie?',
+    a: 'Ja, 2 jaar fabrieksgarantie. Bij defecten onder normale gebruiksomstandigheden zorgen wij voor reparatie of vervanging. Neem contact op via klantenservice voor garantieclaims.',
   },
   {
-    q: 'Hoe gebruik ik de ingebouwde LED flashlight?',
-    a: 'De LED flashlight activeer je door de powerknop 2 seconden ingedrukt te houden. Eén keer drukken schakelt naar de lage stand, nogmaals drukken naar hoog, en een derde keer activeert de SOS-knipperstand. Nog een keer drukken schakelt de flashlight uit. De flashlight werkt ook wanneer de powerbank zelf niet wordt gebruikt voor opladen.',
+    q: 'Hoe gebruik ik de ingebouwde zaklamp?',
+    a: 'Houd de power-button kort ingedrukt om de zaklamp te activeren. De zaklamp werkt onafhankelijk van de oplaadfunctie. De exacte bedieningssequentie (standen, SOS) wordt bevestigd in de handleiding bij verzending van de eerste batch.',
   },
 ];
 
@@ -90,7 +93,7 @@ export default function FAQ() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="faq" ref={ref} className="relative py-24 lg:py-36 bg-[#080808] overflow-hidden">
+    <section id="faq" ref={ref} className="relative py-24 lg:py-36 bg-[#0A0A0A] overflow-hidden">
       {/* Ambient teal glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[260px] pointer-events-none"

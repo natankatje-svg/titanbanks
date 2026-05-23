@@ -1,0 +1,5 @@
+{
+  "chat_id": 715863505,
+  "parse_mode": "Markdown",
+  "text": "*Bridge fix klaar*\n\nProbleem: Python op Windows zocht naar `claude` zonder extensie, maar de echte launcher heet `claude.CMD`. Nu opgelost — de bridge resolveert het volledige pad bij opstarten.\n\n*Wat te doen:*\n1. Stuur eerst `/stop` om de oude bridge af te sluiten\n2. Dubbelklik dan opnieuw op `start-tg-bridge.bat` in `C:\\Users\\natan\\TitanBanks\\scripts\\`\n3. Je krijgt een nieuw welkomstbericht met '🤖 TitanBanks bridge is live'\n4. Daarna kun je gewoon een instructie sturen (bv. 'lees alle 10 antwoorden uit de telegram-thread en gebruik ze')\n\nDe nieuwe versie logt ook bij opstart welk claude-pad gevonden is — zichtbaar via `/log`."
+}

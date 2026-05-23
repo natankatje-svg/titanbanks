@@ -5,18 +5,31 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedM
 import Image from 'next/image';
 import { Zap, Check, ChevronDown } from 'lucide-react';
 import { useEcwid } from '../EcwidProvider';
+import {
+  BRAND,
+  SPECS,
+  TBD,
+  LAUNCH_STATE,
+  safe,
+  priceLabel,
+  anchorPriceLabel,
+  capacityLabel,
+} from '@/lib/product-claims';
 
-const trust = [
-  'Gratis verzending',
-  '30 dagen retour',
-  'Veilig betalen',
-  '2 jaar garantie',
-];
+const baseTrust = ['Veilig betalen', `${SPECS.warrantyYears.value} jaar garantie`];
+const optionalTrust: string[] = [];
+const returnDays = safe(TBD.returnPolicyDays);
+if (returnDays && returnDays > 0) optionalTrust.push(`${returnDays} dagen retour`);
+const shippingCountries = safe(TBD.freeShippingCountries);
+if (shippingCountries && shippingCountries.length > 0) {
+  optionalTrust.push(`Gratis verzending ${shippingCountries.join(' / ')}`);
+}
+const trust = [...optionalTrust, ...baseTrust];
 
 const specs = [
-  { value: '50.000', unit: 'mAh', label: 'Capaciteit'  },
-  { value: '6',      unit: '×',   label: 'Devices'     },
-  { value: 'LED',    unit: '',    label: 'Display'     },
+  { value: SPECS.capacityMah.value.toLocaleString('nl-NL'), unit: ' mAh', label: 'Capaciteit' },
+  { value: SPECS.simultaneousDevices.value.toString(), unit: '×', label: 'Devices' },
+  { value: 'LED', unit: '', label: 'Display' },
 ];
 
 export default function HeroVariantB() {
@@ -98,7 +111,7 @@ export default function HeroVariantB() {
       {/* Layer 2 — ambient orange glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[140px] pointer-events-none"
-        style={{ zIndex: 2, background: 'rgba(255,140,0,0.04)' }}
+        style={{ zIndex: 2, background: 'rgba(255,107,0,0.04)' }}
       />
 
       {/* Layer 10 — main content */}
@@ -106,19 +119,21 @@ export default function HeroVariantB() {
         style={{ y: contentY, opacity: contentFade, zIndex: 10 }}
         className="relative flex flex-col items-center text-center w-full max-w-3xl mx-auto px-6 pt-24 pb-14"
       >
-        {/* Sale badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.05 }}
-          className="flex items-center gap-2 rounded-full px-4 py-1.5 mb-5"
-          style={{ background: 'rgba(255,140,0,0.1)', border: '1px solid rgba(255,140,0,0.28)' }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#FF8C00' }} />
-          <span className="font-mono-titan text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: '#FF8C00' }}>
-            Beperkte aanbieding · −31% korting
-          </span>
-        </motion.div>
+        {/* Status badge — pre-launch waitlist of confirmed price */}
+        {(LAUNCH_STATE.waitlistMode || priceLabel()) && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="flex items-center gap-2 rounded-full px-4 py-1.5 mb-5"
+            style={{ background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.28)' }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#FF6B00' }} />
+            <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: '#FF6B00' }}>
+              {LAUNCH_STATE.waitlistMode ? 'Pre-launch · eerste batch' : `${BRAND.product} · nu beschikbaar`}
+            </span>
+          </motion.div>
+        )}
 
         {/* Eyebrow */}
         <motion.div
@@ -127,9 +142,9 @@ export default function HeroVariantB() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex items-center gap-3 mb-8"
         >
-          <div className="h-px w-7" style={{ background: 'linear-gradient(to right, transparent, #FF8C00)' }} />
-          <span className="section-label tracking-[0.22em]">Titan X · 50.000mAh Powerbank</span>
-          <div className="h-px w-7" style={{ background: 'linear-gradient(to left, transparent, #FF8C00)' }} />
+          <div className="h-px w-7" style={{ background: 'linear-gradient(to right, transparent, #FF6B00)' }} />
+          <span className="section-label tracking-[0.22em]">{BRAND.product} · {capacityLabel()} power bank</span>
+          <div className="h-px w-7" style={{ background: 'linear-gradient(to left, transparent, #FF6B00)' }} />
         </motion.div>
 
         {/* Headline */}
@@ -150,7 +165,7 @@ export default function HeroVariantB() {
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ duration: 0.55, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
           className="h-px w-16 mb-7 origin-center"
-          style={{ background: 'linear-gradient(to right, transparent, #FF8C00, transparent)' }}
+          style={{ background: 'linear-gradient(to right, transparent, #FF6B00, transparent)' }}
         />
 
         {/* Sub */}
@@ -160,8 +175,8 @@ export default function HeroVariantB() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="font-body text-gray-300 text-base leading-relaxed mb-8 max-w-md"
         >
-          50.000 mAh premium power met ingebouwde retractable kabels, LED-zaklamp
-          en fast charging. Eén powerbank voor zes apparaten tegelijk.
+          {capacityLabel()} in matte black. LED-display met exact percentage, ingebouwde
+          zaklamp en tot {SPECS.simultaneousDevices.value} devices tegelijk. Gebouwd voor wie niet kan stoppen.
         </motion.p>
 
         {/* Product image — spotlit */}
@@ -180,63 +195,66 @@ export default function HeroVariantB() {
             style={{
               width: '280px',
               height: '280px',
-              background: 'radial-gradient(ellipse, rgba(255,140,0,0.30) 0%, rgba(14,181,200,0.09) 55%, transparent 80%)',
+              background: 'radial-gradient(ellipse, rgba(255,107,0,0.30) 0%, rgba(14,181,200,0.09) 55%, transparent 80%)',
             }}
           />
           <div
             className="absolute rounded-full blur-[50px] opacity-40 pointer-events-none"
-            style={{ width: '180px', height: '180px', background: 'rgba(255,140,0,0.14)' }}
+            style={{ width: '180px', height: '180px', background: 'rgba(255,107,0,0.14)' }}
           />
           <Image
             src="/images/product-hero.jpg"
-            alt="TitanBanks Titan X 50.000 mAh powerbank met smart LED display en ingebouwde retractable kabels"
+            alt={`${BRAND.wordmark} ${BRAND.product} — ${capacityLabel()} power bank in matte black`}
             width={900}
             height={1060}
             className="relative z-10 h-auto object-contain"
             style={{
               width: 'clamp(260px, 45vw, 420px)',
-              filter: 'drop-shadow(0 28px 56px rgba(0,0,0,0.70)) drop-shadow(0 0 44px rgba(255,140,0,0.28))',
+              filter: 'drop-shadow(0 28px 56px rgba(0,0,0,0.70)) drop-shadow(0 0 44px rgba(255,107,0,0.28))',
             }}
             priority
           />
         </motion.div>
         </div>
 
-        {/* Price + CTA */}
+        {/* Price + CTA — prijs alleen renderen wanneer CONFIRMED */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.44 }}
           className="flex flex-col sm:flex-row items-center gap-4 mb-5 w-full justify-center"
         >
-          <div className="flex flex-col items-center sm:items-start gap-1">
-            <div className="flex items-end gap-2.5">
-              <span
-                className="font-display leading-none text-white"
-                style={{ fontSize: 'clamp(2.4rem, 7vw, 3rem)' }}
-              >
-                €89,95
-              </span>
-              <div className="flex flex-col items-start gap-1 mb-[3px]">
-                <span className="font-body text-gray-500 text-sm line-through leading-none">€129,95</span>
+          {priceLabel() && (
+            <div className="flex flex-col items-center sm:items-start gap-1">
+              <div className="flex items-end gap-2.5">
                 <span
-                  className="font-mono-titan text-[10px] rounded-full px-2 py-[2px] leading-none"
-                  style={{
-                    background: 'rgba(255,140,0,0.11)',
-                    border: '1px solid rgba(255,140,0,0.28)',
-                    color: '#FF8C00',
-                  }}
+                  className="font-display leading-none text-white"
+                  style={{ fontSize: 'clamp(2.4rem, 7vw, 3rem)' }}
                 >
-                  −31% KORTING
+                  {priceLabel()}
                 </span>
+                {anchorPriceLabel() && (
+                  <div className="flex flex-col items-start gap-1 mb-[3px]">
+                    <span className="font-body text-gray-500 text-sm line-through leading-none">
+                      {anchorPriceLabel()}
+                    </span>
+                  </div>
+                )}
               </div>
+              <span className="font-body text-gray-600 text-[10px]">incl. BTW</span>
             </div>
-            <span className="font-body text-gray-600 text-[10px]">incl. BTW</span>
-          </div>
-          <button onClick={addToCart} className="btn-orange w-full sm:w-auto">
-            <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
-            Bestel Nu
-          </button>
+          )}
+          {LAUNCH_STATE.waitlistMode ? (
+            <a href="#waitlist" className="btn-orange w-full sm:w-auto">
+              <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
+              Join waitlist
+            </a>
+          ) : (
+            <button onClick={addToCart} className="btn-orange w-full sm:w-auto">
+              <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
+              Bestel {BRAND.product}
+            </button>
+          )}
         </motion.div>
 
         {/* Secondary CTA */}
@@ -290,7 +308,7 @@ export default function HeroVariantB() {
               }}
             >
               <div className="font-display text-[1.15rem] leading-none text-white">
-                {s.value}<span style={{ color: '#FF8C00' }}>{s.unit}</span>
+                {s.value}<span style={{ color: '#FF6B00' }}>{s.unit}</span>
               </div>
               <div className="font-mono-titan text-gray-500 text-[11px] uppercase tracking-[0.16em]">
                 {s.label}
@@ -313,7 +331,7 @@ export default function HeroVariantB() {
             animate={{ y: ['-100%', '100%'] }}
             transition={{ duration: 1.4, repeat: Infinity, ease: 'linear' }}
             className="absolute inset-x-0 top-0 h-full"
-            style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,140,0,0.6), transparent)' }}
+            style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,107,0,0.6), transparent)' }}
           />
         </div>
       </motion.div>

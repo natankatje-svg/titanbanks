@@ -45,7 +45,7 @@ export default function CookieBanner() {
           >
             <div className="flex items-start justify-between gap-3 mb-3">
               <div className="flex items-center gap-2">
-                <Cookie className="w-4 h-4 flex-shrink-0" style={{ color: '#FF8C00' }} />
+                <Cookie className="w-4 h-4 flex-shrink-0" style={{ color: '#FF6B00' }} />
                 <p className="font-body text-white font-semibold text-sm">Cookies & Privacy</p>
               </div>
               <button

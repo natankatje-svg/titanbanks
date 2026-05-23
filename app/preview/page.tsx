@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function PreviewPage() {
   return (
-    <main className="relative bg-[#080808] overflow-x-hidden">
+    <main className="relative bg-[#0A0A0A] overflow-x-hidden">
       <JsonLd />
       <Navigation />
       <Hero />

@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { Sun, AlertTriangle, Zap, Layers } from 'lucide-react';
+import { Sun, Zap, Layers } from 'lucide-react';
 
 export default function FlashlightSection() {
   const ref = useRef<HTMLElement>(null);
@@ -38,9 +38,9 @@ export default function FlashlightSection() {
               transition={{ duration: 0.5 }}
               className="section-label mb-6 flex items-center gap-3"
             >
-              <div className="w-6 h-px bg-[#FF8C00]" />
+              <div className="w-6 h-px bg-[#FF6B00]" />
               <span>03 — LED Flashlight</span>
-              <div className="w-2 h-2 rounded-full bg-[#FF8C00]" />
+              <div className="w-2 h-2 rounded-full bg-[#FF6B00]" />
             </motion.div>
 
             {/* Headline */}
@@ -61,11 +61,11 @@ export default function FlashlightSection() {
               transition={{ duration: 0.7, delay: 0.25 }}
               className="font-body text-gray-400 text-xl leading-relaxed mb-10 max-w-xl"
             >
-              De ingebouwde ultra-bright LED flashlight is geen bijzaak. Het is een volwaardige zaklamp.
-              Camping, pech, noodsituaties — de Titan X verlicht altijd je weg.
+              De ingebouwde zaklamp is geen bijzaak. Een volwaardige LED-lamp,
+              ingebouwd in de power bank. Camping, pech, onverwacht donker — een druk op de knop.
             </motion.p>
 
-            {/* Feature pills */}
+            {/* Feature pills — geen SOS-claim tot bevestigd */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -73,10 +73,9 @@ export default function FlashlightSection() {
               className="flex flex-wrap gap-3"
             >
               {[
-                { Icon: Sun,           label: 'Ultra-bright beam', color: '#EAB308' },
-                { Icon: AlertTriangle, label: 'SOS-modus',         color: '#f43f5e' },
-                { Icon: Zap,           label: 'Één druk op knop',  color: '#FF8C00' },
-                { Icon: Layers,        label: 'Hoog / Laag stand', color: '#0EB5C8' },
+                { Icon: Sun, label: 'LED-beam', color: '#EAB308' },
+                { Icon: Zap, label: 'Eén druk op knop', color: '#FF6B00' },
+                { Icon: Layers, label: 'Werkt onafhankelijk', color: '#0EB5C8' },
               ].map((item) => (
                 <div key={item.label}
                   className="flex items-center gap-2.5 rounded-full px-5 py-2.5"
