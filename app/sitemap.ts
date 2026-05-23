@@ -19,19 +19,19 @@ interface RouteSpec {
 const routes: RouteSpec[] = [
   { path: '', priority: 1.0, changeFrequency: 'weekly', exists: true },
   { path: 'shop', priority: 0.95, changeFrequency: 'weekly', exists: true },
-  { path: 'products', priority: 0.85, changeFrequency: 'monthly', exists: false }, // Day 4
+  { path: 'products', priority: 0.85, changeFrequency: 'monthly', exists: true },
   { path: 'technology', priority: 0.8, changeFrequency: 'monthly', exists: true },
   { path: 'calculator', priority: 0.75, changeFrequency: 'monthly', exists: true },
   { path: 'in-use', priority: 0.7, changeFrequency: 'monthly', exists: true },
   { path: 'story', priority: 0.6, changeFrequency: 'monthly', exists: true },
-  { path: 'mission', priority: 0.6, changeFrequency: 'monthly', exists: false }, // Day 6
+  { path: 'mission', priority: 0.6, changeFrequency: 'monthly', exists: true },
   { path: 'reviews', priority: 0.5, changeFrequency: 'weekly', exists: true },
   { path: 'support', priority: 0.6, changeFrequency: 'monthly', exists: true },
-  { path: 'contact', priority: 0.55, changeFrequency: 'monthly', exists: false }, // Day 6
-  { path: 'faq', priority: 0.55, changeFrequency: 'monthly', exists: false }, // Day 6
+  { path: 'contact', priority: 0.55, changeFrequency: 'monthly', exists: true },
+  { path: 'faq', priority: 0.55, changeFrequency: 'monthly', exists: true },
   { path: 'legal/privacy', priority: 0.3, changeFrequency: 'yearly', exists: true },
-  { path: 'legal/terms', priority: 0.3, changeFrequency: 'yearly', exists: false }, // Day 6
-  { path: 'legal/policies', priority: 0.3, changeFrequency: 'yearly', exists: false }, // Day 6
+  { path: 'legal/terms', priority: 0.3, changeFrequency: 'yearly', exists: true },
+  { path: 'legal/policies', priority: 0.3, changeFrequency: 'yearly', exists: true },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

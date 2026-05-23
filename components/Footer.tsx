@@ -30,6 +30,7 @@ interface LegalLink {
 }
 
 const productLinks: FooterLink[] = [
+  { tKey: 'products', href: '/products' },
   { tKey: 'shop', href: '/shop' },
   { tKey: 'technology', href: '/technology' },
   { tKey: 'calculator', href: '/calculator' },
@@ -38,8 +39,11 @@ const productLinks: FooterLink[] = [
 
 const companyLinks: FooterLink[] = [
   { tKey: 'story', href: '/story' },
+  { tKey: 'mission', href: '/mission' },
   { tKey: 'reviews', href: '/reviews' },
+  { tKey: 'faq', href: '/faq' },
   { tKey: 'support', href: '/support' },
+  { tKey: 'contact', href: '/contact' },
 ];
 
 const legalLinks: LegalLink[] = [

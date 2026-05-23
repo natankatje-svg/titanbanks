@@ -74,5 +74,69 @@
     "warranty_title": "{years} jaar fabrieksgarantie",
     "warranty_body": "Bij defect onder normaal gebruik regelen wij reparatie of vervanging via de fabrikant.",
     "warranty_link": "Garantieprocedure"
+  },
+  "legal": {
+    "last_updated": "Laatst bijgewerkt",
+    "toc_label": "Inhoudsopgave",
+    "banner_review_label": "Jurist-review pending",
+    "banner_review_body": "Deze tekst is door TitanBanks opgesteld en wordt voor publicatie nog door een Nederlandse jurist herzien. Geen juridisch advies.",
+    "banner_translation_label": "Voorlopige vertaling",
+    "banner_translation_body": "De Nederlandse versie is leidend. Deze vertaling is een werkversie ter informatie.",
+    "footer_contact_prefix": "Vragen over dit beleid? Mail ons via"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Praat met ons.",
+    "intro": "Vragen over Titan X, bestellingen, garantie of samenwerking? Stuur een bericht — we reageren binnen 1-2 werkdagen.",
+    "form_name_label": "Naam",
+    "form_name_placeholder": "Je naam",
+    "form_email_label": "E-mailadres",
+    "form_email_placeholder": "jij@voorbeeld.nl",
+    "form_subject_label": "Onderwerp",
+    "form_subject_placeholder": "Bijv. bestelvraag, garantie, persvraag",
+    "form_message_label": "Bericht",
+    "form_message_placeholder": "Schrijf je bericht…",
+    "form_submit": "Verstuur bericht",
+    "form_sending": "Versturen…",
+    "form_success_title": "Bericht ontvangen.",
+    "form_success_body": "Dank je. We reageren binnen 1-2 werkdagen op je e-mailadres.",
+    "form_error_generic": "Er ging iets mis. Probeer het opnieuw of mail direct naar hello@titan-banks.com.",
+    "error_name_required": "Vul je naam in.",
+    "error_email_invalid": "Vul een geldig e-mailadres in.",
+    "error_subject_required": "Geef je bericht een kort onderwerp.",
+    "error_message_required": "Schrijf een korte boodschap (minimaal 10 tekens).",
+    "direct_email_label": "Liever direct mailen?",
+    "response_time_label": "Reactietijd",
+    "response_time_value": "1-2 werkdagen",
+    "support_alt_label": "Andere kanalen",
+    "support_alt_value": "Bekijk de FAQ voor snelle antwoorden."
+  },
+  "faq_page": {
+    "eyebrow": "Veelgestelde vragen",
+    "title": "Antwoorden op de meest gestelde vragen.",
+    "intro": "Vind je het antwoord niet? Mail ons op hello@titan-banks.com — we helpen je graag verder."
+  },
+  "mission": {
+    "eyebrow": "Onze missie",
+    "title": "Energie die niet stopt waar jij niet stopt.",
+    "intro": "TitanBanks bouwt premium portable power voor mensen die hun dag niet aanpassen aan hun batterij. Onze missie is om betrouwbare energie te leveren waar en wanneer het ertoe doet — zonder compromis op kwaliteit, duurzaamheid of design.",
+    "values_label": "Wat ons drijft",
+    "values": [
+      "Bouw alleen wat je zelf zou willen gebruiken — geen wegwerp-elektronica.",
+      "Duidelijke specs en eerlijke claims — geen marketing-fantasie.",
+      "2 jaar garantie en directe klantenservice — geen call-center labyrint.",
+      "Premium kwaliteit zonder premium opslag — directe verkoop, geen retail-marge.",
+      "Werk aan een ecosysteem — Titan X is de eerste stap, niet het einde."
+    ],
+    "founder_label": "Wie wij zijn",
+    "founder_body": "TitanBanks is opgericht door een klein team dat te vaak zonder stroom kwam te zitten. Wij zijn geen elektronicagigant met honderden SKU's. Wij zijn een focused powerbank-merk dat één product perfect wil maken voor het volgende komt."
+  },
+  "products_page": {
+    "eyebrow": "Onze producten",
+    "title": "Eén power bank. Volledig doordacht.",
+    "intro": "TitanBanks bouwt premium portable power. We starten met de Titan X — meer komt eraan.",
+    "cta_view": "Bekijk Titan X",
+    "current_label": "Nu verkrijgbaar",
+    "soon_label": "Binnenkort"
   }
 }

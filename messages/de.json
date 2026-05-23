@@ -74,5 +74,69 @@
     "warranty_title": "{years} Jahre Herstellergarantie",
     "warranty_body": "Bei Defekten unter normalem Gebrauch organisieren wir Reparatur oder Ersatz über den Hersteller.",
     "warranty_link": "Garantieprozess"
+  },
+  "legal": {
+    "last_updated": "Zuletzt aktualisiert",
+    "toc_label": "Inhaltsverzeichnis",
+    "banner_review_label": "Juristische Prüfung ausstehend",
+    "banner_review_body": "Dieser Text wurde von TitanBanks erstellt und wird vor dem Launch von einem niederländischen Juristen geprüft. Keine Rechtsberatung.",
+    "banner_translation_label": "Vorläufige Übersetzung",
+    "banner_translation_body": "Die niederländische Fassung ist maßgeblich. Diese Übersetzung dient als Arbeitsversion.",
+    "footer_contact_prefix": "Fragen zu diesen Richtlinien? Schreib uns an"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Sprich mit uns.",
+    "intro": "Fragen zur Titan X, zu Bestellungen, Garantie oder Kooperationen? Sende eine Nachricht — wir antworten innerhalb von 1-2 Werktagen.",
+    "form_name_label": "Name",
+    "form_name_placeholder": "Dein Name",
+    "form_email_label": "E-Mail-Adresse",
+    "form_email_placeholder": "du@beispiel.de",
+    "form_subject_label": "Betreff",
+    "form_subject_placeholder": "z.B. Bestellfrage, Garantie, Presse",
+    "form_message_label": "Nachricht",
+    "form_message_placeholder": "Schreibe deine Nachricht…",
+    "form_submit": "Nachricht senden",
+    "form_sending": "Wird gesendet…",
+    "form_success_title": "Nachricht erhalten.",
+    "form_success_body": "Danke. Wir antworten innerhalb von 1-2 Werktagen an deine E-Mail-Adresse.",
+    "form_error_generic": "Etwas ist schiefgelaufen. Versuche es erneut oder schreib direkt an hello@titan-banks.com.",
+    "error_name_required": "Bitte gib deinen Namen ein.",
+    "error_email_invalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
+    "error_subject_required": "Gib deiner Nachricht einen kurzen Betreff.",
+    "error_message_required": "Schreibe eine kurze Nachricht (mindestens 10 Zeichen).",
+    "direct_email_label": "Lieber direkt schreiben?",
+    "response_time_label": "Antwortzeit",
+    "response_time_value": "1-2 Werktage",
+    "support_alt_label": "Andere Kanäle",
+    "support_alt_value": "In den FAQ findest du schnelle Antworten."
+  },
+  "faq_page": {
+    "eyebrow": "Häufig gefragt",
+    "title": "Antworten auf die meistgestellten Fragen.",
+    "intro": "Antwort nicht gefunden? Schreib an hello@titan-banks.com — wir helfen gerne weiter."
+  },
+  "mission": {
+    "eyebrow": "Unsere Mission",
+    "title": "Strom, der nicht aufhört, wo du nicht aufhörst.",
+    "intro": "TitanBanks baut Premium-Powerbanks für Menschen, die ihren Tag nicht an ihren Akku anpassen. Unsere Mission: zuverlässige Energie liefern, wo und wann sie zählt — ohne Kompromisse bei Qualität, Langlebigkeit oder Design.",
+    "values_label": "Was uns antreibt",
+    "values": [
+      "Wir bauen nur, was wir selbst nutzen würden — keine Wegwerf-Elektronik.",
+      "Klare Specs und ehrliche Aussagen — keine Marketing-Fantasie.",
+      "2 Jahre Garantie und direkter Kundenservice — kein Callcenter-Labyrinth.",
+      "Premium-Qualität ohne Premium-Aufschlag — Direktverkauf, keine Handelsmarge.",
+      "Wir bauen ein Ökosystem — Titan X ist der erste Schritt, nicht der letzte."
+    ],
+    "founder_label": "Wer wir sind",
+    "founder_body": "TitanBanks wurde von einem kleinen Team gegründet, dem zu oft der Strom ausging. Wir sind kein Elektronikgigant mit hunderten SKUs. Wir sind eine fokussierte Powerbank-Marke, die ein Produkt perfekt machen will, bevor das nächste kommt."
+  },
+  "products_page": {
+    "eyebrow": "Unsere Produkte",
+    "title": "Eine Powerbank. Durchdacht bis ins Detail.",
+    "intro": "TitanBanks baut Premium-Powerbanks. Wir starten mit der Titan X — weitere folgen.",
+    "cta_view": "Titan X ansehen",
+    "current_label": "Jetzt verfügbar",
+    "soon_label": "Demnächst"
   }
 }
