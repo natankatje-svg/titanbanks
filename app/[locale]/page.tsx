@@ -6,7 +6,7 @@ import Hero from '@/components/heroes/HeroVariantB';
 import TrustBar from '@/components/TrustBar';
 import ImageSlider, { type SliderImage } from '@/components/ImageSlider';
 import UseCases from '@/components/UseCases';
-import ProductShowcase from '@/components/ProductShowcase';
+import FeatureBento from '@/components/FeatureBento';
 import CalculatorPromo from '@/components/CalculatorPromo';
 import MoreProductsComingSoon from '@/components/MoreProductsComingSoon';
 import FAQ from '@/components/FAQ';
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       <UseCases />
-      <ProductShowcase />
+      <FeatureBento />
       <CalculatorPromo />
       <MoreProductsComingSoon />
       <FAQ />

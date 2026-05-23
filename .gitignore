@@ -26,3 +26,4 @@ tsconfig.tsbuildinfo
 
 
 .vercel
+__pycache__/

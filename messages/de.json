@@ -31,6 +31,46 @@
     "see_more": "Mehr ansehen",
     "back_to_home": "Zur Startseite"
   },
+  "feature_bento": {
+    "eyebrow": "Specs",
+    "title": "Alles, was du brauchst. Nichts, was du nicht brauchst.",
+    "intro": "{product} ist um {capacity} reine Kapazität, sechs parallele Ports und ein LED-Display gebaut, das dir genau sagt, wie viel noch übrig ist. Keine Marketing-Fantasie — nur, was drin ist.",
+    "cards": {
+      "capacity": {
+        "eyebrow": "Kapazität",
+        "title": "Genug für einen langen Tag.",
+        "body": "50.000 mAh in mattschwarzem Gehäuse. Genug, um Smartphone, Tablet und Headset durch ein Festival, eine Roadtrip oder eine mehrtägige Wanderung zu bringen — ohne nach einer Steckdose zu suchen."
+      },
+      "devices": {
+        "eyebrow": "Gleichzeitig",
+        "unit": "Geräte",
+        "title": "Sechs Geräte, parallel.",
+        "body": "Vier USB-A, ein USB-C, ein Micro-USB-Eingang. Bis zu sechs Geräte gleichzeitig — keine Warteschlange, keine Diskussion, wer zuerst lädt."
+      },
+      "ports": {
+        "eyebrow": "Anschlüsse",
+        "unit": "Ports",
+        "title": "Universelle Ausgänge.",
+        "body": "4× USB-A · 1× USB-C · 1× Micro-USB (Eingang). Funktioniert mit praktisch allem, was einen USB-Stecker hat."
+      },
+      "flashlight": {
+        "eyebrow": "Extra",
+        "title": "Integrierte Taschenlampe.",
+        "body": "Halte die Power-Taste, um die LED-Taschenlampe zu aktivieren. Funktioniert unabhängig vom Laden — nützlich in Tunneln, Zelten oder bei Stromausfall."
+      },
+      "design": {
+        "eyebrow": "Form",
+        "title": "Mattschwarz. Geflochtene Trageschlaufe. LED-Display.",
+        "body": "Kein glänzendes Plastik, das schon am ersten Tag verkratzt. Keine Tasten, die du im Dunkeln nicht findest. Eine kompakte Form, gemacht zum Mitnehmen."
+      },
+      "warranty": {
+        "eyebrow": "Sicherheit",
+        "unit": "Jahre",
+        "title": "Herstellergarantie inklusive.",
+        "body": "Bei Defekt unter normalem Gebrauch organisieren wir Reparatur oder Ersatz über den Hersteller. Schreib an hello@titan-banks.com — keine Warteschleife, keine Skripte."
+      }
+    }
+  },
   "more_products_coming_soon": {
     "eyebrow": "Roadmap",
     "volume_mark": "Vol. 01 / ∞",

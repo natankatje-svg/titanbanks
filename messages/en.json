@@ -31,6 +31,46 @@
     "see_more": "See more",
     "back_to_home": "Back to home"
   },
+  "feature_bento": {
+    "eyebrow": "Specs",
+    "title": "Everything you need. Nothing you don't.",
+    "intro": "{product} is built around {capacity} of raw capacity, six parallel ports, and an LED display that tells you exactly how much is left. No marketing fiction — just what's inside.",
+    "cards": {
+      "capacity": {
+        "eyebrow": "Capacity",
+        "title": "Enough to outlast a long day.",
+        "body": "50,000 mAh in a matte-black shell. Plenty to push your phone, tablet and headset through a festival, road trip or multi-day hike — without hunting for an outlet."
+      },
+      "devices": {
+        "eyebrow": "Simultaneous",
+        "unit": "devices",
+        "title": "Six devices, in parallel.",
+        "body": "Four USB-A, one USB-C, one Micro-USB input. Up to six devices at once — no queue, no negotiating with friends about who charges first."
+      },
+      "ports": {
+        "eyebrow": "Connectivity",
+        "unit": "ports",
+        "title": "Universal outputs.",
+        "body": "4× USB-A · 1× USB-C · 1× Micro-USB (input). Works with virtually anything that has a USB plug."
+      },
+      "flashlight": {
+        "eyebrow": "Extra",
+        "title": "Built-in flashlight.",
+        "body": "A power-button-hold activates the LED flashlight. Works independently from charging — useful in tunnels, tents, or when the power's out."
+      },
+      "design": {
+        "eyebrow": "Form factor",
+        "title": "Matte black. Woven strap. LED display.",
+        "body": "No glossy plastic that scratches on day one. No buttons you can't find in the dark. One compact shape, made to be carried."
+      },
+      "warranty": {
+        "eyebrow": "Peace of mind",
+        "unit": "years",
+        "title": "Manufacturer warranty included.",
+        "body": "If your unit fails under normal use, we arrange repair or replacement via the manufacturer. Email hello@titan-banks.com — no hold music, no scripts."
+      }
+    }
+  },
   "more_products_coming_soon": {
     "eyebrow": "Roadmap",
     "volume_mark": "Vol. 01 / ∞",

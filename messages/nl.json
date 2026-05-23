@@ -31,6 +31,46 @@
     "see_more": "Bekijk meer",
     "back_to_home": "Terug naar home"
   },
+  "feature_bento": {
+    "eyebrow": "Specs",
+    "title": "Alles wat je nodig hebt. Niets dat je niet nodig hebt.",
+    "intro": "{product} is gebouwd rond {capacity} ruwe capaciteit, zes parallelle poorten en een LED-display dat je vertelt wat er nog over is. Geen marketing-fantasie — alleen wat erin zit.",
+    "cards": {
+      "capacity": {
+        "eyebrow": "Capaciteit",
+        "title": "Genoeg om een lange dag te halen.",
+        "body": "50.000 mAh in matte black behuizing. Genoeg ruimte om je telefoon, tablet en headset door een festival, road trip of meerdaagse hike te tillen — zonder onderweg te zoeken naar een stopcontact."
+      },
+      "devices": {
+        "eyebrow": "Gelijktijdig",
+        "unit": "devices",
+        "title": "Zes devices, parallel.",
+        "body": "Vier USB-A, één USB-C en één Micro-USB input. Tot zes apparaten tegelijk — geen wachtrij, geen onderhandelen met vrienden over wie eerst mag laden."
+      },
+      "ports": {
+        "eyebrow": "Connectiviteit",
+        "unit": "poorten",
+        "title": "Universele uitgangen.",
+        "body": "4× USB-A · 1× USB-C · 1× Micro-USB (input). Werkt met vrijwel alles met een USB-stekker."
+      },
+      "flashlight": {
+        "eyebrow": "Extra",
+        "title": "Ingebouwde zaklamp.",
+        "body": "Een power-button-hold activeert de LED zaklamp. Werkt onafhankelijk van het laden — handig in tunnels, tenten of als de stroom uitvalt."
+      },
+      "design": {
+        "eyebrow": "Form factor",
+        "title": "Matte black. Geweven draaglus. LED-display.",
+        "body": "Geen glossy plastic dat krast bij eerste gebruik. Geen knoppen die je niet kunt vinden in het donker. Eén compacte vorm, gemaakt om mee te dragen."
+      },
+      "warranty": {
+        "eyebrow": "Zekerheid",
+        "unit": "jaar",
+        "title": "Fabrieksgarantie inbegrepen.",
+        "body": "Bij defect onder normaal gebruik regelen we reparatie of vervanging via de fabrikant. Mail hello@titan-banks.com — geen wachtmuziek, geen scripts."
+      }
+    }
+  },
   "more_products_coming_soon": {
     "eyebrow": "Roadmap",
     "volume_mark": "Vol. 01 / ∞",
