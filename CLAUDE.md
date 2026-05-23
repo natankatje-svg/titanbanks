@@ -37,29 +37,31 @@ npx skills sync    # installeert alle skills uit skills-lock.json
 
 ---
 
-## Huidige status (laatst bijgewerkt: 2026-05-16)
+## Huidige status — single source of truth
 
-### Domein
-- **Gekocht:** `titan-banks.com` via Cloudflare Registrar ($10.46/jr, auto-renewal aan)
-- **WHOIS privacy:** ingebouwd & gratis bij Cloudflare
-- **VOF tenaamstelling:** factuur op naam van VOF (NamaCorp), privé Visa gebruikt — €10,46 terugboeken vanaf zakelijke rekening zodra die weer werkt
+**De actuele status, beslissingen en open taken staan in de Obsidian-vault, niet hier.** CLAUDE.md zelf is statische projectcontext (stack/structuur/conventies) zodat hij niet verouderd raakt door elke werksessie.
 
-### Volgende stappen (waar we waren gebleven)
-1. **Deploy naar Vercel** — repo `natankatje-svg/titanbanks` importeren via [vercel.com/new](https://vercel.com/new)
-2. **Domein koppelen aan Vercel** — `titan-banks.com` + `www.titan-banks.com` toevoegen in Vercel project Settings → Domains. DNS records komen in Cloudflare DNS dashboard, zet proxy (oranje wolkje) op **DNS only (grijs)** voor Vercel records om SSL-conflicten te voorkomen
-3. **Build check** — `npx tsc --noEmit` en `npx next build` lokaal draaien vóór deploy
-4. **Ecwid config invullen** — `lib/ecwid-config.ts` heeft nog placeholder Store ID + Product ID nodig
-5. **Titan-Daniel toegang** — heeft al write access op GitHub repo; voor Vercel team-toegang is Pro plan nodig OF hij ziet PR preview-URLs gratis
+### Lees deze twee files aan het begin van elke nieuwe sessie:
 
-### Beslissingen
-- Hosting via **Vercel** (niet Cloudflare Pages) — beste Next.js DX
-- Domein: `titan-banks.com` gekozen boven `.nl`/`.net`/`.org` voor internationale uitstraling
-- Ecwid blijft de e-commerce backend
+1. **`C:\Users\natan\Titanbanks Obsidian\Titanbanks 2\80_Webshop\Session_State.md`**
+   → Werkprogressie, beslissingen, open content/design vragen, chronologische sessie-log
+2. **`C:\Users\natan\Titanbanks Obsidian\Titanbanks 2\80_Webshop\Deploy_State.md`**
+   → Live infra-status: URLs, Basic Auth creds, env vars, DNS records, deploy commando's
 
-### Setup notes voor nieuwe omgeving (bv. Cursor)
-Na clonen:
+### Snelle samenvatting (kan verouderd zijn — bovenstaande files zijn waar)
+- **Live URL**: https://titan-banks.com (achter HTTP Basic Auth — creds in Deploy_State)
+- **Hosting**: Vercel Hobby (`natankatje-svgs-projects/titanbanks`), auto-deploy on push to `main`
+- **Domein**: Cloudflare Registrar, DNS records → `76.76.21.21` (grijs wolkje)
+- **Routes**: `/` = teaser, `/preview` = finalized webshop
+- **Open infra**: Ecwid config invullen, Cloudflare API token intrekken, hero video v2
+
+### Setup voor nieuwe omgeving (bv. Cursor)
 ```bash
 npm install
 npx skills sync       # installeer 57 skills
-npm run dev           # check dat alles werkt
+npm run dev           # check dat alles werkt (lokaal geen Basic Auth dankzij .env.local)
 ```
+
+### Vault navigatie
+- Vault root: `C:\Users\natan\Titanbanks Obsidian\Titanbanks 2\`
+- Begin altijd bij `00_Index.md` voor cross-cutting context (Amazon sprint, team, brand)
