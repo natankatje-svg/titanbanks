@@ -80,8 +80,16 @@ export default function middleware(req: NextRequest): NextResponse {
 }
 
 export const config = {
-  // Sluit Next internals + statische bestanden + robots/sitemap uit.
-  // Robots en sitemap blijven publiek voor crawlers (zelfs achter Basic Auth
-  // werden ze al niet geserveerd; matcher hier is alleen voor performance).
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)'],
+  // Match alle paden BEHALVE:
+  // - /api/*         API routes (eigen processing)
+  // - /_next/*       Next.js internals
+  // - /_vercel/*     Vercel internals
+  // - files met extensie ('.png', '.mp4', etc.) — public/ assets
+  // - robots.txt, sitemap.xml — moeten publiek blijven voor crawlers
+  //
+  // Belangrijk: deze matcher voorkomt dat next-intl /hero/video.mp4 rewrite
+  // naar /nl/hero/video.mp4 (zou 404 geven). Basic Auth past hierdoor niet
+  // op individuele static files — bewuste afweging, files zijn niet
+  // gevoelig en de pagina's die ze tonen zijn nog gegate.
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 };

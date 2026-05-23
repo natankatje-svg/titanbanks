@@ -40,5 +40,39 @@
     "cta_email": "E-mailadres",
     "cta_button": "Aanmelden",
     "cta_success": "Je staat op de lijst. We mailen zodra er iets nieuws is."
+  },
+  "buy_box": {
+    "eyebrow": "Bestel direct",
+    "quantity": "Aantal",
+    "in_stock": "Op voorraad — eerste batch",
+    "shipping_line": "Verzending vanuit Nederland · {days} dagen retour · {years} jaar garantie",
+    "secure_checkout": "Veilig betalen via iDEAL, Apple Pay, Klarna, Visa & Mastercard",
+    "cta_add_to_cart": "In winkelmandje",
+    "cta_waitlist": "Op de waitlist",
+    "incl_vat": "incl. BTW"
+  },
+  "ports_visual": {
+    "eyebrow": "Poorten & aansluitingen",
+    "title": "Alles wat je nodig hebt. Zes poorten parallel.",
+    "usb_a": "4× USB-A",
+    "usb_a_desc": "Standaard USB-A output voor smartphones, tablets, GoPro's en oordopjes.",
+    "usb_c": "1× USB-C",
+    "usb_c_desc": "USB-C output voor snelladen — laptops, moderne phones, headsets.",
+    "micro_usb": "1× Micro-USB",
+    "micro_usb_desc": "Input-only — voor het opladen van de Titan X zelf.",
+    "footnote": "Alle 6 poorten kunnen tegelijkertijd actief zijn."
+  },
+  "shipping_returns_warranty": {
+    "eyebrow": "Veilig kopen",
+    "title": "Geen kleine lettertjes.",
+    "shipping_title": "EU + Internationale verzending",
+    "shipping_body": "Verzending vanuit Nederland. EU eerst, ook wereldwijd beschikbaar. Concrete tarieven bij checkout.",
+    "shipping_link": "Bekijk verzendkosten",
+    "returns_title": "{days} dagen retour",
+    "returns_body": "Niet tevreden? Stuur Titan X binnen {days} dagen ongebruikt terug voor volledige terugbetaling.",
+    "returns_link": "Retourvoorwaarden",
+    "warranty_title": "{years} jaar fabrieksgarantie",
+    "warranty_body": "Bij defect onder normaal gebruik regelen wij reparatie of vervanging via de fabrikant.",
+    "warranty_link": "Garantieprocedure"
   }
 }

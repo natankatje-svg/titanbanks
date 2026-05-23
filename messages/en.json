@@ -40,5 +40,39 @@
     "cta_email": "Email address",
     "cta_button": "Sign up",
     "cta_success": "You're on the list. We'll email you when the next product drops."
+  },
+  "buy_box": {
+    "eyebrow": "Order now",
+    "quantity": "Quantity",
+    "in_stock": "In stock — first batch",
+    "shipping_line": "Ships from the Netherlands · {days}-day returns · {years}-year warranty",
+    "secure_checkout": "Secure checkout via iDEAL, Apple Pay, Klarna, Visa & Mastercard",
+    "cta_add_to_cart": "Add to cart",
+    "cta_waitlist": "Join the waitlist",
+    "incl_vat": "incl. VAT"
+  },
+  "ports_visual": {
+    "eyebrow": "Ports & inputs",
+    "title": "Everything you need. Six ports in parallel.",
+    "usb_a": "4× USB-A",
+    "usb_a_desc": "Standard USB-A output for phones, tablets, GoPros, earbuds.",
+    "usb_c": "1× USB-C",
+    "usb_c_desc": "USB-C fast-charge output — laptops, modern phones, headsets.",
+    "micro_usb": "1× Micro-USB",
+    "micro_usb_desc": "Input only — used to charge the Titan X itself.",
+    "footnote": "All 6 ports can be active simultaneously."
+  },
+  "shipping_returns_warranty": {
+    "eyebrow": "Buy with confidence",
+    "title": "No fine print.",
+    "shipping_title": "EU + International shipping",
+    "shipping_body": "Ships from the Netherlands. EU first, available worldwide. Exact rates calculated at checkout.",
+    "shipping_link": "View shipping rates",
+    "returns_title": "{days}-day returns",
+    "returns_body": "Not satisfied? Return your Titan X unused within {days} days for a full refund.",
+    "returns_link": "Return terms",
+    "warranty_title": "{years}-year manufacturer warranty",
+    "warranty_body": "If your Titan X fails under normal use, we arrange repair or replacement via the manufacturer.",
+    "warranty_link": "Warranty process"
   }
 }
