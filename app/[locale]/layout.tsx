@@ -1,5 +1,4 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing, type Locale } from '@/i18n/routing';
 
@@ -7,6 +6,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+// NextIntlClientProvider zit in app/layout.tsx (root) zodat /preview en /preview2
+// ook messages krijgen. Hier alleen locale-validatie en setRequestLocale voor SSG.
 export default async function LocaleLayout({
   children,
   params,
@@ -21,11 +22,6 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
-  const messages = await getMessages();
 
-  return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
-      {children}
-    </NextIntlClientProvider>
-  );
+  return <>{children}</>;
 }

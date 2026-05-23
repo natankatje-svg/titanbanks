@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Barlow_Condensed, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
-import { getLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
 import './globals.css';
@@ -61,13 +62,17 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // getLocale() valt terug op defaultLocale ('nl') voor non-locale routes (/preview, /preview2).
-  // Voor /[locale]/* routes geeft het 'nl' | 'en' | 'de' uit de URL.
+  // NextIntlClientProvider zit hier (i.p.v. in [locale]/layout) zodat /preview ook
+  // messages krijgt — die vallen terug naar NL via i18n/request.ts.
   const locale = await getLocale();
+  const messages = await getMessages();
   return (
     <html lang={locale} className={`${barlowCondensed.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
       <body className="bg-black text-white antialiased">
         <GA4Loader />
-        <EcwidProvider>{children}</EcwidProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <EcwidProvider>{children}</EcwidProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

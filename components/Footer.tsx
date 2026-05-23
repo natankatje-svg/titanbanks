@@ -1,34 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
+import LanguageSwitcher from './LanguageSwitcher';
 import { BRAND, TBD, safe } from '@/lib/product-claims';
-
-const linkGroups: Array<{ heading: string; items: Array<{ label: string; href: string }> }> = [
-  {
-    heading: 'Product',
-    items: [
-      { label: 'Shop', href: '/shop' },
-      { label: 'Technology', href: '/technology' },
-      { label: 'Calculator', href: '/calculator' },
-      { label: 'In Use', href: '/in-use' },
-    ],
-  },
-  {
-    heading: 'Bedrijf',
-    items: [
-      { label: 'Story', href: '/story' },
-      { label: 'Reviews', href: '/reviews' },
-      { label: 'Support', href: '/support' },
-    ],
-  },
-  {
-    heading: 'Juridisch',
-    items: [
-      { label: 'Privacybeleid', href: '/privacy' },
-      { label: 'Algemene voorwaarden', href: '/support#terms' },
-      { label: 'Cookiebeleid', href: '/privacy#cookies' },
-    ],
-  },
-];
 
 function FooterLogo() {
   return (
@@ -42,7 +16,41 @@ function FooterLogo() {
   );
 }
 
+interface FooterLink {
+  /** Translation-key voor het label (onder messages.navigation.*) */
+  tKey: string;
+  /** Pad zonder locale-prefix */
+  href: string;
+}
+
+interface LegalLink {
+  /** Translation-key voor het label (onder messages.footer.*) */
+  tKey: string;
+  href: string;
+}
+
+const productLinks: FooterLink[] = [
+  { tKey: 'shop', href: '/shop' },
+  { tKey: 'technology', href: '/technology' },
+  { tKey: 'calculator', href: '/calculator' },
+  { tKey: 'in_use', href: '/in-use' },
+];
+
+const companyLinks: FooterLink[] = [
+  { tKey: 'story', href: '/story' },
+  { tKey: 'reviews', href: '/reviews' },
+  { tKey: 'support', href: '/support' },
+];
+
+const legalLinks: LegalLink[] = [
+  { tKey: 'legal_privacy', href: '/legal/privacy' },
+  { tKey: 'legal_terms', href: '/legal/terms' },
+  { tKey: 'legal_policies', href: '/legal/policies' },
+];
+
 export default function Footer() {
+  const tNav = useTranslations('navigation');
+  const tFooter = useTranslations('footer');
   const kvk = safe(TBD.kvkNumber);
   const address = safe(TBD.businessAddress);
 
@@ -57,35 +65,69 @@ export default function Footer() {
               <FooterLogo />
             </div>
             <p className="font-body text-[#888888] text-sm leading-relaxed max-w-xs">
-              Premium power banks. Gebouwd voor wie niet kan stoppen.
+              {tFooter('tagline')}
             </p>
           </div>
 
-          {linkGroups.map(({ heading, items }) => (
-            <div key={heading}>
-              <h4 className="font-mono text-white/60 text-[0.65rem] uppercase tracking-[0.2em] mb-4">
-                {heading}
-              </h4>
-              <ul className="space-y-3">
-                {items.map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="font-body text-[#888888] hover:text-white text-sm transition-colors duration-200"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div>
+            <h4 className="font-mono text-white/60 text-[0.65rem] uppercase tracking-[0.2em] mb-4">
+              {tFooter('group_product')}
+            </h4>
+            <ul className="space-y-3">
+              {productLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="font-body text-[#888888] hover:text-white text-sm transition-colors duration-200"
+                  >
+                    {tNav(item.tKey)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-mono text-white/60 text-[0.65rem] uppercase tracking-[0.2em] mb-4">
+              {tFooter('group_company')}
+            </h4>
+            <ul className="space-y-3">
+              {companyLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="font-body text-[#888888] hover:text-white text-sm transition-colors duration-200"
+                  >
+                    {tNav(item.tKey)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-mono text-white/60 text-[0.65rem] uppercase tracking-[0.2em] mb-4">
+              {tFooter('group_legal')}
+            </h4>
+            <ul className="space-y-3">
+              {legalLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="font-body text-[#888888] hover:text-white text-sm transition-colors duration-200"
+                  >
+                    {tFooter(item.tKey)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="border-t border-white/[0.05] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
             <p className="text-[#666666] text-sm">
-              © {new Date().getFullYear()} {BRAND.text}. Alle rechten voorbehouden.
+              © {new Date().getFullYear()} {BRAND.text}. {tFooter('copyright')}
             </p>
             {(kvk || address) && (
               <>
@@ -98,9 +140,12 @@ export default function Footer() {
               </>
             )}
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[#666666] text-xs">Veilig betalen · iDEAL · Apple Pay · Visa · Mastercard</span>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher variant="full" />
+            <div className="hidden sm:flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[#666666] text-xs">{tFooter('payment_line')}</span>
+            </div>
           </div>
         </div>
       </div>
