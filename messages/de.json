@@ -1,7 +1,4 @@
 {
-  "announcement": {
-    "default": "Titan X jetzt verfügbar — weitere Produkte folgen."
-  },
   "navigation": {
     "products": "Produkte",
     "shop": "Shop",
@@ -35,11 +32,43 @@
     "back_to_home": "Zur Startseite"
   },
   "more_products_coming_soon": {
-    "title": "Weitere Produkte folgen",
-    "body": "TitanBanks baut ein Ökosystem für mobile Energie. Titan X ist der erste Schritt. Trage dich ein, um als Erste:r zu erfahren, was als Nächstes kommt.",
-    "cta_email": "E-Mail-Adresse",
+    "eyebrow": "Roadmap",
+    "volume_mark": "Vol. 01 / ∞",
+    "title": "Eine Powerbank heute. Eine Plattform morgen.",
+    "intro": "TitanBanks ist kein Ein-Produkt-Shop. Die Titan X ist Vol. 01 einer Familie tragbarer Power-Tools. Hier siehst du, wohin die Reise geht — ehrlich, auch da, wo der Name noch nicht feststeht.",
+    "items": [
+      {
+        "label": "01",
+        "name": "Titan X",
+        "tagline": "50.000 mAh · 6 Geräte · mattschwarz",
+        "status": "Jetzt verfügbar"
+      },
+      {
+        "label": "02",
+        "name": "Name folgt",
+        "tagline": "Kompaktere Daily-Carry für leichtere Tage.",
+        "status": "2026"
+      },
+      {
+        "label": "03",
+        "name": "Name folgt",
+        "tagline": "Mehr Kapazität für alle, die weiter gehen.",
+        "status": "2027"
+      },
+      {
+        "label": "04",
+        "name": "Name folgt",
+        "tagline": "Eine modulare Plattform, die mit dir wächst.",
+        "status": "Am Horizont"
+      }
+    ],
+    "signup_label": "Früher Zugriff",
+    "signup_prompt": "Erfahre als Erste:r von Vol. 02.",
+    "email_placeholder": "E-Mail-Adresse",
     "cta_button": "Anmelden",
-    "cta_success": "Du bist auf der Liste. Wir melden uns, sobald das nächste Produkt kommt."
+    "cta_sending": "Sendet",
+    "cta_success": "Du bist auf der Liste. Wir melden uns, wenn Vol. 02 Form annimmt.",
+    "cta_error": "Etwas ist schiefgelaufen. Versuche es erneut."
   },
   "buy_box": {
     "eyebrow": "Jetzt bestellen",

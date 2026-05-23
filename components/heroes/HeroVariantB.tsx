@@ -119,18 +119,35 @@ export default function HeroVariantB() {
         style={{ y: contentY, opacity: contentFade, zIndex: 10 }}
         className="relative flex flex-col items-center text-center w-full max-w-3xl mx-auto px-6 pt-24 pb-14"
       >
-        {/* Status badge — pre-launch waitlist of confirmed price */}
+        {/* Status badge — Volume mark + availability. Confident editorial
+            two-segment pill: archival white "VOL. 01 / ∞" left of a thin
+            orange hairline, orange "NU BESCHIKBAAR" right. The mark signals
+            "first of a line" without needing an announcement bar. */}
         {(LAUNCH_STATE.waitlistMode || priceLabel()) && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.05 }}
-            className="flex items-center gap-2 rounded-full px-4 py-1.5 mb-5"
-            style={{ background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.28)' }}
+            className="flex items-center rounded-full px-4 py-1.5 mb-5"
+            style={{
+              background: 'rgba(255,107,0,0.06)',
+              border: '1px solid rgba(255,107,0,0.22)',
+              backdropFilter: 'blur(6px)',
+            }}
           >
-            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#FF6B00' }} />
-            <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: '#FF6B00' }}>
-              {LAUNCH_STATE.waitlistMode ? 'Pre-launch · eerste batch' : `${BRAND.product} · nu beschikbaar`}
+            <span className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-white/85">
+              Vol.&nbsp;01&nbsp;/&nbsp;∞
+            </span>
+            <span
+              aria-hidden="true"
+              className="mx-3 inline-block h-3 w-px"
+              style={{ background: 'rgba(255,107,0,0.55)' }}
+            />
+            <span
+              className="font-mono text-[0.7rem] uppercase tracking-[0.22em]"
+              style={{ color: '#FF6B00' }}
+            >
+              {LAUNCH_STATE.waitlistMode ? 'Pre-launch · eerste batch' : 'Nu beschikbaar'}
             </span>
           </motion.div>
         )}

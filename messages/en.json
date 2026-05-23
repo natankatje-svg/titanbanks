@@ -1,7 +1,4 @@
 {
-  "announcement": {
-    "default": "Titan X available now — more products coming soon."
-  },
   "navigation": {
     "products": "Products",
     "shop": "Shop",
@@ -35,11 +32,43 @@
     "back_to_home": "Back to home"
   },
   "more_products_coming_soon": {
-    "title": "More products coming soon",
-    "body": "TitanBanks is building a portable-power ecosystem. Titan X is the first step. Sign up to hear what comes next, first.",
-    "cta_email": "Email address",
+    "eyebrow": "Roadmap",
+    "volume_mark": "Vol. 01 / ∞",
+    "title": "One power bank today. A platform tomorrow.",
+    "intro": "TitanBanks isn't a one-product store. Titan X is Vol. 01 of a family of portable-power tools. Here's where we're going — honestly, including where the name isn't fixed yet.",
+    "items": [
+      {
+        "label": "01",
+        "name": "Titan X",
+        "tagline": "50,000 mAh · 6 devices · matte black",
+        "status": "Available now"
+      },
+      {
+        "label": "02",
+        "name": "Name to come",
+        "tagline": "A compact daily-carry for lighter days.",
+        "status": "2026"
+      },
+      {
+        "label": "03",
+        "name": "Name to come",
+        "tagline": "Higher capacity for those who go further.",
+        "status": "2027"
+      },
+      {
+        "label": "04",
+        "name": "Name to come",
+        "tagline": "A modular platform that scales with you.",
+        "status": "On the horizon"
+      }
+    ],
+    "signup_label": "Early access",
+    "signup_prompt": "Hear about Vol. 02 first.",
+    "email_placeholder": "Email address",
     "cta_button": "Sign up",
-    "cta_success": "You're on the list. We'll email you when the next product drops."
+    "cta_sending": "Sending",
+    "cta_success": "You're on the list. We'll email when Vol. 02 takes shape.",
+    "cta_error": "Something went wrong. Try again."
   },
   "buy_box": {
     "eyebrow": "Order now",

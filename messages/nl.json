@@ -1,7 +1,4 @@
 {
-  "announcement": {
-    "default": "Titan X nu beschikbaar — meer producten binnenkort."
-  },
   "navigation": {
     "products": "Producten",
     "shop": "Shop",
@@ -35,11 +32,43 @@
     "back_to_home": "Terug naar home"
   },
   "more_products_coming_soon": {
-    "title": "Meer producten komen eraan",
-    "body": "TitanBanks bouwt een portable-power ecosystem. Titan X is de eerste stap. Schrijf je in om als eerste te horen wat volgt.",
-    "cta_email": "E-mailadres",
+    "eyebrow": "Roadmap",
+    "volume_mark": "Vol. 01 / ∞",
+    "title": "Eén power bank vandaag. Een platform morgen.",
+    "intro": "TitanBanks bouwt geen one-product-store. Titan X is Vol. 01 van een familie portable-power-tools. Hieronder zie je waar we heen gaan — eerlijk, ook waar de naam nog niet vaststaat.",
+    "items": [
+      {
+        "label": "01",
+        "name": "Titan X",
+        "tagline": "50.000 mAh · 6 devices · matte black",
+        "status": "Nu beschikbaar"
+      },
+      {
+        "label": "02",
+        "name": "Naam volgt",
+        "tagline": "Compactere daily-carry voor lichtere dagen.",
+        "status": "2026"
+      },
+      {
+        "label": "03",
+        "name": "Naam volgt",
+        "tagline": "Hogere capaciteit voor wie verder gaat.",
+        "status": "2027"
+      },
+      {
+        "label": "04",
+        "name": "Naam volgt",
+        "tagline": "Een modulair platform dat met je meeschaalt.",
+        "status": "Op de horizon"
+      }
+    ],
+    "signup_label": "Vroeg-toegang",
+    "signup_prompt": "Hoor over Vol. 02 als eerste.",
+    "email_placeholder": "E-mailadres",
     "cta_button": "Aanmelden",
-    "cta_success": "Je staat op de lijst. We mailen zodra er iets nieuws is."
+    "cta_sending": "Bezig",
+    "cta_success": "Je staat op de lijst. We mailen wanneer Vol. 02 vorm krijgt.",
+    "cta_error": "Er ging iets mis. Probeer het opnieuw."
   },
   "buy_box": {
     "eyebrow": "Bestel direct",
