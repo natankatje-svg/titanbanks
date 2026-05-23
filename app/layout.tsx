@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
+import { Manrope, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
 import './globals.css';
 
-const barlowCondensed = Barlow_Condensed({
+const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['600', '700', '800', '900'],
+  weight: ['400', '500', '700', '800'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -67,7 +67,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const locale = await getLocale();
   const messages = await getMessages();
   return (
-    <html lang={locale} className={`${barlowCondensed.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
+    <html lang={locale} className={`${manrope.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
       <body className="bg-black text-white antialiased">
         <GA4Loader />
         <NextIntlClientProvider locale={locale} messages={messages}>
