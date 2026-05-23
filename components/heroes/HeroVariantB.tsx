@@ -1,8 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
-import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Zap, Check, ChevronDown } from 'lucide-react';
 import { useEcwid } from '../EcwidProvider';
 import {
@@ -39,32 +38,9 @@ export default function HeroVariantB() {
   const contentY    = useTransform(scrollYProgress, [0, 1], [0, 55]);
   const contentFade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
-  const prefersReducedMotion = useReducedMotion();
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, { stiffness: 100, damping: 18, mass: 0.5 });
-  const springY = useSpring(mouseY, { stiffness: 100, damping: 18, mass: 0.5 });
-  const tiltY = useTransform(springX, [-0.5, 0.5], [-7, 7]);
-  const tiltX = useTransform(springY, [-0.5, 0.5], [5, -5]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (prefersReducedMotion) return;
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
-    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
   return (
     <section
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] text-white"
     >
       {/* Layer 0 — Particle Drift ambient background video. Mobile uses
@@ -196,43 +172,9 @@ export default function HeroVariantB() {
           zaklamp en tot {SPECS.simultaneousDevices.value} devices tegelijk. Gebouwd voor wie niet kan stoppen.
         </motion.p>
 
-        {/* Product image — spotlit */}
-        <div style={{ perspective: '900px' }}>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.88, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.95, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mb-8 flex items-center justify-center"
-          style={prefersReducedMotion ? undefined : { rotateX: tiltX, rotateY: tiltY, transformStyle: 'preserve-3d' as const }}
-        >
-          <motion.div
-            animate={{ opacity: [0.5, 1, 0.5], scale: [0.95, 1.05, 0.95] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute rounded-full blur-[80px] pointer-events-none"
-            style={{
-              width: '280px',
-              height: '280px',
-              background: 'radial-gradient(ellipse, rgba(255,107,0,0.30) 0%, rgba(14,181,200,0.09) 55%, transparent 80%)',
-            }}
-          />
-          <div
-            className="absolute rounded-full blur-[50px] opacity-40 pointer-events-none"
-            style={{ width: '180px', height: '180px', background: 'rgba(255,107,0,0.14)' }}
-          />
-          <Image
-            src="/images/product-hero.jpg"
-            alt={`${BRAND.wordmark} ${BRAND.product} — ${capacityLabel()} power bank in matte black`}
-            width={900}
-            height={1060}
-            className="relative z-10 h-auto object-contain"
-            style={{
-              width: 'clamp(260px, 45vw, 420px)',
-              filter: 'drop-shadow(0 28px 56px rgba(0,0,0,0.70)) drop-shadow(0 0 44px rgba(255,107,0,0.28))',
-            }}
-            priority
-          />
-        </motion.div>
-        </div>
+        {/* Hero foreground bewust leeg gelaten — de Particle Drift video
+            mag het canvas dragen. Productshots staan in de gallery-sectie
+            direct hieronder. */}
 
         {/* Price + CTA — prijs alleen renderen wanneer CONFIRMED */}
         <motion.div

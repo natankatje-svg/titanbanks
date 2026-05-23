@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import AnnouncementBar from '@/components/AnnouncementBar';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
@@ -38,7 +37,6 @@ export default function ShopPage() {
   return (
     <main className="relative bg-[#0A0A0A] overflow-x-hidden">
       <JsonLd />
-      <AnnouncementBar />
       <Navigation />
       <Hero />
       <TrustBar />

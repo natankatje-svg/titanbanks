@@ -55,8 +55,12 @@ export default function Navigation() {
 
   function NavLinkItem({ link }: { link: NavLink }) {
     const active = pathname.startsWith(link.href);
-    const className = `relative font-mono text-[0.72rem] uppercase tracking-[0.18em] transition-colors duration-200 hover:text-white ${
-      active ? 'text-white' : 'text-[#888888]'
+    // font-body (Plus Jakarta Sans) ipv font-mono — mono leest op kleine
+    // schermhoogte als 'vet' door de hoge stroke-dichtheid. Body sans-serif
+    // op 0.875rem met medium tracking blijft editorial maar leest een stuk
+    // rustiger en helderder.
+    const className = `relative font-body text-[0.875rem] font-medium uppercase tracking-[0.14em] transition-colors duration-200 hover:text-white ${
+      active ? 'text-white' : 'text-[#C5C5C5]'
     }`;
     return (
       <Link href={link.href} className={className}>
@@ -64,7 +68,7 @@ export default function Navigation() {
         {active && (
           <motion.div
             layoutId="nav-indicator"
-            className="absolute -bottom-1 left-0 right-0 h-px bg-[#FF6B00]"
+            className="absolute -bottom-1.5 left-0 right-0 h-px bg-[#FF6B00]"
             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
           />
         )}
