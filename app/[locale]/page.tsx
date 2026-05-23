@@ -3,19 +3,22 @@ import AnnouncementBar from '@/components/AnnouncementBar';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
-import HeroTeaser from '@/components/teaser/HeroTeaser';
-import CounterStrip from '@/components/CounterStrip';
-import UspSections from '@/components/teaser/UspSections';
-import LifestyleStrip from '@/components/teaser/LifestyleStrip';
+import Hero from '@/components/heroes/HeroVariantB';
+import TrustBar from '@/components/TrustBar';
+import ImageSlider, { type SliderImage } from '@/components/ImageSlider';
+import UseCases from '@/components/UseCases';
+import ProductShowcase from '@/components/ProductShowcase';
 import CalculatorPromo from '@/components/CalculatorPromo';
 import MoreProductsComingSoon from '@/components/MoreProductsComingSoon';
-import ImageSlider, { type SliderImage } from '@/components/ImageSlider';
-import WaitlistForm from '@/components/teaser/WaitlistForm';
+import FAQ from '@/components/FAQ';
+import FinalCTA from '@/components/FinalCTA';
+import StickyBuyBar from '@/components/StickyBuyBar';
+import CartExitPopup from '@/components/CartExitPopup';
 import { BRAND, capacityLabel } from '@/lib/product-claims';
 
-// 6 product renders uit /public/images/ — bestaande assets uit Day 1 audit.
+// 6 product renders voor de homepage gallery.
 const homepageSliderImages: SliderImage[] = [
-  { src: '/images/product-hero.jpg', alt: `${BRAND.product} — hero shot, matte black ${capacityLabel()} power bank` },
+  { src: '/images/product-hero.jpg', alt: `${BRAND.product} — hero, matte black ${capacityLabel()} power bank` },
   { src: '/images/product-angle.jpg', alt: `${BRAND.product} — angled view tonen vorm en gevlochten draaglus` },
   { src: '/images/product-top.jpg', alt: `${BRAND.product} — top view met LED-display zichtbaar` },
   { src: '/images/product-ports.jpg', alt: `${BRAND.product} — poorten close-up: 4× USB-A, 1× USB-C, 1× Micro-USB` },
@@ -24,8 +27,8 @@ const homepageSliderImages: SliderImage[] = [
 ];
 
 export const metadata: Metadata = {
-  title: `${BRAND.product} — Outlast the day. | ${BRAND.wordmark}`,
-  description: `${capacityLabel()}. Six devices at once. The drop is coming. Join the ${BRAND.wordmark} waitlist for the first batch of the ${BRAND.product} power bank.`,
+  title: `${BRAND.product} — ${capacityLabel()} power bank | ${BRAND.wordmark}`,
+  description: `${capacityLabel()}. Zes devices tegelijk. Gebouwd voor wie niet kan stoppen. ${BRAND.wordmark} Titan X premium power bank.`,
   alternates: { canonical: 'https://titan-banks.com/nl' },
 };
 
@@ -34,19 +37,18 @@ export default function Home() {
     <main className="relative bg-[#0A0A0A] overflow-x-hidden">
       <JsonLd />
       <AnnouncementBar />
-      <Navigation mode="teaser" />
-      <HeroTeaser />
-      <CounterStrip />
-      <UspSections />
+      <Navigation />
+      <Hero />
+      <TrustBar />
 
-      {/* V2 Day 4 — productvisuals slider, drives naar /shop */}
-      <section className="py-20 bg-[#0A0A0A]">
+      {/* Brand-narrative: product visuals gallery */}
+      <section className="py-20 lg:py-24 bg-[#0A0A0A]">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-6 h-px bg-[#FF6B00]" />
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
-                Product · {BRAND.product}
+                {BRAND.product} · gallery
               </span>
               <div className="w-6 h-px bg-[#FF6B00]" />
             </div>
@@ -61,11 +63,15 @@ export default function Home() {
         </div>
       </section>
 
-      <LifestyleStrip />
+      <UseCases />
+      <ProductShowcase />
       <CalculatorPromo />
       <MoreProductsComingSoon />
-      <WaitlistForm />
+      <FAQ />
+      <FinalCTA />
       <Footer />
+      <StickyBuyBar />
+      <CartExitPopup enabledPaths={['/nl', '/en', '/de', '/nl/shop', '/en/shop', '/de/shop']} />
     </main>
   );
 }

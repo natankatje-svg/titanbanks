@@ -247,10 +247,15 @@ export const FORBIDDEN_PHRASES = [
 // =============================================
 
 export const LAUNCH_STATE = {
-  /** Site is pre-launch — geen echte reviews/klantbase nog. */
+  /** Site is pre-launch — geen echte reviews/klantbase nog (Reviews-component
+   *  blijft pre-launch placeholder). */
   isPreLaunch: true,
-  /** Mag waitlist tonen i.p.v. Buy-CTA? Set true tot Ecwid + prijs bevestigd. */
-  waitlistMode: true,
+  /**
+   * Waitlist-modus is per 2026-05-23 UIT — V2 webshop toont direct Buy-CTA's.
+   * Zie [[feedback-titanbanks-no-teaser-no-preview]]. CTA-fallback naar
+   *  `#waitlist` werkt niet meer; alles drijft naar Ecwid addToCart of /shop.
+   */
+  waitlistMode: false,
 } as const;
 
 // =============================================

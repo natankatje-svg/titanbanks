@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import UseCases from '@/components/UseCases';
-import LifestyleStrip from '@/components/teaser/LifestyleStrip';
+import LifestyleStrip from '@/components/LifestyleStrip';
 import CalculatorPromo from '@/components/CalculatorPromo';
 import { BRAND } from '@/lib/product-claims';
 

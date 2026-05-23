@@ -4,13 +4,12 @@ import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'Privacy | TITANBANKS',
-  robots: { index: false, follow: false },
 };
 
 export default function PrivacyPage() {
   return (
     <main className="relative bg-black min-h-screen text-white">
-      <Navigation mode="teaser" />
+      <Navigation />
       <section className="max-w-3xl mx-auto px-6 pt-32 pb-24">
         <div className="section-label mb-4 flex items-center gap-3">
           <div className="w-6 h-px bg-[#FF6B00]" />
