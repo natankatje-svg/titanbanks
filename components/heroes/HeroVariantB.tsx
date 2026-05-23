@@ -1,8 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Zap, Check, ChevronDown } from 'lucide-react';
+import { Zap, Check, ChevronDown, Plus, Minus, Truck } from 'lucide-react';
 import { useEcwid } from '../EcwidProvider';
 import ImageSlider, { type SliderImage } from '../ImageSlider';
 import {
@@ -42,14 +42,25 @@ const heroSliderImages: SliderImage[] = [
   { src: '/images/product-isometric.jpg', alt: `${BRAND.product} — isometric productshot` },
 ];
 
+const PAYMENT_METHODS = ['iDEAL', 'Apple Pay', 'Klarna', 'Visa', 'Mastercard', 'PayPal'];
+
 export default function HeroVariantB() {
   const { addToCart } = useEcwid();
+  const [qty, setQty] = useState(1);
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   // Content fades + drifts naar boven naarmate je scrolt — niet te aggressief
   // zodat alle conversie-elementen (price/CTA) gewoon bereikbaar blijven.
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 30]);
   const contentFade = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+
+  const onBuy = () => {
+    if (LAUNCH_STATE.waitlistMode) {
+      window.location.href = '#waitlist';
+      return;
+    }
+    addToCart(qty);
+  };
 
   return (
     <section
@@ -202,52 +213,134 @@ export default function HeroVariantB() {
           />
         </motion.div>
 
-        {/* Below-carousel content: subdued recap, conversion, trust, specs */}
+        {/* Below-carousel content — functions als een echte listing:
+            stock-badge, recap, price, qty-selector, primary CTA, payment
+            methods, secure-checkout note, trust badges, specs.
+            Quantity wordt doorgegeven aan addToCart → Ecwid order →
+            ChannelDock → fulfilment center. */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.42 }}
-          className="w-full max-w-2xl flex flex-col items-center"
+          className="w-full max-w-xl flex flex-col items-center"
         >
+          {/* In-stock badge */}
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
+            style={{
+              background: 'rgba(34,197,94,0.08)',
+              border: '1px solid rgba(34,197,94,0.25)',
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-emerald-300">
+              Op voorraad · eerste batch
+            </span>
+          </div>
+
           {/* Compact recap-paragraph */}
-          <p className="font-body text-gray-300 text-base leading-relaxed mb-7">
+          <p className="font-body text-gray-300 text-base leading-relaxed mb-7 text-center">
             {capacityLabel()} in matte black. LED-display met exact percentage, ingebouwde
             zaklamp en tot {SPECS.simultaneousDevices.value} devices tegelijk. Gebouwd voor
             wie niet kan stoppen.
           </p>
 
-          {/* Price + Primary CTA */}
+          {/* Listing block — price + qty + CTA, glass-card stijl voor focus */}
           {(priceLabel() || LAUNCH_STATE.waitlistMode) && (
-            <div className="flex flex-col sm:flex-row items-center gap-5 mb-4">
-              {priceLabel() && (
-                <div className="flex flex-col items-center sm:items-start gap-1">
-                  <div className="flex items-end gap-2.5">
-                    <span
-                      className="font-display leading-none text-white"
-                      style={{ fontSize: 'clamp(2.2rem, 6vw, 2.8rem)', fontWeight: 700 }}
-                    >
-                      {priceLabel()}
-                    </span>
-                    {anchorPriceLabel() && (
-                      <span className="font-body text-gray-500 text-sm line-through leading-none mb-[3px]">
-                        {anchorPriceLabel()}
+            <div
+              className="w-full rounded-2xl p-5 sm:p-6 mb-4"
+              style={{
+                background:
+                  'linear-gradient(135deg, rgba(255,107,0,0.05) 0%, rgba(14,181,200,0.025) 100%)',
+                border: '1px solid rgba(255,107,0,0.18)',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+                {/* Price */}
+                {priceLabel() && (
+                  <div className="flex flex-col items-center sm:items-start gap-1">
+                    <div className="flex items-end gap-2.5">
+                      <span
+                        className="font-display leading-none text-white"
+                        style={{ fontSize: 'clamp(2.4rem, 6vw, 3rem)', fontWeight: 700 }}
+                      >
+                        {priceLabel()}
                       </span>
-                    )}
+                      {anchorPriceLabel() && (
+                        <span className="font-body text-gray-500 text-sm line-through leading-none mb-[3px]">
+                          {anchorPriceLabel()}
+                        </span>
+                      )}
+                    </div>
+                    <span className="font-body text-gray-500 text-[10px]">incl. BTW</span>
                   </div>
-                  <span className="font-body text-gray-600 text-[10px]">incl. BTW</span>
-                </div>
-              )}
-              {LAUNCH_STATE.waitlistMode ? (
-                <a href="#waitlist" className="btn-orange">
-                  <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
-                  Join waitlist
-                </a>
-              ) : (
-                <button onClick={addToCart} className="btn-orange">
-                  <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
-                  Bestel {BRAND.product}
-                </button>
-              )}
+                )}
+
+                {/* Qty selector — passed through to Ecwid → ChannelDock */}
+                {!LAUNCH_STATE.waitlistMode && (
+                  <div className="flex flex-col items-center sm:items-start gap-2">
+                    <label className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[#888888]">
+                      Aantal
+                    </label>
+                    <div className="inline-flex items-stretch rounded-lg overflow-hidden border border-white/[0.10]">
+                      <button
+                        onClick={() => setQty((v) => Math.max(1, v - 1))}
+                        aria-label="Minder"
+                        className="px-3 hover:bg-white/[0.05] transition-colors text-[#A0A0A0]"
+                        type="button"
+                      >
+                        <Minus className="w-3.5 h-3.5" />
+                      </button>
+                      <span className="px-5 py-2.5 font-display text-lg text-white min-w-[56px] text-center">
+                        {qty}
+                      </span>
+                      <button
+                        onClick={() => setQty((v) => Math.min(5, v + 1))}
+                        aria-label="Meer"
+                        className="px-3 hover:bg-white/[0.05] transition-colors text-[#A0A0A0]"
+                        type="button"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Primary CTA */}
+              <button
+                onClick={onBuy}
+                className="btn-orange w-full justify-center mt-5"
+                style={{ padding: '0.9rem 1.6rem', fontSize: '0.85rem' }}
+              >
+                <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
+                {LAUNCH_STATE.waitlistMode ? 'Join waitlist' : `Bestel ${BRAND.product}`}
+              </button>
+
+              {/* Payment methods row */}
+              <div className="flex flex-wrap items-center gap-1.5 justify-center mt-4">
+                {PAYMENT_METHODS.map((m) => (
+                  <span
+                    key={m}
+                    className="font-mono text-[0.58rem] uppercase tracking-[0.1em] px-2 py-0.5 rounded text-[#9CA3AF] border border-white/[0.07] bg-white/[0.03]"
+                  >
+                    {m}
+                  </span>
+                ))}
+              </div>
+
+              {/* Secure checkout + shipping line */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5 mt-4 text-center">
+                <span className="inline-flex items-center gap-1.5 font-body text-[#888888] text-[11px]">
+                  <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                  Veilig betalen
+                </span>
+                <span className="inline-flex items-center gap-1.5 font-body text-[#888888] text-[11px]">
+                  <Truck className="w-3 h-3 text-[#0EB5C8] flex-shrink-0" />
+                  Verzending uit NL · 1-3 werkdagen
+                </span>
+              </div>
             </div>
           )}
 

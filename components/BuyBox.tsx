@@ -33,7 +33,7 @@ export default function BuyBox() {
       window.location.href = '#waitlist';
       return;
     }
-    addToCart();
+    addToCart(qty);
   };
 
   return (

@@ -34,8 +34,14 @@ declare global {
 }
 
 interface EcwidContextType {
-  /** Add Titan X to cart and open the cart popup */
-  addToCart: () => void;
+  /**
+   * Add the Titan X to the Ecwid cart. Defaults to 1 unit; pass a higher
+   * quantity from a quantity selector. The Ecwid order — including the
+   * exact quantity — is what ChannelDock pulls and forwards to the
+   * fulfilment center, so this value must reflect the actual purchase
+   * intent.
+   */
+  addToCart: (quantity?: number) => void;
   /** Open the cart without adding */
   openCart: () => void;
   /** True once the Ecwid API is loaded and ready */
@@ -53,16 +59,18 @@ export const useEcwid = () => useContext(EcwidContext);
 export default function EcwidProvider({ children }: { children: ReactNode }) {
   const [isReady, setIsReady] = useState(false);
 
-  const addToCart = useCallback(() => {
+  const addToCart = useCallback((quantity: number = 1) => {
     if (typeof window === 'undefined') return;
     const { Ecwid } = window;
     if (!Ecwid) {
-      console.warn('[Ecwid] Not loaded yet — configure ECWID_STORE_ID in lib/ecwid-config.ts');
+      console.warn(
+        '[Ecwid] Not loaded yet — configure ECWID_STORE_ID + ECWID_PRODUCT_ID in lib/ecwid-config.ts',
+      );
       return;
     }
     Ecwid.Cart.addProduct({
       id: ECWID_PRODUCT_ID,
-      quantity: 1,
+      quantity: Math.max(1, Math.floor(quantity)),
       callback: () => Ecwid.openPage('cart'),
     });
   }, []);
