@@ -1,0 +1,44 @@
+{
+  "announcement": {
+    "default": "Titan X jetzt verfügbar — weitere Produkte folgen."
+  },
+  "navigation": {
+    "products": "Produkte",
+    "shop": "Shop",
+    "technology": "Technologie",
+    "calculator": "Rechner",
+    "story": "Geschichte",
+    "mission": "Mission",
+    "support": "Support",
+    "contact": "Kontakt",
+    "faq": "FAQ",
+    "reviews": "Bewertungen",
+    "in_use": "Im Einsatz",
+    "cta_buy": "Titan X bestellen",
+    "cta_waitlist": "Auf die Warteliste",
+    "language": "Sprache"
+  },
+  "footer": {
+    "tagline": "Premium-Powerbanks. Für die, die nicht aufhören.",
+    "group_product": "Produkt",
+    "group_company": "Unternehmen",
+    "group_legal": "Rechtliches",
+    "legal_privacy": "Datenschutz",
+    "legal_terms": "AGB",
+    "legal_policies": "Versand, Rückgabe, Garantie & Cookies",
+    "copyright": "Alle Rechte vorbehalten.",
+    "payment_line": "Sicheres Bezahlen · iDEAL · Apple Pay · Visa · Mastercard"
+  },
+  "common": {
+    "loading": "Wird geladen…",
+    "see_more": "Mehr ansehen",
+    "back_to_home": "Zur Startseite"
+  },
+  "more_products_coming_soon": {
+    "title": "Weitere Produkte folgen",
+    "body": "TitanBanks baut ein Ökosystem für mobile Energie. Titan X ist der erste Schritt. Trage dich ein, um als Erste:r zu erfahren, was als Nächstes kommt.",
+    "cta_email": "E-Mail-Adresse",
+    "cta_button": "Anmelden",
+    "cta_success": "Du bist auf der Liste. Wir melden uns, sobald das nächste Produkt kommt."
+  }
+}

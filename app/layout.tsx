@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Barlow_Condensed, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
+import { getLocale } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
 import './globals.css';
@@ -58,9 +59,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // getLocale() valt terug op defaultLocale ('nl') voor non-locale routes (/preview, /preview2).
+  // Voor /[locale]/* routes geeft het 'nl' | 'en' | 'de' uit de URL.
+  const locale = await getLocale();
   return (
-    <html lang="nl" className={`${barlowCondensed.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
+    <html lang={locale} className={`${barlowCondensed.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
       <body className="bg-black text-white antialiased">
         <GA4Loader />
         <EcwidProvider>{children}</EcwidProvider>

@@ -1,0 +1,44 @@
+{
+  "announcement": {
+    "default": "Titan X nu beschikbaar — meer producten binnenkort."
+  },
+  "navigation": {
+    "products": "Producten",
+    "shop": "Shop",
+    "technology": "Technologie",
+    "calculator": "Calculator",
+    "story": "Verhaal",
+    "mission": "Missie",
+    "support": "Support",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "reviews": "Reviews",
+    "in_use": "In gebruik",
+    "cta_buy": "Bestel Titan X",
+    "cta_waitlist": "Join waitlist",
+    "language": "Taal"
+  },
+  "footer": {
+    "tagline": "Premium power banks. Gebouwd voor wie niet kan stoppen.",
+    "group_product": "Product",
+    "group_company": "Bedrijf",
+    "group_legal": "Juridisch",
+    "legal_privacy": "Privacybeleid",
+    "legal_terms": "Algemene voorwaarden",
+    "legal_policies": "Verzending, retour, garantie en cookies",
+    "copyright": "Alle rechten voorbehouden.",
+    "payment_line": "Veilig betalen · iDEAL · Apple Pay · Visa · Mastercard"
+  },
+  "common": {
+    "loading": "Laden…",
+    "see_more": "Bekijk meer",
+    "back_to_home": "Terug naar home"
+  },
+  "more_products_coming_soon": {
+    "title": "Meer producten komen eraan",
+    "body": "TitanBanks bouwt een portable-power ecosystem. Titan X is de eerste stap. Schrijf je in om als eerste te horen wat volgt.",
+    "cta_email": "E-mailadres",
+    "cta_button": "Aanmelden",
+    "cta_success": "Je staat op de lijst. We mailen zodra er iets nieuws is."
+  }
+}

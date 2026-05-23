@@ -1,0 +1,44 @@
+{
+  "announcement": {
+    "default": "Titan X available now — more products coming soon."
+  },
+  "navigation": {
+    "products": "Products",
+    "shop": "Shop",
+    "technology": "Technology",
+    "calculator": "Calculator",
+    "story": "Story",
+    "mission": "Mission",
+    "support": "Support",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "reviews": "Reviews",
+    "in_use": "In Use",
+    "cta_buy": "Buy Titan X",
+    "cta_waitlist": "Join waitlist",
+    "language": "Language"
+  },
+  "footer": {
+    "tagline": "Premium power banks. Built for people who can't stop.",
+    "group_product": "Product",
+    "group_company": "Company",
+    "group_legal": "Legal",
+    "legal_privacy": "Privacy Policy",
+    "legal_terms": "Terms & Conditions",
+    "legal_policies": "Shipping, returns, warranty & cookies",
+    "copyright": "All rights reserved.",
+    "payment_line": "Secure checkout · iDEAL · Apple Pay · Visa · Mastercard"
+  },
+  "common": {
+    "loading": "Loading…",
+    "see_more": "See more",
+    "back_to_home": "Back to home"
+  },
+  "more_products_coming_soon": {
+    "title": "More products coming soon",
+    "body": "TitanBanks is building a portable-power ecosystem. Titan X is the first step. Sign up to hear what comes next, first.",
+    "cta_email": "Email address",
+    "cta_button": "Sign up",
+    "cta_success": "You're on the list. We'll email you when the next product drops."
+  }
+}

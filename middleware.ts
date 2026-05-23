@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import createIntlMiddleware from 'next-intl/middleware';
+import { routing } from './i18n/routing';
 
 // Site-wide HTTP Basic Auth for private preview deploys.
 // Disable by setting BASIC_AUTH_ENABLED=false (defaults to ON in production).
-
 const REALM = 'TitanBanks Preview';
 
 function unauthorized(): NextResponse {
@@ -14,9 +15,9 @@ function unauthorized(): NextResponse {
   });
 }
 
-export function middleware(req: NextRequest): NextResponse {
+function checkBasicAuth(req: NextRequest): NextResponse | null {
   if (process.env.BASIC_AUTH_ENABLED === 'false') {
-    return NextResponse.next();
+    return null;
   }
 
   const user = process.env.BASIC_AUTH_USER;
@@ -26,7 +27,7 @@ export function middleware(req: NextRequest): NextResponse {
   // op Preview. We laten preview-URLs zonder auth door — de URL zelf is al
   // niet-discoverable. Production blijft fail-closed.
   if (process.env.VERCEL_ENV === 'preview' && (!user || !password)) {
-    return NextResponse.next();
+    return null;
   }
 
   if (!user || !password) {
@@ -49,12 +50,38 @@ export function middleware(req: NextRequest): NextResponse {
     return unauthorized();
   }
 
-  return NextResponse.next();
+  return null;
+}
+
+const intlMiddleware = createIntlMiddleware(routing);
+
+// Routes that bypass next-intl: internal previews + api. These don't need
+// locale-detection or /[locale]/-prefix redirects.
+function isNonI18nRoute(pathname: string): boolean {
+  return (
+    pathname.startsWith('/preview') ||
+    pathname.startsWith('/preview2') ||
+    pathname.startsWith('/api')
+  );
+}
+
+export default function middleware(req: NextRequest): NextResponse {
+  // 1) Basic Auth eerst — fail-closed voor heel de site.
+  const authResponse = checkBasicAuth(req);
+  if (authResponse) return authResponse;
+
+  // 2) Non-i18n routes (interne previews + api) skippen next-intl.
+  if (isNonI18nRoute(req.nextUrl.pathname)) {
+    return NextResponse.next();
+  }
+
+  // 3) i18n routes: next-intl handelt locale-detection en /[locale]/-prefix.
+  return intlMiddleware(req);
 }
 
 export const config = {
-  // Protect everything except Next internals, static files, and the
-  // health/sitemap/robots endpoints that should stay public for crawlers
-  // (note: while gated, robots and sitemap won't actually be indexed).
+  // Sluit Next internals + statische bestanden + robots/sitemap uit.
+  // Robots en sitemap blijven publiek voor crawlers (zelfs achter Basic Auth
+  // werden ze al niet geserveerd; matcher hier is alleen voor performance).
   matcher: ['/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)'],
 };
