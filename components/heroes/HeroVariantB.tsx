@@ -4,9 +4,9 @@ import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Zap, Check, ChevronDown, Plus, Minus, Truck } from 'lucide-react';
 import { useEcwid } from '../EcwidProvider';
-import ImageSlider, { type SliderImage } from '../ImageSlider';
 import { FloatingPaths } from '@/components/ui/background-paths';
-import { EtherealShadow } from '@/components/ui/etheral-shadow';
+import { MeshGradientBg } from '@/components/ui/mesh-gradient-bg';
+import { ProductCard, type ProductImagesProps } from '@/components/ui/product-card';
 import {
   BRAND,
   SPECS,
@@ -34,14 +34,58 @@ const specs = [
   { value: 'LED', unit: '', label: 'Display' },
 ];
 
-// 6 product renders die de Titan X als featured product tonen.
-const heroSliderImages: SliderImage[] = [
-  { src: '/images/product-hero.jpg', alt: `${BRAND.product} — hero shot, matte black ${capacityLabel()} power bank` },
-  { src: '/images/product-angle.jpg', alt: `${BRAND.product} — angled view met geweven draaglus` },
-  { src: '/images/product-top.jpg', alt: `${BRAND.product} — top view met LED-display zichtbaar` },
-  { src: '/images/product-ports.jpg', alt: `${BRAND.product} — poorten close-up: 4× USB-A, 1× USB-C, 1× Micro-USB` },
-  { src: '/images/product-dark.jpg', alt: `${BRAND.product} — dark studio shot` },
-  { src: '/images/product-isometric.jpg', alt: `${BRAND.product} — isometric productshot` },
+// Hero gallery — 8 slides (slot 2-9 marketplace renders).
+// Structuur: images[0] = hoofdafbeelding, images[1] = hover-reveal detail.
+// thumbnail = product clean shot als thumbnail-navigatie indicator.
+const heroGalleryImages: ProductImagesProps[] = [
+  {
+    id: 'slide-features',
+    label: 'Features overzicht',
+    thumbnail: '/images/product-hero.jpg',
+    images: ['/images/slots/slot-02.png', '/images/product-hero.jpg'],
+  },
+  {
+    id: 'slide-quality',
+    label: 'Build quality close-up',
+    thumbnail: '/images/product-angle.jpg',
+    images: ['/images/slots/slot-03.png', '/images/product-angle.jpg'],
+  },
+  {
+    id: 'slide-dimensions',
+    label: 'Afmetingen & schaal',
+    thumbnail: '/images/product-top.jpg',
+    images: ['/images/slots/slot-04.png', '/images/product-top.jpg'],
+  },
+  {
+    id: 'slide-lifestyle',
+    label: 'Lifestyle gebruik',
+    thumbnail: '/images/titanx/clean/lifestyle-auto.png',
+    images: ['/images/slots/slot-05.png', '/images/titanx/clean/lifestyle-auto.png'],
+  },
+  {
+    id: 'slide-inbox',
+    label: "What's in the box",
+    thumbnail: '/images/product-dark.jpg',
+    images: ['/images/slots/slot-06.png', '/images/product-dark.jpg'],
+  },
+  {
+    id: 'slide-social',
+    label: 'Social proof',
+    thumbnail: '/images/product-isometric.jpg',
+    images: ['/images/slots/slot-07.png', '/images/product-isometric.jpg'],
+  },
+  {
+    id: 'slide-compare',
+    label: 'Vergelijking met concurrentie',
+    thumbnail: '/images/product-ports.jpg',
+    images: ['/images/slots/slot-08.png', '/images/product-ports.jpg'],
+  },
+  {
+    id: 'slide-benefits',
+    label: 'Alle voordelen',
+    thumbnail: '/images/titanx/clean/usp-build.png',
+    images: ['/images/slots/slot-09.png', '/images/titanx/clean/usp-build.png'],
+  },
 ];
 
 const PAYMENT_METHODS = ['iDEAL', 'Apple Pay', 'Klarna', 'Visa', 'Mastercard', 'PayPal'];
@@ -69,6 +113,12 @@ export default function HeroVariantB() {
       ref={ref}
       className="relative flex flex-col overflow-hidden bg-[#050505] text-white"
     >
+      {/* Layer 0 — MeshGradient WebGL background: brand-oranje × teal × zwart.
+          Twee mesh-lagen: solide basis + subtiele wireframe overlay voor diepte. */}
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+        <MeshGradientBg />
+      </div>
+
       {/* Layer 2 — radial vignette: open center, dark edges */}
       <div
         className="absolute inset-0"
@@ -96,21 +146,6 @@ export default function HeroVariantB() {
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full blur-[160px] pointer-events-none"
         style={{ zIndex: 2, background: 'rgba(255,107,0,0.07)' }}
       />
-
-      {/* Layer 2.5 — Ethereal Shadow: geanimeerde organische blob in brand-oranje.
-          Zit ONDER de FloatingPaths zodat de lijnen boven het vloeiende veld zweven.
-          Opacity 0.28 = zichtbaar maar niet dominerend over carousel + tekst. */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: 2, opacity: 0.28 }}
-      >
-        <EtherealShadow
-          color="rgba(255, 107, 0, 1)"
-          animation={{ scale: 55, speed: 30 }}
-          noise={{ opacity: 0.4, scale: 1.1 }}
-          sizing="fill"
-        />
-      </div>
 
       {/* Layer 3 — FloatingPaths: oranje SVG-lijnanimaties als ambient texture.
           Beide richtingen (position 1 en -1) voor symmetrische compositie.
@@ -203,19 +238,20 @@ export default function HeroVariantB() {
           <span className="text-gradient-orange">zonder stroom.</span>
         </motion.p>
 
-        {/* CAROUSEL — visueel centrum. Vervangt zowel de oude productfoto in
-            de hero als de "Every angle. Every detail."-sectie eronder. */}
+        {/* GALLERY — ProductCard structuur: hover-reveal + thumbnail navigatie.
+            Slot 2-9 marketplace renders als hoofdafbeelding, clean product shots
+            als hover-reveal en thumbnail indicator. */}
         <motion.div
           initial={{ opacity: 0, y: 24, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.85, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full max-w-4xl mb-12"
+          className="w-full max-w-3xl mb-12"
         >
-          <ImageSlider
-            images={heroSliderImages}
-            aspectRatio="4/3"
-            loop
-            autoplayMs={6500}
+          <ProductCard
+            id="hero-gallery"
+            images={heroGalleryImages}
+            aspectClass="aspect-[4/3]"
+            showThumbs
           />
         </motion.div>
 

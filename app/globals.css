@@ -362,3 +362,7 @@ body::after {
     transition: none !important;
   }
 }
+
+.card-image {
+    @apply object-contain absolute bottom-8 max-h-[50%] mt-auto max-w-[80%] left-1/2 -translate-x-1/2 pointer-events-none
+}
