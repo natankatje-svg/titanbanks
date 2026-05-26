@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Zap, Check, ChevronDown, Plus, Minus, Truck } from 'lucide-react';
 import { useEcwid } from '../EcwidProvider';
 import ImageSlider, { type SliderImage } from '../ImageSlider';
+import { FloatingPaths } from '@/components/ui/background-paths';
+import { EtherealShadow } from '@/components/ui/etheral-shadow';
 import {
   BRAND,
   SPECS,
@@ -67,26 +69,6 @@ export default function HeroVariantB() {
       ref={ref}
       className="relative flex flex-col overflow-hidden bg-[#050505] text-white"
     >
-      {/* Layer 0 — Particle Drift ambient background video. Wordt vervangen
-          door een sci-fi Titan X render zodra die geleverd wordt; zelfde
-          donkere stijl, zelfde 16:9 source-aspect. */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/hero/titan-x-particle-drift-poster.jpg"
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-center motion-reduce:hidden pointer-events-none"
-        style={{ zIndex: 0 }}
-      >
-        <source src="/hero/titan-x-particle-drift-16x9.mp4" type="video/mp4" />
-      </video>
-
-      {/* Layer 1 — base dark overlay zodat tekst leesbaar blijft op de video */}
-      <div className="absolute inset-0 bg-black/45" style={{ zIndex: 1 }} />
-
       {/* Layer 2 — radial vignette: open center, dark edges */}
       <div
         className="absolute inset-0"
@@ -112,8 +94,32 @@ export default function HeroVariantB() {
       {/* Layer 2 — ambient orange glow */}
       <div
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full blur-[160px] pointer-events-none"
-        style={{ zIndex: 2, background: 'rgba(255,107,0,0.045)' }}
+        style={{ zIndex: 2, background: 'rgba(255,107,0,0.07)' }}
       />
+
+      {/* Layer 2.5 — Ethereal Shadow: geanimeerde organische blob in brand-oranje.
+          Zit ONDER de FloatingPaths zodat de lijnen boven het vloeiende veld zweven.
+          Opacity 0.28 = zichtbaar maar niet dominerend over carousel + tekst. */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ zIndex: 2, opacity: 0.28 }}
+      >
+        <EtherealShadow
+          color="rgba(255, 107, 0, 1)"
+          animation={{ scale: 55, speed: 30 }}
+          noise={{ opacity: 0.4, scale: 1.1 }}
+          sizing="fill"
+        />
+      </div>
+
+      {/* Layer 3 — FloatingPaths: oranje SVG-lijnanimaties als ambient texture.
+          Beide richtingen (position 1 en -1) voor symmetrische compositie.
+          Opacity is laag gehouden (max ~0.45 per pad) zodat de video en tekst
+          niet concurreren met de animatie. */}
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 3 }}>
+        <FloatingPaths position={1} />
+        <FloatingPaths position={-1} />
+      </div>
 
       {/* Layer 10 — main content. Section is taller than viewport: hero stack
           (brand → product name → motto → carousel → conversion) leeft op
