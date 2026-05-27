@@ -34,11 +34,20 @@
     "featured_product": "Featured Product",
     "motto_lead": "Nie wieder",
     "motto_accent": "ohne Strom.",
+    "tagline_accent": "Nie wieder ohne Strom.",
+    "stock_badge": "Erste Charge · {count} verfügbar",
+    "cta_buy_now": "Jetzt bestellen",
     "cta_claim": "Jetzt sichern",
     "cta_waitlist": "Auf die Warteliste",
+    "view_full_listing": "Vollständiges Listing ansehen →",
+    "trust_inline": "Versand aus NL · 1-3 Werktage · {days} Tage Rückgabe · sicheres Bezahlen",
     "price_incl_vat": "inkl. MwSt.",
     "trust_shipping": "Versand aus NL · 1-3 Werktage",
     "trust_returns": "{days} Tage Rückgabe",
+    "spec_icons": {
+      "devices": "{n} Geräte",
+      "display": "LED %"
+    },
     "specs_open": "Vollständige Specs anzeigen",
     "specs_close": "Specs ausblenden",
     "usps": {

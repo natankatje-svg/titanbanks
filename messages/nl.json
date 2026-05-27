@@ -34,11 +34,20 @@
     "featured_product": "Featured product",
     "motto_lead": "Nooit meer",
     "motto_accent": "zonder stroom.",
+    "tagline_accent": "Nooit meer zonder stroom.",
+    "stock_badge": "Eerste batch · {count} beschikbaar",
+    "cta_buy_now": "Bestel nu",
     "cta_claim": "Claim yours",
     "cta_waitlist": "Join de waitlist",
+    "view_full_listing": "Bekijk volledige listing →",
+    "trust_inline": "Verzending NL · 1-3 werkdagen · {days}d retour · veilig betalen",
     "price_incl_vat": "incl. BTW",
     "trust_shipping": "Verzending NL · 1-3 werkdagen",
     "trust_returns": "{days} dagen retour",
+    "spec_icons": {
+      "devices": "{n} devices",
+      "display": "LED %"
+    },
     "specs_open": "Bekijk uitgebreide specs",
     "specs_close": "Verberg specs",
     "usps": {
