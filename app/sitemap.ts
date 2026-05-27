@@ -21,7 +21,6 @@ const routes: RouteSpec[] = [
   { path: 'shop', priority: 0.95, changeFrequency: 'weekly', exists: true },
   { path: 'products', priority: 0.85, changeFrequency: 'monthly', exists: true },
   { path: 'technology', priority: 0.8, changeFrequency: 'monthly', exists: true },
-  { path: 'calculator', priority: 0.75, changeFrequency: 'monthly', exists: true },
   { path: 'in-use', priority: 0.7, changeFrequency: 'monthly', exists: true },
   { path: 'story', priority: 0.6, changeFrequency: 'monthly', exists: true },
   { path: 'mission', priority: 0.6, changeFrequency: 'monthly', exists: true },

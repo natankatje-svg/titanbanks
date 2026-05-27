@@ -13,7 +13,6 @@ const nextConfig = {
     const routes = [
       'shop',
       'technology',
-      'calculator',
       'in-use',
       'story',
       'reviews',

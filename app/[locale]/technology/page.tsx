@@ -5,7 +5,6 @@ import JsonLd from '@/components/JsonLd';
 import Features from '@/components/Features';
 import FlashlightSection from '@/components/FlashlightSection';
 import Comparison from '@/components/Comparison';
-import CalculatorPromo from '@/components/CalculatorPromo';
 import { BRAND } from '@/lib/product-claims';
 
 export const metadata: Metadata = {
@@ -23,7 +22,6 @@ export default function TechnologyPage() {
         <Features />
         <FlashlightSection />
         <Comparison />
-        <CalculatorPromo />
       </div>
       <Footer />
     </main>

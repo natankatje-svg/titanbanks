@@ -116,7 +116,7 @@ export default function Hero() {
                 Join waitlist
               </a>
             ) : (
-              <button onClick={addToCart} className="btn-orange">
+              <button onClick={() => addToCart()} className="btn-orange">
                 <Zap className="w-5 h-5 fill-white" />
                 Bestel {BRAND.product}
               </button>

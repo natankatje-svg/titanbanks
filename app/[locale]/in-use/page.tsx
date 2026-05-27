@@ -3,7 +3,6 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import UseCases from '@/components/UseCases';
 import LifestyleStrip from '@/components/LifestyleStrip';
-import CalculatorPromo from '@/components/CalculatorPromo';
 import { BRAND } from '@/lib/product-claims';
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ export default function InUsePage() {
       <div className="pt-24">
         <UseCases />
         <LifestyleStrip />
-        <CalculatorPromo />
       </div>
       <Footer />
     </main>

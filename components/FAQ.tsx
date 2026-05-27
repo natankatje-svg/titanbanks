@@ -10,7 +10,7 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     q: 'Hoe vaak kan ik mijn devices opladen met Titan X?',
-    a: 'Titan X heeft een capaciteit van 50.000 mAh — voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele en voor moderne laptops 1–2 keer (via USB-C). Gebruik de Power Calculator op de site voor een schatting per device.',
+    a: 'Titan X heeft een capaciteit van 50.000 mAh — voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele en voor moderne laptops 1–2 keer (via USB-C).',
   },
   {
     q: 'Welke apparaten kan ik opladen?',

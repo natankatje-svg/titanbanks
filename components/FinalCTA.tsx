@@ -169,7 +169,7 @@ export default function FinalCTA() {
                   Join waitlist
                 </a>
               ) : (
-                <button onClick={addToCart} className="btn-orange flex items-center gap-2.5 px-10 py-5 text-xl">
+                <button onClick={() => addToCart()} className="btn-orange flex items-center gap-2.5 px-10 py-5 text-xl">
                   <Zap className="w-5 h-5 fill-white text-white" />
                   Bestel {BRAND.product}
                 </button>

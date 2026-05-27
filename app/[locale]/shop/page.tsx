@@ -11,7 +11,6 @@ import PortsVisual from '@/components/PortsVisual';
 import ShippingReturnsWarranty from '@/components/ShippingReturnsWarranty';
 import FAQ from '@/components/FAQ';
 import StickyBuyBar from '@/components/StickyBuyBar';
-import CalculatorPromo from '@/components/CalculatorPromo';
 import CartExitPopup from '@/components/CartExitPopup';
 import { BRAND, capacityLabel } from '@/lib/product-claims';
 
@@ -56,9 +55,6 @@ export default function ShopPage() {
 
       {/* V2 sectie 8 — Ports & features diagram */}
       <PortsVisual />
-
-      {/* Calculator promo bridge */}
-      <CalculatorPromo />
 
       {/* V2 sectie 8 — Shipping/Returns/Warranty summary cards */}
       <ShippingReturnsWarranty />

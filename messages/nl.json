@@ -3,7 +3,6 @@
     "products": "Producten",
     "shop": "Shop",
     "technology": "Technologie",
-    "calculator": "Calculator",
     "story": "Verhaal",
     "mission": "Missie",
     "support": "Support",
@@ -30,6 +29,43 @@
     "loading": "Laden…",
     "see_more": "Bekijk meer",
     "back_to_home": "Terug naar home"
+  },
+  "hero": {
+    "featured_product": "Featured product",
+    "motto_lead": "Nooit meer",
+    "motto_accent": "zonder stroom.",
+    "cta_claim": "Claim yours",
+    "cta_waitlist": "Join de waitlist",
+    "price_incl_vat": "incl. BTW",
+    "trust_shipping": "Verzending NL · 1-3 werkdagen",
+    "trust_returns": "{days} dagen retour",
+    "specs_open": "Bekijk uitgebreide specs",
+    "specs_close": "Verberg specs",
+    "usps": {
+      "capacity": { "value": "", "tail": "— nooit meer leeg onderweg" },
+      "devices": { "value": "6 devices", "tail": "tegelijk laden via 4× USB-A + USB-C" },
+      "fastcharge": { "value": "", "tail": "fast charge — snel weer vol" },
+      "display": { "value": "LED display", "tail": "— precies percentage, geen gokken" },
+      "flashlight": { "value": "Zaklamp + draagriem", "tail": "· gebouwd om mee te nemen" }
+    },
+    "specs": {
+      "capacity": "Capaciteit",
+      "ports": "Poorten",
+      "fastcharge": "Fast charge",
+      "display": "Display",
+      "flashlight": "Zaklamp",
+      "cables": "Kabels",
+      "finish": "Afwerking",
+      "weight": "Gewicht",
+      "dimensions": "Afmetingen",
+      "certifications": "Certificering"
+    },
+    "spec_values": {
+      "yes": "Ja",
+      "led_percent": "LED met %",
+      "retractable": "Ingebouwd, intrekbaar",
+      "finish_matte_black": "Mat zwart"
+    }
   },
   "feature_bento": {
     "eyebrow": "Specs",

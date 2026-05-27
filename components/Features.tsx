@@ -247,7 +247,7 @@ export default function Features() {
             </a>
           ) : (
             <button
-              onClick={addToCart}
+              onClick={() => addToCart()}
               className="btn-ghost flex-shrink-0 flex items-center gap-2"
               style={{ padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}
             >

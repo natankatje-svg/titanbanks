@@ -6,7 +6,6 @@ import Hero from '@/components/heroes/HeroVariantB';
 import TrustBar from '@/components/TrustBar';
 import UseCases from '@/components/UseCases';
 import FeatureBento from '@/components/FeatureBento';
-import CalculatorPromo from '@/components/CalculatorPromo';
 import MoreProductsComingSoon from '@/components/MoreProductsComingSoon';
 import FAQ from '@/components/FAQ';
 import FinalCTA from '@/components/FinalCTA';
@@ -29,7 +28,6 @@ export default function Home() {
       <TrustBar />
       <UseCases />
       <FeatureBento />
-      <CalculatorPromo />
       <MoreProductsComingSoon />
       <FAQ />
       <FinalCTA />

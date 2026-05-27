@@ -20,7 +20,6 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { tKey: 'shop', href: '/shop' },
   { tKey: 'technology', href: '/technology' },
-  { tKey: 'calculator', href: '/calculator' },
   { tKey: 'story', href: '/story' },
   { tKey: 'support', href: '/support' },
 ];
@@ -105,7 +104,7 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-5">
           <LanguageSwitcher />
           <button
-            onClick={addToCart}
+            onClick={() => addToCart()}
             className="btn-orange"
             style={{ padding: '0.55rem 1.4rem', fontSize: '0.78rem', letterSpacing: '0.06em' }}
           >
@@ -116,7 +115,7 @@ export default function Navigation() {
         {/* Mobile: Buy CTA + menu toggle */}
         <div className="flex md:hidden items-center gap-2">
           <button
-            onClick={addToCart}
+            onClick={() => addToCart()}
             className="btn-orange"
             style={{ padding: '0.45rem 1rem', fontSize: '0.72rem', letterSpacing: '0.06em' }}
           >

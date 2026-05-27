@@ -25,7 +25,7 @@ const faqSchema = {
       name: `Hoe vaak laadt ${BRAND.product} mijn devices op?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `${BRAND.product} heeft een capaciteit van ${capacityLabel()}. Voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele en voor moderne laptops 1–2 keer via USB-C. Gebruik de Power Calculator voor een schatting per device.`,
+        text: `${BRAND.product} heeft een capaciteit van ${capacityLabel()}. Voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele en voor moderne laptops 1–2 keer via USB-C.`,
       },
     },
     {

@@ -17,7 +17,9 @@ export function MeshGradientBg() {
     /* Wrapper op opacity 0.55 — gradient is subtiel, fungeert als
        warm ambient licht achter de FloatingPaths, niet als hoofdelement. */
     <div className="absolute inset-0 w-full h-full" style={{ opacity: 0.55 }}>
-      {/* Laag A — puur warm-oranje gradient, geen teal/blauw */}
+      {/* Laag A — puur warm-oranje gradient. backgroundColor + wireframe
+          worden gecast omdat de library deze props runtime accepteert maar
+          ze nog niet in de geëxporteerde TypeScript types staan. */}
       <MeshGradient
         className="absolute inset-0 w-full h-full"
         colors={[
@@ -28,7 +30,7 @@ export function MeshGradientBg() {
           '#3D1600', // donker amber
         ]}
         speed={0.2}
-        backgroundColor="#050505"
+        {...({ backgroundColor: '#050505' } as Record<string, unknown>)}
       />
 
       {/* Laag B — wireframe overlay, puur oranje tint, lage opacity */}
@@ -42,8 +44,7 @@ export function MeshGradientBg() {
           '#5C2200',
         ]}
         speed={0.12}
-        wireframe
-        backgroundColor="transparent"
+        {...({ wireframe: true, backgroundColor: 'transparent' } as Record<string, unknown>)}
       />
     </div>
   );

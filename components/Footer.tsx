@@ -33,7 +33,6 @@ const productLinks: FooterLink[] = [
   { tKey: 'products', href: '/products' },
   { tKey: 'shop', href: '/shop' },
   { tKey: 'technology', href: '/technology' },
-  { tKey: 'calculator', href: '/calculator' },
   { tKey: 'in_use', href: '/in-use' },
 ];
 

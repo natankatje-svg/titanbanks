@@ -3,7 +3,6 @@
     "products": "Products",
     "shop": "Shop",
     "technology": "Technology",
-    "calculator": "Calculator",
     "story": "Story",
     "mission": "Mission",
     "support": "Support",
@@ -30,6 +29,43 @@
     "loading": "Loading…",
     "see_more": "See more",
     "back_to_home": "Back to home"
+  },
+  "hero": {
+    "featured_product": "Featured product",
+    "motto_lead": "Never run",
+    "motto_accent": "out of power.",
+    "cta_claim": "Claim yours",
+    "cta_waitlist": "Join the waitlist",
+    "price_incl_vat": "incl. VAT",
+    "trust_shipping": "Ships from NL · 1-3 business days",
+    "trust_returns": "{days}-day returns",
+    "specs_open": "View full specs",
+    "specs_close": "Hide specs",
+    "usps": {
+      "capacity": { "value": "", "tail": "— never empty on the road" },
+      "devices": { "value": "6 devices", "tail": "charging at once via 4× USB-A + USB-C" },
+      "fastcharge": { "value": "", "tail": "fast charge — back to full fast" },
+      "display": { "value": "LED display", "tail": "— exact percentage, no guessing" },
+      "flashlight": { "value": "Flashlight + carry loop", "tail": "· built to go where you go" }
+    },
+    "specs": {
+      "capacity": "Capacity",
+      "ports": "Ports",
+      "fastcharge": "Fast charge",
+      "display": "Display",
+      "flashlight": "Flashlight",
+      "cables": "Cables",
+      "finish": "Finish",
+      "weight": "Weight",
+      "dimensions": "Dimensions",
+      "certifications": "Certifications"
+    },
+    "spec_values": {
+      "yes": "Yes",
+      "led_percent": "LED with %",
+      "retractable": "Built-in, retractable",
+      "finish_matte_black": "Matte black"
+    }
   },
   "feature_bento": {
     "eyebrow": "Specs",
