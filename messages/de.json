@@ -65,6 +65,34 @@
       "led_percent": "LED mit %",
       "retractable": "Integriert, einziehbar",
       "finish_matte_black": "Mattschwarz"
+    },
+    "carousel": {
+      "steps": {
+        "capacity": {
+          "name": "Kapazität",
+          "title": "50.000 mAh in Mattschwarz",
+          "description": "Ein Pack, tagelang Strom. LED-Display zeigt den exakten Prozentwert — kein Raten mehr.",
+          "alt": "Titan X Powerbank — Hero-Shot mit LED-Display auf 100 %"
+        },
+        "lifestyle": {
+          "name": "Unterwegs",
+          "title": "Gebaut zum Mitnehmen",
+          "description": "Auf der Fahrt, im Auto, im Zelt. Titan X lädt, wo du bist — Outdoor, Work-from-anywhere, Notfälle.",
+          "alt": "Titan X im Einsatz — unterwegs"
+        },
+        "build": {
+          "name": "Build",
+          "title": "Premium-Build, kein Plastikgefühl",
+          "description": "Mattschwarzes Gehäuse, orangefarbene gewebte Trageschlaufe mit geprägtem POWER BANK, bündige gummierte Anschlüsse.",
+          "alt": "Titan X Close-up — Build-Quality-Details"
+        },
+        "benefits": {
+          "name": "Vorteile",
+          "title": "Alles, was du brauchst",
+          "description": "6 Geräte gleichzeitig · 22.5W Fast Charge · LED-Display · Taschenlampe · Mattschwarz. Kein Marketing-Geschwafel.",
+          "alt": "Titan X — Übersicht aller Vorteile"
+        }
+      }
     }
   },
   "feature_bento": {

@@ -11,7 +11,6 @@ import PortsVisual from '@/components/PortsVisual';
 import ShippingReturnsWarranty from '@/components/ShippingReturnsWarranty';
 import FAQ from '@/components/FAQ';
 import StickyBuyBar from '@/components/StickyBuyBar';
-import CartExitPopup from '@/components/CartExitPopup';
 import { BRAND, capacityLabel } from '@/lib/product-claims';
 
 // 8 product renders voor de PDP image slider. Mix van studio + lifestyle + detail.
@@ -62,7 +61,6 @@ export default function ShopPage() {
       <FAQ />
       <Footer />
       <StickyBuyBar />
-      <CartExitPopup enabledPaths={['/nl/shop', '/en/shop', '/de/shop']} />
     </main>
   );
 }

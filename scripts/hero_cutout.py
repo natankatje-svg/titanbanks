@@ -23,6 +23,9 @@ session = new_session("isnet-general-use")
 SOURCES = [
     ROOT / "public" / "images" / "titanx" / "clean" / "hero-warm-rim.png",
     ROOT / "public" / "images" / "slots" / "slot-02.png",
+    ROOT / "public" / "images" / "slots" / "slot-03.png",
+    ROOT / "public" / "images" / "slots" / "slot-05.png",
+    ROOT / "public" / "images" / "slots" / "slot-09.png",
 ]
 
 for src in SOURCES:

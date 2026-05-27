@@ -14,9 +14,6 @@ type EventName =
   | 'waitlist_submit_success'
   | 'waitlist_submit_error'
   | 'sticky_buy_click'
-  | 'cart_exit_popup_shown'
-  | 'cart_exit_popup_dismiss'
-  | 'cart_exit_popup_submit'
   | 'faq_open'
   | 'video_play'
   | 'video_complete';
@@ -74,8 +71,4 @@ export const analytics = {
   stickyBuyClick: () => track('sticky_buy_click'),
   faqOpen: (questionId: string) => track('faq_open', { question_id: questionId }),
   videoPlay: (videoId: string) => track('video_play', { video_id: videoId }),
-  cartExitShown: () => track('cart_exit_popup_shown'),
-  cartExitDismiss: () => track('cart_exit_popup_dismiss'),
-  cartExitSubmit: (email: string) =>
-    track('cart_exit_popup_submit', { email_domain: email.split('@')[1] || 'unknown' }),
 };

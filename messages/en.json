@@ -65,6 +65,34 @@
       "led_percent": "LED with %",
       "retractable": "Built-in, retractable",
       "finish_matte_black": "Matte black"
+    },
+    "carousel": {
+      "steps": {
+        "capacity": {
+          "name": "Capacity",
+          "title": "50,000 mAh in matte black",
+          "description": "One pack, days of power. LED display shows exact percentage — no guessing left.",
+          "alt": "Titan X power bank — hero shot with LED display at 100%"
+        },
+        "lifestyle": {
+          "name": "On the road",
+          "title": "Built to go where you go",
+          "description": "On the trip, in the car, at the festival. Titan X charges where you are — outdoor, work-from-anywhere, emergencies.",
+          "alt": "Titan X in real-life use — on the road"
+        },
+        "build": {
+          "name": "Build",
+          "title": "Premium build, no plastic feel",
+          "description": "Matte black shell, orange woven carry loop with embossed POWER BANK, ports flush and rubberized.",
+          "alt": "Titan X close-up — build quality details"
+        },
+        "benefits": {
+          "name": "Benefits",
+          "title": "Everything you need",
+          "description": "6 devices at once · 22.5W fast charge · LED display · flashlight · matte black. No marketing fluff.",
+          "alt": "Titan X — overview of all benefits"
+        }
+      }
     }
   },
   "feature_bento": {

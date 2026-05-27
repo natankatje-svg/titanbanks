@@ -8,6 +8,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { FloatingPaths } from '@/components/ui/background-paths';
 import { MeshGradientBg } from '@/components/ui/mesh-gradient-bg';
+import FeatureShowcaseCarousel from '@/components/FeatureShowcaseCarousel';
 import {
   BRAND,
   SPECS,
@@ -157,17 +158,14 @@ export default function HeroVariantB() {
         <div aria-hidden className="hidden lg:block lg:min-h-[480px]" />
 
         <div className="flex flex-col items-start text-left max-w-xl lg:max-w-[560px] lg:pl-2">
-          {/* MOBILE-only cutout in-flow bovenaan, compact */}
-          <div className="lg:hidden relative w-full h-[200px] mb-3 -mt-2">
-            <Image
-              src="/images/titanx/cutout/slot-02-cutout.png"
-              alt=""
-              fill
-              priority
-              sizes="100vw"
-              className="object-contain object-center select-none"
-            />
-          </div>
+          {/* MOBILE-only feature-carousel — vervangt de statische cutout.
+              4-stap auto-cycling slider met cutouts + i18n copy. Compact
+              size zodat CTA-button above-the-fold blijft op iPhone-viewport. */}
+          <FeatureShowcaseCarousel
+            compact
+            idPrefix="hero-mobile"
+            className="lg:hidden mb-4 -mt-1"
+          />
 
           {/* Featured-product eyebrow */}
           <motion.div

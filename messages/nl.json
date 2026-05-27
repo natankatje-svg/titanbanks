@@ -65,6 +65,34 @@
       "led_percent": "LED met %",
       "retractable": "Ingebouwd, intrekbaar",
       "finish_matte_black": "Mat zwart"
+    },
+    "carousel": {
+      "steps": {
+        "capacity": {
+          "name": "Capaciteit",
+          "title": "50.000 mAh in matte black",
+          "description": "Eén pack, dagen aan power. LED-display toont het exacte percentage, geen gokken meer.",
+          "alt": "Titan X powerbank — hero shot met LED display op 100%"
+        },
+        "lifestyle": {
+          "name": "Onderweg",
+          "title": "Gebouwd om mee te nemen",
+          "description": "Op de rit, in de auto, in de tent. Titan X laadt waar jij bent — auto, festival, outdoor, work-from-anywhere.",
+          "alt": "Titan X in lifestyle gebruik — onderweg"
+        },
+        "build": {
+          "name": "Build",
+          "title": "Premium build, geen plastic gevoel",
+          "description": "Matte black behuizing, oranje geweven draagriem met embossed POWER BANK, ports flush en gerubberd.",
+          "alt": "Titan X close-up — build quality details"
+        },
+        "benefits": {
+          "name": "Voordelen",
+          "title": "Alles wat je nodig hebt",
+          "description": "6 devices tegelijk · 22.5W fast charge · LED display · zaklamp · matte black. Geen marketing-fluff.",
+          "alt": "Titan X — overzicht van alle voordelen"
+        }
+      }
     }
   },
   "feature_bento": {
