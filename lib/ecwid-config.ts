@@ -58,5 +58,12 @@
 //
 // =============================================
 
-export const ECWID_STORE_ID = 'YOUR_STORE_ID';      // bijv. '12345678'
-export const ECWID_PRODUCT_ID = 0;                   // bijv. 987654321
+// Geëxtraheerd uit de officiële Ecwid-embed-code (xProductBrowser snippet,
+// 2026-05-28). Het getal achter `script.js?` is de canonical store-id en
+// is dezelfde ID die de REST API verwacht op /api/v3/{storeId}/.
+export const ECWID_STORE_ID = '136509793';
+
+// Wordt automatisch ingevuld door scripts/ecwid-sync.ts na de eerste sync.
+// Tot dan staat hij op 0 — de hero "Bestel nu"-knop opent in dat geval
+// alleen de cart-overlay zonder product (Ecwid logt een no-op warning).
+export const ECWID_PRODUCT_ID = 0;
