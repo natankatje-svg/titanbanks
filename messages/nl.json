@@ -30,6 +30,28 @@
     "see_more": "Bekijk meer",
     "back_to_home": "Terug naar home"
   },
+  "scenes": {
+    "eyebrow": "Gebouwd om mee te nemen",
+    "title": "Eén power bank. Elke situatie.",
+    "cards": {
+      "capacity": {
+        "title": "50.000 mAh in matte black",
+        "description": "Eén pack, dagen aan power. LED-display toont exact percentage."
+      },
+      "lifestyle": {
+        "title": "Op de rit. In de auto. Onderweg.",
+        "description": "Cup-holder formaat, draagriem voor de hand. Outdoor, work-from-anywhere, road trip."
+      },
+      "ports": {
+        "title": "6 devices tegelijk",
+        "description": "4× USB-A · 1× USB-C · 22.5W fast charge. Niemand wacht op zijn beurt."
+      },
+      "flashlight": {
+        "title": "Ingebouwde zaklamp",
+        "description": "Voor de tent, de garage, of de stroomstoring. Eén knop, helder licht."
+      }
+    }
+  },
   "hero": {
     "featured_product": "Featured product",
     "motto_lead": "Nooit meer",

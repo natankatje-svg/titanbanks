@@ -30,6 +30,28 @@
     "see_more": "Mehr ansehen",
     "back_to_home": "Zur Startseite"
   },
+  "scenes": {
+    "eyebrow": "Gebaut zum Mitnehmen",
+    "title": "Eine Powerbank. Jede Situation.",
+    "cards": {
+      "capacity": {
+        "title": "50.000 mAh in Mattschwarz",
+        "description": "Ein Pack, tagelang Strom. LED-Display zeigt den exakten Prozentwert."
+      },
+      "lifestyle": {
+        "title": "Auf der Fahrt. Im Auto. Unterwegs.",
+        "description": "Cup-Holder-Format, Trageschlaufe bereit. Outdoor, Work-from-anywhere, Road Trip."
+      },
+      "ports": {
+        "title": "6 Geräte gleichzeitig",
+        "description": "4× USB-A · 1× USB-C · 22,5W Fast Charge. Niemand wartet auf seinen Turn."
+      },
+      "flashlight": {
+        "title": "Integrierte Taschenlampe",
+        "description": "Für das Zelt, die Garage oder den Stromausfall. Ein Knopf, helles Licht."
+      }
+    }
+  },
   "hero": {
     "featured_product": "Featured Product",
     "motto_lead": "Nie wieder",

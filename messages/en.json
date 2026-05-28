@@ -30,6 +30,28 @@
     "see_more": "See more",
     "back_to_home": "Back to home"
   },
+  "scenes": {
+    "eyebrow": "Built to go where you go",
+    "title": "One power bank. Every situation.",
+    "cards": {
+      "capacity": {
+        "title": "50,000 mAh in matte black",
+        "description": "One pack, days of power. LED display shows the exact percentage."
+      },
+      "lifestyle": {
+        "title": "On the road. In the car. Anywhere.",
+        "description": "Cup-holder sized, carry loop ready. Outdoor, work-from-anywhere, road trip."
+      },
+      "ports": {
+        "title": "6 devices at once",
+        "description": "4× USB-A · 1× USB-C · 22.5W fast charge. No one waits their turn."
+      },
+      "flashlight": {
+        "title": "Built-in flashlight",
+        "description": "For the tent, the garage, or the blackout. One button, bright light."
+      }
+    }
+  },
   "hero": {
     "featured_product": "Featured product",
     "motto_lead": "Never run",
