@@ -18,7 +18,7 @@ const pdpSliderImages: SliderImage[] = [
   { src: '/images/product-hero.jpg', alt: `${BRAND.product} — hero, matte black ${capacityLabel()} power bank` },
   { src: '/images/product-angle.jpg', alt: `${BRAND.product} — angled view tonen vorm en gevlochten draaglus` },
   { src: '/images/product-top.jpg', alt: `${BRAND.product} — top view met LED-display zichtbaar` },
-  { src: '/images/product-ports.jpg', alt: `${BRAND.product} — poorten close-up: 4× USB-A, 1× USB-C, 1× Micro-USB` },
+  { src: '/images/product-ports.jpg', alt: `${BRAND.product} — 4× USB-A poorten plus ingebouwde USB-C en Lightning kabels` },
   { src: '/images/product-ports-angle.jpg', alt: `${BRAND.product} — poorten en zaklamp detail` },
   { src: '/images/product-dark.jpg', alt: `${BRAND.product} — dark studio shot` },
   { src: '/images/product-isometric.jpg', alt: `${BRAND.product} — isometric productshot` },

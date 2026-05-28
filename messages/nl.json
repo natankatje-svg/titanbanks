@@ -31,7 +31,7 @@
     "back_to_home": "Terug naar home"
   },
   "scenes": {
-    "eyebrow": "Gebouwd om mee te nemen",
+    "eyebrow": "In gebruik",
     "title": "Eén power bank. Elke situatie.",
     "cards": {
       "capacity": {
@@ -68,7 +68,11 @@
     "trust_returns": "{days} dagen retour",
     "spec_icons": {
       "devices": "{n} devices",
-      "display": "LED %"
+      "display": "LED %",
+      "label_capacity": "Capaciteit",
+      "label_devices": "Tegelijk",
+      "label_fastcharge": "Fast charge",
+      "label_display": "Display"
     },
     "specs_open": "Bekijk uitgebreide specs",
     "specs_close": "Verberg specs",

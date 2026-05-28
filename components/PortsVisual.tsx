@@ -63,7 +63,7 @@ export default function PortsVisual() {
           >
             <Image
               src="/images/product-ports.jpg"
-              alt={`${BRAND.product} — ports detail: 4× USB-A, 1× USB-C, 1× Micro-USB input`}
+              alt={`${BRAND.product} — 4× USB-A poorten plus ingebouwde USB-C en Lightning kabels`}
               width={900}
               height={700}
               className="w-full h-auto object-cover"

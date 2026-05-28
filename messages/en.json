@@ -31,7 +31,7 @@
     "back_to_home": "Back to home"
   },
   "scenes": {
-    "eyebrow": "Built to go where you go",
+    "eyebrow": "In use",
     "title": "One power bank. Every situation.",
     "cards": {
       "capacity": {
@@ -68,7 +68,11 @@
     "trust_returns": "{days}-day returns",
     "spec_icons": {
       "devices": "{n} devices",
-      "display": "LED %"
+      "display": "LED %",
+      "label_capacity": "Capacity",
+      "label_devices": "At once",
+      "label_fastcharge": "Fast charge",
+      "label_display": "Display"
     },
     "specs_open": "View full specs",
     "specs_close": "Hide specs",

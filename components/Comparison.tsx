@@ -13,7 +13,7 @@ const rows: { feature: string; titanX: CellValue; standard: CellValue }[] = [
   { feature: 'Snellaad',                      titanX: 'yes',                standard: 'partial'    },
   { feature: 'LED-display exact %',           titanX: 'yes',                standard: 'no'         },
   { feature: 'Ingebouwde zaklamp',            titanX: 'yes',                standard: 'no'         },
-  { feature: 'Output poorten',                titanX: '4× USB-A · 1× USB-C', standard: '1–2 poorten' },
+  { feature: 'Output poorten + kabels',       titanX: '4× USB-A + ingebouwde USB-C/Lightning kabels', standard: '1–2 poorten' },
   { feature: 'Devices tegelijk',              titanX: 'tot 6',              standard: '1–2'        },
   { feature: 'Matte black build',             titanX: 'yes',                standard: 'no'         },
   { feature: 'Draaglus',                      titanX: 'yes',                standard: 'no'         },

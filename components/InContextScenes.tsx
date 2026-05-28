@@ -35,7 +35,7 @@ const SCENES: Array<{
   {
     key: 'ports',
     image: '/images/titanx/clean/usp-multi-device.png',
-    alt: '4× USB-A en USB-C poorten top-down',
+    alt: '4× USB-A poorten en ingebouwde USB-C/Lightning kabels top-down',
   },
   {
     key: 'flashlight',

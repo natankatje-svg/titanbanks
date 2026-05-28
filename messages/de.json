@@ -31,7 +31,7 @@
     "back_to_home": "Zur Startseite"
   },
   "scenes": {
-    "eyebrow": "Gebaut zum Mitnehmen",
+    "eyebrow": "Im Einsatz",
     "title": "Eine Powerbank. Jede Situation.",
     "cards": {
       "capacity": {
@@ -68,7 +68,11 @@
     "trust_returns": "{days} Tage Rückgabe",
     "spec_icons": {
       "devices": "{n} Geräte",
-      "display": "LED %"
+      "display": "LED %",
+      "label_capacity": "Kapazität",
+      "label_devices": "Gleichzeitig",
+      "label_fastcharge": "Fast charge",
+      "label_display": "Display"
     },
     "specs_open": "Vollständige Specs anzeigen",
     "specs_close": "Specs ausblenden",

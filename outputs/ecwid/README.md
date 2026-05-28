@@ -63,7 +63,7 @@ Ecwid's importer verwerpt elk bestand waarvan de kolomnamen niet exact één-op-
 | `Gallery` | slot-03/04/05/06/07/08/09 (`;`-gescheiden) | 7 extra views |
 | `Tags` | "power bank;titan x;..." | Voor interne filtering + Google Shopping |
 | `Brand` | TitanBanks | Brand-attribuut voor productpagina + structured data |
-| `Attribute: <10 stuks>` | SSOT-waarden | Renderen als spec-tabel op product page |
+| `Attribute: <11 stuks>` | SSOT-waarden | Renderen als spec-tabel op product page (incl. `Output poorten` = 4× USB-A en `Ingebouwde kabels` = USB-C + Lightning) |
 | `SEO Title` / `SEO Description` | Klant-vriendelijk gevuld | Voor Google-snippet override |
 
 ## Belangrijke setup-stappen ná de import

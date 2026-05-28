@@ -81,7 +81,9 @@ function buildDescriptionHtml(): string {
     wattage ? `<li>${wattage}W fast charge (max)</li>` : '',
     SPECS.hasLedDisplay.value ? '<li>LED-display met exact percentage</li>' : '',
     SPECS.hasFlashlight.value ? '<li>Ingebouwde zaklamp</li>' : '',
-    safe(TBD.hasRetractableCables) ? '<li>Ingebouwde, intrekbare kabels</li>' : '',
+    (SPECS.builtInCableUsbC.value && SPECS.builtInCableLightning.value)
+      ? '<li>2 ingebouwde, intrekbare kabels: USB-C + Lightning</li>'
+      : '',
     `<li>${SPECS.finish.value}, gewoven oranje draagriem (embossed POWER BANK)</li>`,
     `<li>${SPECS.warrantyYears.value} jaar fabrieksgarantie</li>`,
     certs.length ? `<li>Certificering: ${certs.join(' · ')}</li>` : '',
@@ -128,11 +130,13 @@ function buildProductPayload(categoryId: number): Record<string, unknown> {
     attributes: [
       { name: 'Capaciteit', value: capacityLabel(), show: 'DESCR' },
       { name: 'Devices tegelijk', value: String(SPECS.simultaneousDevices.value), show: 'DESCR' },
-      { name: 'Poorten', value: portsLabel(), show: 'DESCR' },
+      { name: 'Output poorten', value: `${SPECS.portsUsbA.value}× USB-A`, show: 'DESCR' },
+      (SPECS.builtInCableUsbC.value && SPECS.builtInCableLightning.value)
+        ? { name: 'Ingebouwde kabels', value: 'USB-C + Lightning (intrekbaar)', show: 'DESCR' }
+        : null,
       wattage ? { name: 'Fast charge', value: `${wattage}W max`, show: 'DESCR' } : null,
       { name: 'LED-display', value: SPECS.hasLedDisplay.value ? 'Ja' : 'Nee', show: 'DESCR' },
       { name: 'Zaklamp', value: SPECS.hasFlashlight.value ? 'Ja' : 'Nee', show: 'DESCR' },
-      safe(TBD.hasRetractableCables) ? { name: 'Kabels', value: 'Ingebouwd intrekbaar', show: 'DESCR' } : null,
       { name: 'Afwerking', value: SPECS.finish.value, show: 'DESCR' },
       weightG ? { name: 'Gewicht', value: `${weightG} g`, show: 'DESCR' } : null,
       dims ? { name: 'Afmetingen', value: dims, show: 'DESCR' } : null,

@@ -64,11 +64,12 @@ export default async function ProductsPage({
               {BRAND.product}
             </h2>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#888888] mb-5">
-              {capacityLabel()} · 6 poorten · 2 jaar garantie
+              {capacityLabel()} · 4× USB-A + ingebouwde kabels · 2 jaar garantie
             </p>
             <p className="font-body text-[#B5B5B5] leading-relaxed mb-6 max-w-md">
-              Premium powerbank in matte black. Zes devices tegelijk via 4× USB-A, 1× USB-C en
-              1× Micro-USB input. LED-display met exact percentage, ingebouwde zaklamp.
+              Premium powerbank in matte black. Zes devices tegelijk via 4× USB-A poorten plus
+              2 ingebouwde intrekbare kabels (USB-C en Lightning). LED-display met exact
+              percentage, ingebouwde zaklamp.
             </p>
             <Link
               href="/shop"

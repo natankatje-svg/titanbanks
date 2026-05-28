@@ -50,23 +50,29 @@ export const SPECS = {
     source: 'product_specs.md',
   } satisfies ProductClaim<number>,
 
+  // OUTPUT-poorten: 4× USB-A op de top-side. Géén losse USB-C of
+  // Micro-USB port — de USB-C en Lightning hieronder zijn INGEBOUWDE
+  // kabels (tethered), geen sockets. Onderscheid is belangrijk voor
+  // accurate spec-communicatie en marketplace-listings.
   portsUsbA: {
     value: 4,
     status: 'CONFIRMED',
-    source: 'product_specs.md',
+    source: 'user-correction 2026-05-28',
   } satisfies ProductClaim<number>,
 
-  portsUsbC: {
-    value: 1,
+  /** Ingebouwde, intrekbare USB-C laadkabel (tethered, geen port). */
+  builtInCableUsbC: {
+    value: true,
     status: 'CONFIRMED',
-    source: 'product_specs.md',
-  } satisfies ProductClaim<number>,
+    source: 'user-correction 2026-05-28',
+  } satisfies ProductClaim<boolean>,
 
-  portsMicroUsb: {
-    value: 1, // Micro-USB poort bestaat fysiek; output NIET claimen
+  /** Ingebouwde, intrekbare Lightning laadkabel (tethered, geen port). */
+  builtInCableLightning: {
+    value: true,
     status: 'CONFIRMED',
-    source: 'product_specs.md',
-  } satisfies ProductClaim<number>,
+    source: 'user-correction 2026-05-28',
+  } satisfies ProductClaim<boolean>,
 
   simultaneousDevices: {
     value: 6,
@@ -122,12 +128,6 @@ export const TBD = {
     status: 'CONFIRMED',
     source: 'Telegram checkpoint 1, vraag 3 — antwoord B (22.5W)',
   } satisfies ProductClaim<number>,
-
-  microUsbOutputCapable: {
-    value: false,
-    status: 'CONFIRMED',
-    source: 'Telegram checkpoint 1, vraag 4 — antwoord A (input-only)',
-  } satisfies ProductClaim<boolean>,
 
   priceEur: {
     value: 59.99,
@@ -189,6 +189,7 @@ export const TBD = {
     source: 'open — gebruiker heeft nog niet bevestigd (Panasonic NCR / LG INR / Samsung INR)',
   } satisfies ProductClaim<string>,
 
+  /** @deprecated SPECS.builtInCableUsbC + SPECS.builtInCableLightning bevatten nu de specifieke kabels. */
   hasRetractableCables: {
     value: true,
     status: 'CONFIRMED',
@@ -229,9 +230,11 @@ export const FORBIDDEN_PHRASES = [
   '100W',
   '120W',
 
-  // Micro-USB output (input-only tot bevestigd)
-  'Micro-USB output',
-  'Micro USB output',
+  // Micro-USB / extra USB-C als losse port (er zit GEEN Micro-USB port
+  // op het product, en de USB-C is een ingebouwde kabel niet een socket).
+  'Micro-USB',
+  '1× USB-C port',
+  '1× USB-C socket',
   'output via Micro-USB',
 
   // Verzonnen reviews / counts
@@ -267,9 +270,30 @@ export function capacityLabel(): string {
   return `${SPECS.capacityMah.value.toLocaleString('nl-NL')} mAh`;
 }
 
-/** "4× USB-A · 1× USB-C · 1× Micro-USB" — altijd renderbaar */
+/**
+ * "4× USB-A · ingebouwde USB-C + Lightning kabel" — altijd renderbaar.
+ *
+ * Bewust GEEN losse USB-C of Micro-USB port noemen: de USB-C en
+ * Lightning op het product zijn INGEBOUWDE/TETHERED kabels, niet
+ * sockets. Onderscheid voorkomt misleidende claims op de listing.
+ */
 export function portsLabel(): string {
-  return `${SPECS.portsUsbA.value}× USB-A · ${SPECS.portsUsbC.value}× USB-C · ${SPECS.portsMicroUsb.value}× Micro-USB`;
+  const cables: string[] = [];
+  if (SPECS.builtInCableUsbC.value) cables.push('USB-C');
+  if (SPECS.builtInCableLightning.value) cables.push('Lightning');
+  const cableStr = cables.length > 0 ? ` · ingebouwde ${cables.join(' + ')} kabel` : '';
+  return `${SPECS.portsUsbA.value}× USB-A${cableStr}`;
+}
+
+/**
+ * Compacte vorm voor specs-tabellen — "4× USB-A + USB-C/Lightning kabel".
+ */
+export function portsLabelCompact(): string {
+  const cables: string[] = [];
+  if (SPECS.builtInCableUsbC.value) cables.push('USB-C');
+  if (SPECS.builtInCableLightning.value) cables.push('Lightning');
+  const cableStr = cables.length > 0 ? ` + ${cables.join('/')} kabel` : '';
+  return `${SPECS.portsUsbA.value}× USB-A${cableStr}`;
 }
 
 /** Format euro met NL-conventie (€59,99 of €89 voor ronde getallen) */
