@@ -70,7 +70,7 @@
       },
       "ports": {
         "title": "6 devices tegelijk",
-        "description": "4× USB-A · 1× USB-C · 22.5W fast charge. Niemand wacht op zijn beurt."
+        "description": "4× USB-A · ingebouwde USB-C + Lightning kabel · 22.5W fast charge. Niemand wacht op zijn beurt."
       },
       "flashlight": {
         "title": "Ingebouwde zaklamp",
@@ -170,13 +170,13 @@
         "eyebrow": "Gelijktijdig",
         "unit": "devices",
         "title": "Zes devices, parallel.",
-        "body": "Vier USB-A, één USB-C en één Micro-USB input. Tot zes apparaten tegelijk — geen wachtrij, geen onderhandelen met vrienden over wie eerst mag laden."
+        "body": "Vier USB-A-poorten plus twee ingebouwde kabels (USB-C en Lightning). Tot zes apparaten tegelijk — geen wachtrij, geen onderhandelen met vrienden over wie eerst mag laden."
       },
       "ports": {
         "eyebrow": "Connectiviteit",
         "unit": "poorten",
         "title": "Universele uitgangen.",
-        "body": "4× USB-A · 1× USB-C · 1× Micro-USB (input). Werkt met vrijwel alles met een USB-stekker."
+        "body": "4× USB-A · ingebouwde USB-C + Lightning kabel. Werkt met vrijwel alles wat een telefoon, tablet of game-controller is."
       },
       "flashlight": {
         "eyebrow": "Extra",
@@ -250,10 +250,10 @@
     "title": "Alles wat je nodig hebt. Zes poorten parallel.",
     "usb_a": "4× USB-A",
     "usb_a_desc": "Standaard USB-A output voor smartphones, tablets, GoPro's en oordopjes.",
-    "usb_c": "1× USB-C",
-    "usb_c_desc": "USB-C output voor snelladen — laptops, moderne phones, headsets.",
-    "micro_usb": "1× Micro-USB",
-    "micro_usb_desc": "Input-only — voor het opladen van de Titan X zelf.",
+    "usb_c": "Ingebouwde USB-C kabel",
+    "usb_c_desc": "Tethered USB-C laadkabel die uit de behuizing trekt — direct aansluiten op moderne Android-phones, tablets en accessoires zonder los snoer.",
+    "micro_usb": "Ingebouwde Lightning kabel",
+    "micro_usb_desc": "Tethered Lightning laadkabel voor iPhones en iPads — altijd bij de hand, nooit een vergeten kabel.",
     "footnote": "Alle 6 poorten kunnen tegelijkertijd actief zijn."
   },
   "shipping_returns_warranty": {

@@ -70,7 +70,7 @@
       },
       "ports": {
         "title": "6 devices at once",
-        "description": "4× USB-A · 1× USB-C · 22.5W fast charge. No one waits their turn."
+        "description": "4× USB-A · built-in USB-C + Lightning cable · 22.5W fast charge. No one waits their turn."
       },
       "flashlight": {
         "title": "Built-in flashlight",
@@ -170,13 +170,13 @@
         "eyebrow": "Simultaneous",
         "unit": "devices",
         "title": "Six devices, in parallel.",
-        "body": "Four USB-A, one USB-C, one Micro-USB input. Up to six devices at once — no queue, no negotiating with friends about who charges first."
+        "body": "Four USB-A ports plus two built-in cables (USB-C and Lightning). Up to six devices at once — no queue, no negotiating with friends about who charges first."
       },
       "ports": {
         "eyebrow": "Connectivity",
         "unit": "ports",
         "title": "Universal outputs.",
-        "body": "4× USB-A · 1× USB-C · 1× Micro-USB (input). Works with virtually anything that has a USB plug."
+        "body": "4× USB-A · built-in USB-C + Lightning cable. Works with virtually anything that's a phone, tablet, or game controller."
       },
       "flashlight": {
         "eyebrow": "Extra",
@@ -250,10 +250,10 @@
     "title": "Everything you need. Six ports in parallel.",
     "usb_a": "4× USB-A",
     "usb_a_desc": "Standard USB-A output for phones, tablets, GoPros, earbuds.",
-    "usb_c": "1× USB-C",
-    "usb_c_desc": "USB-C fast-charge output — laptops, modern phones, headsets.",
-    "micro_usb": "1× Micro-USB",
-    "micro_usb_desc": "Input only — used to charge the Titan X itself.",
+    "usb_c": "Built-in USB-C cable",
+    "usb_c_desc": "Tethered USB-C charging cable that pulls out of the chassis — plug straight into modern Android phones, tablets and accessories, no loose cable required.",
+    "micro_usb": "Built-in Lightning cable",
+    "micro_usb_desc": "Tethered Lightning charging cable for iPhones and iPads — always on hand, never a forgotten cable.",
     "footnote": "All 6 ports can be active simultaneously."
   },
   "shipping_returns_warranty": {

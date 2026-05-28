@@ -70,7 +70,7 @@
       },
       "ports": {
         "title": "6 Geräte gleichzeitig",
-        "description": "4× USB-A · 1× USB-C · 22,5W Fast Charge. Niemand wartet auf seinen Turn."
+        "description": "4× USB-A · integriertes USB-C + Lightning Kabel · 22,5W Fast Charge. Niemand wartet auf seinen Turn."
       },
       "flashlight": {
         "title": "Integrierte Taschenlampe",
@@ -170,13 +170,13 @@
         "eyebrow": "Gleichzeitig",
         "unit": "Geräte",
         "title": "Sechs Geräte, parallel.",
-        "body": "Vier USB-A, ein USB-C, ein Micro-USB-Eingang. Bis zu sechs Geräte gleichzeitig — keine Warteschlange, keine Diskussion, wer zuerst lädt."
+        "body": "Vier USB-A-Ports plus zwei integrierte Kabel (USB-C und Lightning). Bis zu sechs Geräte gleichzeitig — keine Warteschlange, keine Diskussion, wer zuerst lädt."
       },
       "ports": {
         "eyebrow": "Anschlüsse",
         "unit": "Ports",
         "title": "Universelle Ausgänge.",
-        "body": "4× USB-A · 1× USB-C · 1× Micro-USB (Eingang). Funktioniert mit praktisch allem, was einen USB-Stecker hat."
+        "body": "4× USB-A · integriertes USB-C + Lightning Kabel. Funktioniert mit praktisch allem, was ein Smartphone, Tablet oder Game-Controller ist."
       },
       "flashlight": {
         "eyebrow": "Extra",
@@ -250,10 +250,10 @@
     "title": "Alles was du brauchst. Sechs Ports parallel.",
     "usb_a": "4× USB-A",
     "usb_a_desc": "Standard-USB-A-Ausgang für Smartphones, Tablets, GoPros und Earbuds.",
-    "usb_c": "1× USB-C",
-    "usb_c_desc": "USB-C Schnellladung — Laptops, moderne Smartphones, Headsets.",
-    "micro_usb": "1× Micro-USB",
-    "micro_usb_desc": "Nur Eingang — zum Aufladen der Titan X selbst.",
+    "usb_c": "Integriertes USB-C Kabel",
+    "usb_c_desc": "Aus dem Gehäuse herausziehbares USB-C Ladekabel — direkt anschließen an moderne Android-Smartphones, Tablets und Zubehör, ohne loses Kabel.",
+    "micro_usb": "Integriertes Lightning Kabel",
+    "micro_usb_desc": "Integriertes Lightning Ladekabel für iPhones und iPads — immer griffbereit, nie ein vergessenes Kabel.",
     "footnote": "Alle 6 Ports können gleichzeitig genutzt werden."
   },
   "shipping_returns_warranty": {
