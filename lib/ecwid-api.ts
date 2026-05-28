@@ -14,8 +14,6 @@
  */
 
 import { readFileSync } from 'node:fs';
-import { basename } from 'node:path';
-import FormData from 'form-data';
 
 const STORE_ID = process.env.ECWID_STORE_ID;
 const TOKEN = process.env.ECWID_ACCESS_TOKEN;
@@ -99,15 +97,18 @@ export async function ecwidPut<T>(path: string, body: unknown): Promise<T> {
 }
 
 /**
- * Upload een lokale image als multipart/form-data.
+ * Upload een lokale image naar Ecwid.
  *
  * Ecwid endpoints:
  *   - POST /products/{id}/image     → hoofdafbeelding (vervangt bestaande)
  *   - POST /products/{id}/gallery   → voegt toe aan gallery
  *
- * Belangrijk: Ecwid verwacht de file in een `image`-veld voor /image en
- * `image` voor /gallery — dezelfde key. Content-type wordt afgeleid uit
- * de file-extension; png/jpg/webp werken allemaal.
+ * Format: RAW binary in body, NIET multipart/form-data. Content-Type
+ * header expliciet zetten op het MIME-type van de file (image/png,
+ * image/jpeg, image/webp). Anders krijg je 422 'Uploaded file cannot
+ * be processed' — dat is de gebruikelijke Ecwid-fout bij multipart.
+ *
+ * Bron: api-docs.ecwid.com/reference/upload-product-image
  */
 export async function ecwidUploadImage(
   path: string,
@@ -115,23 +116,29 @@ export async function ecwidUploadImage(
 ): Promise<{ id: number }> {
   const { base, token } = requireCreds();
   const buffer = readFileSync(localFilePath);
-  const filename = basename(localFilePath);
 
-  const form = new FormData();
-  form.append('image', buffer, { filename });
+  // MIME-type uit file-extension afleiden (.png/.jpg/.jpeg/.webp)
+  const ext = (localFilePath.split('.').pop() || '').toLowerCase();
+  const contentType =
+    ext === 'png' ? 'image/png' :
+    ext === 'webp' ? 'image/webp' :
+    ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' :
+    'application/octet-stream';
 
-  // form-data heeft een eigen fetch-incompatible body type op oudere Node.
-  // Op Node 18+ accepteert undici de native FormData; we casten naar BodyInit.
+  // Convert Node Buffer → Uint8Array zodat fetch (undici) hem accepteert
+  // als BodyInit zonder typing-issues.
+  const body = new Uint8Array(buffer);
+
   const res = await fetch(`${base}${path}`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
-      ...form.getHeaders(),
+      'Content-Type': contentType,
     },
-    body: form as unknown as BodyInit,
+    body,
   });
 
-  return handleResponse<{ id: number }>(res, `POST ${path} (multipart)`);
+  return handleResponse<{ id: number }>(res, `POST ${path} (binary ${contentType})`);
 }
 
 // ─── Type-shapes voor de endpoints die we gebruiken ────────────────────────

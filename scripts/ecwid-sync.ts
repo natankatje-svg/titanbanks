@@ -212,17 +212,23 @@ async function uploadImages(productId: number): Promise<void> {
     'slot-09.png',
   ];
 
-  // Main image (vervangt bestaande)
+  // Main image (vervangt bestaande). Try/catch zodat een falende main
+  // niet de gallery-uploads blokkeert.
   const mainPath = resolve(ROOT, 'public', 'images', 'slots', slots[0]);
   log(`→ Main image upload: ${slots[0]}`);
   if (DRY_RUN) {
     log(`[dry] zou POST /products/${productId}/image (${mainPath})`);
   } else {
-    const r = await ecwidUploadImage(`/products/${productId}/image`, mainPath);
-    log(`✓ Main image (id: ${r.id})`);
+    try {
+      const r = await ecwidUploadImage(`/products/${productId}/image`, mainPath);
+      log(`✓ Main image (id: ${r.id})`);
+    } catch (e) {
+      log(`✗ Main upload faalde voor ${slots[0]}: ${(e as Error).message}`);
+    }
   }
 
-  // Gallery (rest)
+  // Gallery (rest) — per-image try/catch zodat één failure de rest
+  // niet ophoudt; we krijgen liever 7/8 dan 0/8.
   for (const slot of slots.slice(1)) {
     const path = resolve(ROOT, 'public', 'images', 'slots', slot);
     log(`→ Gallery image upload: ${slot}`);
@@ -267,8 +273,10 @@ async function main() {
     const category = await ensureCategory();
     const productId = await upsertProduct(category.id);
     if (productId > 0) {
-      await uploadImages(productId);
+      // Persist FIRST — zodat zelfs als image-uploads later falen, de
+      // cart-button live-gewired is met de juiste Product ID.
       persistIdsToConfig(productId);
+      await uploadImages(productId);
     }
     log(`═══ Sync ${DRY_RUN ? 'dry-run ' : ''}voltooid ═══\n`);
   } catch (e) {

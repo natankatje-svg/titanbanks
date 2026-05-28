@@ -66,4 +66,4 @@ export const ECWID_STORE_ID = '136509793';
 // Wordt automatisch ingevuld door scripts/ecwid-sync.ts na de eerste sync.
 // Tot dan staat hij op 0 — de hero "Bestel nu"-knop opent in dat geval
 // alleen de cart-overlay zonder product (Ecwid logt een no-op warning).
-export const ECWID_PRODUCT_ID = 0;
+export const ECWID_PRODUCT_ID = 838059778;
