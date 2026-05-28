@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ecwid:sync": "tsx scripts/ecwid-sync.ts",
+    "ecwid:sync:dry": "tsx scripts/ecwid-sync.ts --dry"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -32,10 +34,13 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.19",
+    "dotenv": "^17.4.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.35",
+    "form-data": "^4.0.5",
     "postcss": "^8.4.40",
     "tailwindcss": "^3.4.7",
+    "tsx": "^4.22.3",
     "typescript": "^5"
   }
 }

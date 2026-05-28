@@ -27,3 +27,7 @@ tsconfig.tsbuildinfo
 
 .vercel
 __pycache__/
+
+# Ecwid sync log can contain API response bodies (sensitive data)
+outputs/ecwid-sync.log
+
