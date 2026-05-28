@@ -3,7 +3,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import Hero from '@/components/heroes/HeroVariantB';
-import InContextScenes from '@/components/InContextScenes';
+import TitanFeatureCarousel from '@/components/TitanFeatureCarousel';
 import FAQ from '@/components/FAQ';
 import FinalCTA from '@/components/FinalCTA';
 import StickyBuyBar from '@/components/StickyBuyBar';
@@ -35,7 +35,7 @@ export default function Home() {
       <JsonLd />
       <Navigation />
       <Hero />
-      <InContextScenes />
+      <TitanFeatureCarousel />
       <FAQ />
       <FinalCTA />
       <Footer />

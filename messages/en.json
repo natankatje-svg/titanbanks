@@ -30,6 +30,32 @@
     "see_more": "See more",
     "back_to_home": "Back to home"
   },
+  "feature_carousel": {
+    "section_label": "Titan X feature showcase",
+    "image_alt": "Titan X power bank — feature photo",
+    "steps": {
+      "capacity": {
+        "name": "Capacity",
+        "title": "50,000 mAh in matte black.",
+        "description": "One pack, days of power. LED display shows the exact percentage — no 4-bar guessing. Enough to fully charge a smartphone multiple times or a laptop 1-2 times."
+      },
+      "devices": {
+        "name": "Multi-device",
+        "title": "6 devices charging at once.",
+        "description": "4× USB-A ports plus 2 built-in retractable cables — USB-C for Android, tablets and laptops; Lightning for iPhone. No one waits their turn."
+      },
+      "fastcharge": {
+        "name": "Fast charge",
+        "title": "22.5W fast charge.",
+        "description": "Power when and where you need it. A modern smartphone to 50% in ~30 minutes. The right charging protocol is auto-detected per device."
+      },
+      "build": {
+        "name": "Build",
+        "title": "Premium build + flashlight.",
+        "description": "Matte black shell, orange woven carry loop with embossed POWER BANK. Built-in flashlight for the rare moment you'll need it. 2-year manufacturer warranty."
+      }
+    }
+  },
   "scenes": {
     "eyebrow": "In use",
     "title": "One power bank. Every situation.",

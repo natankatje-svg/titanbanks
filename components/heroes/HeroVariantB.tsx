@@ -9,6 +9,7 @@ import { Link } from '@/i18n/routing';
 import { useEcwid } from '@/components/EcwidProvider';
 import { FloatingPaths } from '@/components/ui/background-paths';
 import { MeshGradientBg } from '@/components/ui/mesh-gradient-bg';
+import { SparklesText } from '@/components/ui/sparkles-text';
 import {
   BRAND,
   SPECS,
@@ -180,15 +181,23 @@ export default function HeroVariantB() {
             />
           </div>
 
-          {/* PRODUCT NAME — single anchor */}
+          {/* PRODUCT NAME — single anchor met sparkles shimmer.
+              Sparkle-kleuren in brand-palet (oranje + warm-amber) zodat ze
+              een verlengstuk zijn van de bestaande ambient glow, niet een
+              vreemde flair. Lage count (6) houdt het premium, niet showy. */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-white uppercase leading-[0.88] tracking-[-0.035em] mb-2 lg:mb-3"
-            style={{ fontSize: 'clamp(2.6rem, 7.4vw, 6.5rem)' }}
+            className="mb-2 lg:mb-3"
           >
-            {BRAND.product}
+            <SparklesText
+              text={BRAND.product}
+              colors={{ first: '#FF6B00', second: '#FFD7A3' }}
+              sparklesCount={6}
+              className="font-display text-white uppercase leading-[0.88] tracking-[-0.035em]"
+              style={{ fontSize: 'clamp(2.6rem, 7.4vw, 6.5rem)' }}
+            />
           </motion.h1>
 
           {/* Tagline — one-liner, no paragraph */}

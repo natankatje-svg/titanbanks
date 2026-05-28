@@ -30,6 +30,32 @@
     "see_more": "Bekijk meer",
     "back_to_home": "Terug naar home"
   },
+  "feature_carousel": {
+    "section_label": "Titan X feature showcase",
+    "image_alt": "Titan X powerbank — feature foto",
+    "steps": {
+      "capacity": {
+        "name": "Capaciteit",
+        "title": "50.000 mAh in matte black.",
+        "description": "Eén pack, dagen aan power. LED-display toont het exacte percentage — geen 4-bars gok. Genoeg om een smartphone meerdere keren vol te laden of een laptop 1-2 keer."
+      },
+      "devices": {
+        "name": "Multi-device",
+        "title": "6 devices tegelijk laden.",
+        "description": "4× USB-A poorten plus 2 ingebouwde intrekbare kabels — USB-C voor Android, tablets en laptops; Lightning voor iPhone. Niemand wacht op zijn beurt."
+      },
+      "fastcharge": {
+        "name": "Snel laden",
+        "title": "22,5W fast charge.",
+        "description": "Power waar je hem nodig hebt, op het moment dat je hem nodig hebt. Een moderne smartphone in ~30 minuten naar 50%. Het juiste laadprotocol wordt automatisch herkend."
+      },
+      "build": {
+        "name": "Build",
+        "title": "Premium build + zaklamp.",
+        "description": "Matte black behuizing, oranje geweven draagriem met embossed POWER BANK. Ingebouwde zaklamp voor het zelden-besproken moment dat je hem nodig hebt. 2 jaar garantie."
+      }
+    }
+  },
   "scenes": {
     "eyebrow": "In gebruik",
     "title": "Eén power bank. Elke situatie.",
