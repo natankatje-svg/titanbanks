@@ -70,10 +70,10 @@ const features = [
           color: '#FF6B00',
           title: portsLabel(),
           sub: 'Connectiviteit',
-          description: `${SPECS.portsUsbA.value}× USB-A · ${SPECS.portsUsbC.value}× USB-C · ${SPECS.portsMicroUsb.value}× Micro-USB voor input. Alles wat je hebt, past.`,
-          badge: 'Poorten',
+          description: `${SPECS.portsUsbA.value}× USB-A poorten plus 2 ingebouwde intrekbare kabels (USB-C en Lightning). Alles wat je hebt, past.`,
+          badge: 'Poorten + kabels',
           image: '/images/product-ports.jpg',
-          imageAlt: 'Titan X poorten — USB-A, USB-C en Micro-USB',
+          imageAlt: 'Titan X poorten — 4× USB-A + ingebouwde USB-C en Lightning kabels',
           large: false,
         },
       ]),
@@ -247,7 +247,7 @@ export default function Features() {
             </a>
           ) : (
             <button
-              onClick={addToCart}
+              onClick={() => addToCart()}
               className="btn-ghost flex-shrink-0 flex items-center gap-2"
               style={{ padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}
             >

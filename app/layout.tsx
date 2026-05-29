@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
+import { Manrope, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
 import './globals.css';
 
-const barlowCondensed = Barlow_Condensed({
+const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['600', '700', '800', '900'],
+  weight: ['400', '500', '700', '800'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -58,12 +60,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // getLocale() valt terug op defaultLocale ('nl') voor non-locale routes (/preview, /preview2).
+  // NextIntlClientProvider zit hier (i.p.v. in [locale]/layout) zodat /preview ook
+  // messages krijgt — die vallen terug naar NL via i18n/request.ts.
+  const locale = await getLocale();
+  const messages = await getMessages();
   return (
-    <html lang="nl" className={`${barlowCondensed.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
+    <html lang={locale} className={`${manrope.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
       <body className="bg-black text-white antialiased">
         <GA4Loader />
-        <EcwidProvider>{children}</EcwidProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <EcwidProvider>{children}</EcwidProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -116,7 +116,7 @@ export default function Hero() {
                 Join waitlist
               </a>
             ) : (
-              <button onClick={addToCart} className="btn-orange">
+              <button onClick={() => addToCart()} className="btn-orange">
                 <Zap className="w-5 h-5 fill-white" />
                 Bestel {BRAND.product}
               </button>
@@ -211,7 +211,7 @@ export default function Hero() {
               <Zap className="w-3 h-3 flex-shrink-0" style={{ color: '#0EB5C8' }} />
               <div className="font-display text-sm uppercase tracking-wide" style={{ color: '#0EB5C8' }}>Fast Charge</div>
             </div>
-            <div className="font-mono-titan text-gray-500 text-xs pl-5">USB-C ready</div>
+            <div className="font-mono-titan text-gray-500 text-xs pl-5">Ingebouwde kabel</div>
           </motion.div>
 
           <motion.div

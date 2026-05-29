@@ -85,9 +85,6 @@ export default function StorySection() {
             <Link href="/shop" className="btn-orange">
               Bekijk {BRAND.product}
             </Link>
-            <Link href="/calculator" className="btn-ghost">
-              Power Calculator
-            </Link>
           </div>
         </motion.div>
       </div>

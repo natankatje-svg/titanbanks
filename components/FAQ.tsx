@@ -10,29 +10,25 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     q: 'Hoe vaak kan ik mijn devices opladen met Titan X?',
-    a: 'Titan X heeft een capaciteit van 50.000 mAh — voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele en voor moderne laptops 1–2 keer (via USB-C). Gebruik de Power Calculator op de site voor een schatting per device.',
+    a: 'Titan X heeft een capaciteit van 50.000 mAh — voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele, en voor moderne laptops 1–2 keer via de ingebouwde USB-C kabel.',
   },
   {
     q: 'Welke apparaten kan ik opladen?',
-    a: 'Vrijwel alle USB-apparaten: smartphones (iPhone, Android), tablets, laptops via USB-C, draadloze oordopjes, smartwatches, camera\'s en meer. Via 4× USB-A, 1× USB-C output en 1× Micro-USB input laad je tot 6 devices tegelijk.',
+    a: 'Vrijwel alle USB-apparaten. Via de 4× USB-A poorten en de 2 ingebouwde intrekbare kabels (USB-C en Lightning) laad je tot 6 devices tegelijk: smartphones (iPhone via Lightning, Android via USB-C), tablets, laptops via USB-C, oordopjes, smartwatches, camera\'s en meer.',
   },
   {
     q: 'Hoe snel laadt Titan X mijn devices?',
-    a: 'Titan X ondersteunt snellaad via USB-C. Sluit een compatibel device aan en het juiste protocol wordt automatisch herkend. We publiceren de exacte wattage zodra die definitief is bevestigd — geen ongebaseerde getallen tot dan.',
-  },
-  {
-    q: 'Hoe lang duurt het opladen van Titan X zelf?',
-    a: 'Via de USB-C ingang gaat het sneller dan via USB-A. We adviseren de power bank \'s nachts op te laden zodat hij overdag altijd klaar is. Exacte oplaadduur wordt bevestigd in de specs zodra getest in finale productie-units.',
+    a: 'Titan X levert tot 22,5W via de ingebouwde USB-C kabel — snel genoeg om een moderne smartphone in ~30 minuten naar 50% te brengen. Het juiste laadprotocol wordt automatisch herkend per device.',
   },
   {
     q: 'Heeft Titan X een garantie?',
-    a: 'Ja, 2 jaar fabrieksgarantie. Bij defecten onder normale gebruiksomstandigheden zorgen wij voor reparatie of vervanging. Neem contact op via klantenservice voor garantieclaims.',
-  },
-  {
-    q: 'Hoe gebruik ik de ingebouwde zaklamp?',
-    a: 'Houd de power-button kort ingedrukt om de zaklamp te activeren. De zaklamp werkt onafhankelijk van de oplaadfunctie. De exacte bedieningssequentie (standen, SOS) wordt bevestigd in de handleiding bij verzending van de eerste batch.',
+    a: 'Ja, 2 jaar fabrieksgarantie. Bij defecten onder normale gebruiksomstandigheden zorgen wij voor reparatie of vervanging. Neem contact op via klantenservice voor garantieclaims. Verzending uit Nederland, 14 dagen retourrecht, geen vragen.',
   },
 ];
+// V3 one-pager: 4 vragen max. Capacity · compatibility · speed · warranty
+// dekken 90% van de buy-blocking-objections. Andere vragen (zaklamp-bediening,
+// oplaadduur Titan X zelf) zijn niet doorslaggevend voor de eerste-batch-koop
+// en horen later op /support of in de handleiding bij verzending.
 
 function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
   const [open, setOpen] = useState(false);

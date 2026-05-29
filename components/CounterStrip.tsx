@@ -25,10 +25,10 @@ const counters: Counter[] = [
     label: 'Tegelijk laden',
   },
   {
-    numericTarget: SPECS.portsUsbA.value + SPECS.portsUsbC.value,
-    fallback: (SPECS.portsUsbA.value + SPECS.portsUsbC.value).toString(),
-    unit: 'output poorten',
-    label: 'USB-A en USB-C',
+    numericTarget: SPECS.portsUsbA.value,
+    fallback: SPECS.portsUsbA.value.toString(),
+    unit: 'USB-A poorten',
+    label: '+ ingebouwde kabels',
   },
   {
     numericTarget: SPECS.warrantyYears.value,

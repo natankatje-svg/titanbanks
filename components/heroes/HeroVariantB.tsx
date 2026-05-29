@@ -1,338 +1,304 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
-import { Zap, Check, ChevronDown } from 'lucide-react';
-import { useEcwid } from '../EcwidProvider';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, Zap, BatteryCharging, Plug, Gauge } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
+import { useEcwid } from '@/components/EcwidProvider';
+import { FloatingPaths } from '@/components/ui/background-paths';
+import { MeshGradientBg } from '@/components/ui/mesh-gradient-bg';
+import { SparklesText } from '@/components/ui/sparkles-text';
 import {
   BRAND,
   SPECS,
   TBD,
   LAUNCH_STATE,
-  safe,
   priceLabel,
-  anchorPriceLabel,
-  capacityLabel,
+  safe,
 } from '@/lib/product-claims';
 
-const baseTrust = ['Veilig betalen', `${SPECS.warrantyYears.value} jaar garantie`];
-const optionalTrust: string[] = [];
-const returnDays = safe(TBD.returnPolicyDays);
-if (returnDays && returnDays > 0) optionalTrust.push(`${returnDays} dagen retour`);
-const shippingCountries = safe(TBD.freeShippingCountries);
-if (shippingCountries && shippingCountries.length > 0) {
-  optionalTrust.push(`Gratis verzending ${shippingCountries.join(' / ')}`);
-}
-const trust = [...optionalTrust, ...baseTrust];
+// 4 spec-icons — geen tekstparagrafen, geen bullets, geen dropdown.
+// Pure number+icon=instant signal voor scannen. Volgorde = belangrijk:
+// capaciteit (de hook), poorten (de utility), watts (de speed), feature (de plus).
+const SPEC_ICONS = [
+  { icon: BatteryCharging, key: 'capacity' },
+  { icon: Plug, key: 'devices' },
+  { icon: Gauge, key: 'fastcharge' },
+  { icon: Zap, key: 'display' },
+] as const;
 
-const specs = [
-  { value: SPECS.capacityMah.value.toLocaleString('nl-NL'), unit: ' mAh', label: 'Capaciteit' },
-  { value: SPECS.simultaneousDevices.value.toString(), unit: '×', label: 'Devices' },
-  { value: 'LED', unit: '', label: 'Display' },
-];
-
+/**
+ * HeroVariantB — V3 minimal conversion hero.
+ *
+ * Eén scherm, één doel: BESTEL NU.
+ *
+ * Compositie:
+ * - Stock badge (scarcity-driver: "eerste batch · N beschikbaar")
+ * - Product cutout links (desktop) / top (mobile)
+ * - TITAN X massive heading + tagline
+ * - 4 spec-icons als horizontale rij (geen prose)
+ * - Prijs + grote oranje CTA
+ * - Trust-strip mini (verzending · retour · veilig betalen)
+ *
+ * Verwijderd t.o.v. V2: brand-chip met volume-marker, USP-bullet-prose,
+ * specs-dropdown, motto. Alles wat informeert in plaats van converteert.
+ */
 export default function HeroVariantB() {
+  const locale = useLocale();
+  const t = useTranslations('hero');
   const { addToCart } = useEcwid();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const contentY    = useTransform(scrollYProgress, [0, 1], [0, 55]);
-  const contentFade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const contentFade = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
 
-  const prefersReducedMotion = useReducedMotion();
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, { stiffness: 100, damping: 18, mass: 0.5 });
-  const springY = useSpring(mouseY, { stiffness: 100, damping: 18, mass: 0.5 });
-  const tiltY = useTransform(springX, [-0.5, 0.5], [-7, 7]);
-  const tiltX = useTransform(springY, [-0.5, 0.5], [5, -5]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (prefersReducedMotion) return;
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
-    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+  const isWaitlist = LAUNCH_STATE.waitlistMode;
+  const onBuy = () => {
+    if (isWaitlist) {
+      window.location.href = '#waitlist';
+      return;
+    }
+    addToCart();
   };
 
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
+  // Stock — eerste batch hardcoded op 100 totdat Ecwid stock-feed live is.
+  // Wanneer de Ecwid integratie binnen is: vervang door fetch naar
+  // /api/stock dat de live count uit Ecwid trekt.
+  const batchSize = 100;
+
+  const capacityFormatted = SPECS.capacityMah.value.toLocaleString(locale);
+  const wattage = safe(TBD.fastChargeWattage) ?? 22.5;
 
   return (
     <section
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] text-white"
+      className="relative flex flex-col overflow-hidden bg-[#050505] text-white min-h-[100svh] lg:min-h-[92vh]"
     >
-      {/* Layer 0 — Particle Drift ambient background video. Mobile uses
-          object-cover center-crop of the same 16:9 source. */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/hero/titan-x-particle-drift-poster.jpg"
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-center motion-reduce:hidden pointer-events-none"
-        style={{ zIndex: 0 }}
-      >
-        <source src="/hero/titan-x-particle-drift-16x9.mp4" type="video/mp4" />
-      </video>
+      {/* Layer 0 — MeshGradient WebGL background */}
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+        <MeshGradientBg />
+      </div>
 
-      {/* Layer 1 — base dark overlay */}
-      <div className="absolute inset-0 bg-black/40" style={{ zIndex: 1 }} />
-
-      {/* Layer 2 — radial vignette: open center, dark edges */}
+      {/* Layer 2 — radial vignette */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{
           zIndex: 2,
           background:
-            'radial-gradient(ellipse 75% 70% at 50% 52%, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.55) 55%, rgba(5,5,5,0.95) 100%)',
+            'radial-gradient(ellipse 80% 70% at 35% 55%, rgba(5,5,5,0.0) 0%, rgba(5,5,5,0.45) 60%, rgba(5,5,5,0.95) 100%)',
         }}
       />
 
-      {/* Layer 2 — top/bottom hard fades */}
+      {/* Layer 2 — top/bottom fades */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-[#050505]/95"
+        className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-[#050505]/95 pointer-events-none"
         style={{ zIndex: 2 }}
       />
 
-      {/* Layer 2 — grid */}
+      {/* Layer 2 — ambient orange aura stack */}
       <div
-        className="absolute inset-0 grid-pattern opacity-[0.12] pointer-events-none"
-        style={{ zIndex: 2 }}
+        className="absolute top-[44%] left-[27%] -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[1400px] rounded-full blur-[240px] pointer-events-none"
+        style={{ zIndex: 2, background: 'rgba(255,107,0,0.10)' }}
+      />
+      <div
+        className="absolute top-[46%] left-[26%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[180px] pointer-events-none"
+        style={{ zIndex: 2, background: 'rgba(255,120,30,0.13)' }}
       />
 
-      {/* Layer 2 — ambient orange glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[140px] pointer-events-none"
-        style={{ zIndex: 2, background: 'rgba(255,107,0,0.04)' }}
-      />
+      {/* Layer 2 — subtle FloatingPaths */}
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 2 }}>
+        <FloatingPaths position={1} />
+      </div>
 
-      {/* Layer 10 — main content */}
+      {/* Layer 3 — DESKTOP absolute product cutout (left half) */}
+      {/* Desktop cutout — gecentreerd BINNEN het visuele linker-helft canvas.
+          De grid hieronder geeft de rechter-helft aan content; deze layer
+          spans dezelfde linker-helft maar centreert het product daarin met
+          object-center i.p.v. tegen de viewport-rand te plakken.
+          Subtiele idle-float animatie (±5px over 7s) geeft het product
+          leven zonder afleiding — respect prefers-reduced-motion via
+          motion.div animate-prop. */}
       <motion.div
-        style={{ y: contentY, opacity: contentFade, zIndex: 10 }}
-        className="relative flex flex-col items-center text-center w-full max-w-3xl mx-auto px-6 pt-24 pb-14"
+        aria-hidden
+        className="hidden lg:block absolute lg:inset-y-0 lg:left-0 lg:w-1/2 pointer-events-none"
+        style={{ zIndex: 3 }}
+        animate={{ y: [-5, 5, -5] }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
       >
-        {/* Status badge — pre-launch waitlist of confirmed price */}
-        {(LAUNCH_STATE.waitlistMode || priceLabel()) && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.05 }}
-            className="flex items-center gap-2 rounded-full px-4 py-1.5 mb-5"
-            style={{ background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.28)' }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#FF6B00' }} />
-            <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: '#FF6B00' }}>
-              {LAUNCH_STATE.waitlistMode ? 'Pre-launch · eerste batch' : `${BRAND.product} · nu beschikbaar`}
-            </span>
-          </motion.div>
-        )}
-
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex items-center gap-3 mb-8"
-        >
-          <div className="h-px w-7" style={{ background: 'linear-gradient(to right, transparent, #FF6B00)' }} />
-          <span className="section-label tracking-[0.22em]">{BRAND.product} · {capacityLabel()} power bank</span>
-          <div className="h-px w-7" style={{ background: 'linear-gradient(to left, transparent, #FF6B00)' }} />
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.78, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display uppercase leading-[0.88] tracking-[-0.01em] mb-3"
-          style={{ fontSize: 'clamp(3.2rem, 10vw, 7rem)' }}
-        >
-          <span className="block text-white">NOOIT MEER</span>
-          <span className="block text-gradient-orange">ZONDER STROOM</span>
-        </motion.h1>
-
-        {/* Accent rule */}
-        <motion.div
-          initial={{ scaleX: 0, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 1 }}
-          transition={{ duration: 0.55, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
-          className="h-px w-16 mb-7 origin-center"
-          style={{ background: 'linear-gradient(to right, transparent, #FF6B00, transparent)' }}
+        <Image
+          src="/images/titanx/cutout/slot-02-cutout.png"
+          alt=""
+          fill
+          priority
+          sizes="50vw"
+          className="object-contain object-center select-none [mask-image:linear-gradient(to_right,black_0%,black_82%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,black_0%,black_82%,transparent_100%)]"
         />
-
-        {/* Sub */}
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="font-body text-gray-300 text-base leading-relaxed mb-8 max-w-md"
-        >
-          {capacityLabel()} in matte black. LED-display met exact percentage, ingebouwde
-          zaklamp en tot {SPECS.simultaneousDevices.value} devices tegelijk. Gebouwd voor wie niet kan stoppen.
-        </motion.p>
-
-        {/* Product image — spotlit */}
-        <div style={{ perspective: '900px' }}>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.88, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.95, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mb-8 flex items-center justify-center"
-          style={prefersReducedMotion ? undefined : { rotateX: tiltX, rotateY: tiltY, transformStyle: 'preserve-3d' as const }}
-        >
-          <motion.div
-            animate={{ opacity: [0.5, 1, 0.5], scale: [0.95, 1.05, 0.95] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute rounded-full blur-[80px] pointer-events-none"
-            style={{
-              width: '280px',
-              height: '280px',
-              background: 'radial-gradient(ellipse, rgba(255,107,0,0.30) 0%, rgba(14,181,200,0.09) 55%, transparent 80%)',
-            }}
-          />
-          <div
-            className="absolute rounded-full blur-[50px] opacity-40 pointer-events-none"
-            style={{ width: '180px', height: '180px', background: 'rgba(255,107,0,0.14)' }}
-          />
-          <Image
-            src="/images/product-hero.jpg"
-            alt={`${BRAND.wordmark} ${BRAND.product} — ${capacityLabel()} power bank in matte black`}
-            width={900}
-            height={1060}
-            className="relative z-10 h-auto object-contain"
-            style={{
-              width: 'clamp(260px, 45vw, 420px)',
-              filter: 'drop-shadow(0 28px 56px rgba(0,0,0,0.70)) drop-shadow(0 0 44px rgba(255,107,0,0.28))',
-            }}
-            priority
-          />
-        </motion.div>
-        </div>
-
-        {/* Price + CTA — prijs alleen renderen wanneer CONFIRMED */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.44 }}
-          className="flex flex-col sm:flex-row items-center gap-4 mb-5 w-full justify-center"
-        >
-          {priceLabel() && (
-            <div className="flex flex-col items-center sm:items-start gap-1">
-              <div className="flex items-end gap-2.5">
-                <span
-                  className="font-display leading-none text-white"
-                  style={{ fontSize: 'clamp(2.4rem, 7vw, 3rem)' }}
-                >
-                  {priceLabel()}
-                </span>
-                {anchorPriceLabel() && (
-                  <div className="flex flex-col items-start gap-1 mb-[3px]">
-                    <span className="font-body text-gray-500 text-sm line-through leading-none">
-                      {anchorPriceLabel()}
-                    </span>
-                  </div>
-                )}
-              </div>
-              <span className="font-body text-gray-600 text-[10px]">incl. BTW</span>
-            </div>
-          )}
-          {LAUNCH_STATE.waitlistMode ? (
-            <a href="#waitlist" className="btn-orange w-full sm:w-auto">
-              <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
-              Join waitlist
-            </a>
-          ) : (
-            <button onClick={addToCart} className="btn-orange w-full sm:w-auto">
-              <Zap className="w-[18px] h-[18px] fill-white flex-shrink-0" />
-              Bestel {BRAND.product}
-            </button>
-          )}
-        </motion.div>
-
-        {/* Secondary CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mb-5"
-        >
-          <a
-            href="#functies"
-            className="btn-ghost inline-flex items-center gap-2"
-            style={{ padding: '0.6rem 1.6rem', fontSize: '0.82rem' }}
-          >
-            Ontdek alle features
-            <ChevronDown className="w-3.5 h-3.5" />
-          </a>
-        </motion.div>
-
-        {/* Trust indicators */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.54 }}
-          className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 mb-9"
-        >
-          {trust.map((t) => (
-            <span key={t} className="flex items-center gap-1.5">
-              <Check className="w-3 h-3 flex-shrink-0" style={{ color: '#0EB5C8' }} />
-              <span className="font-body text-gray-400 text-[12px] leading-none">{t}</span>
-            </span>
-          ))}
-        </motion.div>
-
-        {/* Specs bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.62 }}
-          className="flex w-full max-w-sm sm:max-w-md overflow-hidden"
-          style={{ borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}
-        >
-          {specs.map((s, i) => (
-            <div
-              key={i}
-              className="flex-1 flex flex-col items-center py-[14px] gap-1"
-              style={{
-                background: 'rgba(255,255,255,0.025)',
-                backdropFilter: 'blur(8px)',
-                borderRight: i < specs.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
-              }}
-            >
-              <div className="font-display text-[1.15rem] leading-none text-white">
-                {s.value}<span style={{ color: '#FF6B00' }}>{s.unit}</span>
-              </div>
-              <div className="font-mono-titan text-gray-500 text-[11px] uppercase tracking-[0.16em]">
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
-      {/* Scroll cue */}
+      {/* Layer 10 — content */}
       <motion.div
-        animate={{ y: [0, 6, 0], opacity: [0.25, 0.55, 0.25] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ zIndex: 10 }}
+        style={{ y: contentY, opacity: contentFade, zIndex: 10 }}
+        className="relative w-full max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-24 pb-12 lg:pb-20 flex-1 grid grid-cols-1 lg:grid-cols-2 gap-x-12 items-center"
       >
-        <span className="section-label tracking-[0.28em]">Ontdek</span>
-        <div className="w-px h-6 relative overflow-hidden">
+        <div aria-hidden className="hidden lg:block lg:min-h-[520px]" />
+
+        <div className="flex flex-col items-start text-left max-w-xl lg:max-w-[560px]">
+          {/* Stock badge BOVENAAN op mobile — eerste indruk = scarcity-hook.
+              Op desktop blijft de logische volgorde gelijk (de absolute
+              cutout-laag links domineert visueel sowieso). */}
           <motion.div
-            animate={{ y: ['-100%', '100%'] }}
-            transition={{ duration: 1.4, repeat: Infinity, ease: 'linear' }}
-            className="absolute inset-x-0 top-0 h-full"
-            style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,107,0,0.6), transparent)' }}
-          />
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-4 lg:mb-5 self-start"
+            style={{
+              background: 'rgba(255,107,0,0.08)',
+              border: '1px solid rgba(255,107,0,0.28)',
+              backdropFilter: 'blur(6px)',
+            }}
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF6B00] opacity-60" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B00]" />
+            </span>
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-white">
+              {t('stock_badge', { count: batchSize })}
+            </span>
+          </motion.div>
+
+          {/* MOBILE-only cutout in-flow — na de scarcity-badge zodat de
+              eerste-indruk-hierarchy klopt: badge → product → naam → CTA. */}
+          <div className="lg:hidden relative w-full h-[200px] mb-3">
+            <Image
+              src="/images/titanx/cutout/slot-02-cutout.png"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-contain object-center select-none"
+            />
+          </div>
+
+          {/* PRODUCT NAME — single anchor met sparkles shimmer.
+              Sparkle-kleuren in brand-palet (oranje + warm-amber) zodat ze
+              een verlengstuk zijn van de bestaande ambient glow, niet een
+              vreemde flair. Lage count (6) houdt het premium, niet showy. */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-2 lg:mb-3"
+          >
+            <SparklesText
+              text={BRAND.product}
+              colors={{ first: '#FF6B00', second: '#FFD7A3' }}
+              sparklesCount={6}
+              className="font-display text-white uppercase leading-[0.88] tracking-[-0.035em]"
+              style={{ fontSize: 'clamp(2.6rem, 7.4vw, 6.5rem)' }}
+            />
+          </motion.h1>
+
+          {/* Tagline — one-liner, no paragraph */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.2 }}
+            className="font-display uppercase tracking-[-0.01em] mb-6 lg:mb-9 text-white/85"
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.6rem)', lineHeight: 1, fontWeight: 700 }}
+          >
+            <span>{capacityFormatted} mAh. </span>
+            <span className="text-gradient-orange">{t('tagline_accent')}</span>
+          </motion.p>
+
+          {/* Spec-icons grid — 2×2 op mobile (tekst leesbaar), 1×4 op lg+
+              (horizontale scan-row). Voorkomt cramped wrappen van "50.000 mAh"
+              op kleine viewports. */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.28 } } }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-2 lg:gap-3 mb-6 lg:mb-8 w-full"
+          >
+            {SPEC_ICONS.map(({ icon: Icon, key }) => (
+              <motion.div
+                key={key}
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
+                }}
+                className="flex flex-col items-center justify-center gap-1 py-3 px-2 rounded-xl"
+                style={{
+                  background: 'rgba(255,255,255,0.025)',
+                  border: '1px solid rgba(255,255,255,0.06)',
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                <Icon className="w-4 h-4 lg:w-[18px] lg:h-[18px]" style={{ color: '#FF6B00' }} strokeWidth={2} aria-hidden />
+                <span className="font-display text-white text-[0.78rem] lg:text-[0.9rem] tracking-tight text-center leading-tight">
+                  {key === 'capacity' && `${capacityFormatted} mAh`}
+                  {key === 'devices' && t('spec_icons.devices', { n: SPECS.simultaneousDevices.value })}
+                  {key === 'fastcharge' && `${wattage}W`}
+                  {key === 'display' && t('spec_icons.display')}
+                </span>
+                <span className="font-mono text-[0.5rem] lg:text-[0.55rem] uppercase tracking-[0.18em] text-white/35 leading-none mt-0.5">
+                  {key === 'capacity' && t('spec_icons.label_capacity')}
+                  {key === 'devices' && t('spec_icons.label_devices')}
+                  {key === 'fastcharge' && t('spec_icons.label_fastcharge')}
+                  {key === 'display' && t('spec_icons.label_display')}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Price + huge primary CTA — one decisive row */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.45 }}
+            className="flex flex-col w-full max-w-[440px] gap-2.5 mb-4 lg:mb-5"
+          >
+            <button
+              onClick={onBuy}
+              className="btn-orange group inline-flex items-center justify-between gap-3 w-full"
+              style={{ padding: '1.05rem 1.5rem', fontSize: '0.9rem' }}
+              aria-label={`${isWaitlist ? t('cta_waitlist') : t('cta_buy_now')} ${priceLabel() ?? ''}`}
+            >
+              <span className="flex items-center gap-2.5">
+                <Zap className="w-[16px] h-[16px] fill-white flex-shrink-0" aria-hidden />
+                <span className="font-display tracking-[0.12em] uppercase">
+                  {isWaitlist ? t('cta_waitlist') : t('cta_buy_now')}
+                </span>
+              </span>
+              <span className="flex items-center gap-2">
+                {priceLabel() && (
+                  <span className="font-display text-[1.05rem] lg:text-[1.15rem] font-bold">
+                    {priceLabel()}
+                  </span>
+                )}
+                <ArrowRight className="w-[15px] h-[15px] transition-transform group-hover:translate-x-0.5" aria-hidden />
+              </span>
+            </button>
+            {/* Backup-link voor klanten die /shop willen openen voor extra info */}
+            <Link
+              href="/shop"
+              locale={locale}
+              className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-white/40 hover:text-white/70 transition-colors text-center"
+            >
+              {t('view_full_listing')}
+            </Link>
+          </motion.div>
+
+          {/* Trust mini — één regel, geen iconen-stack */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="font-body text-[#9A9A9A] text-[12px] lg:text-[13px]"
+          >
+            {t('trust_inline', { days: safe(TBD.returnPolicyDays) ?? 14 })}
+          </motion.p>
         </div>
       </motion.div>
     </section>

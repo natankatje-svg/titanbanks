@@ -1,0 +1,336 @@
+{
+  "navigation": {
+    "products": "Produkte",
+    "shop": "Shop",
+    "technology": "Technologie",
+    "story": "Geschichte",
+    "mission": "Mission",
+    "support": "Support",
+    "contact": "Kontakt",
+    "faq": "FAQ",
+    "reviews": "Bewertungen",
+    "in_use": "Im Einsatz",
+    "cta_buy": "Titan X bestellen",
+    "cta_waitlist": "Auf die Warteliste",
+    "language": "Sprache"
+  },
+  "footer": {
+    "tagline": "Premium-Powerbanks. Für die, die nicht aufhören.",
+    "group_product": "Produkt",
+    "group_company": "Unternehmen",
+    "group_legal": "Rechtliches",
+    "legal_privacy": "Datenschutz",
+    "legal_terms": "AGB",
+    "legal_policies": "Versand, Rückgabe, Garantie & Cookies",
+    "copyright": "Alle Rechte vorbehalten.",
+    "payment_line": "Sicheres Bezahlen · iDEAL · Apple Pay · Visa · Mastercard"
+  },
+  "common": {
+    "loading": "Wird geladen…",
+    "see_more": "Mehr ansehen",
+    "back_to_home": "Zur Startseite"
+  },
+  "feature_carousel": {
+    "section_label": "Titan X Feature Showcase",
+    "image_alt": "Titan X Powerbank — Feature-Foto",
+    "steps": {
+      "capacity": {
+        "name": "Kapazität",
+        "title": "50.000 mAh in Mattschwarz.",
+        "description": "Ein Pack, tagelang Strom. LED-Display zeigt den exakten Prozentwert — kein 4-Balken-Raten. Genug, um ein Smartphone mehrmals voll zu laden oder einen Laptop 1-2 Mal."
+      },
+      "devices": {
+        "name": "Multi-Device",
+        "title": "6 Geräte gleichzeitig laden.",
+        "description": "4× USB-A Anschlüsse plus 2 integrierte einziehbare Kabel — USB-C für Android, Tablets und Laptops; Lightning für iPhone. Niemand wartet auf seinen Turn."
+      },
+      "fastcharge": {
+        "name": "Fast Charge",
+        "title": "22,5W Fast Charge.",
+        "description": "Strom, wann und wo du ihn brauchst. Ein modernes Smartphone in ~30 Minuten auf 50 %. Das richtige Ladeprotokoll wird pro Gerät automatisch erkannt."
+      },
+      "build": {
+        "name": "Build",
+        "title": "Premium-Build + Taschenlampe.",
+        "description": "Mattschwarzes Gehäuse, orangefarbene gewebte Trageschlaufe mit geprägtem POWER BANK. Integrierte Taschenlampe für den seltenen Moment, in dem du sie brauchst. 2 Jahre Herstellergarantie."
+      }
+    }
+  },
+  "scenes": {
+    "eyebrow": "Im Einsatz",
+    "title": "Eine Powerbank. Jede Situation.",
+    "cards": {
+      "capacity": {
+        "title": "50.000 mAh in Mattschwarz",
+        "description": "Ein Pack, tagelang Strom. LED-Display zeigt den exakten Prozentwert."
+      },
+      "lifestyle": {
+        "title": "Auf der Fahrt. Im Auto. Unterwegs.",
+        "description": "Cup-Holder-Format, Trageschlaufe bereit. Outdoor, Work-from-anywhere, Road Trip."
+      },
+      "ports": {
+        "title": "6 Geräte gleichzeitig",
+        "description": "4× USB-A · integriertes USB-C + Lightning Kabel · 22,5W Fast Charge. Niemand wartet auf seinen Turn."
+      },
+      "flashlight": {
+        "title": "Integrierte Taschenlampe",
+        "description": "Für das Zelt, die Garage oder den Stromausfall. Ein Knopf, helles Licht."
+      }
+    }
+  },
+  "hero": {
+    "featured_product": "Featured Product",
+    "motto_lead": "Nie wieder",
+    "motto_accent": "ohne Strom.",
+    "tagline_accent": "Nie wieder ohne Strom.",
+    "stock_badge": "Erste Charge · {count} verfügbar",
+    "cta_buy_now": "Jetzt bestellen",
+    "cta_claim": "Jetzt sichern",
+    "cta_waitlist": "Auf die Warteliste",
+    "view_full_listing": "Vollständiges Listing ansehen →",
+    "trust_inline": "Versand aus NL · 1-3 Werktage · {days} Tage Rückgabe · sicheres Bezahlen",
+    "price_incl_vat": "inkl. MwSt.",
+    "trust_shipping": "Versand aus NL · 1-3 Werktage",
+    "trust_returns": "{days} Tage Rückgabe",
+    "spec_icons": {
+      "devices": "{n} Geräte",
+      "display": "LED %",
+      "label_capacity": "Kapazität",
+      "label_devices": "Gleichzeitig",
+      "label_fastcharge": "Fast charge",
+      "label_display": "Display"
+    },
+    "specs_open": "Vollständige Specs anzeigen",
+    "specs_close": "Specs ausblenden",
+    "usps": {
+      "capacity": { "value": "", "tail": "— nie mehr leer unterwegs" },
+      "devices": { "value": "6 Geräte", "tail": "gleichzeitig laden via 4× USB-A + USB-C" },
+      "fastcharge": { "value": "", "tail": "Fast Charge — schnell wieder voll" },
+      "display": { "value": "LED-Display", "tail": "— exakter Prozentwert, kein Raten" },
+      "flashlight": { "value": "Taschenlampe + Trageschlaufe", "tail": "· gebaut zum Mitnehmen" }
+    },
+    "specs": {
+      "capacity": "Kapazität",
+      "ports": "Anschlüsse",
+      "fastcharge": "Fast Charge",
+      "display": "Display",
+      "flashlight": "Taschenlampe",
+      "cables": "Kabel",
+      "finish": "Oberfläche",
+      "weight": "Gewicht",
+      "dimensions": "Abmessungen",
+      "certifications": "Zertifizierung"
+    },
+    "spec_values": {
+      "yes": "Ja",
+      "led_percent": "LED mit %",
+      "retractable": "Integriert, einziehbar",
+      "finish_matte_black": "Mattschwarz"
+    },
+    "carousel": {
+      "steps": {
+        "capacity": {
+          "name": "Kapazität",
+          "title": "50.000 mAh in Mattschwarz",
+          "description": "Ein Pack, tagelang Strom. LED-Display zeigt den exakten Prozentwert — kein Raten mehr.",
+          "alt": "Titan X Powerbank — Hero-Shot mit LED-Display auf 100 %"
+        },
+        "lifestyle": {
+          "name": "Unterwegs",
+          "title": "Gebaut zum Mitnehmen",
+          "description": "Auf der Fahrt, im Auto, im Zelt. Titan X lädt, wo du bist — Outdoor, Work-from-anywhere, Notfälle.",
+          "alt": "Titan X im Einsatz — unterwegs"
+        },
+        "build": {
+          "name": "Build",
+          "title": "Premium-Build, kein Plastikgefühl",
+          "description": "Mattschwarzes Gehäuse, orangefarbene gewebte Trageschlaufe mit geprägtem POWER BANK, bündige gummierte Anschlüsse.",
+          "alt": "Titan X Close-up — Build-Quality-Details"
+        },
+        "benefits": {
+          "name": "Vorteile",
+          "title": "Alles, was du brauchst",
+          "description": "6 Geräte gleichzeitig · 22.5W Fast Charge · LED-Display · Taschenlampe · Mattschwarz. Kein Marketing-Geschwafel.",
+          "alt": "Titan X — Übersicht aller Vorteile"
+        }
+      }
+    }
+  },
+  "feature_bento": {
+    "eyebrow": "Specs",
+    "title": "Alles, was du brauchst. Nichts, was du nicht brauchst.",
+    "intro": "{product} ist um {capacity} reine Kapazität, sechs parallele Ports und ein LED-Display gebaut, das dir genau sagt, wie viel noch übrig ist. Keine Marketing-Fantasie — nur, was drin ist.",
+    "cards": {
+      "capacity": {
+        "eyebrow": "Kapazität",
+        "title": "Genug für einen langen Tag.",
+        "body": "50.000 mAh in mattschwarzem Gehäuse. Genug, um Smartphone, Tablet und Headset durch ein Festival, eine Roadtrip oder eine mehrtägige Wanderung zu bringen — ohne nach einer Steckdose zu suchen."
+      },
+      "devices": {
+        "eyebrow": "Gleichzeitig",
+        "unit": "Geräte",
+        "title": "Sechs Geräte, parallel.",
+        "body": "Vier USB-A-Ports plus zwei integrierte Kabel (USB-C und Lightning). Bis zu sechs Geräte gleichzeitig — keine Warteschlange, keine Diskussion, wer zuerst lädt."
+      },
+      "ports": {
+        "eyebrow": "Anschlüsse",
+        "unit": "Ports",
+        "title": "Universelle Ausgänge.",
+        "body": "4× USB-A · integriertes USB-C + Lightning Kabel. Funktioniert mit praktisch allem, was ein Smartphone, Tablet oder Game-Controller ist."
+      },
+      "flashlight": {
+        "eyebrow": "Extra",
+        "title": "Integrierte Taschenlampe.",
+        "body": "Halte die Power-Taste, um die LED-Taschenlampe zu aktivieren. Funktioniert unabhängig vom Laden — nützlich in Tunneln, Zelten oder bei Stromausfall."
+      },
+      "design": {
+        "eyebrow": "Form",
+        "title": "Mattschwarz. Geflochtene Trageschlaufe. LED-Display.",
+        "body": "Kein glänzendes Plastik, das schon am ersten Tag verkratzt. Keine Tasten, die du im Dunkeln nicht findest. Eine kompakte Form, gemacht zum Mitnehmen."
+      },
+      "warranty": {
+        "eyebrow": "Sicherheit",
+        "unit": "Jahre",
+        "title": "Herstellergarantie inklusive.",
+        "body": "Bei Defekt unter normalem Gebrauch organisieren wir Reparatur oder Ersatz über den Hersteller. Schreib an hello@titan-banks.com — keine Warteschleife, keine Skripte."
+      }
+    }
+  },
+  "more_products_coming_soon": {
+    "eyebrow": "Roadmap",
+    "volume_mark": "Vol. 01 / ∞",
+    "title": "Eine Powerbank heute. Eine Plattform morgen.",
+    "intro": "TitanBanks ist kein Ein-Produkt-Shop. Die Titan X ist Vol. 01 einer Familie tragbarer Power-Tools. Hier siehst du, wohin die Reise geht — ehrlich, auch da, wo der Name noch nicht feststeht.",
+    "items": [
+      {
+        "label": "01",
+        "name": "Titan X",
+        "tagline": "50.000 mAh · 6 Geräte · mattschwarz",
+        "status": "Jetzt verfügbar"
+      },
+      {
+        "label": "02",
+        "name": "Name folgt",
+        "tagline": "Kompaktere Daily-Carry für leichtere Tage.",
+        "status": "2026"
+      },
+      {
+        "label": "03",
+        "name": "Name folgt",
+        "tagline": "Mehr Kapazität für alle, die weiter gehen.",
+        "status": "2027"
+      },
+      {
+        "label": "04",
+        "name": "Name folgt",
+        "tagline": "Eine modulare Plattform, die mit dir wächst.",
+        "status": "Am Horizont"
+      }
+    ],
+    "signup_label": "Früher Zugriff",
+    "signup_prompt": "Erfahre als Erste:r von Vol. 02.",
+    "email_placeholder": "E-Mail-Adresse",
+    "cta_button": "Anmelden",
+    "cta_sending": "Sendet",
+    "cta_success": "Du bist auf der Liste. Wir melden uns, wenn Vol. 02 Form annimmt.",
+    "cta_error": "Etwas ist schiefgelaufen. Versuche es erneut."
+  },
+  "buy_box": {
+    "eyebrow": "Jetzt bestellen",
+    "quantity": "Anzahl",
+    "in_stock": "Auf Lager — erste Charge",
+    "shipping_line": "Versand aus den Niederlanden · {days} Tage Rückgabe · {years} Jahre Garantie",
+    "secure_checkout": "Sicheres Bezahlen mit iDEAL, Apple Pay, Klarna, Visa & Mastercard",
+    "cta_add_to_cart": "In den Warenkorb",
+    "cta_waitlist": "Auf die Warteliste",
+    "incl_vat": "inkl. MwSt."
+  },
+  "ports_visual": {
+    "eyebrow": "Anschlüsse & Ports",
+    "title": "Alles was du brauchst. Sechs Ports parallel.",
+    "usb_a": "4× USB-A",
+    "usb_a_desc": "Standard-USB-A-Ausgang für Smartphones, Tablets, GoPros und Earbuds.",
+    "usb_c": "Integriertes USB-C Kabel",
+    "usb_c_desc": "Aus dem Gehäuse herausziehbares USB-C Ladekabel — direkt anschließen an moderne Android-Smartphones, Tablets und Zubehör, ohne loses Kabel.",
+    "micro_usb": "Integriertes Lightning Kabel",
+    "micro_usb_desc": "Integriertes Lightning Ladekabel für iPhones und iPads — immer griffbereit, nie ein vergessenes Kabel.",
+    "footnote": "Alle 6 Ports können gleichzeitig genutzt werden."
+  },
+  "shipping_returns_warranty": {
+    "eyebrow": "Sicher kaufen",
+    "title": "Kein Kleingedrucktes.",
+    "shipping_title": "EU + internationaler Versand",
+    "shipping_body": "Versand aus den Niederlanden. Zuerst EU, weltweit verfügbar. Genaue Tarife im Checkout.",
+    "shipping_link": "Versandkosten ansehen",
+    "returns_title": "{days} Tage Rückgabe",
+    "returns_body": "Nicht zufrieden? Sende deine Titan X innerhalb von {days} Tagen unbenutzt zurück und erhalte den vollen Kaufpreis zurück.",
+    "returns_link": "Rückgabebedingungen",
+    "warranty_title": "{years} Jahre Herstellergarantie",
+    "warranty_body": "Bei Defekten unter normalem Gebrauch organisieren wir Reparatur oder Ersatz über den Hersteller.",
+    "warranty_link": "Garantieprozess"
+  },
+  "legal": {
+    "last_updated": "Zuletzt aktualisiert",
+    "toc_label": "Inhaltsverzeichnis",
+    "banner_review_label": "Juristische Prüfung ausstehend",
+    "banner_review_body": "Dieser Text wurde von TitanBanks erstellt und wird vor dem Launch von einem niederländischen Juristen geprüft. Keine Rechtsberatung.",
+    "banner_translation_label": "Vorläufige Übersetzung",
+    "banner_translation_body": "Die niederländische Fassung ist maßgeblich. Diese Übersetzung dient als Arbeitsversion.",
+    "footer_contact_prefix": "Fragen zu diesen Richtlinien? Schreib uns an"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Sprich mit uns.",
+    "intro": "Fragen zur Titan X, zu Bestellungen, Garantie oder Kooperationen? Sende eine Nachricht — wir antworten innerhalb von 1-2 Werktagen.",
+    "form_name_label": "Name",
+    "form_name_placeholder": "Dein Name",
+    "form_email_label": "E-Mail-Adresse",
+    "form_email_placeholder": "du@beispiel.de",
+    "form_subject_label": "Betreff",
+    "form_subject_placeholder": "z.B. Bestellfrage, Garantie, Presse",
+    "form_message_label": "Nachricht",
+    "form_message_placeholder": "Schreibe deine Nachricht…",
+    "form_submit": "Nachricht senden",
+    "form_sending": "Wird gesendet…",
+    "form_success_title": "Nachricht erhalten.",
+    "form_success_body": "Danke. Wir antworten innerhalb von 1-2 Werktagen an deine E-Mail-Adresse.",
+    "form_error_generic": "Etwas ist schiefgelaufen. Versuche es erneut oder schreib direkt an hello@titan-banks.com.",
+    "error_name_required": "Bitte gib deinen Namen ein.",
+    "error_email_invalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
+    "error_subject_required": "Gib deiner Nachricht einen kurzen Betreff.",
+    "error_message_required": "Schreibe eine kurze Nachricht (mindestens 10 Zeichen).",
+    "direct_email_label": "Lieber direkt schreiben?",
+    "response_time_label": "Antwortzeit",
+    "response_time_value": "1-2 Werktage",
+    "support_alt_label": "Andere Kanäle",
+    "support_alt_value": "In den FAQ findest du schnelle Antworten."
+  },
+  "faq_page": {
+    "eyebrow": "Häufig gefragt",
+    "title": "Antworten auf die meistgestellten Fragen.",
+    "intro": "Antwort nicht gefunden? Schreib an hello@titan-banks.com — wir helfen gerne weiter."
+  },
+  "mission": {
+    "eyebrow": "Unsere Mission",
+    "title": "Strom, der nicht aufhört, wo du nicht aufhörst.",
+    "intro": "TitanBanks baut Premium-Powerbanks für Menschen, die ihren Tag nicht an ihren Akku anpassen. Unsere Mission: zuverlässige Energie liefern, wo und wann sie zählt — ohne Kompromisse bei Qualität, Langlebigkeit oder Design.",
+    "values_label": "Was uns antreibt",
+    "values": [
+      "Wir bauen nur, was wir selbst nutzen würden — keine Wegwerf-Elektronik.",
+      "Klare Specs und ehrliche Aussagen — keine Marketing-Fantasie.",
+      "2 Jahre Garantie und direkter Kundenservice — kein Callcenter-Labyrinth.",
+      "Premium-Qualität ohne Premium-Aufschlag — Direktverkauf, keine Handelsmarge.",
+      "Wir bauen ein Ökosystem — Titan X ist der erste Schritt, nicht der letzte."
+    ],
+    "founder_label": "Wer wir sind",
+    "founder_body": "TitanBanks wurde von einem kleinen Team gegründet, dem zu oft der Strom ausging. Wir sind kein Elektronikgigant mit hunderten SKUs. Wir sind eine fokussierte Powerbank-Marke, die ein Produkt perfekt machen will, bevor das nächste kommt."
+  },
+  "products_page": {
+    "eyebrow": "Unsere Produkte",
+    "title": "Eine Powerbank. Durchdacht bis ins Detail.",
+    "intro": "TitanBanks baut Premium-Powerbanks. Wir starten mit der Titan X — weitere folgen.",
+    "cta_view": "Titan X ansehen",
+    "current_label": "Jetzt verfügbar",
+    "soon_label": "Demnächst"
+  }
+}

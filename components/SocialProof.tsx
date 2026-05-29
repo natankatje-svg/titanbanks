@@ -34,12 +34,12 @@ const stats: Stat[] = [
     label: 'Tegelijk laden',
   },
   {
-    value: (SPECS.portsUsbA.value + SPECS.portsUsbC.value + SPECS.portsMicroUsb.value).toString(),
-    numericTarget: SPECS.portsUsbA.value + SPECS.portsUsbC.value + SPECS.portsMicroUsb.value,
+    value: SPECS.simultaneousDevices.value.toString(),
+    numericTarget: SPECS.simultaneousDevices.value,
     isFloat: false,
     suffix: '',
-    unit: 'poorten',
-    label: 'USB-A · USB-C · Micro-USB',
+    unit: 'devices',
+    label: '4× USB-A + USB-C/Lightning kabels',
   },
   {
     value: SPECS.warrantyYears.value.toString(),

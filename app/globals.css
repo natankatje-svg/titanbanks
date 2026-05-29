@@ -28,11 +28,15 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Typography ── */
+/* ── Typography ──
+ * Display = Manrope. Bold (700) als default voor h1/h2/h3 — geometrische
+ * sans, minimal-techy feel zonder de "shouty condensed"-uitstraling van
+ * de vorige Barlow Condensed 900. Voor extra-luide momenten kan een
+ * component handmatig naar 800 (ExtraBold) bumpen. */
 h1, h2, h3, .display {
   font-family: var(--font-display), sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .mono {
@@ -177,7 +181,7 @@ body::after {
 /* ── Decorative section number ── */
 .section-number {
   font-family: var(--font-display), sans-serif;
-  font-weight: 900;
+  font-weight: 800;
   font-size: clamp(6rem, 15vw, 14rem);
   line-height: 1;
   color: rgba(255,255,255,0.025);
@@ -357,4 +361,8 @@ body::after {
   .glass-card {
     transition: none !important;
   }
+}
+
+.card-image {
+    @apply object-contain absolute bottom-8 max-h-[50%] mt-auto max-w-[80%] left-1/2 -translate-x-1/2 pointer-events-none
 }

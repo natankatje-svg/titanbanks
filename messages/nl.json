@@ -1,0 +1,336 @@
+{
+  "navigation": {
+    "products": "Producten",
+    "shop": "Shop",
+    "technology": "Technologie",
+    "story": "Verhaal",
+    "mission": "Missie",
+    "support": "Support",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "reviews": "Reviews",
+    "in_use": "In gebruik",
+    "cta_buy": "Bestel Titan X",
+    "cta_waitlist": "Join waitlist",
+    "language": "Taal"
+  },
+  "footer": {
+    "tagline": "Premium power banks. Gebouwd voor wie niet kan stoppen.",
+    "group_product": "Product",
+    "group_company": "Bedrijf",
+    "group_legal": "Juridisch",
+    "legal_privacy": "Privacybeleid",
+    "legal_terms": "Algemene voorwaarden",
+    "legal_policies": "Verzending, retour, garantie en cookies",
+    "copyright": "Alle rechten voorbehouden.",
+    "payment_line": "Veilig betalen · iDEAL · Apple Pay · Visa · Mastercard"
+  },
+  "common": {
+    "loading": "Laden…",
+    "see_more": "Bekijk meer",
+    "back_to_home": "Terug naar home"
+  },
+  "feature_carousel": {
+    "section_label": "Titan X feature showcase",
+    "image_alt": "Titan X powerbank — feature foto",
+    "steps": {
+      "capacity": {
+        "name": "Capaciteit",
+        "title": "50.000 mAh in matte black.",
+        "description": "Eén pack, dagen aan power. LED-display toont het exacte percentage — geen 4-bars gok. Genoeg om een smartphone meerdere keren vol te laden of een laptop 1-2 keer."
+      },
+      "devices": {
+        "name": "Multi-device",
+        "title": "6 devices tegelijk laden.",
+        "description": "4× USB-A poorten plus 2 ingebouwde intrekbare kabels — USB-C voor Android, tablets en laptops; Lightning voor iPhone. Niemand wacht op zijn beurt."
+      },
+      "fastcharge": {
+        "name": "Snel laden",
+        "title": "22,5W fast charge.",
+        "description": "Power waar je hem nodig hebt, op het moment dat je hem nodig hebt. Een moderne smartphone in ~30 minuten naar 50%. Het juiste laadprotocol wordt automatisch herkend."
+      },
+      "build": {
+        "name": "Build",
+        "title": "Premium build + zaklamp.",
+        "description": "Matte black behuizing, oranje geweven draagriem met embossed POWER BANK. Ingebouwde zaklamp voor het zelden-besproken moment dat je hem nodig hebt. 2 jaar garantie."
+      }
+    }
+  },
+  "scenes": {
+    "eyebrow": "In gebruik",
+    "title": "Eén power bank. Elke situatie.",
+    "cards": {
+      "capacity": {
+        "title": "50.000 mAh in matte black",
+        "description": "Eén pack, dagen aan power. LED-display toont exact percentage."
+      },
+      "lifestyle": {
+        "title": "Op de rit. In de auto. Onderweg.",
+        "description": "Cup-holder formaat, draagriem voor de hand. Outdoor, work-from-anywhere, road trip."
+      },
+      "ports": {
+        "title": "6 devices tegelijk",
+        "description": "4× USB-A · ingebouwde USB-C + Lightning kabel · 22.5W fast charge. Niemand wacht op zijn beurt."
+      },
+      "flashlight": {
+        "title": "Ingebouwde zaklamp",
+        "description": "Voor de tent, de garage, of de stroomstoring. Eén knop, helder licht."
+      }
+    }
+  },
+  "hero": {
+    "featured_product": "Featured product",
+    "motto_lead": "Nooit meer",
+    "motto_accent": "zonder stroom.",
+    "tagline_accent": "Nooit meer zonder stroom.",
+    "stock_badge": "Eerste batch · {count} beschikbaar",
+    "cta_buy_now": "Bestel nu",
+    "cta_claim": "Claim yours",
+    "cta_waitlist": "Join de waitlist",
+    "view_full_listing": "Bekijk volledige listing →",
+    "trust_inline": "Verzending NL · 1-3 werkdagen · {days}d retour · veilig betalen",
+    "price_incl_vat": "incl. BTW",
+    "trust_shipping": "Verzending NL · 1-3 werkdagen",
+    "trust_returns": "{days} dagen retour",
+    "spec_icons": {
+      "devices": "{n} devices",
+      "display": "LED %",
+      "label_capacity": "Capaciteit",
+      "label_devices": "Tegelijk",
+      "label_fastcharge": "Fast charge",
+      "label_display": "Display"
+    },
+    "specs_open": "Bekijk uitgebreide specs",
+    "specs_close": "Verberg specs",
+    "usps": {
+      "capacity": { "value": "", "tail": "— nooit meer leeg onderweg" },
+      "devices": { "value": "6 devices", "tail": "tegelijk laden via 4× USB-A + USB-C" },
+      "fastcharge": { "value": "", "tail": "fast charge — snel weer vol" },
+      "display": { "value": "LED display", "tail": "— precies percentage, geen gokken" },
+      "flashlight": { "value": "Zaklamp + draagriem", "tail": "· gebouwd om mee te nemen" }
+    },
+    "specs": {
+      "capacity": "Capaciteit",
+      "ports": "Poorten",
+      "fastcharge": "Fast charge",
+      "display": "Display",
+      "flashlight": "Zaklamp",
+      "cables": "Kabels",
+      "finish": "Afwerking",
+      "weight": "Gewicht",
+      "dimensions": "Afmetingen",
+      "certifications": "Certificering"
+    },
+    "spec_values": {
+      "yes": "Ja",
+      "led_percent": "LED met %",
+      "retractable": "Ingebouwd, intrekbaar",
+      "finish_matte_black": "Mat zwart"
+    },
+    "carousel": {
+      "steps": {
+        "capacity": {
+          "name": "Capaciteit",
+          "title": "50.000 mAh in matte black",
+          "description": "Eén pack, dagen aan power. LED-display toont het exacte percentage, geen gokken meer.",
+          "alt": "Titan X powerbank — hero shot met LED display op 100%"
+        },
+        "lifestyle": {
+          "name": "Onderweg",
+          "title": "Gebouwd om mee te nemen",
+          "description": "Op de rit, in de auto, in de tent. Titan X laadt waar jij bent — auto, festival, outdoor, work-from-anywhere.",
+          "alt": "Titan X in lifestyle gebruik — onderweg"
+        },
+        "build": {
+          "name": "Build",
+          "title": "Premium build, geen plastic gevoel",
+          "description": "Matte black behuizing, oranje geweven draagriem met embossed POWER BANK, ports flush en gerubberd.",
+          "alt": "Titan X close-up — build quality details"
+        },
+        "benefits": {
+          "name": "Voordelen",
+          "title": "Alles wat je nodig hebt",
+          "description": "6 devices tegelijk · 22.5W fast charge · LED display · zaklamp · matte black. Geen marketing-fluff.",
+          "alt": "Titan X — overzicht van alle voordelen"
+        }
+      }
+    }
+  },
+  "feature_bento": {
+    "eyebrow": "Specs",
+    "title": "Alles wat je nodig hebt. Niets dat je niet nodig hebt.",
+    "intro": "{product} is gebouwd rond {capacity} ruwe capaciteit, zes parallelle poorten en een LED-display dat je vertelt wat er nog over is. Geen marketing-fantasie — alleen wat erin zit.",
+    "cards": {
+      "capacity": {
+        "eyebrow": "Capaciteit",
+        "title": "Genoeg om een lange dag te halen.",
+        "body": "50.000 mAh in matte black behuizing. Genoeg ruimte om je telefoon, tablet en headset door een festival, road trip of meerdaagse hike te tillen — zonder onderweg te zoeken naar een stopcontact."
+      },
+      "devices": {
+        "eyebrow": "Gelijktijdig",
+        "unit": "devices",
+        "title": "Zes devices, parallel.",
+        "body": "Vier USB-A-poorten plus twee ingebouwde kabels (USB-C en Lightning). Tot zes apparaten tegelijk — geen wachtrij, geen onderhandelen met vrienden over wie eerst mag laden."
+      },
+      "ports": {
+        "eyebrow": "Connectiviteit",
+        "unit": "poorten",
+        "title": "Universele uitgangen.",
+        "body": "4× USB-A · ingebouwde USB-C + Lightning kabel. Werkt met vrijwel alles wat een telefoon, tablet of game-controller is."
+      },
+      "flashlight": {
+        "eyebrow": "Extra",
+        "title": "Ingebouwde zaklamp.",
+        "body": "Een power-button-hold activeert de LED zaklamp. Werkt onafhankelijk van het laden — handig in tunnels, tenten of als de stroom uitvalt."
+      },
+      "design": {
+        "eyebrow": "Form factor",
+        "title": "Matte black. Geweven draaglus. LED-display.",
+        "body": "Geen glossy plastic dat krast bij eerste gebruik. Geen knoppen die je niet kunt vinden in het donker. Eén compacte vorm, gemaakt om mee te dragen."
+      },
+      "warranty": {
+        "eyebrow": "Zekerheid",
+        "unit": "jaar",
+        "title": "Fabrieksgarantie inbegrepen.",
+        "body": "Bij defect onder normaal gebruik regelen we reparatie of vervanging via de fabrikant. Mail hello@titan-banks.com — geen wachtmuziek, geen scripts."
+      }
+    }
+  },
+  "more_products_coming_soon": {
+    "eyebrow": "Roadmap",
+    "volume_mark": "Vol. 01 / ∞",
+    "title": "Eén power bank vandaag. Een platform morgen.",
+    "intro": "TitanBanks bouwt geen one-product-store. Titan X is Vol. 01 van een familie portable-power-tools. Hieronder zie je waar we heen gaan — eerlijk, ook waar de naam nog niet vaststaat.",
+    "items": [
+      {
+        "label": "01",
+        "name": "Titan X",
+        "tagline": "50.000 mAh · 6 devices · matte black",
+        "status": "Nu beschikbaar"
+      },
+      {
+        "label": "02",
+        "name": "Naam volgt",
+        "tagline": "Compactere daily-carry voor lichtere dagen.",
+        "status": "2026"
+      },
+      {
+        "label": "03",
+        "name": "Naam volgt",
+        "tagline": "Hogere capaciteit voor wie verder gaat.",
+        "status": "2027"
+      },
+      {
+        "label": "04",
+        "name": "Naam volgt",
+        "tagline": "Een modulair platform dat met je meeschaalt.",
+        "status": "Op de horizon"
+      }
+    ],
+    "signup_label": "Vroeg-toegang",
+    "signup_prompt": "Hoor over Vol. 02 als eerste.",
+    "email_placeholder": "E-mailadres",
+    "cta_button": "Aanmelden",
+    "cta_sending": "Bezig",
+    "cta_success": "Je staat op de lijst. We mailen wanneer Vol. 02 vorm krijgt.",
+    "cta_error": "Er ging iets mis. Probeer het opnieuw."
+  },
+  "buy_box": {
+    "eyebrow": "Bestel direct",
+    "quantity": "Aantal",
+    "in_stock": "Op voorraad — eerste batch",
+    "shipping_line": "Verzending vanuit Nederland · {days} dagen retour · {years} jaar garantie",
+    "secure_checkout": "Veilig betalen via iDEAL, Apple Pay, Klarna, Visa & Mastercard",
+    "cta_add_to_cart": "In winkelmandje",
+    "cta_waitlist": "Op de waitlist",
+    "incl_vat": "incl. BTW"
+  },
+  "ports_visual": {
+    "eyebrow": "Poorten & aansluitingen",
+    "title": "Alles wat je nodig hebt. Zes poorten parallel.",
+    "usb_a": "4× USB-A",
+    "usb_a_desc": "Standaard USB-A output voor smartphones, tablets, GoPro's en oordopjes.",
+    "usb_c": "Ingebouwde USB-C kabel",
+    "usb_c_desc": "Tethered USB-C laadkabel die uit de behuizing trekt — direct aansluiten op moderne Android-phones, tablets en accessoires zonder los snoer.",
+    "micro_usb": "Ingebouwde Lightning kabel",
+    "micro_usb_desc": "Tethered Lightning laadkabel voor iPhones en iPads — altijd bij de hand, nooit een vergeten kabel.",
+    "footnote": "Alle 6 poorten kunnen tegelijkertijd actief zijn."
+  },
+  "shipping_returns_warranty": {
+    "eyebrow": "Veilig kopen",
+    "title": "Geen kleine lettertjes.",
+    "shipping_title": "EU + Internationale verzending",
+    "shipping_body": "Verzending vanuit Nederland. EU eerst, ook wereldwijd beschikbaar. Concrete tarieven bij checkout.",
+    "shipping_link": "Bekijk verzendkosten",
+    "returns_title": "{days} dagen retour",
+    "returns_body": "Niet tevreden? Stuur Titan X binnen {days} dagen ongebruikt terug voor volledige terugbetaling.",
+    "returns_link": "Retourvoorwaarden",
+    "warranty_title": "{years} jaar fabrieksgarantie",
+    "warranty_body": "Bij defect onder normaal gebruik regelen wij reparatie of vervanging via de fabrikant.",
+    "warranty_link": "Garantieprocedure"
+  },
+  "legal": {
+    "last_updated": "Laatst bijgewerkt",
+    "toc_label": "Inhoudsopgave",
+    "banner_review_label": "Jurist-review pending",
+    "banner_review_body": "Deze tekst is door TitanBanks opgesteld en wordt voor publicatie nog door een Nederlandse jurist herzien. Geen juridisch advies.",
+    "banner_translation_label": "Voorlopige vertaling",
+    "banner_translation_body": "De Nederlandse versie is leidend. Deze vertaling is een werkversie ter informatie.",
+    "footer_contact_prefix": "Vragen over dit beleid? Mail ons via"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Praat met ons.",
+    "intro": "Vragen over Titan X, bestellingen, garantie of samenwerking? Stuur een bericht — we reageren binnen 1-2 werkdagen.",
+    "form_name_label": "Naam",
+    "form_name_placeholder": "Je naam",
+    "form_email_label": "E-mailadres",
+    "form_email_placeholder": "jij@voorbeeld.nl",
+    "form_subject_label": "Onderwerp",
+    "form_subject_placeholder": "Bijv. bestelvraag, garantie, persvraag",
+    "form_message_label": "Bericht",
+    "form_message_placeholder": "Schrijf je bericht…",
+    "form_submit": "Verstuur bericht",
+    "form_sending": "Versturen…",
+    "form_success_title": "Bericht ontvangen.",
+    "form_success_body": "Dank je. We reageren binnen 1-2 werkdagen op je e-mailadres.",
+    "form_error_generic": "Er ging iets mis. Probeer het opnieuw of mail direct naar hello@titan-banks.com.",
+    "error_name_required": "Vul je naam in.",
+    "error_email_invalid": "Vul een geldig e-mailadres in.",
+    "error_subject_required": "Geef je bericht een kort onderwerp.",
+    "error_message_required": "Schrijf een korte boodschap (minimaal 10 tekens).",
+    "direct_email_label": "Liever direct mailen?",
+    "response_time_label": "Reactietijd",
+    "response_time_value": "1-2 werkdagen",
+    "support_alt_label": "Andere kanalen",
+    "support_alt_value": "Bekijk de FAQ voor snelle antwoorden."
+  },
+  "faq_page": {
+    "eyebrow": "Veelgestelde vragen",
+    "title": "Antwoorden op de meest gestelde vragen.",
+    "intro": "Vind je het antwoord niet? Mail ons op hello@titan-banks.com — we helpen je graag verder."
+  },
+  "mission": {
+    "eyebrow": "Onze missie",
+    "title": "Energie die niet stopt waar jij niet stopt.",
+    "intro": "TitanBanks bouwt premium portable power voor mensen die hun dag niet aanpassen aan hun batterij. Onze missie is om betrouwbare energie te leveren waar en wanneer het ertoe doet — zonder compromis op kwaliteit, duurzaamheid of design.",
+    "values_label": "Wat ons drijft",
+    "values": [
+      "Bouw alleen wat je zelf zou willen gebruiken — geen wegwerp-elektronica.",
+      "Duidelijke specs en eerlijke claims — geen marketing-fantasie.",
+      "2 jaar garantie en directe klantenservice — geen call-center labyrint.",
+      "Premium kwaliteit zonder premium opslag — directe verkoop, geen retail-marge.",
+      "Werk aan een ecosysteem — Titan X is de eerste stap, niet het einde."
+    ],
+    "founder_label": "Wie wij zijn",
+    "founder_body": "TitanBanks is opgericht door een klein team dat te vaak zonder stroom kwam te zitten. Wij zijn geen elektronicagigant met honderden SKU's. Wij zijn een focused powerbank-merk dat één product perfect wil maken voor het volgende komt."
+  },
+  "products_page": {
+    "eyebrow": "Onze producten",
+    "title": "Eén power bank. Volledig doordacht.",
+    "intro": "TitanBanks bouwt premium portable power. We starten met de Titan X — meer komt eraan.",
+    "cta_view": "Bekijk Titan X",
+    "current_label": "Nu verkrijgbaar",
+    "soon_label": "Binnenkort"
+  }
+}

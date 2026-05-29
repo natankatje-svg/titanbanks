@@ -40,7 +40,7 @@ const useCases = [
     title: 'Werk & School',
     sub: 'Voor de professional',
     accent: '#EAB308',
-    description: 'Laptop bijna leeg in de trein? Titan X laadt ook laptops en tablets via USB-C.',
+    description: 'Laptop bijna leeg in de trein? Titan X laadt ook laptops en tablets via de ingebouwde USB-C kabel.',
   },
   {
     Icon: AlertTriangle,

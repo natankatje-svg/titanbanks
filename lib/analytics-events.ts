@@ -9,17 +9,11 @@ type EventName =
   | 'view_home'
   | 'view_shop'
   | 'view_technology'
-  | 'view_calculator'
-  | 'calculator_device_toggle'
-  | 'calculator_complete'
   | 'cta_buy_click'
   | 'cta_waitlist_click'
   | 'waitlist_submit_success'
   | 'waitlist_submit_error'
   | 'sticky_buy_click'
-  | 'cart_exit_popup_shown'
-  | 'cart_exit_popup_dismiss'
-  | 'cart_exit_popup_submit'
   | 'faq_open'
   | 'video_play'
   | 'video_complete';
@@ -75,14 +69,6 @@ export const analytics = {
   buyClick: (section: string) => track('cta_buy_click', { page_section: section }),
   waitlistClick: (section: string) => track('cta_waitlist_click', { page_section: section }),
   stickyBuyClick: () => track('sticky_buy_click'),
-  calculatorToggle: (deviceId: string, action: 'add' | 'remove') =>
-    track('calculator_device_toggle', { product_id: deviceId, action }),
-  calculatorComplete: (deviceCount: number) =>
-    track('calculator_complete', { device_count: deviceCount }),
   faqOpen: (questionId: string) => track('faq_open', { question_id: questionId }),
   videoPlay: (videoId: string) => track('video_play', { video_id: videoId }),
-  cartExitShown: () => track('cart_exit_popup_shown'),
-  cartExitDismiss: () => track('cart_exit_popup_dismiss'),
-  cartExitSubmit: (email: string) =>
-    track('cart_exit_popup_submit', { email_domain: email.split('@')[1] || 'unknown' }),
 };
