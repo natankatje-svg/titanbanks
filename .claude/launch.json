@@ -4,8 +4,8 @@
     {
       "name": "titanbanks-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "C:/Users/natan/TitanBanks", "run", "dev"],
-      "autoPort": true
+      "runtimeArgs": ["--prefix", "C:/Users/natan/TitanBanks", "run", "dev", "--", "-p", "3010"],
+      "port": 3010
     }
   ]
 }
