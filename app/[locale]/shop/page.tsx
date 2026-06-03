@@ -12,6 +12,7 @@ import ShippingReturnsWarranty from '@/components/ShippingReturnsWarranty';
 import FAQ from '@/components/FAQ';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import { BRAND, capacityLabel } from '@/lib/product-claims';
+import { buildPageMetadata } from '@/lib/seo';
 
 // 8 product renders voor de PDP image slider. Mix van studio + lifestyle + detail.
 const pdpSliderImages: SliderImage[] = [
@@ -25,11 +26,33 @@ const pdpSliderImages: SliderImage[] = [
   { src: '/images/feature-multidevice.jpg', alt: `${BRAND.product} — laadt smartphone, tablet en laptop tegelijk` },
 ];
 
-export const metadata: Metadata = {
-  title: `${BRAND.product} kopen — ${capacityLabel()} power bank | ${BRAND.text}`,
-  description: `Bestel ${BRAND.product}. ${capacityLabel()} matte black power bank. Tot 6 devices tegelijk. ${BRAND.wordmark}.`,
-  alternates: { canonical: 'https://titan-banks.com/nl/shop' },
+const SHOP_META: Record<string, { title: string; description: string }> = {
+  nl: {
+    title: 'Titan X kopen — 50.000 mAh power bank | TitanBanks',
+    description:
+      'Bestel Titan X. 50.000 mAh matte black power bank. Tot 6 apparaten tegelijk laden. TITANBANKS.',
+  },
+  en: {
+    title: 'Buy Titan X — 50,000 mAh power bank | TitanBanks',
+    description:
+      'Order Titan X. 50,000 mAh matte black power bank. Charge up to 6 devices at once. TITANBANKS.',
+  },
+  de: {
+    title: 'Titan X kaufen — 50.000 mAh Powerbank | TitanBanks',
+    description:
+      'Titan X bestellen. 50.000 mAh mattschwarze Powerbank. Bis zu 6 Geräte gleichzeitig. TITANBANKS.',
+  },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const copy = SHOP_META[locale] ?? SHOP_META.nl;
+  return buildPageMetadata({ locale, path: 'shop', ...copy });
+}
 
 export default function ShopPage() {
   return (

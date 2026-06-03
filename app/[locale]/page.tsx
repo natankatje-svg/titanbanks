@@ -3,31 +3,62 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import Hero from '@/components/heroes/HeroVariantB';
-import TitanFeatureCarousel from '@/components/TitanFeatureCarousel';
+import ProductSpotlight from '@/components/home/ProductSpotlight';
+import WhatsInside from '@/components/home/WhatsInside';
+import UseCasesGrid from '@/components/home/UseCasesGrid';
 import FAQ from '@/components/FAQ';
-import FinalCTA from '@/components/FinalCTA';
+import FinalDrop from '@/components/home/FinalDrop';
 import StickyBuyBar from '@/components/StickyBuyBar';
-import { BRAND, capacityLabel } from '@/lib/product-claims';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: `${BRAND.product} — ${capacityLabel()} power bank | ${BRAND.wordmark}`,
-  description: `${capacityLabel()}. Eerste batch beperkt. ${BRAND.wordmark} Titan X premium power bank — bestel nu.`,
-  alternates: { canonical: 'https://titan-banks.com/nl' },
+// Per-locale homepage-copy. NL is primair; EN/DE eigen teksten zodat Google
+// niet de NL-title voor alle locales toont (was de oude bug).
+const HOME_META: Record<string, { title: string; description: string }> = {
+  nl: {
+    title: 'Titan X — 50.000 mAh power bank | TITANBANKS',
+    description:
+      '50.000 mAh. Tot 6 apparaten tegelijk laden. Matte black premium power bank van TITANBANKS — bestel nu.',
+  },
+  en: {
+    title: 'Titan X — 50,000 mAh power bank | TITANBANKS',
+    description:
+      '50,000 mAh. Charge up to 6 devices at once. Matte black premium power bank by TITANBANKS — order now.',
+  },
+  de: {
+    title: 'Titan X — 50.000 mAh Powerbank | TITANBANKS',
+    description:
+      '50.000 mAh. Bis zu 6 Geräte gleichzeitig laden. Mattschwarze Premium-Powerbank von TITANBANKS — jetzt bestellen.',
+  },
 };
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const copy = HOME_META[locale] ?? HOME_META.nl;
+  return buildPageMetadata({ locale, path: '', ...copy });
+}
+
 /**
- * Homepage V3 — minimal one-pager voor maximale conversie op de eerste
- * batch (100 units). Eén product, één doel, één pad naar checkout.
+ * Homepage V4 — landingpage in de Gigi-template-STIJL (layout, compositie,
+ * pills, 2-regelige koppen, 4-koloms stat-strip, hover-fill cards, watermarks),
+ * vertaald naar TitanBanks dark silent-luxury (#0A0A0A + oranje #FF6B00 +
+ * Manrope). Buy-now via Ecwid; alle claims via lib/product-claims SSOT.
  *
- * Sectie-volgorde bewust kort gehouden:
- *  1. Hero — alles boven de fold (cutout, prijs, CTA, scarcity badge)
- *  2. FAQ — top 4 vragen om laatste twijfels weg te nemen
- *  3. FinalCTA — herhaling van CTA voor wie scrolde maar nog niet kocht
- *  4. Footer + StickyBuyBar (sticky-on-scroll CTA blijft persistent zichtbaar)
+ * Sectie-flow (mapt op de template, secties in `components/home/`):
+ *  1. Navigation       — sticky header
+ *  2. Hero             — split: 2-regelige kop + pill-CTA's + benefit-pills + product
+ *  3. ProductSpotlight — "Choose your fuel": product + feature-chips + Bestel
+ *  4. WhatsInside      — "Formula & Benefits": 4-koloms stat-strip + watermark
+ *  5. UseCasesGrid     — "Activations": hover-fill use-case cards
+ *  6. FAQ              — laatste twijfels wegnemen
+ *  7. FinalDrop        — "Ready to level up": grote koop-CTA-band
+ *  8. Footer + StickyBuyBar — persistente koop-CTA
  *
- * Verwijderd t.o.v. V2-homepage: TrustBar, UseCases, FeatureBento,
- * FeatureShowcaseCarousel, MoreProductsComingSoon. Die surfaces verkopen
- * niet meer aandacht dan ze opeisen voor een 100-unit-batch.
+ * Bewust NIET overgenomen: de Instagram-feed met like-counts (pre-launch geen
+ * echte metrics; verzonnen aantallen zijn verboden).
  */
 export default function Home() {
   return (
@@ -35,9 +66,11 @@ export default function Home() {
       <JsonLd />
       <Navigation />
       <Hero />
-      <TitanFeatureCarousel />
+      <ProductSpotlight />
+      <WhatsInside />
+      <UseCasesGrid />
       <FAQ />
-      <FinalCTA />
+      <FinalDrop />
       <Footer />
       <StickyBuyBar />
     </main>

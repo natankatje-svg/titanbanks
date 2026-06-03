@@ -9,9 +9,10 @@ const nextConfig = {
     // AVIF/WebP first: next/image serveert deze automatisch i.p.v. de zware
     // bron-PNG/JPG. AVIF eerst (kleinst), WebP als fallback.
     formats: ['image/avif', 'image/webp'],
-    // Breakpoints afgestemd op de layout (mobiel → desktop) zodat het
-    // optimizer-srcset geen onnodig grote varianten genereert.
-    deviceSizes: [360, 640, 768, 1024, 1280, 1600, 1920],
+    // Breakpoints afgestemd op de layout (mobiel → desktop). Grote varianten
+    // (2048/2560/3840) toegevoegd voor de full-bleed hero-foto op grote en
+    // retina/4K-schermen — anders schaalt de browser 1920 op = wazig.
+    deviceSizes: [360, 640, 768, 1024, 1280, 1600, 1920, 2048, 2560, 3840],
     imageSizes: [100, 200, 320, 480, 640],
   },
   async redirects() {

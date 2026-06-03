@@ -348,9 +348,11 @@ body::after {
   .animate-ping,
   .animate-pulse,
   .animate-bounce,
-  .animate-spin {
+  .animate-spin,
+  .ember-particle {
     animation: none !important;
   }
+  .ember-particle { opacity: 0 !important; }
 
   /* Preserve instant state for pulsing indicators so they stay visible */
   .animate-ping  { opacity: 0.6; }
@@ -365,4 +367,53 @@ body::after {
 
 .card-image {
     @apply object-contain absolute bottom-8 max-h-[50%] mt-auto max-w-[80%] left-1/2 -translate-x-1/2 pointer-events-none
+}
+
+/* ── Ember-drift — zwevende oranje vonkjes (hero-overlay, CSS-only) ── */
+@keyframes emberRise {
+  0%   { transform: translateY(30px) translateX(0) scale(0.6);   opacity: 0; }
+  14%  { opacity: 1; }
+  55%  { opacity: 0.9; }
+  80%  { opacity: 0.55; }
+  100% { transform: translateY(-230px) translateX(var(--ember-drift, 12px)) scale(1.05); opacity: 0; }
+}
+.ember-particle {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255,210,140,1) 0%, rgba(255,140,40,0.85) 40%, rgba(255,107,0,0.35) 65%, transparent 80%);
+  box-shadow: 0 0 8px 1px rgba(255,130,30,0.6);
+  will-change: transform, opacity;
+  animation: emberRise var(--ember-dur, 9s) ease-in-out infinite;
+  animation-delay: var(--ember-delay, 0s);
+  pointer-events: none;
+}
+
+/* ── Hero energie-effecten ── */
+/* trage warme licht-sweep diagonaal over de hero */
+@keyframes heroSweep {
+  0%   { transform: translateX(-30%) skewX(-12deg); opacity: 0; }
+  35%  { opacity: 0.5; }
+  65%  { opacity: 0.5; }
+  100% { transform: translateX(160%) skewX(-12deg); opacity: 0; }
+}
+.hero-sweep {
+  animation: heroSweep 9s ease-in-out infinite;
+  animation-delay: var(--sweep-delay, 0s);
+  will-change: transform, opacity;
+}
+/* pulserende warme gloed (achter de kop) */
+@keyframes glowPulse2 {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50%      { opacity: 0.85; transform: scale(1.12); }
+}
+.hero-glow-pulse { animation: glowPulse2 6s ease-in-out infinite; will-change: opacity, transform; }
+/* zachte oranje glow-pulse op de accent-tekst */
+@keyframes textGlowPulse {
+  0%, 100% { text-shadow: 0 0 18px rgba(255,107,0,0.30), 0 2px 30px rgba(0,0,0,0.45); }
+  50%      { text-shadow: 0 0 30px rgba(255,140,40,0.65), 0 0 60px rgba(255,107,0,0.35), 0 2px 30px rgba(0,0,0,0.45); }
+}
+.text-glow-orange { animation: textGlowPulse 4.5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sweep, .hero-glow-pulse, .text-glow-orange { animation: none !important; }
 }

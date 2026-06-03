@@ -1,4 +1,6 @@
-import { BRAND, SPECS, capacityLabel, portsLabel } from '@/lib/product-claims';
+import { BRAND, SPECS, TBD, safe, capacityLabel, portsLabel } from '@/lib/product-claims';
+
+const priceEur = safe(TBD.priceEur);
 
 const product = {
   '@context': 'https://schema.org',
@@ -6,12 +8,17 @@ const product = {
   name: `${BRAND.text} ${BRAND.product} — ${capacityLabel()} power bank`,
   description: `${capacityLabel()} power bank in matte black. ${portsLabel()}. LED-display met exact percentage, ingebouwde zaklamp. Tot ${SPECS.simultaneousDevices.value} devices tegelijk laden.`,
   brand: { '@type': 'Brand', name: BRAND.text },
-  image: 'https://titan-banks.com/images/titanx/hero-never-at-0.png',
+  image: 'https://titan-banks.com/images/product-hero.jpg',
   offers: {
     '@type': 'Offer',
     priceCurrency: 'EUR',
-    availability: 'https://schema.org/PreOrder',
-    url: 'https://titan-banks.com',
+    // Prijs uit SSOT (TBD.priceEur, CONFIRMED). Alleen renderen indien bekend.
+    ...(priceEur ? { price: priceEur.toFixed(2) } : {}),
+    priceValidUntil: '2026-12-31',
+    // Site verkoopt direct via Ecwid (waitlistMode = false) → InStock i.p.v. PreOrder.
+    availability: 'https://schema.org/InStock',
+    itemCondition: 'https://schema.org/NewCondition',
+    url: 'https://titan-banks.com/nl/shop',
     seller: { '@type': 'Organization', name: BRAND.text },
   },
 };
