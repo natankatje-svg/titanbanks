@@ -56,16 +56,19 @@ export default function TitanFeatureCarousel() {
 
   const image: ImageSet = {
     alt: t('image_alt'),
+    // WebP-varianten: deze carousel rendert via een rauwe <img> (geen
+    // next/image-optimalisatie), dus de bron moet zelf licht zijn. .webp
+    // bespaart hier ~95% t.o.v. de PNG-bronnen (zie scripts/_optimize-images).
     // Step 1 — Capaciteit: cutout-product + spotlight hero
-    step1img1: '/images/titanx/cutout/slot-02-cutout.png',
-    step1img2: '/images/titanx/clean/usp-capacity.png',
+    step1img1: '/images/titanx/cutout/slot-02-cutout.webp',
+    step1img2: '/images/titanx/clean/usp-capacity.webp',
     // Step 2 — Multi-device: ports top-down + lifestyle context
-    step2img1: '/images/titanx/clean/usp-multi-device.png',
-    step2img2: '/images/titanx/clean/lifestyle-auto.png',
+    step2img1: '/images/titanx/clean/usp-multi-device.webp',
+    step2img2: '/images/titanx/clean/lifestyle-auto.webp',
     // Step 3 — Fast charge: cinematic warm-rim shot
-    step3img: '/images/titanx/cutout/hero-warm-rim-cutout.png',
+    step3img: '/images/titanx/cutout/hero-warm-rim-cutout.webp',
     // Step 4 — Build quality + zaklamp: flashlight glow
-    step4img: '/images/titanx/clean/usp-display-control.png',
+    step4img: '/images/titanx/clean/usp-display-control.webp',
   };
 
   return (

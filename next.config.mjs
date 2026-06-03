@@ -6,6 +6,13 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 const nextConfig = {
   images: {
     remotePatterns: [],
+    // AVIF/WebP first: next/image serveert deze automatisch i.p.v. de zware
+    // bron-PNG/JPG. AVIF eerst (kleinst), WebP als fallback.
+    formats: ['image/avif', 'image/webp'],
+    // Breakpoints afgestemd op de layout (mobiel → desktop) zodat het
+    // optimizer-srcset geen onnodig grote varianten genereert.
+    deviceSizes: [360, 640, 768, 1024, 1280, 1600, 1920],
+    imageSizes: [100, 200, 320, 480, 640],
   },
   async redirects() {
     // 301-redirect alle pre-i18n URLs naar /nl/<route>.
