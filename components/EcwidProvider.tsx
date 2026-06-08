@@ -106,11 +106,17 @@ export default function EcwidProvider({ children }: { children: ReactNode }) {
             {`window.ecwid_script_defer = true; window.ecwid_dynamic_widgets = true;`}
           </Script>
 
-          {/* Ecwid core script */}
+          {/*
+            Ecwid core script. strategy="lazyOnload" → laadt pas in browser-idle
+            ná het window 'load'-event, dus van het kritieke pad af. Op de
+            homepage is Ecwid alleen nodig zodra iemand op "kopen" klikt; tegen
+            die tijd is de idle-load (binnen ~1-2s) klaar. addToCart no-opt veilig
+            als 'window.Ecwid' nog niet bestaat (zie hierboven).
+          */}
           <Script
             id="ecwid-script"
             src={`https://app.ecwid.com/script.js?${ECWID_STORE_ID}&data_platform=code`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             onLoad={() => {
               if (!window.Ecwid) return;
               /*

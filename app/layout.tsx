@@ -8,7 +8,10 @@ import './globals.css';
 
 const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '800'],
+  // 500 verwijderd: geen enkel .font-display element of heading rendert op
+  // medium-gewicht (font-medium → altijd Jakarta/body). 400 blijft: .font-display
+  // op niet-heading spans erft body-gewicht 400. 700 = headings, 800 = extrabold.
+  weight: ['400', '700', '800'],
   variable: '--font-display',
   display: 'swap',
 });
