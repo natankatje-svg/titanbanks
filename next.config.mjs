@@ -4,6 +4,15 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // x-powered-by header weglaten: minder bytes per response, geen stack-leak.
+  poweredByHeader: false,
+  experimental: {
+    // Barrel-imports (lucide-react ~1000 iconen, framer-motion) worden door
+    // Next omgezet naar directe per-module imports. Zonder dit sleept één
+    // `import { Icon } from 'lucide-react'` de hele barrel mee de client-bundle
+    // in. Puur build-time transform — geen runtime- of visueel effect.
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
   images: {
     remotePatterns: [],
     // AVIF/WebP first: next/image serveert deze automatisch i.p.v. de zware

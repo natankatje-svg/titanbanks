@@ -55,6 +55,17 @@ function checkBasicAuth(req: NextRequest): NextResponse | null {
 
 const intlMiddleware = createIntlMiddleware(routing);
 
+// SSG-pagina's worden door de next-intl rewrite (/nl → intern /[locale]) als
+// dynamisch behandeld → Vercel stuurt `no-store` en elke navigatie raakt de
+// origin-functie i.p.v. de CDN-edge. Dat is de grootste "voelt traag"-oorzaak.
+// De locale zit in de URL-PATH (/nl, /en, /de), dus de HTML is veilig per-URL
+// te cachen. We zetten een edge-cache met stale-while-revalidate: browser
+// revalideert (max-age=0, altijd vers na deploy), maar de edge serveert de
+// HTML direct (s-maxage) en ververst op de achtergrond. Vercel purget de CDN
+// automatisch bij elke nieuwe deploy, dus geen verouderde content na een push.
+const HTML_CACHE_CONTROL =
+  'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400';
+
 // Routes that bypass next-intl: internal previews + api. These don't need
 // locale-detection or /[locale]/-prefix redirects.
 function isNonI18nRoute(pathname: string): boolean {
@@ -76,7 +87,17 @@ export default function middleware(req: NextRequest): NextResponse {
   }
 
   // 3) i18n routes: next-intl handelt locale-detection en /[locale]/-prefix.
-  return intlMiddleware(req);
+  const res = intlMiddleware(req);
+
+  // Edge-cache de statische locale-HTML. Alleen veilige GET's; auth-responses
+  // zijn hierboven al teruggegeven, dus we overschrijven nooit een 401. Niet
+  // cachen wanneer er een Set-Cookie op zit (next-intl zet die soms voor
+  // locale-detectie) — anders zou de edge één bezoeker's cookie delen.
+  if (req.method === 'GET' && !res.headers.has('set-cookie')) {
+    res.headers.set('Cache-Control', HTML_CACHE_CONTROL);
+  }
+
+  return res;
 }
 
 export const config = {
