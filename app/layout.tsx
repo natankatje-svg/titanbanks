@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
+import ConsentBanner from '@/components/ConsentBanner';
 import './globals.css';
 
 // PULSE type-systeem (build/pulse):
@@ -31,25 +32,25 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
+// Root-fallback; locale-pagina's overschrijven dit via buildPageMetadata.
 export const metadata: Metadata = {
   title: 'Titan X — 50.000 mAh Power Bank | TitanBanks',
   description:
     'The Titan X by TitanBanks. 50.000 mAh. Six devices at once. Built for festivals, road trips, and workdays without an outlet.',
-  keywords: 'powerbank, titan x, titanbanks, 50000mah, high capacity powerbank, outdoor powerbank',
   metadataBase: new URL('https://titan-banks.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Titan X — TITANBANKS',
-    description: '50.000 mAh. Six devices at once. The drop is coming.',
+    description: '50.000 mAh. Six devices at once. Built for days without an outlet.',
     type: 'website',
     url: 'https://titan-banks.com',
     siteName: 'TitanBanks',
-    locale: 'en_US',
+    locale: 'nl_NL',
     images: [
       {
-        url: '/images/titanx/hero-never-at-0.png',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Titan X — 50.000 mAh power bank by TITANBANKS',
@@ -59,8 +60,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Titan X — TITANBANKS',
-    description: '50.000 mAh. Six devices at once. The drop is coming.',
-    images: ['/images/titanx/hero-never-at-0.png'],
+    description: '50.000 mAh. Six devices at once. Built for days without an outlet.',
+    images: ['/images/og-image.jpg'],
   },
 };
 
@@ -76,6 +77,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <GA4Loader />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <EcwidProvider>{children}</EcwidProvider>
+          <ConsentBanner />
         </NextIntlClientProvider>
       </body>
     </html>

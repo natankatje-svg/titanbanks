@@ -9,7 +9,9 @@ const product = {
   name: `${BRAND.text} ${BRAND.product} — ${capacityLabel()} power bank`,
   description: `${capacityLabel()} power bank in matte black. ${portsLabel()}. LED-display met exact percentage, ingebouwde zaklamp. Tot ${SPECS.simultaneousDevices.value} devices tegelijk laden.`,
   brand: { '@type': 'Brand', name: BRAND.text },
-  image: 'https://titan-banks.com/images/product-hero.jpg',
+  // Schoon productbeeld (lichte achtergrond, product gecentreerd) — geschikt
+  // voor rich results én Google Merchant Center.
+  image: 'https://titan-banks.com/images/titanx/gallery/v2/studio-orangegel.webp',
   offers: {
     '@type': 'Offer',
     priceCurrency: 'EUR',

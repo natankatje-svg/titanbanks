@@ -13,9 +13,9 @@ import { BRAND, capacityLabel } from '@/lib/product-claims';
 
 export const BASE_URL = 'https://titan-banks.com';
 
-/** Productshot als OG-image (bestaat in public/images). Een dedicated
- *  1200×630 OG-render is een post-launch nicety. */
-const OG_IMAGE = `${BASE_URL}/images/product-hero.jpg`;
+/** Dedicated 1200×630 OG-render (scripts/make-og-image.mjs):
+ *  logo links, goedgekeurde productfoto rechts op donker canvas. */
+const OG_IMAGE = `${BASE_URL}/images/og-image.jpg`;
 
 const OG_LOCALE: Record<string, string> = {
   nl: 'nl_NL',
