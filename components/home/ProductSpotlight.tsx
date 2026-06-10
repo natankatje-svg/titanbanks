@@ -38,7 +38,7 @@ export default function ProductSpotlight() {
   const isWaitlist = LAUNCH_STATE.waitlistMode;
 
   return (
-    <section className="relative bg-[#0A0A0A] py-20 lg:py-28 overflow-hidden border-t border-white/[0.07]">
+    <section className="relative bg-black py-20 lg:py-32 overflow-hidden border-t border-white/[0.07]">
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="mb-12 lg:mb-16">
           <Eyebrow className="mb-5">Ons product</Eyebrow>
@@ -59,25 +59,23 @@ export default function ProductSpotlight() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="group relative rounded-3xl border border-white/[0.08] overflow-hidden transition-colors duration-500 hover:border-[#FF8C00]/25"
-            style={{
-              background:
-                'radial-gradient(ellipse 90% 80% at 50% 35%, rgba(255,140,0,0.12) 0%, transparent 62%), linear-gradient(160deg, #161616 0%, #0C0C0C 100%)',
-            }}
+            className="group relative rounded-[1.75rem] border border-white/[0.08] overflow-hidden transition-colors duration-500 hover:border-[#FF8C00]/25"
           >
+            {/* Cinematische fotostage — goedgekeurde studio-raw (oranje gel-licht),
+                geen cutout-op-gradient meer: de fotografie draagt het beeld. */}
             <div className="relative aspect-[4/5] w-full">
               <Image
-                src="/images/titanx/cutout/hero-warm-rim-cutout.png"
-                alt={`${BRAND.text} ${BRAND.product} — ${capacityLabel()} power bank, matte black met warm rim-licht`}
+                src="/images/titanx/gallery/stage-orangegel.webp"
+                alt={`${BRAND.text} ${BRAND.product} — ${capacityLabel()} power bank in warm oranje studiolicht`}
                 fill
                 sizes="(max-width: 768px) 90vw, 45vw"
-                className="object-contain object-center p-10 lg:p-12 select-none transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                className="object-cover object-center select-none transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
               />
-              {/* zachte vloer-gloed onder het product */}
+              {/* zachte ondervignet zodat de card in de zwarte stage smelt */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-x-[18%] bottom-[8%] h-[14%] rounded-[50%] blur-2xl"
-                style={{ background: 'rgba(255,140,0,0.10)' }}
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%]"
+                style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45), transparent)' }}
               />
             </div>
           </motion.div>

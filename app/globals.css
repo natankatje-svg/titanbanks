@@ -405,6 +405,16 @@ body::after {
 }
 .text-glow-orange { animation: textGlowPulse 4.5s ease-in-out infinite; }
 
+/* ── FinalDrop — trage Ken-Burns-zoom op de beam-foto (compositor-only) ── */
+@keyframes finalDropZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.07); }
+}
+.final-drop-zoom {
+  animation: finalDropZoom 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-sweep, .hero-glow-pulse, .text-glow-orange { animation: none !important; }
+  .hero-sweep, .hero-glow-pulse, .text-glow-orange, .final-drop-zoom { animation: none !important; }
 }

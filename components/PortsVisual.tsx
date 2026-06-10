@@ -62,10 +62,10 @@ export default function PortsVisual() {
             }}
           >
             <Image
-              src="/images/product-ports.jpg"
-              alt={`${BRAND.product} — 4× USB-A poorten plus ingebouwde USB-C en Lightning kabels`}
+              src="/images/titanx/gallery/ports-dark.webp"
+              alt={`${BRAND.product} — 4× USB-A poorten plus ingebouwde USB-C en Lightning kabels, top-down in warm licht`}
               width={900}
-              height={700}
+              height={900}
               className="w-full h-auto object-cover"
               sizes="(max-width: 1024px) 100vw, 600px"
             />

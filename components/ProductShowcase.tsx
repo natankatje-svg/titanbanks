@@ -15,8 +15,8 @@ const showcaseItems = [
     accent: '#FF8C00',
     icon: Gauge,
     imageSide: 'right',
-    image: '/images/product-hero.jpg',
-    imageAlt: 'Titan X LED-display toont exact batterijpercentage',
+    image: '/images/titanx/gallery/stage-gobo.webp',
+    imageAlt: 'Titan X in daglicht met LED-display dat exact batterijpercentage toont',
   },
   {
     id: 'multidevice',
@@ -39,8 +39,8 @@ const showcaseItems = [
     accent: '#FF8C00',
     icon: Link2,
     imageSide: 'right',
-    image: '/images/product-angle.jpg',
-    imageAlt: 'Titan X met oranje gevlochten draaglus bevestigd aan rugzak',
+    image: '/images/titanx/gallery/outdoor.webp',
+    imageAlt: 'Titan X met oranje gevlochten draaglus geklikt aan een rugzak in de natuur',
   },
   {
     id: 'flashlight',
@@ -51,8 +51,8 @@ const showcaseItems = [
     accent: '#FF8C00',
     icon: Sun,
     imageSide: 'left',
-    image: '/images/feature-flashlight.jpg',
-    imageAlt: 'Titan X ingebouwde zaklamp',
+    image: '/images/titanx/gallery/flashlight.webp',
+    imageAlt: 'Titan X ingebouwde zaklamp brandend, met de twee ingebouwde kabels zichtbaar',
   },
 ];
 
