@@ -150,7 +150,7 @@ export default function HeroVariantB() {
               </span>
             )}
             <Link
-              href="/shop"
+              href="/#specs"
               locale={locale}
               className="font-body text-sm text-white/65 underline underline-offset-4 decoration-white/30 transition-colors hover:text-titan-accent hover:decoration-titan-accent/50"
             >

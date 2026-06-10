@@ -31,7 +31,7 @@ export default function FinalePulse() {
   };
 
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.07] bg-black py-24 lg:py-36">
+    <section id="bestel" className="relative scroll-mt-20 overflow-hidden border-t border-white/[0.07] bg-black py-24 lg:py-36">
       <div className="absolute inset-0" aria-hidden>
         <Image
           src="/images/atmosphere/energy.webp"

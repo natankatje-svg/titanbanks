@@ -11,7 +11,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { BRAND } from '@/lib/product-claims';
 
 const LEFT_LINKS = [
-  { tKey: 'shop', href: '/shop' },
+  { tKey: 'order', href: '/#bestel' },
   { tKey: 'technology', href: '/technology' },
 ] as const;
 const RIGHT_LINKS = [

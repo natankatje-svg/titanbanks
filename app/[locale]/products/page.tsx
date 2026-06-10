@@ -72,7 +72,7 @@ export default async function ProductsPage({
               percentage, ingebouwde zaklamp.
             </p>
             <Link
-              href="/shop"
+              href="/#bestel"
               className="btn-orange inline-block"
               style={{ padding: '0.75rem 1.6rem', fontSize: '0.8rem', letterSpacing: '0.08em' }}
             >

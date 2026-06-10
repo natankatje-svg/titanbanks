@@ -89,7 +89,7 @@ export default function CoverHero() {
             {isWaitlist ? t('cta_waitlist') : t('cta_buy_now')}
             {price && <span className="font-display normal-case italic tracking-normal">— {price}</span>}
           </button>
-          <Link href="/shop" locale={locale} className="link-hairline">
+          <Link href="/#specs" locale={locale} className="link-hairline">
             {t('cta_view_specs')}
           </Link>
         </div>

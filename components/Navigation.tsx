@@ -18,7 +18,7 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { tKey: 'shop', href: '/shop' },
+  { tKey: 'order', href: '/#bestel' },
   { tKey: 'technology', href: '/technology' },
   { tKey: 'story', href: '/story' },
   { tKey: 'support', href: '/support' },

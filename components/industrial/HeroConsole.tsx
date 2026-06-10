@@ -121,7 +121,7 @@ export default function HeroConsole() {
                 <span>{isWaitlist ? t('cta_waitlist') : t('cta_buy_now')}</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
               </button>
-              <Link href="/shop" locale={locale} className="btn-console-ghost flex-1 text-center">
+              <Link href="/#specs" locale={locale} className="btn-console-ghost flex-1 text-center">
                 {t('cta_view_specs')}
               </Link>
             </div>

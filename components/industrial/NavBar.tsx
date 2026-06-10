@@ -11,7 +11,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { BRAND } from '@/lib/product-claims';
 
 const navLinks = [
-  { tKey: 'shop', href: '/shop' },
+  { tKey: 'order', href: '/#bestel' },
   { tKey: 'technology', href: '/technology' },
   { tKey: 'story', href: '/story' },
   { tKey: 'support', href: '/support' },

@@ -82,7 +82,7 @@ export default function StorySection() {
           )}
 
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/shop" className="btn-orange">
+            <Link href="/#bestel" className="btn-orange">
               Bekijk {BRAND.product}
             </Link>
           </div>

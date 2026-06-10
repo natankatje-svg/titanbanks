@@ -41,7 +41,7 @@ export default function SpecsPulse() {
   const mid = Math.ceil(rows.length / 2);
 
   return (
-    <section className="relative border-t border-white/[0.07] bg-[#080808] py-16 lg:py-24">
+    <section id="specs" className="relative scroll-mt-20 border-t border-white/[0.07] bg-[#080808] py-16 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 22 }}

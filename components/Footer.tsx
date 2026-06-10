@@ -31,7 +31,7 @@ interface LegalLink {
 
 const productLinks: FooterLink[] = [
   { tKey: 'products', href: '/products' },
-  { tKey: 'shop', href: '/shop' },
+  { tKey: 'order', href: '/#bestel' },
   { tKey: 'technology', href: '/technology' },
   { tKey: 'in_use', href: '/in-use' },
 ];
