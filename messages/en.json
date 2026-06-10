@@ -236,16 +236,6 @@
     "cta_success": "You're on the list. We'll email when Vol. 02 takes shape.",
     "cta_error": "Something went wrong. Try again."
   },
-  "buy_box": {
-    "eyebrow": "Order now",
-    "quantity": "Quantity",
-    "in_stock": "In stock — first batch",
-    "shipping_line": "Ships from the Netherlands · {days}-day returns · {years}-year warranty",
-    "secure_checkout": "Secure checkout via iDEAL, Apple Pay, Klarna, Visa & Mastercard",
-    "cta_add_to_cart": "Add to cart",
-    "cta_waitlist": "Join the waitlist",
-    "incl_vat": "incl. VAT"
-  },
   "ports_visual": {
     "eyebrow": "Ports & inputs",
     "title": "Everything you need. Six ports in parallel.",

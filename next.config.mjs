@@ -19,7 +19,6 @@ const nextConfig = {
     // 301-redirect alle pre-i18n URLs naar /nl/<route>.
     // /preview en /preview2 blijven op root (interne review-pagina's).
     const routes = [
-      'shop',
       'technology',
       'in-use',
       'story',
@@ -37,6 +36,9 @@ const nextConfig = {
       { source: '/', destination: '/nl', permanent: true },
       // Legacy /privacy → /nl/legal/privacy
       { source: '/privacy', destination: '/nl/legal/privacy', permanent: true },
+      // /shop is opgeheven (1 product → homepage = shoppagina). Eén hop, geen chain.
+      { source: '/shop', destination: '/nl', permanent: true },
+      { source: '/:locale(nl|en|de)/shop', destination: '/:locale', permanent: true },
       ...redirects,
     ];
   },

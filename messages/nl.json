@@ -236,16 +236,6 @@
     "cta_success": "Je staat op de lijst. We mailen wanneer Vol. 02 vorm krijgt.",
     "cta_error": "Er ging iets mis. Probeer het opnieuw."
   },
-  "buy_box": {
-    "eyebrow": "Bestel direct",
-    "quantity": "Aantal",
-    "in_stock": "Op voorraad — eerste batch",
-    "shipping_line": "Verzending vanuit Nederland · {days} dagen retour · {years} jaar garantie",
-    "secure_checkout": "Veilig betalen via iDEAL, Apple Pay, Klarna, Visa & Mastercard",
-    "cta_add_to_cart": "In winkelmandje",
-    "cta_waitlist": "Op de waitlist",
-    "incl_vat": "incl. BTW"
-  },
   "ports_visual": {
     "eyebrow": "Poorten & aansluitingen",
     "title": "Alles wat je nodig hebt. Zes poorten parallel.",

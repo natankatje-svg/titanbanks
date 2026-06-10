@@ -236,16 +236,6 @@
     "cta_success": "Du bist auf der Liste. Wir melden uns, wenn Vol. 02 Form annimmt.",
     "cta_error": "Etwas ist schiefgelaufen. Versuche es erneut."
   },
-  "buy_box": {
-    "eyebrow": "Jetzt bestellen",
-    "quantity": "Anzahl",
-    "in_stock": "Auf Lager — erste Charge",
-    "shipping_line": "Versand aus den Niederlanden · {days} Tage Rückgabe · {years} Jahre Garantie",
-    "secure_checkout": "Sicheres Bezahlen mit iDEAL, Apple Pay, Klarna, Visa & Mastercard",
-    "cta_add_to_cart": "In den Warenkorb",
-    "cta_waitlist": "Auf die Warteliste",
-    "incl_vat": "inkl. MwSt."
-  },
   "ports_visual": {
     "eyebrow": "Anschlüsse & Ports",
     "title": "Alles was du brauchst. Sechs Ports parallel.",

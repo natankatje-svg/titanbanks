@@ -270,7 +270,8 @@ export const LAUNCH_STATE = {
   /**
    * Waitlist-modus is per 2026-05-23 UIT — V2 webshop toont direct Buy-CTA's.
    * Zie [[feedback-titanbanks-no-teaser-no-preview]]. CTA-fallback naar
-   *  `#waitlist` werkt niet meer; alles drijft naar Ecwid addToCart of /shop.
+   *  `#waitlist` werkt niet meer; alles drijft naar Ecwid addToCart
+   *  (/shop is opgeheven — de homepage is de shoppagina).
    */
   waitlistMode: false,
 } as const;

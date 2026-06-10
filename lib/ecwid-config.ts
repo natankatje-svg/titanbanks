@@ -10,7 +10,7 @@
 // └─────────────────────────────────────────────────────────────────────┘
 //
 //  1. Klant klikt "Bestel Titan X" op titan-banks.com
-//     └─► HeroVariantB / BuyBox callt useEcwid().addToCart(qty)
+//     └─► PulseHero / FinalePulse / StickyBuyBar callt useEcwid().addToCart(qty)
 //
 //  2. EcwidProvider roept window.Ecwid.Cart.addProduct({
 //       id: ECWID_PRODUCT_ID, quantity: qty

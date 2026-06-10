@@ -18,7 +18,6 @@ interface RouteSpec {
 
 const routes: RouteSpec[] = [
   { path: '', priority: 1.0, changeFrequency: 'weekly', exists: true },
-  { path: 'shop', priority: 0.95, changeFrequency: 'weekly', exists: true },
   { path: 'products', priority: 0.85, changeFrequency: 'monthly', exists: true },
   { path: 'technology', priority: 0.8, changeFrequency: 'monthly', exists: true },
   { path: 'in-use', priority: 0.7, changeFrequency: 'monthly', exists: true },

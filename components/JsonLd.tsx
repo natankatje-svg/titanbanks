@@ -18,7 +18,8 @@ const product = {
     // Site verkoopt direct via Ecwid (waitlistMode = false) → InStock i.p.v. PreOrder.
     availability: 'https://schema.org/InStock',
     itemCondition: 'https://schema.org/NewCondition',
-    url: 'https://titan-banks.com/nl/shop',
+    // Eén product → de homepage ís de productpagina (/shop is opgeheven).
+    url: 'https://titan-banks.com/nl',
     seller: { '@type': 'Organization', name: BRAND.text },
   },
 };
