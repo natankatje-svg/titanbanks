@@ -1,32 +1,36 @@
 import type { Metadata } from 'next';
-import { Archivo_Black, Archivo, JetBrains_Mono } from 'next/font/google';
+import { Bodoni_Moda, Hanken_Grotesk, Spline_Sans_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
 import './globals.css';
 
-// Industrial type-systeem (revamp 2026-06-10):
-// display = Archivo Black (zwaar, equipment-grade poster-gewicht),
-// body    = Archivo (zelfde familie → premium systeemgevoel),
-// mono    = JetBrains Mono (technische data, serials, specs).
-const archivoBlack = Archivo_Black({
+// ATELIER NOIR type-systeem (build/atelier):
+// display = Bodoni Moda (Didone, fashion-campagne contrast, incl. italic),
+// body    = Hanken Grotesk (neutrale, warme grotesk),
+// mono    = Spline Sans Mono (stille labels/colofon).
+const bodoniModa = Bodoni_Moda({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
+  // Next heeft geen fallback-metrics voor Bodoni Moda (build-warning) —
+  // expliciet uitzetten; serif-fallback is acceptabel tijdens swap.
+  adjustFontFallback: false,
 });
 
-const archivo = Archivo({
+const hankenGrotesk = Hanken_Grotesk({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap',
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const splineSansMono = Spline_Sans_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['400', '500'],
   variable: '--font-mono',
   display: 'swap',
 });
@@ -71,7 +75,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const locale = await getLocale();
   const messages = await getMessages();
   return (
-    <html lang={locale} className={`${archivoBlack.variable} ${archivo.variable} ${jetbrainsMono.variable}`}>
+    <html lang={locale} className={`${bodoniModa.variable} ${hankenGrotesk.variable} ${splineSansMono.variable}`}>
       <body className="bg-black text-white antialiased">
         <GA4Loader />
         <NextIntlClientProvider locale={locale} messages={messages}>

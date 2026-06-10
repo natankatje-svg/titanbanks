@@ -29,13 +29,12 @@ body {
 }
 
 /* ── Typography ──
- * Display = Archivo Black (industrial revamp): één zwaar poster-gewicht,
- * equipment-grade. De familie heeft maar één weight (400-genaamd, rendert
- * zwart) — weight-variatie komt uit Archivo (body) 600/700. */
+ * Display = Bodoni Moda (ATELIER NOIR): Didone met extreem dik/dun-contrast,
+ * fashion-campagnegewicht. Didones NIET negatief trackken; italic = accent. */
 h1, h2, h3, .display {
-  font-family: var(--font-display), sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  letter-spacing: 0.005em;
 }
 
 .mono {
@@ -403,6 +402,64 @@ body::after {
   50%      { text-shadow: 0 0 30px rgba(255,140,40,0.65), 0 0 60px rgba(255,140,0,0.35), 0 2px 30px rgba(0,0,0,0.45); }
 }
 .text-glow-orange { animation: textGlowPulse 4.5s ease-in-out infinite; }
+
+/* ════════════════════════════════════════════════════════════════════
+   ATELIER NOIR — couture utilities (build/atelier)
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Gevulde couture-knop: scherp rechthoekig, brede caps-tracking. */
+.btn-atelier {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: #FF8C00;
+  color: #080808;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 1.05rem 2.4rem;
+  border: 1px solid #FF8C00;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.btn-atelier:hover {
+  background: transparent;
+  color: #FF8C00;
+}
+.btn-atelier:focus-visible {
+  outline: 2px solid #FF8C00;
+  outline-offset: 3px;
+}
+
+/* Hairline-tekstlink: kleine caps met onderlijn die oranje kleurt. */
+.link-hairline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 0.35rem;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.link-hairline:hover {
+  color: #FF8C00;
+  border-color: rgba(255,140,0,0.6);
+}
+
+/* Verticale maison-lijn (decoratief, boven/onder secties). */
+.maison-rule {
+  width: 1px;
+  height: 56px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, transparent, rgba(255,140,0,0.7), transparent);
+}
 
 /* ════════════════════════════════════════════════════════════════════
    INDUSTRIAL REVAMP — equipment-grade utilities

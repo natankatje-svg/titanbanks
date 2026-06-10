@@ -1,14 +1,12 @@
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
-import TickerBar from '@/components/industrial/TickerBar';
-import NavBar from '@/components/industrial/NavBar';
+import MaisonNav from '@/components/atelier/MaisonNav';
 import ShopGallery from '@/components/shop/ShopGallery';
 import BuyBox from '@/components/BuyBox';
-import SystemView from '@/components/industrial/SystemView';
-import FieldLog from '@/components/industrial/FieldLog';
-import SpecSheet from '@/components/industrial/SpecSheet';
-import TrustStrip from '@/components/industrial/TrustStrip';
+import EditorialSpread from '@/components/atelier/EditorialSpread';
+import AtelierNumbers from '@/components/atelier/AtelierNumbers';
+import Colophon from '@/components/atelier/Colophon';
 import FAQ from '@/components/FAQ';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import { BRAND } from '@/lib/product-claims';
@@ -43,23 +41,22 @@ export async function generateMetadata({
 }
 
 /**
- * /shop V4 — industrial PDP: koopbeslissing boven de fold (galerij sticky
- * links, BuyBox rechts), daarna systeem/logboek/spec-sheet/trust/FAQ.
+ * /shop — build/atelier: couture-PDP boven de fold (sticky galerij +
+ * BuyBox), daarna editorial spread, numbers, colofon en FAQ.
  */
 export default function ShopPage() {
   return (
     // GEEN overflow-x-hidden op main (breekt position:sticky galerij-pin).
     <main className="relative bg-titan-bg">
       <JsonLd />
-      <TickerBar />
-      <NavBar />
+      <MaisonNav />
 
       {/* PDP — boven de fold */}
-      <section className="relative bg-titan-bg blueprint-grid pb-16 pt-8 lg:pb-24 lg:pt-12">
-        <div className="mx-auto max-w-[1440px] px-5 lg:px-8">
+      <section className="relative bg-titan-bg pb-16 pt-10 lg:pb-24 lg:pt-14">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
           <h1 className="sr-only">{BRAND.text} {BRAND.product}</h1>
-          <div className="grid items-start gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
-            <div className="lg:sticky lg:top-24">
+          <div className="grid items-start gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
+            <div className="lg:sticky lg:top-28">
               <ShopGallery />
             </div>
             <BuyBox embedded />
@@ -67,10 +64,9 @@ export default function ShopPage() {
         </div>
       </section>
 
-      <SystemView />
-      <FieldLog />
-      <SpecSheet />
-      <TrustStrip />
+      <EditorialSpread />
+      <AtelierNumbers />
+      <Colophon />
       <FAQ />
       <Footer />
       <StickyBuyBar />

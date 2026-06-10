@@ -1,17 +1,14 @@
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
-import TickerBar from '@/components/industrial/TickerBar';
-import NavBar from '@/components/industrial/NavBar';
-import HeroConsole from '@/components/industrial/HeroConsole';
-import MarqueeBand from '@/components/industrial/MarqueeBand';
-import DataPanel from '@/components/industrial/DataPanel';
-import SystemView from '@/components/industrial/SystemView';
-import FieldLog from '@/components/industrial/FieldLog';
-import SpecSheet from '@/components/industrial/SpecSheet';
-import TrustStrip from '@/components/industrial/TrustStrip';
+import MaisonNav from '@/components/atelier/MaisonNav';
+import CoverHero from '@/components/atelier/CoverHero';
+import EditorialSpread from '@/components/atelier/EditorialSpread';
+import AtelierNumbers from '@/components/atelier/AtelierNumbers';
+import LookBook from '@/components/atelier/LookBook';
+import Colophon from '@/components/atelier/Colophon';
 import FAQ from '@/components/FAQ';
-import OrderConsole from '@/components/industrial/OrderConsole';
+import AcquireFinale from '@/components/atelier/AcquireFinale';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import { buildPageMetadata } from '@/lib/seo';
 
@@ -46,31 +43,25 @@ export async function generateMetadata({
 }
 
 /**
- * Homepage V6 — "INDUSTRIAL POWER UNIT": equipment-grade spec-sheet-design
- * (blueprint-raster, annotatie-callouts, mono-data, safety-orange console-CTA's).
- * Archivo Black / Archivo / JetBrains Mono. Alle productbeelden uit de
- * goedgekeurde launch-set; alle claims via lib/product-claims SSOT.
- *
- * Flow: Ticker → Nav → HeroConsole (callouts + order-console ATF) →
- * MarqueeBand → DataPanel (count-up) → SystemView → FieldLog (live preview) →
- * SpecSheet → TrustStrip → FAQ → OrderConsole → Footer + StickyBuyBar.
+ * Homepage — build/atelier "ATELIER NOIR": dark-luxury editorial in
+ * fashion-campagnestijl. Bodoni Moda (Didone, italic accenten) + Hanken
+ * Grotesk; maison-nav met gecentreerd logo; campagne-cover met het
+ * halo-juweel; look-book-platen; colofon-specs; couture-finale.
+ * Copy/claims/logo identiek; productbeelden uit de goedgekeurde set.
  */
 export default function Home() {
   return (
     // GEEN overflow-x-hidden op main (breekt position:sticky); body clipt op X.
     <main className="relative bg-titan-bg">
       <JsonLd />
-      <TickerBar />
-      <NavBar />
-      <HeroConsole />
-      <MarqueeBand />
-      <DataPanel />
-      <SystemView />
-      <FieldLog />
-      <SpecSheet />
-      <TrustStrip />
+      <MaisonNav />
+      <CoverHero />
+      <EditorialSpread />
+      <AtelierNumbers />
+      <LookBook />
+      <Colophon />
       <FAQ />
-      <OrderConsole />
+      <AcquireFinale />
       <Footer />
       <StickyBuyBar />
     </main>
