@@ -14,8 +14,8 @@ export type AtmosFeatureProps = {
   title: string;
   accent: string;
   body: string;
-  /** Productloos sfeerbeeld — full-bleed parallax-achtergrond. */
-  atmosphere: string;
+  /** Productloos sfeerbeeld — full-bleed parallax-achtergrond. Weglaten/null = donkere sectie op puur zwart. */
+  atmosphere?: string | null;
   /** Goedgekeurde productfoto — zwevende tilt-card op de voorgrond. */
   product: string;
   productAlt: string;
@@ -24,17 +24,17 @@ export type AtmosFeatureProps = {
 };
 
 /**
- * AtmosFeature — full-bleed sfeerbeeld (productloos, parallax) met daar
- * bovenop een zwevende 3D-tilt productfoto en de use-case-copy. De sfeer
- * geeft context, de echte productfoto blijft de enige plek waar de Titan X
- * te zien is.
+ * AtmosFeature — use-case-sectie met zwevende 3D-tilt productfoto. Met
+ * `atmosphere` = full-bleed sfeerbeeld (productloos, parallax) als
+ * achtergrond; zonder = donkere sectie op puur zwart, zodat sfeerbanden
+ * elkaar afwisselen i.p.v. opstapelen.
  */
 export default function AtmosFeature({
   kicker,
   title,
   accent,
   body,
-  atmosphere,
+  atmosphere = null,
   product,
   productAlt,
   productPos = 'object-center',
@@ -51,23 +51,25 @@ export default function AtmosFeature({
   };
 
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.07] py-20 lg:py-28">
-      {/* sfeer-achtergrond met parallax */}
-      <div aria-hidden className="absolute inset-0">
-        <ParallaxImg className="h-full">
-          <Image src={atmosphere} alt="" fill sizes="100vw" className="object-cover" />
-        </ParallaxImg>
-        {/* scrims voor leesbaarheid */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #080808 0%, rgba(8,8,8,0.25) 30%, rgba(8,8,8,0.45) 75%, #080808 100%)' }} />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: flip
-              ? 'linear-gradient(to left, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.45) 45%, transparent 70%)'
-              : 'linear-gradient(to right, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.45) 45%, transparent 70%)',
-          }}
-        />
-      </div>
+    <section className={`relative overflow-hidden border-t border-white/[0.07] py-20 lg:py-28 ${atmosphere ? '' : 'bg-[#080808]'}`}>
+      {/* sfeer-achtergrond met parallax (alleen bij sfeerband-variant) */}
+      {atmosphere && (
+        <div aria-hidden className="absolute inset-0">
+          <ParallaxImg className="h-full">
+            <Image src={atmosphere} alt="" fill sizes="100vw" className="object-cover" />
+          </ParallaxImg>
+          {/* scrims voor leesbaarheid */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #080808 0%, rgba(8,8,8,0.25) 30%, rgba(8,8,8,0.45) 75%, #080808 100%)' }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: flip
+                ? 'linear-gradient(to left, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.45) 45%, transparent 70%)'
+                : 'linear-gradient(to right, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.45) 45%, transparent 70%)',
+            }}
+          />
+        </div>
+      )}
 
       <div className="relative flex items-center">
         <div className="mx-auto grid w-full max-w-[1440px] items-center gap-10 px-6 lg:grid-cols-2 lg:px-10">
@@ -80,10 +82,10 @@ export default function AtmosFeature({
             className={flip ? 'lg:order-2' : ''}
           >
             <span className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-titan-accent">{kicker}</span>
-            <h2 className="mt-3 font-display uppercase leading-[1.06] text-white [text-wrap:balance]" style={{ fontSize: 'clamp(1.9rem, 4vw, 3.2rem)', textShadow: '0 2px 30px rgba(0,0,0,0.6)' }}>
+            <h2 className="mt-3 font-display uppercase leading-[1.06] text-white [text-wrap:balance]" style={{ fontSize: 'clamp(1.9rem, 4vw, 3.2rem)', ...(atmosphere ? { textShadow: '0 2px 30px rgba(0,0,0,0.6)' } : {}) }}>
               {title} <span className="text-titan-accent">{accent}</span>
             </h2>
-            <p className="mt-5 max-w-md font-body text-base leading-relaxed text-[#C9C9C9]" style={{ textShadow: '0 1px 14px rgba(0,0,0,0.7)' }}>
+            <p className="mt-5 max-w-md font-body text-base leading-relaxed text-[#C9C9C9]" style={atmosphere ? { textShadow: '0 1px 14px rgba(0,0,0,0.7)' } : undefined}>
               {body}
             </p>
             <button onClick={onBuy} className="group mt-7 inline-flex items-center gap-2 font-body text-sm font-600 text-white transition-colors hover:text-titan-accent">

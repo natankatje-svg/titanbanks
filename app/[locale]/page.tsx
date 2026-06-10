@@ -71,6 +71,15 @@ export default function Home() {
         productAlt="in de cup-holder van een auto bij nacht"
       />
       <AtmosFeature
+        kicker="Werk & school"
+        title="Telefoon bijna leeg"
+        accent="in de trein?"
+        body="Snellaad via de ingebouwde USB-C kabel."
+        product="/images/titanx/gallery/v2/life-train.webp"
+        productAlt="in de trein"
+        flip
+      />
+      <AtmosFeature
         kicker="Festivals"
         title="Drie dagen,"
         accent="nul zorgen."
@@ -79,21 +88,6 @@ export default function Home() {
         product="/images/titanx/gallery/v2/life-festival.webp"
         productAlt="op een festival in de avond"
         productPos="object-[center_55%]"
-        flip
-      />
-      <AtmosFeature
-        kicker="Werk & school"
-        title="Telefoon bijna leeg"
-        accent="in de trein?"
-        body="Snellaad via de ingebouwde USB-C kabel."
-        atmosphere="/images/atmosphere/rain.webp"
-        product="/images/titanx/gallery/v2/life-train.webp"
-        productAlt="in de trein"
-      />
-      <AtmosBreak
-        atmosphere="/images/atmosphere/mountains.webp"
-        kicker="Outdoor"
-        line="GPS, camera en de ingebouwde zaklamp als back-up wanneer de zon ondergaat."
       />
       <SpecsPulse />
       <FAQ />
