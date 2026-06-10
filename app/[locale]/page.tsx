@@ -4,7 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import MaisonNav from '@/components/atelier/MaisonNav';
 import PulseHero from '@/components/pulse/PulseHero';
 import StatPulse from '@/components/pulse/StatPulse';
-import TiltGallery from '@/components/pulse/TiltGallery';
+import PulseGalleryLazy from '@/components/pulse/PulseGalleryLazy';
 import MarqueeBand from '@/components/industrial/MarqueeBand';
 import AtmosFeature from '@/components/pulse/AtmosFeature';
 import AtmosBreak from '@/components/pulse/AtmosBreak';
@@ -59,7 +59,7 @@ export default function Home() {
       <MaisonNav />
       <PulseHero />
       <StatPulse />
-      <TiltGallery />
+      <PulseGalleryLazy />
       <MarqueeBand />
       <AtmosFeature
         kicker="Road trips"
