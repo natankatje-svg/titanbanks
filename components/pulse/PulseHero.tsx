@@ -117,13 +117,10 @@ export default function PulseHero() {
           </div>
         </motion.div>
 
-        {/* reactor — zwevende cirkel + orbit-ringen */}
-        <motion.div
-          initial={reduce ? false : { opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
-          className="order-1 flex items-center justify-center lg:order-2 lg:col-span-7"
-        >
+        {/* reactor — zwevende cirkel + orbit-ringen. GEEN entrance-fade: dit is
+            het LCP-element; opacity:0 in SSR laat LCP wachten op hydration
+            (gemeten: +6s op trage mobiel). Direct zichtbaar = snelste paint. */}
+        <div className="order-1 flex items-center justify-center lg:order-2 lg:col-span-7">
           <div className="relative aspect-square w-[88vw] max-w-[460px] lg:max-w-[640px]">
             {/* orbit-ringen — drie lagen + twee satellieten */}
             <svg aria-hidden viewBox="0 0 100 100" className="pulse-ring absolute -inset-[6%] h-[112%] w-[112%]">
@@ -154,7 +151,7 @@ export default function PulseHero() {
               />
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* onderfade naar volgende sectie */}

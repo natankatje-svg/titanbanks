@@ -60,28 +60,37 @@ export default function EcwidProvider({ children }: { children: ReactNode }) {
   const [isReady, setIsReady] = useState(false);
 
   const addToCart = useCallback((quantity: number = 1) => {
-    if (typeof window === 'undefined' || !window.Ecwid) {
-      console.warn('[Ecwid] Not loaded yet');
-      return;
-    }
+    if (typeof window === 'undefined') return;
     /*
-      Ecwid v3 internally wraps every API call in `n(() => ...)` which queues
-      until `ecommerce.ready` fires. We do NOT need React-side isReady gating —
-      Ecwid handles the queueing itself.
+      Ecwid laadt via lazyOnload (perf: derden niet in de kritieke laadfase).
+      Klikt iemand vóórdat script.js binnen is, dan pollen we kort door i.p.v.
+      de klik te laten vallen — de intentie gaat dus nooit verloren.
 
-      Open the cart-overlay AFTER addProduct so the rendered cart-page reads
-      the just-added item. A 150ms delay reliably wins the race against the
-      addProduct mutation commit; calling openPage synchronously after
-      addProduct caused the overlay to render with stale (empty-cart) state
-      on the first click of a fresh page-load.
+      Ecwid v3 wraps verder elke API-call intern in een queue tot
+      `ecommerce.ready` — React-side isReady-gating is niet nodig.
+
+      Open de cart-overlay NA addProduct; de 600ms-delay wint betrouwbaar de
+      race tegen de addProduct-commit (synchrone openPage gaf een lege cart
+      bij de eerste klik op een verse pageload).
     */
-    window.Ecwid.Cart.addProduct({
-      id: ECWID_PRODUCT_ID,
-      quantity: Math.max(1, Math.floor(quantity)),
-    });
-    setTimeout(() => {
-      if (window.Ecwid) window.Ecwid.openPage('cart');
-    }, 600);
+    const attempt = (triesLeft: number) => {
+      if (!window.Ecwid) {
+        if (triesLeft <= 0) {
+          console.warn('[Ecwid] Not loaded');
+          return;
+        }
+        setTimeout(() => attempt(triesLeft - 1), 250);
+        return;
+      }
+      window.Ecwid.Cart.addProduct({
+        id: ECWID_PRODUCT_ID,
+        quantity: Math.max(1, Math.floor(quantity)),
+      });
+      setTimeout(() => {
+        if (window.Ecwid) window.Ecwid.openPage('cart');
+      }, 600);
+    };
+    attempt(40); // max ~10s wachten op een trage verbinding
   }, []);
 
   const openCart = useCallback(() => {
@@ -106,11 +115,14 @@ export default function EcwidProvider({ children }: { children: ReactNode }) {
             {`window.ecwid_script_defer = true; window.ecwid_dynamic_widgets = true;`}
           </Script>
 
-          {/* Ecwid core script */}
+          {/* Ecwid core script — lazyOnload: Ecwid+Stripe (~500KB aan derden)
+              vechten anders tijdens de kritieke laadfase om bandbreedte met het
+              LCP-hero-beeld (gemeten: LCP +3s op trage mobiel). Na window.onload
+              laden = hero eerst, checkout alsnog ruim vóór de eerste klik klaar. */}
           <Script
             id="ecwid-script"
             src={`https://app.ecwid.com/script.js?${ECWID_STORE_ID}&data_platform=code`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             onLoad={() => {
               if (!window.Ecwid) return;
               /*
