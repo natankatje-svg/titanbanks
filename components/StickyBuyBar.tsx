@@ -74,10 +74,10 @@ export default function StickyBuyBar() {
               </div>
               <button
                 onClick={handleCta}
-                className="btn-atelier flex-shrink-0"
-                style={{ padding: '0.7rem 1.5rem', fontSize: '0.68rem' }}
+                className="btn-pulse flex-shrink-0"
+                style={{ padding: '0.7rem 1.5rem', fontSize: '0.72rem' }}
               >
-                <Zap className="w-3.5 h-3.5 fill-[#080808]" />
+                <Zap className="w-3.5 h-3.5 fill-[#0A0A0A]" />
                 {isWaitlist ? 'Waitlist' : 'Bestel'}
               </button>
             </div>

@@ -29,12 +29,12 @@ body {
 }
 
 /* ── Typography ──
- * Display = Bodoni Moda (ATELIER NOIR): Didone met extreem dik/dun-contrast,
- * fashion-campagnegewicht. Didones NIET negatief trackken; italic = accent. */
+ * Display = Unbounded (PULSE): expressieve rond-tech display, energiek
+ * maar premium op 500-600; brede lettervormen → niet negatief trackken. */
 h1, h2, h3, .display {
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), sans-serif;
   font-weight: 600;
-  letter-spacing: 0.005em;
+  letter-spacing: -0.005em;
 }
 
 .mono {
@@ -404,6 +404,104 @@ body::after {
 .text-glow-orange { animation: textGlowPulse 4.5s ease-in-out infinite; }
 
 /* ════════════════════════════════════════════════════════════════════
+   PULSE — energy-tech utilities (build/pulse)
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Traag roterende energie-blob (conic gradient) — compositor-only. */
+@keyframes pulseOrbit {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.08); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.pulse-blob {
+  background: conic-gradient(
+    from 0deg,
+    rgba(255,140,0,0) 0deg,
+    rgba(255,140,0,0.55) 70deg,
+    rgba(255,90,0,0.15) 140deg,
+    rgba(255,140,0,0) 200deg,
+    rgba(255,170,60,0.4) 290deg,
+    rgba(255,140,0,0) 360deg
+  );
+  border-radius: 9999px;
+  filter: blur(70px);
+  animation: pulseOrbit var(--blob-dur, 26s) linear infinite;
+  will-change: transform;
+}
+
+/* Zwevend product — trage verticale float. */
+@keyframes pulseFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-16px); }
+}
+.pulse-float { animation: pulseFloat 7s ease-in-out infinite; will-change: transform; }
+
+/* Pulserende CTA-gloed. */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(255,140,0,0.35), 0 0 0 0 rgba(255,140,0,0.35); }
+  50%      { box-shadow: 0 10px 44px rgba(255,140,0,0.55), 0 0 0 10px rgba(255,140,0,0); }
+}
+.btn-pulse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #FF8C00, #FF7A1A);
+  color: #0A0A0A;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1.05rem 2.2rem;
+  border-radius: 9999px;
+  animation: ctaPulse 3.2s ease-in-out infinite;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.btn-pulse:hover { transform: translateY(-2px); filter: brightness(1.07); }
+.btn-pulse:active { transform: translateY(0); }
+.btn-pulse:focus-visible { outline: 2px solid #FF8C00; outline-offset: 3px; }
+
+/* Ghost-variant. */
+.btn-pulse-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.18);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1.05rem 1.9rem;
+  border-radius: 9999px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.btn-pulse-ghost:hover { border-color: rgba(255,140,0,0.6); color: #FF8C00; }
+.btn-pulse-ghost:focus-visible { outline: 2px solid rgba(255,140,0,0.7); outline-offset: 3px; }
+
+/* Draaiende orbit-ring rond het hero-product (SVG-wrapper). */
+@keyframes ringSpin { to { transform: rotate(360deg); } }
+.pulse-ring { animation: ringSpin 40s linear infinite; will-change: transform; }
+.pulse-ring-rev { animation: ringSpin 55s linear infinite reverse; will-change: transform; }
+
+/* Shine-sweep over kaarten bij hover. */
+.card-shine { position: relative; overflow: hidden; }
+.card-shine::after {
+  content: '';
+  position: absolute;
+  inset: -150% -60%;
+  background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,0.09) 50%, transparent 58%);
+  transform: translateX(-60%) rotate(0.001deg);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.card-shine:hover::after { transform: translateX(60%); }
+
+/* ════════════════════════════════════════════════════════════════════
    ATELIER NOIR — couture utilities (build/atelier)
    ════════════════════════════════════════════════════════════════════ */
 
@@ -575,5 +673,7 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-sweep, .hero-glow-pulse, .text-glow-orange, .final-drop-zoom,
-  .ticker-track { animation: none !important; }
+  .ticker-track, .pulse-blob, .pulse-float, .btn-pulse,
+  .pulse-ring, .pulse-ring-rev { animation: none !important; }
+  .card-shine::after { display: none; }
 }

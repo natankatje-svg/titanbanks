@@ -4,9 +4,9 @@ import JsonLd from '@/components/JsonLd';
 import MaisonNav from '@/components/atelier/MaisonNav';
 import ShopGallery from '@/components/shop/ShopGallery';
 import BuyBox from '@/components/BuyBox';
-import EditorialSpread from '@/components/atelier/EditorialSpread';
-import AtelierNumbers from '@/components/atelier/AtelierNumbers';
-import Colophon from '@/components/atelier/Colophon';
+import StatPulse from '@/components/pulse/StatPulse';
+import AtmosFeature from '@/components/pulse/AtmosFeature';
+import SpecsPulse from '@/components/pulse/SpecsPulse';
 import FAQ from '@/components/FAQ';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import { BRAND } from '@/lib/product-claims';
@@ -41,8 +41,8 @@ export async function generateMetadata({
 }
 
 /**
- * /shop — build/atelier: couture-PDP boven de fold (sticky galerij +
- * BuyBox), daarna editorial spread, numbers, colofon en FAQ.
+ * /shop — build/pulse: PDP boven de fold (sticky galerij + BuyBox),
+ * daarna energiecellen, sfeer-feature, specs en FAQ.
  */
 export default function ShopPage() {
   return (
@@ -52,7 +52,7 @@ export default function ShopPage() {
       <MaisonNav />
 
       {/* PDP — boven de fold */}
-      <section className="relative bg-titan-bg pb-16 pt-10 lg:pb-24 lg:pt-14">
+      <section className="relative bg-titan-bg pb-16 pt-8 lg:pb-24 lg:pt-12">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
           <h1 className="sr-only">{BRAND.text} {BRAND.product}</h1>
           <div className="grid items-start gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
@@ -64,9 +64,17 @@ export default function ShopPage() {
         </div>
       </section>
 
-      <EditorialSpread />
-      <AtelierNumbers />
-      <Colophon />
+      <StatPulse />
+      <AtmosFeature
+        kicker="Road trips"
+        title="Camera, telefoon en speakers"
+        accent="blijven aan."
+        body="Eén power bank voor de hele rit."
+        atmosphere="/images/atmosphere/highway.webp"
+        product="/images/titanx/gallery/v2/life-car.webp"
+        productAlt="in de cup-holder van een auto bij nacht"
+      />
+      <SpecsPulse />
       <FAQ />
       <Footer />
       <StickyBuyBar />

@@ -1,34 +1,30 @@
 import type { Metadata } from 'next';
-import { Bodoni_Moda, Hanken_Grotesk, Spline_Sans_Mono } from 'next/font/google';
+import { Unbounded, Figtree, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
 import './globals.css';
 
-// ATELIER NOIR type-systeem (build/atelier):
-// display = Bodoni Moda (Didone, fashion-campagne contrast, incl. italic),
-// body    = Hanken Grotesk (neutrale, warme grotesk),
-// mono    = Spline Sans Mono (stille labels/colofon).
-const bodoniModa = Bodoni_Moda({
+// PULSE type-systeem (build/pulse):
+// display = Unbounded (expressief, rond-tech, energiek),
+// body    = Figtree (moderne neutrale grotesk),
+// mono    = JetBrains Mono (labels/specs).
+const unbounded = Unbounded({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
-  // Next heeft geen fallback-metrics voor Bodoni Moda (build-warning) —
-  // expliciet uitzetten; serif-fallback is acceptabel tijdens swap.
-  adjustFontFallback: false,
 });
 
-const hankenGrotesk = Hanken_Grotesk({
+const figtree = Figtree({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap',
 });
 
-const splineSansMono = Spline_Sans_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',
@@ -75,7 +71,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const locale = await getLocale();
   const messages = await getMessages();
   return (
-    <html lang={locale} className={`${bodoniModa.variable} ${hankenGrotesk.variable} ${splineSansMono.variable}`}>
+    <html lang={locale} className={`${unbounded.variable} ${figtree.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-black text-white antialiased">
         <GA4Loader />
         <NextIntlClientProvider locale={locale} messages={messages}>

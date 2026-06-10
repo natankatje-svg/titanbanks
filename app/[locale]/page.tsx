@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import MaisonNav from '@/components/atelier/MaisonNav';
-import CoverHero from '@/components/atelier/CoverHero';
-import EditorialSpread from '@/components/atelier/EditorialSpread';
-import AtelierNumbers from '@/components/atelier/AtelierNumbers';
-import LookBook from '@/components/atelier/LookBook';
-import Colophon from '@/components/atelier/Colophon';
+import PulseHero from '@/components/pulse/PulseHero';
+import StatPulse from '@/components/pulse/StatPulse';
+import TiltGallery from '@/components/pulse/TiltGallery';
+import AtmosFeature from '@/components/pulse/AtmosFeature';
+import AtmosBreak from '@/components/pulse/AtmosBreak';
+import SpecsPulse from '@/components/pulse/SpecsPulse';
 import FAQ from '@/components/FAQ';
-import AcquireFinale from '@/components/atelier/AcquireFinale';
+import FinalePulse from '@/components/pulse/FinalePulse';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import { buildPageMetadata } from '@/lib/seo';
 
@@ -43,11 +44,11 @@ export async function generateMetadata({
 }
 
 /**
- * Homepage — build/atelier "ATELIER NOIR": dark-luxury editorial in
- * fashion-campagnestijl. Bodoni Moda (Didone, italic accenten) + Hanken
- * Grotesk; maison-nav met gecentreerd logo; campagne-cover met het
- * halo-juweel; look-book-platen; colofon-specs; couture-finale.
- * Copy/claims/logo identiek; productbeelden uit de goedgekeurde set.
+ * Homepage — build/pulse "PULSE": motion-first dark energy-tech.
+ * Unbounded/Geist; MaisonNav-layout (Natans keuze) behouden; reactor-hero
+ * met orbit-ringen + blobs + embers; count-up energiecellen; 3D-tilt
+ * gallery; parallax-sfeerbanden (productloze Higgsfield-beelden) met
+ * zwevende productfoto's; pulserende CTA's. Copy/claims/logo ongewijzigd.
  */
 export default function Home() {
   return (
@@ -55,13 +56,37 @@ export default function Home() {
     <main className="relative bg-titan-bg">
       <JsonLd />
       <MaisonNav />
-      <CoverHero />
-      <EditorialSpread />
-      <AtelierNumbers />
-      <LookBook />
-      <Colophon />
+      <PulseHero />
+      <StatPulse />
+      <TiltGallery />
+      <AtmosFeature
+        kicker="Road trips"
+        title="Camera, telefoon en speakers"
+        accent="blijven aan."
+        body="Eén power bank voor de hele rit."
+        atmosphere="/images/atmosphere/highway.webp"
+        product="/images/titanx/gallery/v2/life-car.webp"
+        productAlt="in de cup-holder van een auto bij nacht"
+      />
+      <AtmosFeature
+        kicker="Festivals"
+        title="Drie dagen,"
+        accent="nul zorgen."
+        body="Telefoon, oordopjes en camera blijven de hele tijd aan."
+        atmosphere="/images/atmosphere/festival.webp"
+        product="/images/titanx/gallery/v2/life-festival.webp"
+        productAlt="op een festival in de avond"
+        productPos="object-[center_55%]"
+        flip
+      />
+      <AtmosBreak
+        atmosphere="/images/atmosphere/mountains.webp"
+        kicker="Outdoor"
+        line="GPS, camera en de ingebouwde zaklamp als back-up wanneer de zon ondergaat."
+      />
+      <SpecsPulse />
       <FAQ />
-      <AcquireFinale />
+      <FinalePulse />
       <Footer />
       <StickyBuyBar />
     </main>
