@@ -1,72 +1,129 @@
 import type { Metadata } from 'next';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import FAQ from '@/components/FAQ';
+import { getTranslations } from 'next-intl/server';
 import { Mail, Shield, RefreshCcw, Package } from 'lucide-react';
-import { BRAND, SPECS, TBD, safe } from '@/lib/product-claims';
+import PageShell from '@/components/pulse/PageShell';
+import FAQ from '@/components/FAQ';
+import { SPECS, TBD, safe } from '@/lib/product-claims';
+import { CONTACT_EMAIL } from '@/lib/brand-links';
+import { buildPageMetadata } from '@/lib/seo';
+import { Link } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 
-export const metadata: Metadata = {
-  title: `Support — ${BRAND.product} | ${BRAND.text}`,
-  description: 'FAQ, garantie, retour, shipping en contact voor Titan X.',
-  alternates: { canonical: 'https://titan-banks.com/support' },
+const META: Record<string, { title: string; description: string }> = {
+  nl: {
+    title: 'Support & veelgestelde vragen — Titan X powerbank | TITANBANKS',
+    description:
+      'Antwoorden over de Titan X powerbank: opladen, garantie, retourneren en verzending. Kom je er niet uit? Mail info@titan-banks.com — we reageren snel.',
+  },
+  en: {
+    title: 'Support & FAQ — Titan X power bank | TITANBANKS',
+    description:
+      'Answers about the Titan X power bank: charging, warranty, returns and shipping. Still stuck? Email info@titan-banks.com — we respond fast.',
+  },
+  de: {
+    title: 'Support & häufige Fragen — Titan X Powerbank | TITANBANKS',
+    description:
+      'Antworten zur Titan X Powerbank: Laden, Garantie, Rückgabe und Versand. Nicht fündig geworden? Schreib an info@titan-banks.com — wir antworten schnell.',
+  },
 };
 
-export default function SupportPage() {
+const HERO: Record<string, { kicker: string; title: string; accent: string; emailLabel: string }> = {
+  nl: { kicker: 'Support', title: 'Hier helpen we', accent: 'je verder.', emailLabel: 'E-mail' },
+  en: { kicker: 'Support', title: 'We are here', accent: 'to help.', emailLabel: 'Email' },
+  de: { kicker: 'Support', title: 'Hier helfen wir', accent: 'dir weiter.', emailLabel: 'E-Mail' },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const copy = META[locale] ?? META.nl;
+  return buildPageMetadata({ locale, path: 'support', ...copy });
+}
+
+export default async function SupportPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'shipping_returns_warranty' });
+  const tFaq = await getTranslations({ locale, namespace: 'faq_page' });
+  const hero = HERO[locale] ?? HERO.nl;
   const returnDays = safe(TBD.returnPolicyDays);
-  const shipping = safe(TBD.freeShippingCountries);
+
+  const tiles = [
+    {
+      icon: Mail,
+      title: hero.emailLabel,
+      body: CONTACT_EMAIL,
+      href: `mailto:${CONTACT_EMAIL}`,
+    },
+    {
+      icon: Shield,
+      title: t('warranty_title', { years: SPECS.warrantyYears.value }),
+      body: t('warranty_body'),
+      legal: '/legal/policies' as const,
+    },
+    ...(returnDays && returnDays > 0
+      ? [{
+          icon: RefreshCcw,
+          title: t('returns_title', { days: returnDays }),
+          body: t('returns_body', { days: returnDays }),
+          legal: '/legal/policies' as const,
+        }]
+      : []),
+    {
+      icon: Package,
+      title: t('shipping_title'),
+      body: t('shipping_body'),
+      legal: '/legal/policies' as const,
+    },
+  ];
 
   return (
-    <main className="relative bg-[#0A0A0A] text-[#F5F5F5] overflow-x-hidden">
-      <Navigation />
-      <section className="pt-32 pb-16 px-6 max-w-4xl mx-auto">
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888] mb-4">
-          {BRAND.text} · Support
-        </p>
-        <h1 className="font-display text-4xl md:text-6xl font-bold leading-[0.95] mb-8">
-          Hier helpen we je.
-        </h1>
-        <p className="text-[#A0A0A0] text-lg leading-relaxed max-w-2xl mb-12">
-          Antwoorden op de meest gestelde vragen, voorwaarden voor garantie en retour,
-          en hoe je ons bereikt.
-        </p>
-
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
-          <a
-            href="mailto:info@titan-banks.com"
-            className="border border-[#2A2A2A] rounded-xl p-5 hover:border-[#FF8C00] transition-colors group"
-          >
-            <Mail className="w-5 h-5 text-[#FF8C00] mb-3" />
-            <p className="font-body text-white font-semibold mb-1">E-mail</p>
-            <p className="text-[#888888] text-sm">info@titan-banks.com</p>
-          </a>
-
-          <div className="border border-[#2A2A2A] rounded-xl p-5">
-            <Shield className="w-5 h-5 text-[#4ade80] mb-3" />
-            <p className="font-body text-white font-semibold mb-1">Garantie</p>
-            <p className="text-[#888888] text-sm">{SPECS.warrantyYears.value} jaar fabrieksgarantie</p>
+    <PageShell
+      kicker={hero.kicker}
+      title={hero.title}
+      accent={hero.accent}
+      intro={tFaq('intro')}
+    >
+      <section className="relative border-t border-white/[0.07] bg-[#080808] py-14 lg:py-20">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {tiles.map((tile) => {
+              const Icon = tile.icon;
+              const inner = (
+                <>
+                  <Icon className="h-5 w-5 text-titan-accent" aria-hidden />
+                  <p className="mt-4 font-body font-semibold leading-snug text-white">{tile.title}</p>
+                  <p className="mt-1.5 font-body text-sm leading-relaxed text-[#9A9A9A]">{tile.body}</p>
+                </>
+              );
+              return tile.href ? (
+                <a
+                  key={tile.title}
+                  href={tile.href}
+                  className="rounded-2xl border border-white/[0.1] bg-[#0C0C0C] p-6 transition-colors hover:border-titan-accent/50"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <Link
+                  key={tile.title}
+                  href={tile.legal ?? '/legal/policies'}
+                  className="rounded-2xl border border-white/[0.1] bg-[#0C0C0C] p-6 transition-colors hover:border-titan-accent/50"
+                >
+                  {inner}
+                </Link>
+              );
+            })}
           </div>
-
-          {returnDays && returnDays > 0 && (
-            <div className="border border-[#2A2A2A] rounded-xl p-5">
-              <RefreshCcw className="w-5 h-5 text-[#EAB308] mb-3" />
-              <p className="font-body text-white font-semibold mb-1">Retour</p>
-              <p className="text-[#888888] text-sm">{returnDays} dagen retourrecht</p>
-            </div>
-          )}
-
-          {shipping && shipping.length > 0 && (
-            <div className="border border-[#2A2A2A] rounded-xl p-5">
-              <Package className="w-5 h-5 text-[#0EB5C8] mb-3" />
-              <p className="font-body text-white font-semibold mb-1">Verzending</p>
-              <p className="text-[#888888] text-sm">
-                Gratis verzending {shipping.join(' / ')}
-              </p>
-            </div>
-          )}
         </div>
       </section>
       <FAQ />
-      <Footer />
-    </main>
+    </PageShell>
   );
 }

@@ -1,4 +1,4 @@
-import Navigation from '@/components/Navigation';
+import MaisonNav from '@/components/atelier/MaisonNav';
 import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
 import type { LegalDocument } from '@/lib/legal-content';
@@ -12,7 +12,7 @@ export default function LegalPage({ document }: LegalPageProps) {
 
   return (
     <main className="relative bg-[#0A0A0A] text-[#F5F5F5] min-h-screen overflow-x-hidden">
-      <Navigation />
+      <MaisonNav />
       <section className="pt-32 pb-24 px-6 max-w-3xl mx-auto">
         {/* Eyebrow */}
         <div className="mb-5 flex items-center gap-3">

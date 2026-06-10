@@ -18,13 +18,7 @@ const nextConfig = {
   async redirects() {
     // 301-redirect alle pre-i18n URLs naar /nl/<route>.
     // /preview en /preview2 blijven op root (interne review-pagina's).
-    const routes = [
-      'technology',
-      'in-use',
-      'story',
-      'reviews',
-      'support',
-    ];
+    const routes = ['technology', 'story', 'support'];
     const redirects = routes.map((path) => ({
       source: `/${path}`,
       destination: `/nl/${path}`,
@@ -39,6 +33,17 @@ const nextConfig = {
       // /shop is opgeheven (1 product → homepage = shoppagina). Eén hop, geen chain.
       { source: '/shop', destination: '/nl', permanent: true },
       { source: '/:locale(nl|en|de)/shop', destination: '/:locale', permanent: true },
+      // Pagina-consolidatie (kernset): dunne pagina's gevouwen in story/support/home.
+      { source: '/mission', destination: '/nl/story', permanent: true },
+      { source: '/:locale(nl|en|de)/mission', destination: '/:locale/story', permanent: true },
+      { source: '/faq', destination: '/nl/support', permanent: true },
+      { source: '/:locale(nl|en|de)/faq', destination: '/:locale/support', permanent: true },
+      { source: '/in-use', destination: '/nl', permanent: true },
+      { source: '/:locale(nl|en|de)/in-use', destination: '/:locale', permanent: true },
+      { source: '/products', destination: '/nl', permanent: true },
+      { source: '/:locale(nl|en|de)/products', destination: '/:locale', permanent: true },
+      { source: '/reviews', destination: '/nl', permanent: true },
+      { source: '/:locale(nl|en|de)/reviews', destination: '/:locale', permanent: true },
       ...redirects,
     ];
   },
