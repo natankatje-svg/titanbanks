@@ -436,6 +436,17 @@ body::after {
 }
 .pulse-float { animation: pulseFloat 7s ease-in-out infinite; will-change: transform; }
 
+/* Zachte variant voor cards in een grid (subtiel, gestaggerd via delay). */
+@keyframes pulseFloatSoft {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+.pulse-float-soft {
+  animation: pulseFloatSoft 6.5s ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  will-change: transform;
+}
+
 /* Pulserende CTA-gloed. */
 @keyframes ctaPulse {
   0%, 100% { box-shadow: 0 8px 32px rgba(255,140,0,0.35), 0 0 0 0 rgba(255,140,0,0.35); }
@@ -673,7 +684,7 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-sweep, .hero-glow-pulse, .text-glow-orange, .final-drop-zoom,
-  .ticker-track, .pulse-blob, .pulse-float, .btn-pulse,
+  .ticker-track, .pulse-blob, .pulse-float, .pulse-float-soft, .btn-pulse,
   .pulse-ring, .pulse-ring-rev { animation: none !important; }
   .card-shine::after { display: none; }
 }

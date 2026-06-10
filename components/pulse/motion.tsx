@@ -14,7 +14,15 @@ import {
  * TiltCard — 3D hover-tilt met spring (max ~6°), gecombineerd met de
  * .card-shine glare-sweep. Reduced-motion: statisch.
  */
-export function TiltCard({ children, className = '' }: { children: ReactNode; className?: string }) {
+export function TiltCard({
+  children,
+  className = '',
+  style,
+}: {
+  children: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const rx = useMotionValue(0);
@@ -40,7 +48,7 @@ export function TiltCard({ children, className = '' }: { children: ReactNode; cl
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      style={reduce ? undefined : { rotateX: srx, rotateY: sry, transformPerspective: 900 }}
+      style={reduce ? style : { ...style, rotateX: srx, rotateY: sry, transformPerspective: 900 }}
       className={`card-shine ${className}`}
     >
       {children}

@@ -39,11 +39,12 @@ export default function FAQ() {
 
   return (
     <section id="faq" ref={ref} className="relative py-20 lg:py-32 bg-titan-surface overflow-hidden border-t border-white/[0.06]">
-      {/* Ambient warme gloed bovenaan */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[260px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.04) 0%, transparent 65%)' }}
-      />
+      {/* Partikel-sfeer — heel stil als onderlaag */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.13]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/atmosphere/particles.webp" alt="" className="h-full w-full object-cover" loading="lazy" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #0A0A0A 0%, rgba(10,10,10,0.45) 50%, #0A0A0A 100%)' }} />
+      </div>
 
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}

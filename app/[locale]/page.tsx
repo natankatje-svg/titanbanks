@@ -5,6 +5,7 @@ import MaisonNav from '@/components/atelier/MaisonNav';
 import PulseHero from '@/components/pulse/PulseHero';
 import StatPulse from '@/components/pulse/StatPulse';
 import TiltGallery from '@/components/pulse/TiltGallery';
+import MarqueeBand from '@/components/industrial/MarqueeBand';
 import AtmosFeature from '@/components/pulse/AtmosFeature';
 import AtmosBreak from '@/components/pulse/AtmosBreak';
 import SpecsPulse from '@/components/pulse/SpecsPulse';
@@ -59,6 +60,7 @@ export default function Home() {
       <PulseHero />
       <StatPulse />
       <TiltGallery />
+      <MarqueeBand />
       <AtmosFeature
         kicker="Road trips"
         title="Camera, telefoon en speakers"
@@ -79,6 +81,15 @@ export default function Home() {
         productPos="object-[center_55%]"
         flip
       />
+      <AtmosFeature
+        kicker="Werk & school"
+        title="Laptop bijna leeg"
+        accent="in de trein?"
+        body="Laadt ook laptops via de ingebouwde USB-C kabel."
+        atmosphere="/images/atmosphere/rain.webp"
+        product="/images/titanx/gallery/v2/life-train.webp"
+        productAlt="naast een laptop in de trein"
+      />
       <AtmosBreak
         atmosphere="/images/atmosphere/mountains.webp"
         kicker="Outdoor"
@@ -86,6 +97,11 @@ export default function Home() {
       />
       <SpecsPulse />
       <FAQ />
+      <AtmosBreak
+        atmosphere="/images/atmosphere/starfield.webp"
+        kicker="Titan X"
+        line="Never at 0."
+      />
       <FinalePulse />
       <Footer />
       <StickyBuyBar />

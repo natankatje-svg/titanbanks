@@ -74,6 +74,8 @@ export default function TiltGallery() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: (i % 4) * 0.08, ease: EASE }}
             >
+              {/* float op een eigen wrapper — botst anders met de framer-tilt-transform */}
+              <div className="pulse-float-soft" style={{ ['--float-delay' as string]: `${i * 0.9}s` }}>
               <TiltCard className="overflow-hidden rounded-2xl border border-white/[0.1] bg-[#0C0C0C]">
                 <div className="relative aspect-[4/5]">
                   <Image
@@ -89,6 +91,7 @@ export default function TiltGallery() {
                   </span>
                 </div>
               </TiltCard>
+              </div>
             </motion.div>
           ))}
         </div>

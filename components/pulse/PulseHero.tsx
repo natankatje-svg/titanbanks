@@ -50,13 +50,13 @@ export default function PulseHero() {
         <EmberDrift />
       </div>
 
-      <div className="relative mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-12 px-6 pb-16 pt-28 lg:grid-cols-2 lg:gap-6 lg:px-10 lg:pb-20 lg:pt-24">
+      <div className="relative mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-12 px-6 pb-16 pt-28 lg:grid-cols-12 lg:gap-8 lg:px-10 lg:pb-20 lg:pt-24">
         {/* tekst */}
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="order-2 flex flex-col items-start lg:order-1"
+          className="order-2 flex flex-col items-start lg:order-1 lg:col-span-5"
         >
           <span className="font-mono text-[0.66rem] uppercase tracking-[0.26em] text-white/55">
             {BRAND.wordmark} · {BRAND.product}
@@ -87,9 +87,35 @@ export default function PulseHero() {
             </Link>
           </div>
 
+          {/* stat-chips — vullen de linkerkolom + scanbare USP's (bestaande termen) */}
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {[
+              `${capacityFormatted} mAh`,
+              t('spec_icons.devices', { n: SPECS.simultaneousDevices.value }),
+              t('spec_icons.label_fastcharge'),
+              t('spec_icons.display'),
+            ].map((label) => (
+              <span
+                key={label}
+                className="rounded-full border border-white/[0.12] bg-white/[0.04] px-3.5 py-1.5 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/75 backdrop-blur-sm"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+
           <p className="mt-6 font-body text-[12px] text-[#9C9C9C]">
             {t('trust_inline', { days: safe(TBD.returnPolicyDays) ?? 14 })}
           </p>
+
+          {/* betaal-vertrouwen — stil, vult de lege onderruimte */}
+          <div className="mt-3 flex flex-wrap items-center gap-1.5">
+            {['iDEAL', 'Apple Pay', 'Klarna', 'Visa', 'Mastercard', 'PayPal'].map((m) => (
+              <span key={m} className="rounded border border-white/[0.08] bg-white/[0.03] px-2 py-0.5 font-mono text-[0.56rem] text-[#8E8E8E]">
+                {m}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         {/* reactor — zwevende cirkel + orbit-ringen */}
@@ -97,27 +123,35 @@ export default function PulseHero() {
           initial={reduce ? false : { opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
-          className="order-1 flex items-center justify-center lg:order-2"
+          className="order-1 flex items-center justify-center lg:order-2 lg:col-span-7"
         >
-          <div className="relative aspect-square w-[78vw] max-w-[420px] lg:max-w-[520px]">
-            {/* orbit-ringen */}
-            <svg aria-hidden viewBox="0 0 100 100" className="pulse-ring absolute -inset-[7%] h-[114%] w-[114%]">
-              <circle cx="50" cy="50" r="48.5" fill="none" stroke="rgba(255,140,0,0.35)" strokeWidth="0.35" strokeDasharray="2.4 4.2" />
+          <div className="relative aspect-square w-[88vw] max-w-[460px] lg:max-w-[640px]">
+            {/* orbit-ringen — drie lagen + twee satellieten */}
+            <svg aria-hidden viewBox="0 0 100 100" className="pulse-ring absolute -inset-[6%] h-[112%] w-[112%]">
+              <circle cx="50" cy="50" r="48.5" fill="none" stroke="rgba(255,140,0,0.4)" strokeWidth="0.35" strokeDasharray="2.4 4.2" />
+              <circle cx="98.5" cy="50" r="0.9" fill="#FF8C00" />
             </svg>
-            <svg aria-hidden viewBox="0 0 100 100" className="pulse-ring-rev absolute -inset-[14%] h-[128%] w-[128%]">
-              <circle cx="50" cy="50" r="48.5" fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="0.25" strokeDasharray="0.7 6.5" />
+            <svg aria-hidden viewBox="0 0 100 100" className="pulse-ring-rev absolute -inset-[13%] h-[126%] w-[126%]">
+              <circle cx="50" cy="50" r="48.5" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.25" strokeDasharray="0.7 6.5" />
               <circle cx="50" cy="1.5" r="1.1" fill="#FF8C00" />
             </svg>
+            <svg aria-hidden viewBox="0 0 100 100" className="pulse-ring absolute -inset-[20%] h-[140%] w-[140%]" style={{ animationDuration: '70s' }}>
+              <circle cx="50" cy="50" r="48.5" fill="none" stroke="rgba(255,140,0,0.12)" strokeWidth="0.2" strokeDasharray="0.4 9" />
+              <circle cx="1.5" cy="50" r="0.7" fill="rgba(255,170,80,0.9)" />
+            </svg>
+
+            {/* pulserende buitengloed */}
+            <div aria-hidden className="hero-glow-pulse absolute inset-[6%] rounded-full" style={{ boxShadow: '0 0 130px rgba(255,140,0,0.35)' }} />
 
             {/* zwevend halo-product in cirkel */}
-            <div className="pulse-float absolute inset-0 overflow-hidden rounded-full border border-white/[0.1] shadow-[0_0_90px_rgba(255,140,0,0.25)]">
+            <div className="pulse-float absolute inset-0 overflow-hidden rounded-full border border-white/[0.12] shadow-[0_0_110px_rgba(255,140,0,0.3)]">
               <Image
                 src="/images/titanx/gallery/v2/energy-halo.webp"
                 alt={`${BRAND.text} ${BRAND.product} — ${capacityFormatted} mAh power bank met gloeiende lichtring`}
                 fill
                 priority
-                sizes="(max-width: 1024px) 78vw, 520px"
-                className="object-cover object-[52%_38%]"
+                sizes="(max-width: 1024px) 88vw, 640px"
+                className="object-cover object-[52%_38%] scale-[1.12]"
               />
             </div>
           </div>
