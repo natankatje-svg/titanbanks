@@ -27,51 +27,35 @@ const SLIDES = [
   {
     src: '/images/titanx/gallery/v2/studio-orangegel.webp',
     alt: `${BRAND.product} in warm oranje gel-licht — matte black ${capacityLabel()} power bank`,
-    caption: `${BRAND.product} — ${SPECS.finish.value}`,
-    pos: 'object-center',
-  },
+    caption: `${BRAND.product} — ${SPECS.finish.value}`,  },
   {
     src: '/images/titanx/gallery/v2/studio-marble.webp',
     alt: `${BRAND.product} op marmer, premium studiolicht`,
-    caption: SPECS.finish.value,
-    pos: 'object-center',
-  },
+    caption: SPECS.finish.value,  },
   {
     src: '/images/titanx/gallery/v2/studio-gobo.webp',
     alt: `${BRAND.product} in daglicht, LED-display zichtbaar`,
-    caption: 'LED-display',
-    pos: 'object-[center_40%]',
-  },
+    caption: 'LED-display',  },
   {
     src: '/images/titanx/gallery/v2/studio-ports-dark.webp',
     alt: `${BRAND.product} — 4× USB-A poorten plus ingebouwde kabels, top-down`,
-    caption: portsLabelCompact(),
-    pos: 'object-center',
-  },
+    caption: portsLabelCompact(),  },
   {
     src: '/images/titanx/gallery/v2/cables-cinematic.webp',
     alt: `${BRAND.product} met beide ingebouwde kabels uitgetrokken`,
-    caption: 'Ingebouwde kabels',
-    pos: 'object-[center_45%]',
-  },
+    caption: 'Ingebouwde kabels',  },
   {
     src: '/images/titanx/gallery/v2/studio-slab.webp',
     alt: `${BRAND.product} op stenen plaat in warm licht`,
-    caption: capacityLabel(),
-    pos: 'object-center',
-  },
+    caption: capacityLabel(),  },
   {
     src: '/images/titanx/gallery/v2/life-backpack.webp',
     alt: `${BRAND.product} met draaglus aan een rugzak`,
-    caption: 'Draaglus',
-    pos: 'object-center',
-  },
+    caption: 'Draaglus',  },
   {
     src: '/images/titanx/gallery/v2/studio-frostedacrylic.webp',
     alt: `${BRAND.product} op frosted acryl`,
-    caption: `${BRAND.wordmark} · ${BRAND.product}`,
-    pos: 'object-center',
-  },
+    caption: `${BRAND.wordmark} · ${BRAND.product}`,  },
 ] as const;
 
 export default function PulseGallery() {
@@ -127,16 +111,21 @@ export default function PulseGallery() {
               <CarouselContent>
                 {SLIDES.map((s) => (
                   <CarouselItem key={s.src}>
-                    <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-[16/9]">
+                    {/* contain-stage: de hele foto altijd zichtbaar, nooit afgesneden */}
+                    <div className="relative aspect-[4/5] sm:aspect-[4/3]">
+                      <div
+                        aria-hidden
+                        className="absolute inset-0"
+                        style={{ background: 'radial-gradient(ellipse 60% 70% at 50% 45%, rgba(255,140,0,0.06), transparent 70%)' }}
+                      />
                       <Image
                         src={s.src}
                         alt={s.alt}
                         fill
                         sizes="(max-width: 1024px) 100vw, 1100px"
-                        className={`object-cover ${s.pos}`}
+                        className="object-contain p-3 sm:p-4"
                       />
-                      <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.65), transparent)' }} />
-                      <span className="absolute bottom-4 left-5 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-white/85">
+                      <span className="absolute bottom-3 left-4 rounded bg-black/55 px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-white/85 backdrop-blur-sm">
                         {s.caption}
                       </span>
                     </div>

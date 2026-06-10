@@ -91,11 +91,7 @@ export default function Home() {
       />
       <SpecsPulse />
       <FAQ />
-      <AtmosBreak
-        atmosphere="/images/atmosphere/starfield.webp"
-        kicker="Titan X"
-        line="Never at 0."
-      />
+      <AtmosBreak kicker="Titan X" line="Never at 0." />
       <FinalePulse />
       <Footer />
       <StickyBuyBar />
