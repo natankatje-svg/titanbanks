@@ -13,6 +13,8 @@ import './globals.css';
 // mono    = JetBrains Mono (labels/specs).
 const unbounded = Unbounded({
   subsets: ['latin'],
+  // (main's Manrope-gewicht-trim is achterhaald: pulse gebruikt Unbounded,
+  //  die 500/600/700 daadwerkelijk rendert in koppen/CTA's.)
   weight: ['400', '500', '600', '700'],
   variable: '--font-display',
   display: 'swap',

@@ -118,7 +118,7 @@ export default function EcwidProvider({ children }: { children: ReactNode }) {
           {/* Ecwid core script — lazyOnload: Ecwid+Stripe (~500KB aan derden)
               vechten anders tijdens de kritieke laadfase om bandbreedte met het
               LCP-hero-beeld (gemeten: LCP +3s op trage mobiel). Na window.onload
-              laden = hero eerst, checkout alsnog ruim vóór de eerste klik klaar. */}
+              laden = hero eerst; addToCart pollt kort als iemand eerder klikt. */}
           <Script
             id="ecwid-script"
             src={`https://app.ecwid.com/script.js?${ECWID_STORE_ID}&data_platform=code`}
