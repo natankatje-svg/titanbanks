@@ -29,14 +29,13 @@ body {
 }
 
 /* ── Typography ──
- * Display = Manrope. Bold (700) als default voor h1/h2/h3 — geometrische
- * sans, minimal-techy feel zonder de "shouty condensed"-uitstraling van
- * de vorige Barlow Condensed 900. Voor extra-luide momenten kan een
- * component handmatig naar 800 (ExtraBold) bumpen. */
+ * Display = Archivo Black (industrial revamp): één zwaar poster-gewicht,
+ * equipment-grade. De familie heeft maar één weight (400-genaamd, rendert
+ * zwart) — weight-variatie komt uit Archivo (body) 600/700. */
 h1, h2, h3, .display {
   font-family: var(--font-display), sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .mono {
@@ -405,6 +404,108 @@ body::after {
 }
 .text-glow-orange { animation: textGlowPulse 4.5s ease-in-out infinite; }
 
+/* ════════════════════════════════════════════════════════════════════
+   INDUSTRIAL REVAMP — equipment-grade utilities
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Ticker / marquee — naadloze loop (inhoud 2× gerenderd) ── */
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: tickerScroll var(--ticker-dur, 28s) linear infinite;
+}
+
+/* ── Blueprint-raster — fijner technisch grid + crosshair-gevoel ── */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+}
+
+/* ── Console-knop — vierkant industrieel, safety-orange met zwarte tekst ── */
+.btn-console {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #FF8C00;
+  color: #080808;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem 1.9rem;
+  border-radius: 4px;
+  border: 1px solid #FF8C00;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.btn-console:hover {
+  background: #FFA227;
+  transform: translateY(-1px);
+}
+.btn-console:active { transform: translateY(0); }
+.btn-console:focus-visible {
+  outline: 2px solid #FF8C00;
+  outline-offset: 3px;
+}
+
+/* ── Ghost-console-knop — hairline, mono ── */
+.btn-console-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-mono), monospace;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem 1.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.22);
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+.btn-console-ghost:hover {
+  border-color: #FF8C00;
+  color: #FF8C00;
+}
+.btn-console-ghost:focus-visible {
+  outline: 2px solid rgba(255,140,0,0.7);
+  outline-offset: 3px;
+}
+
+/* ── Corner ticks — technische hoek-merktekens op panelen ── */
+.corner-ticks { position: relative; }
+.corner-ticks::before,
+.corner-ticks::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+.corner-ticks::before {
+  top: -1px; left: -1px;
+  border-top: 2px solid #FF8C00;
+  border-left: 2px solid #FF8C00;
+}
+.corner-ticks::after {
+  bottom: -1px; right: -1px;
+  border-bottom: 2px solid #FF8C00;
+  border-right: 2px solid #FF8C00;
+}
+
 /* ── FinalDrop — trage Ken-Burns-zoom op de beam-foto (compositor-only) ── */
 @keyframes finalDropZoom {
   0%   { transform: scale(1); }
@@ -416,5 +517,6 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-sweep, .hero-glow-pulse, .text-glow-orange, .final-drop-zoom { animation: none !important; }
+  .hero-sweep, .hero-glow-pulse, .text-glow-orange, .final-drop-zoom,
+  .ticker-track { animation: none !important; }
 }

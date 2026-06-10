@@ -22,8 +22,9 @@ const config: Config = {
         },
       },
       borderRadius: {
-        stage: '1.75rem', // fotocards / stages (28px)
-        pill: '980px', // nav + pill-knoppen
+        // Industrial revamp: vierkantere taal (12px) i.p.v. de zachte 28px.
+        stage: '0.75rem',
+        pill: '980px',
       },
       fontFamily: {
         display: ['var(--font-display)', 'sans-serif'],

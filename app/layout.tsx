@@ -1,28 +1,32 @@
 import type { Metadata } from 'next';
-import { Manrope, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
+import { Archivo_Black, Archivo, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
 import './globals.css';
 
-const manrope = Manrope({
+// Industrial type-systeem (revamp 2026-06-10):
+// display = Archivo Black (zwaar, equipment-grade poster-gewicht),
+// body    = Archivo (zelfde familie → premium systeemgevoel),
+// mono    = JetBrains Mono (technische data, serials, specs).
+const archivoBlack = Archivo_Black({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '800'],
+  weight: '400',
   variable: '--font-display',
   display: 'swap',
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const archivo = Archivo({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap',
 });
 
-const dmMono = DM_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '700'],
   variable: '--font-mono',
   display: 'swap',
 });
@@ -67,7 +71,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const locale = await getLocale();
   const messages = await getMessages();
   return (
-    <html lang={locale} className={`${manrope.variable} ${plusJakartaSans.variable} ${dmMono.variable}`}>
+    <html lang={locale} className={`${archivoBlack.variable} ${archivo.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-black text-white antialiased">
         <GA4Loader />
         <NextIntlClientProvider locale={locale} messages={messages}>

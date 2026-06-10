@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
-import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
-import Hero from '@/components/heroes/HeroVariantB';
-import CapacityStatement from '@/components/home/CapacityStatement';
-import GalleryRail from '@/components/home/GalleryRailLazy';
-import FeatureStages from '@/components/home/FeatureStages';
-import LifeMosaic from '@/components/home/LifeMosaic';
-import SpecTable from '@/components/home/SpecTable';
-import TrustWall from '@/components/home/TrustWall';
+import TickerBar from '@/components/industrial/TickerBar';
+import NavBar from '@/components/industrial/NavBar';
+import HeroConsole from '@/components/industrial/HeroConsole';
+import MarqueeBand from '@/components/industrial/MarqueeBand';
+import DataPanel from '@/components/industrial/DataPanel';
+import SystemView from '@/components/industrial/SystemView';
+import FieldLog from '@/components/industrial/FieldLog';
+import SpecSheet from '@/components/industrial/SpecSheet';
+import TrustStrip from '@/components/industrial/TrustStrip';
 import FAQ from '@/components/FAQ';
-import FinalStage from '@/components/home/FinalStage';
+import OrderConsole from '@/components/industrial/OrderConsole';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import { buildPageMetadata } from '@/lib/seo';
 
@@ -45,31 +46,31 @@ export async function generateMetadata({
 }
 
 /**
- * Homepage V5 — "DAGEN, GEEN UREN": drie-akten cinematic met conversie-spine
- * (Apple verleidt boven, Anker sluit onder). Alle productbeelden uit de
+ * Homepage V6 — "INDUSTRIAL POWER UNIT": equipment-grade spec-sheet-design
+ * (blueprint-raster, annotatie-callouts, mono-data, safety-orange console-CTA's).
+ * Archivo Black / Archivo / JetBrains Mono. Alle productbeelden uit de
  * goedgekeurde launch-set; alle claims via lib/product-claims SSOT.
  *
- * AKTE 1 — verleiden:  Hero (embers, onder-links) → CapacityStatement (scrub)
- * AKTE 2 — bewijzen:   GalleryRail → FeatureStages → LifeMosaic
- * AKTE 3 — sluiten:    SpecTable → TrustWall → FAQ → FinalStage (mini-buybox)
- * Persistente conversie: pill-nav BESTEL + StickyBuyBar (mobiel).
+ * Flow: Ticker → Nav → HeroConsole (callouts + order-console ATF) →
+ * MarqueeBand → DataPanel (count-up) → SystemView → FieldLog (live preview) →
+ * SpecSheet → TrustStrip → FAQ → OrderConsole → Footer + StickyBuyBar.
  */
 export default function Home() {
   return (
-    // GEEN overflow-x-hidden op main: dat maakt main een scroll-container en
-    // breekt position:sticky (CapacityStatement-pin). Body clipt al op X.
-    <main className="relative bg-titan-surface">
+    // GEEN overflow-x-hidden op main (breekt position:sticky); body clipt op X.
+    <main className="relative bg-titan-bg">
       <JsonLd />
-      <Navigation />
-      <Hero />
-      <CapacityStatement />
-      <GalleryRail />
-      <FeatureStages />
-      <LifeMosaic />
-      <SpecTable />
-      <TrustWall />
+      <TickerBar />
+      <NavBar />
+      <HeroConsole />
+      <MarqueeBand />
+      <DataPanel />
+      <SystemView />
+      <FieldLog />
+      <SpecSheet />
+      <TrustStrip />
       <FAQ />
-      <FinalStage />
+      <OrderConsole />
       <Footer />
       <StickyBuyBar />
     </main>

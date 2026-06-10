@@ -53,15 +53,14 @@ export default function FAQ() {
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-14"
         >
-          <div className="section-label mb-4 flex items-center gap-3 justify-center">
-            <div className="w-6 h-px bg-titan-accent" />
-            <span>FAQ</span>
-          </div>
+          <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-titan-accent">
+            FAQ
+          </span>
           <h2
-            className="font-display uppercase text-white mb-5 tracking-[-0.035em] [text-wrap:balance]"
-            style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', lineHeight: 0.92 }}
+            className="font-display uppercase text-white mt-3 mb-5 [text-wrap:balance]"
+            style={{ fontSize: 'clamp(2rem, 4.6vw, 3.6rem)', lineHeight: 0.95 }}
           >
-            ALLES WAT JE WIL <span className="text-gradient-orange">WETEN</span>
+            ALLES WAT JE WIL <span className="text-titan-accent">WETEN</span>
           </h2>
           <p className="font-body text-gray-400 text-lg leading-relaxed">
             Staat jouw vraag er niet bij?{' '}
@@ -80,7 +79,7 @@ export default function FAQ() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-stage border border-white/[0.07] bg-[#0E0E0E] px-7 lg:px-10"
+          className="corner-ticks border border-white/[0.1] bg-[#0A0A0A] px-7 lg:px-10"
         >
           <Accordion type="single" collapsible>
             {faqs.map((faq, i) => (
