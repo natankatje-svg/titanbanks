@@ -17,7 +17,11 @@ import {
 
 const PAYMENT_METHODS = ['iDEAL', 'Apple Pay', 'Klarna', 'Visa', 'Mastercard', 'PayPal'];
 
-export default function BuyBox() {
+/**
+ * `embedded` — rendert alleen de kaart (zonder section/container) in één
+ * kolom, voor gebruik als rechterkolom van de PDP op /shop.
+ */
+export default function BuyBox({ embedded = false }: { embedded?: boolean }) {
   const t = useTranslations('buy_box');
   const { addToCart } = useEcwid();
   const [qty, setQty] = useState(1);
@@ -36,22 +40,20 @@ export default function BuyBox() {
     addToCart(qty);
   };
 
-  return (
-    <section className="relative py-16 lg:py-20 bg-[#0A0A0A]">
-      <div className="max-w-4xl mx-auto px-6">
+  const card = (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-3xl p-8 lg:p-12"
+          className={embedded ? 'rounded-stage p-7 lg:p-8' : 'rounded-3xl p-8 lg:p-12'}
           style={{
             background:
               'radial-gradient(ellipse 80% 90% at 18% 0%, rgba(255,140,0,0.05) 0%, transparent 55%), #111111',
             border: '1px solid rgba(255,140,0,0.18)',
           }}
         >
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className={embedded ? 'grid grid-cols-1 gap-8' : 'grid lg:grid-cols-2 gap-10 items-center'}>
             {/* Left: heading + price */}
             <div>
               <div className="inline-flex items-center gap-3 mb-4">
@@ -159,7 +161,13 @@ export default function BuyBox() {
             </div>
           </div>
         </motion.div>
-      </div>
+  );
+
+  if (embedded) return card;
+
+  return (
+    <section className="relative py-16 lg:py-20 bg-[#0A0A0A]">
+      <div className="max-w-4xl mx-auto px-6">{card}</div>
     </section>
   );
 }

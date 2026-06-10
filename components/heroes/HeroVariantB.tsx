@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Zap, BatteryCharging, Plug, Gauge } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useEcwid } from '@/components/EcwidProvider';
@@ -16,28 +16,15 @@ import {
   safe,
 } from '@/lib/product-claims';
 
-// Benefit-badges (pill-rij onder de CTA's). Volgorde = USP-rangorde:
-// capaciteit → devices → snellaad → display.
-const BENEFITS = [
-  { icon: BatteryCharging, key: 'capacity' },
-  { icon: Plug, key: 'devices' },
-  { icon: Gauge, key: 'fastcharge' },
-  { icon: Zap, key: 'display' },
-] as const;
-
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 /**
- * HeroVariantB — V5 hero met full-bleed embers-fotoachtergrond.
+ * Hero V6 — "obsidian vitrine": het vaste embers-beeld full-bleed, met de
+ * complete content-stack ONDER-LINKS (Apple Watch Ultra-compositie). Eén
+ * oranje pill als enige gevulde CTA, prijs als ghost-label ernaast, en de
+ * specs als één stille mono-regel i.p.v. pill-soep. Scroll-cue onderaan.
  *
- * Achtergrond = `hero-embers.jpg`: de echte Titan X op een podium met oranje
- * embers (E04), uitgebreid naar 16:9 (origineel product + podium ongewijzigd,
- * randen generatief geoutpaint). Tekst + CTA's liggen links over de donkere
- * negatieve ruimte; het product staat rechts in het beeld.
- *
- * Performance: één statisch beeld als LCP-element (`priority`) — géén WebGL,
- * géén RAF-animaties meer in de hero. Donkere scrims voor leesbaarheid + een
- * onderfade die naadloos overgaat in de volgende sectie (#0A0A0A).
+ * Performance: één statisch beeld als LCP-element (`priority`) — geen WebGL.
  */
 export default function HeroVariantB() {
   const locale = useLocale();
@@ -56,24 +43,19 @@ export default function HeroVariantB() {
 
   const capacityFormatted = SPECS.capacityMah.value.toLocaleString(locale);
   const batchSize = 100;
+  const price = priceLabel();
 
-  // Content-regel: nooit een specifiek wattage tonen — alleen "fast charge".
-  const benefitLabel = (key: string) => {
-    switch (key) {
-      case 'capacity':
-        return `${capacityFormatted} mAh`;
-      case 'devices':
-        return t('spec_icons.devices', { n: SPECS.simultaneousDevices.value });
-      case 'fastcharge':
-        return t('spec_icons.label_fastcharge');
-      default:
-        return t('spec_icons.display');
-    }
-  };
+  // Eén stille mono-specregel (content-regel: nooit een specifiek wattage).
+  const specLine = [
+    `${capacityFormatted} mAh`,
+    t('spec_icons.devices', { n: SPECS.simultaneousDevices.value }),
+    t('spec_icons.label_fastcharge'),
+    t('spec_icons.display'),
+  ].join('  ·  ');
 
   return (
-    <section className="relative flex items-center overflow-hidden bg-[#0A0A0A] text-white min-h-[100svh] lg:min-h-[94vh]">
-      {/* BG — embers-fotoachtergrond (LCP-element) */}
+    <section className="relative flex items-end overflow-hidden bg-[#0A0A0A] text-white min-h-[100svh]">
+      {/* BG — embers-fotoachtergrond (LCP-element, vast hero-beeld) */}
       <div className="absolute inset-0" style={{ zIndex: 0 }}>
         <Image
           src="/images/titanx/hero-embers.jpg"
@@ -85,126 +67,101 @@ export default function HeroVariantB() {
         />
       </div>
 
-      {/* Scrim — links donker voor leesbaarheid, rechts transparant (product zichtbaar) */}
+      {/* Scrim — links + onder donker voor de bottom-left stack, rechts blijft het product vrij */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           zIndex: 1,
           background:
-            'linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0.82) 28%, rgba(10,10,10,0.45) 52%, rgba(10,10,10,0) 72%)',
+            'linear-gradient(to right, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.6) 34%, rgba(8,8,8,0.18) 58%, rgba(8,8,8,0) 75%)',
         }}
       />
-      {/* Scrim — verticale diepte + naadloze onderovergang naar de volgende sectie */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           zIndex: 1,
           background:
-            'linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0) 30%, rgba(10,10,10,0) 72%, #0A0A0A 100%)',
+            'linear-gradient(to bottom, rgba(8,8,8,0.5) 0%, rgba(8,8,8,0) 26%, rgba(8,8,8,0) 55%, rgba(8,8,8,0.85) 88%, #0A0A0A 100%)',
         }}
       />
-      {/* Mobiel — extra globale demping zodat tekst leesbaar blijft over het beeld */}
-      <div className="absolute inset-0 bg-[#0A0A0A]/35 lg:bg-transparent pointer-events-none" style={{ zIndex: 1 }} />
+      {/* Mobiel — extra demping voor leesbaarheid over het beeld */}
+      <div className="absolute inset-0 bg-[#0A0A0A]/30 lg:bg-transparent pointer-events-none" style={{ zIndex: 1 }} />
 
-      {/* Bewegende energie-effecten — allemaal LINKS begrensd zodat ze niet over
-          de powerbank (rechts) lopen. CSS-only, mobiel + desktop. */}
+      {/* Energie-effecten — links begrensd zodat ze niet over het product lopen */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 5 }}>
-        {/* pulserende warme gloed achter de kop — alleen desktop (mobiel scheelt
-            een geanimeerde 120px-blur op de compositor; de foto draagt daar al warmte) */}
         <div
-          className="hero-glow-pulse hidden lg:block absolute top-1/2 left-[12%] -translate-y-1/2 w-[480px] h-[480px] rounded-full blur-[120px]"
-          style={{ background: 'rgba(255,140,0,0.22)' }}
+          className="hero-glow-pulse hidden lg:block absolute bottom-[18%] left-[10%] w-[480px] h-[480px] rounded-full blur-[120px]"
+          style={{ background: 'rgba(255,140,0,0.2)' }}
         />
-        {/* diagonale licht-sweep (links begrensd) */}
         <div className="absolute inset-y-0 left-0 w-[58%] overflow-hidden">
           <div
             className="hero-sweep absolute top-[-20%] left-0 h-[140%] w-[140px] blur-2xl"
             style={{ background: 'linear-gradient(90deg, transparent, rgba(255,150,60,0.28), transparent)' }}
           />
         </div>
-        {/* zwevende vonkjes */}
         <EmberDrift />
       </div>
 
-      {/* CONTENT — links */}
-      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28" style={{ zIndex: 10 }}>
+      {/* CONTENT — onder-links (Apple-compositie) */}
+      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-10 pb-20 lg:pb-24 pt-36" style={{ zIndex: 10 }}>
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 24 }}
+          initial={reduce ? false : { opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: EASE }}
-          className="flex flex-col items-start text-left max-w-xl lg:max-w-[560px]"
+          transition={{ duration: 0.7, ease: EASE }}
+          className="flex flex-col items-start text-left max-w-2xl"
         >
-          {/* Statusregel — batch-info als stil mono-label (geen badge-lawaai) */}
-          <span className="inline-flex items-center gap-2.5 mb-7">
-            <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#FF8C00]" aria-hidden />
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-white/60">
-              {t('stock_badge', { count: batchSize })}
+          {/* Kicker — productnaam + stille batch-status op één regel */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-5">
+            <span className="font-mono text-[0.7rem] uppercase tracking-[0.3em] text-white/50">
+              {BRAND.wordmark} · {BRAND.product}
             </span>
-          </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-titan-accent" aria-hidden />
+              <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-white/45">
+                {t('stock_badge', { count: batchSize })}
+              </span>
+            </span>
+          </div>
 
-          {/* Kicker — productnaam */}
-          <span className="font-mono text-[0.7rem] uppercase tracking-[0.3em] text-white/45 mb-4">
-            {BRAND.wordmark} · {BRAND.product}
-          </span>
-
-          {/* Headline — 2 regels, accent op regel 2 */}
+          {/* Headline — 2 regels, accent op regel 2, Apple-schaal */}
           <h1
-            className="font-display font-extrabold uppercase leading-[0.92] tracking-[-0.035em] text-white mb-6"
-            style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', textShadow: '0 2px 30px rgba(0,0,0,0.45)' }}
+            className="font-display font-extrabold uppercase leading-[0.94] tracking-[-0.035em] text-white mb-7 [text-wrap:balance]"
+            style={{ fontSize: 'clamp(3rem, 7vw, 6.5rem)', textShadow: '0 2px 30px rgba(0,0,0,0.5)' }}
           >
             {t('motto_lead')}
             <br />
             <span className="text-gradient-orange text-glow-orange">{t('motto_accent')}</span>
           </h1>
 
-          {/* Subcopy */}
-          <p className="font-body text-[#C8C8C8] text-base lg:text-lg leading-relaxed max-w-md mb-8">
-            {capacityFormatted} mAh.{' '}
-            {t('spec_icons.devices', { n: SPECS.simultaneousDevices.value })} tegelijk.{' '}
-            {t('tagline_accent')}
-          </p>
-
-          {/* CTA-rij */}
-          <div className="flex flex-wrap items-center gap-3 mb-8">
+          {/* CTA-cluster — één gevulde pill + prijs-ghost + stille specs-link */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mb-6">
             <button
               onClick={onBuy}
               className="btn-orange group"
-              style={{ padding: '0.95rem 1.8rem', fontSize: '0.95rem' }}
-              aria-label={`${isWaitlist ? t('cta_waitlist') : t('cta_buy_now')} ${priceLabel() ?? ''}`}
+              style={{ padding: '0.95rem 2rem', fontSize: '0.95rem' }}
+              aria-label={`${isWaitlist ? t('cta_waitlist') : t('cta_buy_now')} ${price ?? ''}`}
             >
-              <Zap className="w-[16px] h-[16px] fill-white" aria-hidden />
               <span>{isWaitlist ? t('cta_waitlist') : t('cta_buy_now')}</span>
-              {priceLabel() && <span className="opacity-90">· {priceLabel()}</span>}
               <ArrowRight className="w-[15px] h-[15px] transition-transform group-hover:translate-x-0.5" aria-hidden />
             </button>
+            {price && (
+              <span className="font-body text-white/90 text-lg" style={{ textShadow: '0 1px 12px rgba(0,0,0,0.6)' }}>
+                {price}
+              </span>
+            )}
             <Link
               href="/shop"
               locale={locale}
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/25 px-6 py-3 font-display text-sm font-extrabold uppercase tracking-[0.08em] text-white transition-colors hover:border-white/60 hover:bg-white/5 backdrop-blur-sm"
+              className="font-body text-sm text-white/65 underline underline-offset-4 decoration-white/30 transition-colors hover:text-titan-accent hover:decoration-titan-accent/50"
             >
               {t('cta_view_specs')}
             </Link>
           </div>
 
-          {/* Benefit-badges — pill-rij */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {BENEFITS.map(({ icon: Icon, key }) => (
-              <span
-                key={key}
-                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5"
-                style={{
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                  backdropFilter: 'blur(6px)',
-                }}
-              >
-                <Icon className="w-3.5 h-3.5" style={{ color: '#FF8C00' }} strokeWidth={2} aria-hidden />
-                <span className="font-display text-[0.8rem] font-bold text-white tracking-tight">
-                  {benefitLabel(key)}
-                </span>
-              </span>
-            ))}
-          </div>
+          {/* Specs — één stille mono-regel i.p.v. pills */}
+          <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-white/55 mb-3">
+            {specLine}
+          </p>
 
           {/* Trust mini */}
           <p className="font-body text-[#B0B0B0] text-[12px] lg:text-[13px]">
@@ -212,6 +169,18 @@ export default function HeroVariantB() {
           </p>
         </motion.div>
       </div>
+
+      {/* Scroll-cue — gecentreerd onderaan */}
+      <motion.div
+        aria-hidden
+        initial={reduce ? false : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 text-white/35"
+        style={{ zIndex: 10 }}
+      >
+        <ChevronDown className="w-4 h-4 animate-bounce" />
+      </motion.div>
     </section>
   );
 }

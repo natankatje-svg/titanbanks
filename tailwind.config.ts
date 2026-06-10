@@ -8,6 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Brand-tokens (SSOT = app/globals.css :root) — hier gespiegeld zodat
+      // componenten `bg-titan-bg` / `text-titan-accent` kunnen schrijven
+      // i.p.v. losse hex-arbitraries.
+      colors: {
+        titan: {
+          bg: '#080808',
+          surface: '#0A0A0A',
+          card: '#141214',
+          accent: '#FF8C00',
+          ink: '#F5F2EE',
+          muted: '#9C9C9C',
+        },
+      },
+      borderRadius: {
+        stage: '1.75rem', // fotocards / stages (28px)
+        pill: '980px', // nav + pill-knoppen
+      },
       fontFamily: {
         display: ['var(--font-display)', 'sans-serif'],
         body: ['var(--font-body)', 'system-ui', 'sans-serif'],
@@ -22,8 +39,18 @@ const config: Config = {
         'float-delayed': 'float 6s ease-in-out 1.5s infinite',
         'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
         shimmer: 'shimmer 2.5s linear infinite',
+        'accordion-down': 'accordionDown 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        'accordion-up': 'accordionUp 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
       },
       keyframes: {
+        accordionDown: {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        accordionUp: {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-18px)' },

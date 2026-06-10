@@ -2,29 +2,15 @@ import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
-import Hero from '@/components/heroes/HeroVariantB';
-import TrustBar from '@/components/TrustBar';
-import ImageSlider, { type SliderImage } from '@/components/ImageSlider';
+import ShopGallery from '@/components/shop/ShopGallery';
 import BuyBox from '@/components/BuyBox';
-import ProductShowcase from '@/components/ProductShowcase';
-import PortsVisual from '@/components/PortsVisual';
+import FeatureStages from '@/components/home/FeatureStages';
+import SpecTable from '@/components/home/SpecTable';
 import ShippingReturnsWarranty from '@/components/ShippingReturnsWarranty';
 import FAQ from '@/components/FAQ';
 import StickyBuyBar from '@/components/StickyBuyBar';
-import { BRAND, capacityLabel } from '@/lib/product-claims';
+import { BRAND } from '@/lib/product-claims';
 import { buildPageMetadata } from '@/lib/seo';
-
-// 8 product renders voor de PDP image slider. Mix van studio + lifestyle + detail.
-const pdpSliderImages: SliderImage[] = [
-  { src: '/images/product-hero.jpg', alt: `${BRAND.product} — hero, matte black ${capacityLabel()} power bank` },
-  { src: '/images/product-angle.jpg', alt: `${BRAND.product} — angled view tonen vorm en gevlochten draaglus` },
-  { src: '/images/product-top.jpg', alt: `${BRAND.product} — top view met LED-display zichtbaar` },
-  { src: '/images/product-ports.jpg', alt: `${BRAND.product} — 4× USB-A poorten plus ingebouwde USB-C en Lightning kabels` },
-  { src: '/images/product-ports-angle.jpg', alt: `${BRAND.product} — poorten en zaklamp detail` },
-  { src: '/images/product-dark.jpg', alt: `${BRAND.product} — dark studio shot` },
-  { src: '/images/product-isometric.jpg', alt: `${BRAND.product} — isometric productshot` },
-  { src: '/images/feature-multidevice.jpg', alt: `${BRAND.product} — laadt smartphone, tablet en laptop tegelijk` },
-];
 
 const SHOP_META: Record<string, { title: string; description: string }> = {
   nl: {
@@ -54,33 +40,34 @@ export async function generateMetadata({
   return buildPageMetadata({ locale, path: 'shop', ...copy });
 }
 
+/**
+ * /shop V3 — PDP-first: koopbeslissing boven de fold. 2-koloms PDP (galerij
+ * links sticky, BuyBox rechts), daarna de gedeelde bewijs- en conversielagen.
+ * Galerij = uitsluitend goedgekeurde launch-set fotografie.
+ */
 export default function ShopPage() {
   return (
-    <main className="relative bg-[#0A0A0A] overflow-x-hidden">
+    // GEEN overflow-x-hidden op main: breekt position:sticky (galerij-pin).
+    <main className="relative bg-titan-surface">
       <JsonLd />
       <Navigation />
-      <Hero />
-      <TrustBar />
 
-      {/* V2 sectie 7 — Image slider met listing-style renders */}
-      <section className="py-16 lg:py-20 bg-[#0A0A0A]">
-        <div className="max-w-5xl mx-auto px-6">
-          <ImageSlider images={pdpSliderImages} aspectRatio="4/3" />
+      {/* PDP — boven de fold */}
+      <section className="relative bg-titan-surface pt-28 lg:pt-36 pb-16 lg:pb-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <h1 className="sr-only">{BRAND.text} {BRAND.product}</h1>
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-start">
+            <div className="lg:sticky lg:top-24">
+              <ShopGallery />
+            </div>
+            <BuyBox embedded />
+          </div>
         </div>
       </section>
 
-      {/* V2 sectie 8 — BuyBox: apart conversion-block, prijs + qty + CTA */}
-      <BuyBox />
-
-      {/* Existing — 4 detail rows */}
-      <ProductShowcase />
-
-      {/* V2 sectie 8 — Ports & features diagram */}
-      <PortsVisual />
-
-      {/* V2 sectie 8 — Shipping/Returns/Warranty summary cards */}
+      <FeatureStages />
+      <SpecTable />
       <ShippingReturnsWarranty />
-
       <FAQ />
       <Footer />
       <StickyBuyBar />

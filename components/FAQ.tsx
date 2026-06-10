@@ -1,8 +1,13 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 // FAQ-antwoorden zijn handmatig geredigeerd om verzonnen claims te vermijden.
 // Geen specifieke aantallen "12× smartphone", geen SOS-modus tot bevestigd,
@@ -26,69 +31,14 @@ const faqs = [
   },
 ];
 // V3 one-pager: 4 vragen max. Capacity · compatibility · speed · warranty
-// dekken 90% van de buy-blocking-objections. Andere vragen (zaklamp-bediening,
-// oplaadduur Titan X zelf) zijn niet doorslaggevend voor de eerste-batch-koop
-// en horen later op /support of in de handleiding bij verzending.
-
-function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.06 }}
-      className="border-b border-white/[0.06] last:border-0"
-      style={{
-        background: open ? 'rgba(255,140,0,0.03)' : 'transparent',
-        transition: 'background-color 0.3s ease',
-      }}
-    >
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-start justify-between gap-6 py-6 text-left group"
-      >
-        <span className="font-body text-white font-semibold text-base lg:text-lg leading-snug group-hover:text-[#FF8C00] transition-colors duration-200">
-          {faq.q}
-        </span>
-        <div
-          className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 mt-0.5"
-          style={{
-            background: open ? 'rgba(255,140,0,0.12)' : 'rgba(255,255,255,0.04)',
-            border: open ? '1px solid rgba(255,140,0,0.3)' : '1px solid rgba(255,255,255,0.08)',
-          }}
-        >
-          {open ? (
-            <Minus className="w-4 h-4" style={{ color: '#FF8C00' }} />
-          ) : (
-            <Plus className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
-          )}
-        </div>
-      </button>
-
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="text-gray-400 text-base leading-relaxed pb-6 max-w-3xl">{faq.a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-}
+// dekken 90% van de buy-blocking-objections.
 
 export default function FAQ() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="faq" ref={ref} className="relative py-24 lg:py-36 bg-[#0A0A0A] overflow-hidden border-t border-white/[0.07]">
+    <section id="faq" ref={ref} className="relative py-20 lg:py-32 bg-titan-surface overflow-hidden border-t border-white/[0.06]">
       {/* Ambient warme gloed bovenaan */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[260px] pointer-events-none"
@@ -101,10 +51,10 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 28 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <div className="section-label mb-4 flex items-center gap-3 justify-center">
-            <div className="w-6 h-px bg-[#FF8C00]" />
+            <div className="w-6 h-px bg-titan-accent" />
             <span>FAQ</span>
           </div>
           <h2
@@ -117,7 +67,7 @@ export default function FAQ() {
             Staat jouw vraag er niet bij?{' '}
             <a
               href="mailto:hello@titan-banks.com"
-              className="text-[#FF8C00] underline underline-offset-2 hover:text-white transition-colors duration-200"
+              className="text-titan-accent underline underline-offset-2 hover:text-white transition-colors duration-200"
             >
               Mail ons
             </a>
@@ -125,16 +75,21 @@ export default function FAQ() {
           </p>
         </motion.div>
 
-        {/* FAQ list */}
+        {/* FAQ-accordion (radix — toetsenbord + screenreader a11y) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-3xl border border-white/[0.07] bg-[#0E0E0E] px-8 lg:px-12"
+          className="rounded-stage border border-white/[0.07] bg-[#0E0E0E] px-7 lg:px-10"
         >
-          {faqs.map((faq, i) => (
-            <FAQItem key={i} faq={faq} index={i} />
-          ))}
+          <Accordion type="single" collapsible>
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`}>
+                <AccordionTrigger>{faq.q}</AccordionTrigger>
+                <AccordionContent className="max-w-3xl">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </motion.div>
       </div>
     </section>

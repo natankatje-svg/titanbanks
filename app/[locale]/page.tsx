@@ -3,11 +3,14 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import Hero from '@/components/heroes/HeroVariantB';
-import ProductSpotlight from '@/components/home/ProductSpotlight';
-import WhatsInside from '@/components/home/WhatsInside';
-import UseCasesGrid from '@/components/home/UseCasesGrid';
+import CapacityStatement from '@/components/home/CapacityStatement';
+import GalleryRail from '@/components/home/GalleryRailLazy';
+import FeatureStages from '@/components/home/FeatureStages';
+import LifeMosaic from '@/components/home/LifeMosaic';
+import SpecTable from '@/components/home/SpecTable';
+import TrustWall from '@/components/home/TrustWall';
 import FAQ from '@/components/FAQ';
-import FinalDrop from '@/components/home/FinalDrop';
+import FinalStage from '@/components/home/FinalStage';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import { buildPageMetadata } from '@/lib/seo';
 
@@ -42,35 +45,31 @@ export async function generateMetadata({
 }
 
 /**
- * Homepage V4 — landingpage in de Gigi-template-STIJL (layout, compositie,
- * pills, 2-regelige koppen, 4-koloms stat-strip, hover-fill cards, watermarks),
- * vertaald naar TitanBanks dark silent-luxury (#0A0A0A + oranje #FF8C00 +
- * Manrope). Buy-now via Ecwid; alle claims via lib/product-claims SSOT.
+ * Homepage V5 — "DAGEN, GEEN UREN": drie-akten cinematic met conversie-spine
+ * (Apple verleidt boven, Anker sluit onder). Alle productbeelden uit de
+ * goedgekeurde launch-set; alle claims via lib/product-claims SSOT.
  *
- * Sectie-flow (mapt op de template, secties in `components/home/`):
- *  1. Navigation       — sticky header
- *  2. Hero             — split: 2-regelige kop + pill-CTA's + benefit-pills + product
- *  3. ProductSpotlight — "Choose your fuel": product + feature-chips + Bestel
- *  4. WhatsInside      — "Formula & Benefits": 4-koloms stat-strip + watermark
- *  5. UseCasesGrid     — "Activations": hover-fill use-case cards
- *  6. FAQ              — laatste twijfels wegnemen
- *  7. FinalDrop        — "Ready to level up": grote koop-CTA-band
- *  8. Footer + StickyBuyBar — persistente koop-CTA
- *
- * Bewust NIET overgenomen: de Instagram-feed met like-counts (pre-launch geen
- * echte metrics; verzonnen aantallen zijn verboden).
+ * AKTE 1 — verleiden:  Hero (embers, onder-links) → CapacityStatement (scrub)
+ * AKTE 2 — bewijzen:   GalleryRail → FeatureStages → LifeMosaic
+ * AKTE 3 — sluiten:    SpecTable → TrustWall → FAQ → FinalStage (mini-buybox)
+ * Persistente conversie: pill-nav BESTEL + StickyBuyBar (mobiel).
  */
 export default function Home() {
   return (
-    <main className="relative bg-[#0A0A0A] overflow-x-hidden">
+    // GEEN overflow-x-hidden op main: dat maakt main een scroll-container en
+    // breekt position:sticky (CapacityStatement-pin). Body clipt al op X.
+    <main className="relative bg-titan-surface">
       <JsonLd />
       <Navigation />
       <Hero />
-      <ProductSpotlight />
-      <WhatsInside />
-      <UseCasesGrid />
+      <CapacityStatement />
+      <GalleryRail />
+      <FeatureStages />
+      <LifeMosaic />
+      <SpecTable />
+      <TrustWall />
       <FAQ />
-      <FinalDrop />
+      <FinalStage />
       <Footer />
       <StickyBuyBar />
     </main>
