@@ -142,7 +142,7 @@ export default function ImageSlider({
                 aria-label={`Slide ${i + 1}`}
                 className={`flex-[0_0_72px] sm:flex-[0_0_88px] aspect-square relative rounded-lg overflow-hidden transition-all ${
                   selected === i
-                    ? 'ring-2 ring-[#FF6B00] opacity-100'
+                    ? 'ring-2 ring-[#FF8C00] opacity-100'
                     : 'opacity-50 hover:opacity-80 ring-1 ring-white/10'
                 }`}
               >
@@ -168,7 +168,7 @@ export default function ImageSlider({
               onClick={() => onThumbClick(i)}
               aria-label={`Slide ${i + 1}`}
               className={`h-1.5 rounded-full transition-all ${
-                selected === i ? 'w-6 bg-[#FF6B00]' : 'w-1.5 bg-white/40 hover:bg-white/60'
+                selected === i ? 'w-6 bg-[#FF8C00]' : 'w-1.5 bg-white/40 hover:bg-white/60'
               }`}
             />
           ))}

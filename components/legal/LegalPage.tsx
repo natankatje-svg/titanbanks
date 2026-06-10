@@ -16,7 +16,7 @@ export default function LegalPage({ document }: LegalPageProps) {
       <section className="pt-32 pb-24 px-6 max-w-3xl mx-auto">
         {/* Eyebrow */}
         <div className="mb-5 flex items-center gap-3">
-          <div className="w-6 h-px bg-[#FF6B00]" />
+          <div className="w-6 h-px bg-[#FF8C00]" />
           <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
             {document.eyebrow}
           </span>
@@ -72,7 +72,7 @@ export default function LegalPage({ document }: LegalPageProps) {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="font-body text-sm text-[#FF6B00] hover:text-white underline underline-offset-4 decoration-[#FF6B00]/40 hover:decoration-white transition-colors"
+                    className="font-body text-sm text-[#FF8C00] hover:text-white underline underline-offset-4 decoration-[#FF8C00]/40 hover:decoration-white transition-colors"
                   >
                     {item.label}
                   </a>
@@ -109,7 +109,7 @@ export default function LegalPage({ document }: LegalPageProps) {
                       className="font-body text-[#B5B5B5] text-base leading-relaxed pl-5 relative"
                     >
                       <span
-                        className="absolute left-0 top-[0.7em] w-2 h-px bg-[#FF6B00]"
+                        className="absolute left-0 top-[0.7em] w-2 h-px bg-[#FF8C00]"
                         aria-hidden
                       />
                       {item}
@@ -127,7 +127,7 @@ export default function LegalPage({ document }: LegalPageProps) {
             {t('footer_contact_prefix')}{' '}
             <a
               href="mailto:hello@titan-banks.com"
-              className="text-[#FF6B00] underline underline-offset-4 hover:text-white transition-colors"
+              className="text-[#FF8C00] underline underline-offset-4 hover:text-white transition-colors"
             >
               hello@titan-banks.com
             </a>

@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: 'Hoe snel laadt Titan X mijn devices?',
-    a: 'Titan X levert tot 22,5W via de ingebouwde USB-C kabel — snel genoeg om een moderne smartphone in ~30 minuten naar 50% te brengen. Het juiste laadprotocol wordt automatisch herkend per device.',
+    a: 'Titan X snellaadt via de ingebouwde USB-C kabel — snel genoeg om een moderne smartphone in ~30 minuten naar 50% te brengen. Het juiste laadprotocol wordt automatisch herkend per device.',
   },
   {
     q: 'Heeft Titan X een garantie?',
@@ -38,29 +38,28 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
-      className="border-b border-white/[0.06] last:border-0 -ml-3 pl-3"
+      className="border-b border-white/[0.06] last:border-0"
       style={{
-        borderLeft: `2px solid ${open ? 'rgba(14,181,200,0.45)' : 'transparent'}`,
-        background: open ? 'rgba(255,107,0,0.03)' : 'transparent',
-        transition: 'border-color 0.3s ease, background-color 0.3s ease',
+        background: open ? 'rgba(255,140,0,0.03)' : 'transparent',
+        transition: 'background-color 0.3s ease',
       }}
     >
       <button
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-start justify-between gap-6 py-6 text-left group"
       >
-        <span className="font-body text-white font-semibold text-base lg:text-lg leading-snug group-hover:text-[#FF6B00] transition-colors duration-200">
+        <span className="font-body text-white font-semibold text-base lg:text-lg leading-snug group-hover:text-[#FF8C00] transition-colors duration-200">
           {faq.q}
         </span>
         <div
           className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 mt-0.5"
           style={{
-            background: open ? 'rgba(255,107,0,0.12)' : 'rgba(255,255,255,0.04)',
-            border: open ? '1px solid rgba(255,107,0,0.3)' : '1px solid rgba(255,255,255,0.08)',
+            background: open ? 'rgba(255,140,0,0.12)' : 'rgba(255,255,255,0.04)',
+            border: open ? '1px solid rgba(255,140,0,0.3)' : '1px solid rgba(255,255,255,0.08)',
           }}
         >
           {open ? (
-            <Minus className="w-4 h-4" style={{ color: '#FF6B00' }} />
+            <Minus className="w-4 h-4" style={{ color: '#FF8C00' }} />
           ) : (
             <Plus className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
           )}
@@ -90,10 +89,10 @@ export default function FAQ() {
 
   return (
     <section id="faq" ref={ref} className="relative py-24 lg:py-36 bg-[#0A0A0A] overflow-hidden border-t border-white/[0.07]">
-      {/* Ambient teal glow */}
+      {/* Ambient warme gloed bovenaan */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[260px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.04) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.04) 0%, transparent 65%)' }}
       />
 
       <div className="max-w-4xl mx-auto px-6">
@@ -105,28 +104,24 @@ export default function FAQ() {
           className="text-center mb-16"
         >
           <div className="section-label mb-4 flex items-center gap-3 justify-center">
-            <div className="w-6 h-px bg-[#FF6B00]" />
-            <span>11 — FAQ</span>
+            <div className="w-6 h-px bg-[#FF8C00]" />
+            <span>FAQ</span>
           </div>
-          <h2 className="font-display uppercase text-white mb-5" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', lineHeight: 0.88 }}>
+          <h2
+            className="font-display uppercase text-white mb-5 tracking-[-0.035em] [text-wrap:balance]"
+            style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', lineHeight: 0.92 }}
+          >
             ALLES WAT JE WIL <span className="text-gradient-orange">WETEN</span>
           </h2>
           <p className="font-body text-gray-400 text-lg leading-relaxed">
             Staat jouw vraag er niet bij?{' '}
             <a
               href="mailto:hello@titan-banks.com"
-              className="text-[#FF6B00] underline underline-offset-2 hover:text-white transition-colors duration-200"
+              className="text-[#FF8C00] underline underline-offset-2 hover:text-white transition-colors duration-200"
             >
               Mail ons
             </a>
-            {' '}of stuur een DM via{' '}
-            <a
-              href="#"
-              className="text-[#FF6B00] underline underline-offset-2 hover:text-white transition-colors duration-200"
-            >
-              @titanbanks
-            </a>
-            .
+            {' '}— we reageren snel.
           </p>
         </motion.div>
 
@@ -135,7 +130,7 @@ export default function FAQ() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="glass-card rounded-3xl px-8 lg:px-12"
+          className="rounded-3xl border border-white/[0.07] bg-[#0E0E0E] px-8 lg:px-12"
         >
           {faqs.map((faq, i) => (
             <FAQItem key={i} faq={faq} index={i} />

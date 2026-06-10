@@ -51,7 +51,7 @@ export default function StickyBuyBar() {
             style={{
               background: 'rgba(10,10,10,0.96)',
               backdropFilter: 'blur(20px)',
-              borderColor: 'rgba(255,107,0,0.35)',
+              borderColor: 'rgba(255,140,0,0.35)',
             }}
           >
             <div className="flex items-center gap-3 max-w-sm mx-auto">
@@ -68,7 +68,7 @@ export default function StickyBuyBar() {
                 ) : (
                   <span className="font-display text-white text-xl leading-none">{BRAND.product}</span>
                 )}
-                <div className="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[#888888] mt-0.5">
+                <div className="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[#9A9A9A] mt-0.5">
                   {capacityLabel()} · matte black
                 </div>
               </div>

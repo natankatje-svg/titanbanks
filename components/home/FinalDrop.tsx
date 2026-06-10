@@ -27,7 +27,7 @@ export default function FinalDrop() {
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full blur-[160px]"
-        style={{ background: 'rgba(255,107,0,0.12)' }}
+        style={{ background: 'rgba(255,140,0,0.12)' }}
       />
 
       <motion.div
@@ -37,12 +37,12 @@ export default function FinalDrop() {
         transition={{ duration: 0.6, ease: EASE }}
         className="relative max-w-4xl mx-auto px-6 text-center flex flex-col items-center"
       >
-        <span className="font-mono text-[0.7rem] uppercase tracking-[0.3em] text-[#FF6B00] mb-5">
+        <span className="font-mono text-[0.7rem] uppercase tracking-[0.3em] text-[#FF8C00] mb-5">
           Eerste batch · {SPECS.warrantyYears.value} jaar garantie
         </span>
         <h2
-          className="font-display font-extrabold uppercase leading-[0.88] tracking-tighter text-white mb-6"
-          style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)' }}
+          className="font-display font-extrabold uppercase leading-[0.92] tracking-[-0.035em] text-white mb-6"
+          style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}
         >
           Klaar om
           <br />
@@ -63,7 +63,7 @@ export default function FinalDrop() {
           <ArrowRight className="w-[17px] h-[17px] transition-transform group-hover:translate-x-1" aria-hidden />
         </button>
 
-        <p className="font-body text-[#666666] text-xs mt-5 inline-flex items-center gap-1.5">
+        <p className="font-body text-[#8A8A8A] text-xs mt-5 inline-flex items-center gap-1.5">
           <Check className="w-3 h-3 text-emerald-400" aria-hidden />
           {safe(TBD.returnPolicyDays) ?? 14} dagen retour · iDEAL · Klarna · veilig betalen
         </p>

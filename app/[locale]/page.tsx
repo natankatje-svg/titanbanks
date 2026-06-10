@@ -44,7 +44,7 @@ export async function generateMetadata({
 /**
  * Homepage V4 — landingpage in de Gigi-template-STIJL (layout, compositie,
  * pills, 2-regelige koppen, 4-koloms stat-strip, hover-fill cards, watermarks),
- * vertaald naar TitanBanks dark silent-luxury (#0A0A0A + oranje #FF6B00 +
+ * vertaald naar TitanBanks dark silent-luxury (#0A0A0A + oranje #FF8C00 +
  * Manrope). Buy-now via Ecwid; alle claims via lib/product-claims SSOT.
  *
  * Sectie-flow (mapt op de template, secties in `components/home/`):

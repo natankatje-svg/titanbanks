@@ -17,10 +17,10 @@ import {
 // Badges: alleen CONFIRMED specs. Geen "Smart Display" / "Outdoor Strap"
 // als marketing-USP — die zijn descriptief, niet onderscheidend.
 const badges = [
-  { label: capacityLabel(), color: '#FF6B00' },
+  { label: capacityLabel(), color: '#FF8C00' },
   { label: `${SPECS.simultaneousDevices.value} devices tegelijk`, color: '#0EB5C8' },
   { label: 'LED-display', color: '#EAB308' },
-  { label: 'Ingebouwde zaklamp', color: '#FF6B00' },
+  { label: 'Ingebouwde zaklamp', color: '#FF8C00' },
 ];
 
 export default function Hero() {
@@ -40,7 +40,7 @@ export default function Hero() {
       {/* Grid + radial atmosphere */}
       <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 70% 60% at 70% 60%, rgba(255,107,0,0.06) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 70% 60% at 70% 60%, rgba(255,140,0,0.06) 0%, transparent 70%)' }}
       />
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse 40% 40% at 10% 80%, rgba(14,181,200,0.04) 0%, transparent 60%)' }}
@@ -64,7 +64,7 @@ export default function Hero() {
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             className="section-label mb-6 flex items-center gap-3 justify-center lg:justify-start"
           >
-            <div className="w-6 h-px bg-[#FF6B00]" />
+            <div className="w-6 h-px bg-[#FF8C00]" />
             <span>01 — Titan X Powerbank</span>
           </motion.div>
 
@@ -150,7 +150,7 @@ export default function Hero() {
             animate={{ opacity: [0.25, 0.55, 0.25] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute w-[420px] h-[420px] rounded-full blur-[80px] pointer-events-none"
-            style={{ background: 'rgba(255,107,0,0.12)' }}
+            style={{ background: 'rgba(255,140,0,0.12)' }}
           />
           <div className="absolute w-[260px] h-[260px] rounded-full blur-[60px] pointer-events-none translate-x-16 -translate-y-20"
             style={{ background: 'rgba(14,181,200,0.07)' }}
@@ -169,7 +169,7 @@ export default function Hero() {
               className="absolute inset-[5%] rounded-full blur-3xl pointer-events-none"
               style={{
                 background:
-                  'radial-gradient(ellipse at 50% 58%, rgba(255,107,0,0.14) 0%, rgba(255,107,0,0.06) 50%, transparent 75%)',
+                  'radial-gradient(ellipse at 50% 58%, rgba(255,140,0,0.14) 0%, rgba(255,140,0,0.06) 50%, transparent 75%)',
               }}
             />
 
@@ -196,7 +196,7 @@ export default function Hero() {
             {/* Stage floor glow — warme grondreflectie onder powerbank */}
             <div
               className="absolute bottom-6 left-1/2 -translate-x-1/2 h-10 blur-2xl pointer-events-none"
-              style={{ width: '55%', background: 'rgba(255,107,0,0.22)' }}
+              style={{ width: '55%', background: 'rgba(255,140,0,0.22)' }}
             />
           </motion.div>
 
@@ -218,11 +218,11 @@ export default function Hero() {
             animate={{ y: [7, -7, 7] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.9 }}
             className="absolute right-0 lg:-right-4 top-1/3 glass-card rounded-2xl px-4 py-3 z-20"
-            style={{ border: '1px solid rgba(255,107,0,0.22)' }}
+            style={{ border: '1px solid rgba(255,140,0,0.22)' }}
           >
             <div className="flex items-center gap-2 mb-0.5">
-              <Sun className="w-3 h-3 flex-shrink-0" style={{ color: '#FF6B00' }} />
-              <div className="font-display text-sm uppercase tracking-wide" style={{ color: '#FF6B00' }}>LED Flashlight</div>
+              <Sun className="w-3 h-3 flex-shrink-0" style={{ color: '#FF8C00' }} />
+              <div className="font-display text-sm uppercase tracking-wide" style={{ color: '#FF8C00' }}>LED Flashlight</div>
             </div>
             <div className="font-mono-titan text-gray-500 text-xs pl-5">Ultra-bright beam</div>
           </motion.div>

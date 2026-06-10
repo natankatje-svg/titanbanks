@@ -25,7 +25,7 @@ export default async function ContactPage({
       <Navigation />
       <section className="pt-32 pb-24 px-6 max-w-5xl mx-auto">
         <div className="mb-5 flex items-center gap-3">
-          <div className="w-6 h-px bg-[#FF6B00]" />
+          <div className="w-6 h-px bg-[#FF8C00]" />
           <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
             {t('eyebrow')}
           </span>
@@ -49,13 +49,13 @@ export default async function ContactPage({
           {/* Side info */}
           <div className="space-y-6">
             <div className="border border-white/[0.06] rounded-xl p-5">
-              <Mail className="w-5 h-5 text-[#FF6B00] mb-3" />
+              <Mail className="w-5 h-5 text-[#FF8C00] mb-3" />
               <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#888888] mb-1">
                 {t('direct_email_label')}
               </p>
               <a
                 href="mailto:hello@titan-banks.com"
-                className="font-body text-white hover:text-[#FF6B00] transition-colors"
+                className="font-body text-white hover:text-[#FF8C00] transition-colors"
               >
                 hello@titan-banks.com
               </a>

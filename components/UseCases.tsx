@@ -32,7 +32,7 @@ const useCases = [
     Icon: Gamepad2,
     title: 'Gaming',
     sub: 'Voor creators & gamers',
-    accent: '#FF6B00',
+    accent: '#FF8C00',
     description: 'Stream, game en maak content zonder onderbreking. Snellaad in je pauze.',
   },
   {
@@ -60,7 +60,7 @@ export default function UseCases() {
       {/* Ambient center glow */}
       <div
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse, rgba(255,107,0,0.03) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse, rgba(255,140,0,0.03) 0%, transparent 65%)' }}
       />
       {/* Bottom fade into ProductShowcase */}
       <div
@@ -78,7 +78,7 @@ export default function UseCases() {
           className="mb-16 text-center"
         >
           <div className="section-label mb-4 flex items-center gap-3 justify-center">
-            <div className="w-6 h-px bg-[#FF6B00]" />
+            <div className="w-6 h-px bg-[#FF8C00]" />
             <span>04 — Gebruik</span>
           </div>
           <h2 className="font-display uppercase text-white mb-4" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', lineHeight: 0.88 }}>

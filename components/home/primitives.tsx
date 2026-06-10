@@ -3,12 +3,12 @@
 import { motion, useReducedMotion } from 'framer-motion';
 
 /**
- * Gedeelde design-primitives voor de template-stijl homepage (v4).
- * Vertaalt de Gigi-template z'n layout-taal naar TitanBanks dark silent-luxury:
- *  - Eyebrow: donkere pill met oranje dot + mono caps (template badge-pill).
+ * Gedeelde design-primitives voor de homepage, in TitanBanks silent-luxury:
+ *  - Eyebrow: stil kicker-systeem — kort oranje streepje + mono caps. Bewust
+ *    géén pill/border/ping-dot meer: dat las als badge-lawaai op elke sectie.
  *  - SectionHeading: 2-regelige ultra-bold uppercase kop, accent op regel 2.
  *  - Watermark: gigantisch faint woord als diepte-laag achter een sectie.
- * Tokens: bg #0A0A0A/#141414, accent #FF6B00/#FF8C00, Manrope (font-display, max 800).
+ * Tokens: bg #0A0A0A/#141214, accent #FF8C00, Manrope (font-display, max 800).
  */
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -21,19 +21,9 @@ export function Eyebrow({
   className?: string;
 }) {
   return (
-    <span
-      className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 ${className}`}
-      style={{
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,107,0,0.28)',
-        backdropFilter: 'blur(6px)',
-      }}
-    >
-      <span className="relative flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF6B00] opacity-60" />
-        <span className="relative inline-flex h-2 w-2 rounded-full bg-[#FF6B00]" />
-      </span>
-      <span className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-white/85">
+    <span className={`inline-flex items-center gap-3 ${className}`}>
+      <span aria-hidden className="h-px w-6 bg-[#FF8C00]/80" />
+      <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-white/55">
         {children}
       </span>
     </span>
@@ -88,7 +78,7 @@ export function SectionHeading({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.6, ease: EASE }}
-      className={`font-display font-extrabold uppercase leading-[0.9] tracking-tighter text-white ${sizeClass} ${
+      className={`font-display font-extrabold uppercase leading-[0.92] tracking-[-0.035em] text-white [text-wrap:balance] ${sizeClass} ${
         align === 'center' ? 'text-center' : ''
       } ${className}`}
     >
@@ -117,7 +107,7 @@ export function Watermark({
   return (
     <span
       aria-hidden
-      className={`pointer-events-none absolute left-1/2 -translate-x-1/2 select-none whitespace-nowrap font-display font-extrabold uppercase leading-none tracking-tighter ${className}`}
+      className={`pointer-events-none absolute left-1/2 -translate-x-1/2 select-none whitespace-nowrap font-display font-extrabold uppercase leading-none tracking-[-0.035em] ${className}`}
       style={{
         fontSize: 'clamp(8rem, 26vw, 26rem)',
         color: 'rgba(255,255,255,0.02)',

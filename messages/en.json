@@ -46,7 +46,7 @@
       },
       "fastcharge": {
         "name": "Fast charge",
-        "title": "22.5W fast charge.",
+        "title": "Fast charge built in.",
         "description": "Power when and where you need it. A modern smartphone to 50% in ~30 minutes. The right charging protocol is auto-detected per device."
       },
       "build": {
@@ -70,7 +70,7 @@
       },
       "ports": {
         "title": "6 devices at once",
-        "description": "4× USB-A · built-in USB-C + Lightning cable · 22.5W fast charge. No one waits their turn."
+        "description": "4× USB-A · built-in USB-C + Lightning cable · fast charge. No one waits their turn."
       },
       "flashlight": {
         "title": "Built-in flashlight",
@@ -151,7 +151,7 @@
         "benefits": {
           "name": "Benefits",
           "title": "Everything you need",
-          "description": "6 devices at once · 22.5W fast charge · LED display · flashlight · matte black. No marketing fluff.",
+          "description": "6 devices at once · fast charge · LED display · flashlight · matte black. No marketing fluff.",
           "alt": "Titan X — overview of all benefits"
         }
       }

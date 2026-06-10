@@ -52,9 +52,9 @@ export default function LifestyleStrip() {
         >
           <div className="text-center max-w-3xl">
             <div className="section-label mb-4 flex items-center gap-3 justify-center">
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
               <span>Made for</span>
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
             </div>
             <p
               className="font-display uppercase text-white"

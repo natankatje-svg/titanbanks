@@ -146,7 +146,7 @@ function ProductThumbs({
           className="relative w-12 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 flex-shrink-0"
           style={{
             borderColor: index === activeColor
-              ? "rgba(255, 107, 0, 0.9)"
+              ? "rgba(255, 140, 0, 0.9)"
               : "rgba(255,255,255,0.12)",
             background: "rgba(0,0,0,0.4)",
           }}
@@ -165,7 +165,7 @@ function ProductThumbs({
             <motion.div
               layoutId={productId}
               className="absolute inset-0 rounded-md"
-              style={{ border: "2px solid rgba(255,107,0,0.7)", borderRadius: 6 }}
+              style={{ border: "2px solid rgba(255,140,0,0.7)", borderRadius: 6 }}
               transition={springTransition}
             />
           )}

@@ -46,16 +46,17 @@ export default function BuyBox() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="rounded-3xl p-8 lg:p-12"
           style={{
-            background: 'linear-gradient(135deg, rgba(255,107,0,0.04) 0%, rgba(14,181,200,0.02) 100%)',
-            border: '1px solid rgba(255,107,0,0.15)',
+            background:
+              'radial-gradient(ellipse 80% 90% at 18% 0%, rgba(255,140,0,0.05) 0%, transparent 55%), #111111',
+            border: '1px solid rgba(255,140,0,0.18)',
           }}
         >
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left: heading + price */}
             <div>
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-6 h-px bg-[#FF6B00]" />
-                <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
+                <div className="w-6 h-px bg-[#FF8C00]" />
+                <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#9A9A9A]">
                   {t('eyebrow')}
                 </span>
               </div>
@@ -76,13 +77,13 @@ export default function BuyBox() {
                     {price}
                   </span>
                   {anchor && (
-                    <span className="font-body text-[#666666] text-base line-through mb-2">
+                    <span className="font-body text-[#8A8A8A] text-base line-through mb-2">
                       {anchor}
                     </span>
                   )}
                 </div>
               )}
-              <p className="font-body text-[#666666] text-xs mb-6">
+              <p className="font-body text-[#8A8A8A] text-xs mb-6">
                 {t('incl_vat')}
               </p>
 
@@ -105,7 +106,7 @@ export default function BuyBox() {
             <div>
               {!inWaitlistMode && (
                 <div className="mb-5">
-                  <label className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#888888] mb-3">
+                  <label className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#9A9A9A] mb-3">
                     {t('quantity')}
                   </label>
                   <div className="inline-flex items-stretch rounded-lg overflow-hidden border border-white/[0.08]">
@@ -151,7 +152,7 @@ export default function BuyBox() {
                 ))}
               </div>
 
-              <p className="font-body text-[#666666] text-[11px] text-center leading-relaxed">
+              <p className="font-body text-[#8A8A8A] text-[11px] text-center leading-relaxed">
                 <Check className="inline w-3 h-3 text-emerald-400 mr-1" />
                 {t('secure_checkout')}
               </p>

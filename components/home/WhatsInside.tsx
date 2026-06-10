@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { Eyebrow, Watermark } from '@/components/home/primitives';
-import { SPECS, TBD, safe } from '@/lib/product-claims';
+import { SPECS } from '@/lib/product-claims';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -20,11 +20,12 @@ const STATS = [
     label: 'Tegelijk laden',
     desc: 'Via 4× USB-A plus ingebouwde USB-C en Lightning kabels.',
   },
+  // Content-regel: geen specifiek wattage — poorten-stat i.p.v. watt-getal.
   {
-    value: `${safe(TBD.fastChargeWattage) ?? 22.5}`,
-    unit: 'watt',
-    label: 'Snellaad',
-    desc: 'Snel weer vol als je even kunt bijladen.',
+    value: SPECS.portsUsbA.value.toString(),
+    unit: '× USB-A',
+    label: 'Poorten',
+    desc: 'Plus snellaad via de ingebouwde USB-C kabel.',
   },
   {
     value: SPECS.warrantyYears.value.toString(),
@@ -49,7 +50,7 @@ export default function WhatsInside() {
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-[300px]"
-        style={{ background: 'radial-gradient(ellipse 70% 100% at 50% 0%, rgba(255,107,0,0.05) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse 70% 100% at 50% 0%, rgba(255,140,0,0.05) 0%, transparent 60%)' }}
       />
 
       <div className="relative max-w-7xl mx-auto px-6">
@@ -57,7 +58,7 @@ export default function WhatsInside() {
           <div>
             <Eyebrow className="mb-5">Wat erin zit</Eyebrow>
             <h2
-              className="font-display font-extrabold uppercase leading-[0.9] tracking-tighter text-white"
+              className="font-display font-extrabold uppercase leading-[0.92] tracking-[-0.035em] text-white"
               style={{ fontSize: 'clamp(2.1rem, 5vw, 3.8rem)' }}
             >
               Pure
@@ -84,12 +85,12 @@ export default function WhatsInside() {
             >
               <div className="flex items-baseline gap-1.5 mb-3">
                 <span
-                  className="font-display font-extrabold text-white leading-none tracking-tighter"
+                  className="font-display font-extrabold text-white leading-none tracking-[-0.035em]"
                   style={{ fontSize: 'clamp(2.6rem, 5vw, 4.2rem)' }}
                 >
                   {s.value}
                 </span>
-                <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#FF6B00]">
+                <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#FF8C00]">
                   {s.unit}
                 </span>
               </div>

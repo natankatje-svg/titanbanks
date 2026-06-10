@@ -67,7 +67,7 @@ export default function Navigation() {
         {active && (
           <motion.div
             layoutId="nav-indicator"
-            className="absolute -bottom-1.5 left-0 right-0 h-px bg-[#FF6B00]"
+            className="absolute -bottom-1.5 left-0 right-0 h-px bg-[#FF8C00]"
             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
           />
         )}
@@ -151,7 +151,7 @@ export default function Navigation() {
                 >
                   <Link
                     href={link.href}
-                    className="font-display text-3xl uppercase tracking-wide text-[#D1D5DB] hover:text-[#FF6B00] transition-colors"
+                    className="font-display text-3xl uppercase tracking-wide text-[#D1D5DB] hover:text-[#FF8C00] transition-colors"
                     onClick={() => setMenuOpen(false)}
                   >
                     {t(link.tKey)}

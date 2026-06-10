@@ -18,12 +18,12 @@ import {
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-// Feature-chips uit SSOT — geen verboden claims.
+// Feature-chips uit SSOT — geen verboden claims (nooit een specifiek wattage).
 const FEATURES = [
   { icon: BatteryCharging, label: `${capacityLabel()} capaciteit` },
   { icon: Plug, label: `${SPECS.simultaneousDevices.value} apparaten tegelijk` },
   { icon: Cable, label: portsLabelCompact() },
-  { icon: Gauge, label: `${safe(TBD.fastChargeWattage) ?? 22.5}W snellaad` },
+  { icon: Gauge, label: 'Snellaad via USB-C' },
 ] as const;
 
 /**
@@ -43,7 +43,7 @@ export default function ProductSpotlight() {
         <div className="mb-12 lg:mb-16">
           <Eyebrow className="mb-5">Ons product</Eyebrow>
           <h2
-            className="font-display font-extrabold uppercase leading-[0.9] tracking-tighter text-white"
+            className="font-display font-extrabold uppercase leading-[0.92] tracking-[-0.035em] text-white"
             style={{ fontSize: 'clamp(2.1rem, 5vw, 3.8rem)' }}
           >
             Eén powerbank.
@@ -59,19 +59,25 @@ export default function ProductSpotlight() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="relative rounded-3xl border border-white/[0.08] overflow-hidden"
+            className="group relative rounded-3xl border border-white/[0.08] overflow-hidden transition-colors duration-500 hover:border-[#FF8C00]/25"
             style={{
               background:
-                'radial-gradient(ellipse 90% 80% at 50% 30%, rgba(255,107,0,0.10) 0%, transparent 60%), linear-gradient(160deg, #161616 0%, #0C0C0C 100%)',
+                'radial-gradient(ellipse 90% 80% at 50% 35%, rgba(255,140,0,0.12) 0%, transparent 62%), linear-gradient(160deg, #161616 0%, #0C0C0C 100%)',
             }}
           >
             <div className="relative aspect-[4/5] w-full">
               <Image
-                src="/images/titanx/cutout/slot-03-cutout.png"
-                alt={`${BRAND.text} ${BRAND.product} — ${capacityLabel()} power bank, matte black`}
+                src="/images/titanx/cutout/hero-warm-rim-cutout.png"
+                alt={`${BRAND.text} ${BRAND.product} — ${capacityLabel()} power bank, matte black met warm rim-licht`}
                 fill
                 sizes="(max-width: 768px) 90vw, 45vw"
-                className="object-contain object-center p-8 select-none"
+                className="object-contain object-center p-10 lg:p-12 select-none transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+              />
+              {/* zachte vloer-gloed onder het product */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-[18%] bottom-[8%] h-[14%] rounded-[50%] blur-2xl"
+                style={{ background: 'rgba(255,140,0,0.10)' }}
               />
             </div>
           </motion.div>
@@ -84,7 +90,7 @@ export default function ProductSpotlight() {
             transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
           >
             <h3
-              className="font-display font-extrabold uppercase tracking-tighter text-white leading-none mb-4"
+              className="font-display font-extrabold uppercase tracking-[-0.035em] text-white leading-none mb-4"
               style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)' }}
             >
               {BRAND.product}
@@ -106,7 +112,7 @@ export default function ProductSpotlight() {
                     border: '1px solid rgba(255,255,255,0.08)',
                   }}
                 >
-                  <Icon className="w-3.5 h-3.5 flex-shrink-0" style={{ color: '#FF6B00' }} aria-hidden />
+                  <Icon className="w-3.5 h-3.5 flex-shrink-0" style={{ color: '#FF8C00' }} aria-hidden />
                   <span className="font-display text-[0.78rem] font-bold text-white/90 tracking-tight leading-tight">
                     {label}
                   </span>
@@ -133,7 +139,7 @@ export default function ProductSpotlight() {
                 <ArrowRight className="w-[15px] h-[15px] transition-transform group-hover:translate-x-0.5" aria-hidden />
               </button>
             </div>
-            <p className="font-body text-[#666666] text-xs mt-3 inline-flex items-center gap-1.5">
+            <p className="font-body text-[#8A8A8A] text-xs mt-3 inline-flex items-center gap-1.5">
               <Check className="w-3 h-3 text-emerald-400" aria-hidden />
               {safe(TBD.returnPolicyDays) ?? 14} dagen retour · {SPECS.warrantyYears.value} jaar garantie · veilig betalen
             </p>

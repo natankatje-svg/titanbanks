@@ -28,7 +28,7 @@ export default function ShippingReturnsWarranty() {
       bodyKey: 'shipping_body',
       linkKey: 'shipping_link',
       href: '/legal/policies#shipping',
-      accent: '#FF6B00',
+      accent: '#FF8C00',
     },
     {
       Icon: RefreshCcw,
@@ -36,7 +36,7 @@ export default function ShippingReturnsWarranty() {
       bodyKey: 'returns_body',
       linkKey: 'returns_link',
       href: '/legal/policies#returns',
-      accent: '#EAB308',
+      accent: '#FF8C00',
       values: { days: returnDays },
     },
     {
@@ -45,7 +45,7 @@ export default function ShippingReturnsWarranty() {
       bodyKey: 'warranty_body',
       linkKey: 'warranty_link',
       href: '/legal/policies#warranty',
-      accent: '#22c55e',
+      accent: '#FF8C00',
       values: { years: warrantyYears },
     },
   ];
@@ -61,11 +61,11 @@ export default function ShippingReturnsWarranty() {
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <div className="w-6 h-px bg-[#0EB5C8]" />
+            <div className="w-6 h-px bg-[#FF8C00]" />
             <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
               {t('eyebrow')}
             </span>
-            <div className="w-6 h-px bg-[#0EB5C8]" />
+            <div className="w-6 h-px bg-[#FF8C00]" />
           </div>
           <h2
             className="font-display uppercase text-white"

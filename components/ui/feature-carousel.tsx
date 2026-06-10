@@ -113,7 +113,7 @@ function StepPills({
               transition={{ duration: 0.3 }}
               className={cn(
                 'rounded-full px-2.5 py-1 transition-colors duration-300',
-                isCompleted ? 'bg-[#FF6B00]/15' : 'bg-white/[0.06]',
+                isCompleted ? 'bg-[#FF8C00]/15' : 'bg-white/[0.06]',
               )}
             >
               <button
@@ -128,8 +128,8 @@ function StepPills({
                   animate={{ scale: isCurrent ? 1.15 : 1 }}
                   className={cn(
                     'flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[10px] font-mono',
-                    isCompleted && 'bg-[#FF6B00] text-white',
-                    isCurrent && 'bg-[#FF6B00]/80 text-white',
+                    isCompleted && 'bg-[#FF8C00] text-white',
+                    isCurrent && 'bg-[#FF8C00]/80 text-white',
                     !isCompleted && !isCurrent && 'bg-white/10 text-white/60',
                   )}
                 >
@@ -138,7 +138,7 @@ function StepPills({
                 <span
                   className={cn(
                     'font-mono text-[0.6rem] uppercase tracking-[0.18em] hidden sm:inline',
-                    isCurrent ? 'text-[#FF6B00]' : 'text-white/55',
+                    isCurrent ? 'text-[#FF8C00]' : 'text-white/55',
                   )}
                 >
                   {step.name}
@@ -193,7 +193,7 @@ export function FeatureCarousel({
         className="pointer-events-none absolute inset-0 opacity-0 lg:opacity-100 transition-opacity"
         style={{
           background:
-            'radial-gradient(400px circle at var(--x) var(--y), rgba(255,107,0,0.10), transparent 70%)',
+            'radial-gradient(400px circle at var(--x) var(--y), rgba(255,140,0,0.10), transparent 70%)',
         }}
       />
 

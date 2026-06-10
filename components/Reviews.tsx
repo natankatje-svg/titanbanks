@@ -93,11 +93,11 @@ export default function Reviews() {
             className="text-center mb-14"
           >
             <div className="inline-flex items-center gap-3 mb-5">
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
                 10 — Reviews
               </span>
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
             </div>
             <h2
               className="font-display uppercase text-white mb-4"
@@ -138,7 +138,7 @@ export default function Reviews() {
       <section id="reviews" ref={ref} className="relative py-24 lg:py-36 bg-[#0A0A0A] overflow-hidden">
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[320px] pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.05) 0%, transparent 65%)' }}
+          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.05) 0%, transparent 65%)' }}
         />
         <div className="max-w-3xl mx-auto px-6 text-center">
           <motion.div
@@ -147,11 +147,11 @@ export default function Reviews() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
                 Reviews · in afwachting
               </span>
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
             </div>
             <h2
               className="font-display uppercase text-white mb-6"
@@ -181,11 +181,11 @@ export default function Reviews() {
     <section id="reviews" ref={ref} className="relative py-24 bg-[#0A0A0A]">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <div className="inline-flex items-center gap-3 mb-6">
-          <div className="w-6 h-px bg-[#FF6B00]" />
+          <div className="w-6 h-px bg-[#FF8C00]" />
           <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
             10 — Reviews
           </span>
-          <div className="w-6 h-px bg-[#FF6B00]" />
+          <div className="w-6 h-px bg-[#FF8C00]" />
         </div>
         <h2
           className="font-display uppercase text-white mb-4"

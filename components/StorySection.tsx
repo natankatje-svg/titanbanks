@@ -46,7 +46,7 @@ export default function StorySection() {
           {/* Manufacturer credentials — alleen tonen als bevestigd */}
           {(cells || (certs && certs.length > 0)) && (
             <div className="border-t border-[#2A2A2A] pt-10 mb-12">
-              <p className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#FF6B00] mb-6">
+              <p className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#FF8C00] mb-6">
                 Engineering & compliance
               </p>
               <div className="grid sm:grid-cols-2 gap-6">

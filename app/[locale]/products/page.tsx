@@ -27,7 +27,7 @@ export default async function ProductsPage({
       <Navigation />
       <section className="pt-32 pb-16 px-6 max-w-5xl mx-auto">
         <div className="mb-5 flex items-center gap-3">
-          <div className="w-6 h-px bg-[#FF6B00]" />
+          <div className="w-6 h-px bg-[#FF8C00]" />
           <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
             {t('eyebrow')}
           </span>

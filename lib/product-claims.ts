@@ -123,10 +123,14 @@ export const SPECS = {
 // Wat nog open staat (cells) blijft TBD totdat user antwoordt.
 
 export const TBD = {
+  // Content-regel (briefing 2026-06-10): specifieke wattages mogen NIET in de
+  // UI — alleen "fast charge"/"snelladen" als kwalitatieve claim. FORBIDDEN
+  // zorgt dat safe() altijd de fallback geeft, ook als een component dit
+  // per ongeluk weer gaat renderen.
   fastChargeWattage: {
     value: 22.5,
-    status: 'CONFIRMED',
-    source: 'Telegram checkpoint 1, vraag 3 — antwoord B (22.5W)',
+    status: 'FORBIDDEN',
+    source: 'briefing 2026-06-10 — geen specifieke wattage-claims in UI',
   } satisfies ProductClaim<number>,
 
   priceEur: {

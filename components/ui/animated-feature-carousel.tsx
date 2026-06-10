@@ -223,7 +223,7 @@ function FeatureCard({
         className="pointer-events-none absolute inset-0 hidden md:block opacity-100 rounded-3xl"
         style={{
           background:
-            'radial-gradient(380px circle at var(--x) var(--y), rgba(255,107,0,0.12), transparent 70%)',
+            'radial-gradient(380px circle at var(--x) var(--y), rgba(255,140,0,0.12), transparent 70%)',
         }}
       />
 
@@ -240,7 +240,7 @@ function FeatureCard({
             >
               <motion.div
                 className="font-mono text-[0.65rem] uppercase tracking-[0.3em]"
-                style={{ color: '#FF6B00' }}
+                style={{ color: '#FF8C00' }}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -301,9 +301,9 @@ function StepsNav({
               <button
                 type="button"
                 className={cn(
-                  'group flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FF6B00] focus-visible:ring-offset-black',
+                  'group flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FF8C00] focus-visible:ring-offset-black',
                   isCurrent
-                    ? 'bg-[#FF6B00] text-white'
+                    ? 'bg-[#FF8C00] text-white'
                     : 'bg-white/[0.06] text-white/65 hover:bg-white/[0.10] hover:text-white',
                 )}
                 onClick={() => onChange(stepIdx)}
@@ -313,7 +313,7 @@ function StepsNav({
                   className={cn(
                     'flex h-5 w-5 shrink-0 items-center justify-center rounded-full transition-all duration-300 text-[10px] font-mono',
                     isCompleted
-                      ? 'bg-[#FF6B00] text-white'
+                      ? 'bg-[#FF8C00] text-white'
                       : isCurrent
                       ? 'bg-white/20 text-white'
                       : 'bg-white/10 text-white/65 group-hover:bg-white/20',

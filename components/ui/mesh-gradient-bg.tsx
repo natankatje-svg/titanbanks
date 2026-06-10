@@ -24,7 +24,7 @@ export function MeshGradientBg() {
         className="absolute inset-0 w-full h-full"
         colors={[
           '#050505', // bijna-zwart brand bg
-          '#FF6B00', // brand oranje
+          '#FF8C00', // brand oranje
           '#7A3000', // gebrand donker-oranje
           '#1C0800', // bijna-zwart met oranje ondertoon
           '#3D1600', // donker amber
@@ -40,7 +40,7 @@ export function MeshGradientBg() {
         colors={[
           '#050505',
           '#FF8C00',
-          '#FF6B00',
+          '#FF8C00',
           '#5C2200',
         ]}
         speed={0.12}

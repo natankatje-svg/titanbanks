@@ -55,9 +55,9 @@ export default function HeroVariantB() {
   };
 
   const capacityFormatted = SPECS.capacityMah.value.toLocaleString(locale);
-  const wattage = safe(TBD.fastChargeWattage) ?? 22.5;
   const batchSize = 100;
 
+  // Content-regel: nooit een specifiek wattage tonen — alleen "fast charge".
   const benefitLabel = (key: string) => {
     switch (key) {
       case 'capacity':
@@ -65,7 +65,7 @@ export default function HeroVariantB() {
       case 'devices':
         return t('spec_icons.devices', { n: SPECS.simultaneousDevices.value });
       case 'fastcharge':
-        return `${wattage}W`;
+        return t('spec_icons.label_fastcharge');
       default:
         return t('spec_icons.display');
     }
@@ -109,10 +109,11 @@ export default function HeroVariantB() {
       {/* Bewegende energie-effecten — allemaal LINKS begrensd zodat ze niet over
           de powerbank (rechts) lopen. CSS-only, mobiel + desktop. */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 5 }}>
-        {/* pulserende warme gloed achter de kop */}
+        {/* pulserende warme gloed achter de kop — alleen desktop (mobiel scheelt
+            een geanimeerde 120px-blur op de compositor; de foto draagt daar al warmte) */}
         <div
-          className="hero-glow-pulse absolute top-1/2 left-[12%] -translate-y-1/2 w-[480px] h-[480px] rounded-full blur-[120px]"
-          style={{ background: 'rgba(255,107,0,0.22)' }}
+          className="hero-glow-pulse hidden lg:block absolute top-1/2 left-[12%] -translate-y-1/2 w-[480px] h-[480px] rounded-full blur-[120px]"
+          style={{ background: 'rgba(255,140,0,0.22)' }}
         />
         {/* diagonale licht-sweep (links begrensd) */}
         <div className="absolute inset-y-0 left-0 w-[58%] overflow-hidden">
@@ -133,33 +134,23 @@ export default function HeroVariantB() {
           transition={{ duration: 0.6, ease: EASE }}
           className="flex flex-col items-start text-left max-w-xl lg:max-w-[560px]"
         >
-          {/* Eyebrow pill */}
-          <div
-            className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-6"
-            style={{
-              background: 'rgba(255,107,0,0.08)',
-              border: '1px solid rgba(255,107,0,0.28)',
-              backdropFilter: 'blur(6px)',
-            }}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF6B00] opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#FF6B00]" />
-            </span>
-            <span className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-white/85">
+          {/* Statusregel — batch-info als stil mono-label (geen badge-lawaai) */}
+          <span className="inline-flex items-center gap-2.5 mb-7">
+            <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#FF8C00]" aria-hidden />
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-white/60">
               {t('stock_badge', { count: batchSize })}
             </span>
-          </div>
+          </span>
 
           {/* Kicker — productnaam */}
-          <span className="font-mono text-[0.7rem] uppercase tracking-[0.3em] text-white/45 mb-3">
+          <span className="font-mono text-[0.7rem] uppercase tracking-[0.3em] text-white/45 mb-4">
             {BRAND.wordmark} · {BRAND.product}
           </span>
 
           {/* Headline — 2 regels, accent op regel 2 */}
           <h1
-            className="font-display font-extrabold uppercase leading-[0.88] tracking-tighter text-white mb-5"
-            style={{ fontSize: 'clamp(2.8rem, 7vw, 6rem)', textShadow: '0 2px 30px rgba(0,0,0,0.45)' }}
+            className="font-display font-extrabold uppercase leading-[0.92] tracking-[-0.035em] text-white mb-6"
+            style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', textShadow: '0 2px 30px rgba(0,0,0,0.45)' }}
           >
             {t('motto_lead')}
             <br />
@@ -207,7 +198,7 @@ export default function HeroVariantB() {
                   backdropFilter: 'blur(6px)',
                 }}
               >
-                <Icon className="w-3.5 h-3.5" style={{ color: '#FF6B00' }} strokeWidth={2} aria-hidden />
+                <Icon className="w-3.5 h-3.5" style={{ color: '#FF8C00' }} strokeWidth={2} aria-hidden />
                 <span className="font-display text-[0.8rem] font-bold text-white tracking-tight">
                   {benefitLabel(key)}
                 </span>

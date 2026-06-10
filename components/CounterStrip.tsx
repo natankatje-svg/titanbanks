@@ -73,8 +73,8 @@ export default function CounterStrip() {
       ref={ref}
       className="relative border-y border-white/[0.05] bg-[#0A0A0A]"
     >
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/35 to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/35 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FF8C00]/35 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FF8C00]/35 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6">
@@ -92,7 +92,7 @@ export default function CounterStrip() {
                 <span className="font-display text-3xl sm:text-4xl text-white leading-none tabular-nums">
                   <CountingValue target={c.numericTarget} inView={inView} />
                 </span>
-                <span className="font-mono text-[0.65rem] sm:text-[0.7rem] uppercase tracking-[0.18em] leading-none text-[#FF6B00]">
+                <span className="font-mono text-[0.65rem] sm:text-[0.7rem] uppercase tracking-[0.18em] leading-none text-[#FF8C00]">
                   {c.unit}
                 </span>
               </div>

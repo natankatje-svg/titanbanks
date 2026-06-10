@@ -46,7 +46,7 @@
       },
       "fastcharge": {
         "name": "Fast Charge",
-        "title": "22,5W Fast Charge.",
+        "title": "Fast Charge integriert.",
         "description": "Strom, wann und wo du ihn brauchst. Ein modernes Smartphone in ~30 Minuten auf 50 %. Das richtige Ladeprotokoll wird pro Gerät automatisch erkannt."
       },
       "build": {
@@ -70,7 +70,7 @@
       },
       "ports": {
         "title": "6 Geräte gleichzeitig",
-        "description": "4× USB-A · integriertes USB-C + Lightning Kabel · 22,5W Fast Charge. Niemand wartet auf seinen Turn."
+        "description": "4× USB-A · integriertes USB-C + Lightning Kabel · Fast Charge. Niemand wartet auf seinen Turn."
       },
       "flashlight": {
         "title": "Integrierte Taschenlampe",
@@ -151,7 +151,7 @@
         "benefits": {
           "name": "Vorteile",
           "title": "Alles, was du brauchst",
-          "description": "6 Geräte gleichzeitig · 22.5W Fast Charge · LED-Display · Taschenlampe · Mattschwarz. Kein Marketing-Geschwafel.",
+          "description": "6 Geräte gleichzeitig · Fast Charge · LED-Display · Taschenlampe · Mattschwarz. Kein Marketing-Geschwafel.",
           "alt": "Titan X — Übersicht aller Vorteile"
         }
       }

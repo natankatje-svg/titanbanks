@@ -86,7 +86,7 @@ export default function LanguageSwitcher({ variant = 'compact' }: LanguageSwitch
                   {LOCALE_FULL[l]}
                 </span>
                 {active && (
-                  <span className="w-1 h-1 rounded-full bg-[#FF6B00]" aria-hidden />
+                  <span className="w-1 h-1 rounded-full bg-[#FF8C00]" aria-hidden />
                 )}
               </button>
             );

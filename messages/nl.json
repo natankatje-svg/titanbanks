@@ -46,7 +46,7 @@
       },
       "fastcharge": {
         "name": "Snel laden",
-        "title": "22,5W fast charge.",
+        "title": "Snelladen ingebouwd.",
         "description": "Power waar je hem nodig hebt, op het moment dat je hem nodig hebt. Een moderne smartphone in ~30 minuten naar 50%. Het juiste laadprotocol wordt automatisch herkend."
       },
       "build": {
@@ -70,7 +70,7 @@
       },
       "ports": {
         "title": "6 devices tegelijk",
-        "description": "4× USB-A · ingebouwde USB-C + Lightning kabel · 22.5W fast charge. Niemand wacht op zijn beurt."
+        "description": "4× USB-A · ingebouwde USB-C + Lightning kabel · fast charge. Niemand wacht op zijn beurt."
       },
       "flashlight": {
         "title": "Ingebouwde zaklamp",
@@ -151,7 +151,7 @@
         "benefits": {
           "name": "Voordelen",
           "title": "Alles wat je nodig hebt",
-          "description": "6 devices tegelijk · 22.5W fast charge · LED display · zaklamp · matte black. Geen marketing-fluff.",
+          "description": "6 devices tegelijk · fast charge · LED display · zaklamp · matte black. Geen marketing-fluff.",
           "alt": "Titan X — overzicht van alle voordelen"
         }
       }

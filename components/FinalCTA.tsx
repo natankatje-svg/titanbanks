@@ -44,16 +44,16 @@ export default function FinalCTA() {
       style={{ background: 'linear-gradient(180deg, #0A0A0A 0%, #0a0a0a 50%, #0A0A0A 100%)' }}
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,107,0,0.04)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,140,0,0.04)_0%,transparent_70%)]" />
       <div className="absolute inset-0 grid-pattern opacity-30" />
       <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0A0A0A] to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
 
       {/* Ambient glow rings — CSS animated for compositor-thread perf */}
       <div className="ring-pulse-inner absolute left-1/2 top-1/2 w-[600px] h-[600px] rounded-full border pointer-events-none"
-        style={{ borderColor: 'rgba(255,107,0,0.2)' }} />
+        style={{ borderColor: 'rgba(255,140,0,0.2)' }} />
       <div className="ring-pulse-outer absolute left-1/2 top-1/2 w-[900px] h-[900px] rounded-full border pointer-events-none"
-        style={{ borderColor: 'rgba(255,107,0,0.1)' }} />
+        style={{ borderColor: 'rgba(255,140,0,0.1)' }} />
 
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -71,7 +71,7 @@ export default function FinalCTA() {
                 className="glow-pulse absolute inset-[8%] rounded-full blur-3xl pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse at 50% 55%, rgba(255,107,0,0.22) 0%, rgba(255,107,0,0.08) 50%, transparent 75%)',
+                    'radial-gradient(ellipse at 50% 55%, rgba(255,140,0,0.22) 0%, rgba(255,140,0,0.08) 50%, transparent 75%)',
                   animationDuration: '6s',
                 }}
               />
@@ -100,7 +100,7 @@ export default function FinalCTA() {
               {/* Stage floor glow — warme grondreflectie onder powerbank */}
               <div
                 className="absolute bottom-4 left-1/2 -translate-x-1/2 h-10 blur-2xl pointer-events-none"
-                style={{ width: '55%', background: 'rgba(255,107,0,0.25)' }}
+                style={{ width: '55%', background: 'rgba(255,140,0,0.25)' }}
               />
             </div>
           </motion.div>
@@ -114,10 +114,10 @@ export default function FinalCTA() {
           >
             {/* Eyebrow */}
             <div className="section-label mb-6 flex items-center gap-3">
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
               <span>12 — Bestel Nu</span>
               <span className="relative flex h-2 w-2">
-                <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#FF6B00' }} />
+                <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#FF8C00' }} />
               </span>
             </div>
 
@@ -188,9 +188,9 @@ export default function FinalCTA() {
                 <div key={label} className="flex items-center gap-2.5 glass-card rounded-2xl px-4 py-3">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'rgba(255,107,0,0.1)' }}
+                    style={{ background: 'rgba(255,140,0,0.1)' }}
                   >
-                    <Icon className="w-5 h-5" style={{ color: '#FF6B00' }} />
+                    <Icon className="w-5 h-5" style={{ color: '#FF8C00' }} />
                   </div>
                   <span className="font-body text-gray-300 text-sm font-medium">{label}</span>
                 </div>

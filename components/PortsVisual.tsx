@@ -14,9 +14,9 @@ interface PortRow {
 }
 
 const PORT_ROWS: PortRow[] = [
-  { Icon: Usb, titleKey: 'usb_a', descKey: 'usb_a_desc', accent: '#0EB5C8' },
-  { Icon: Cable, titleKey: 'usb_c', descKey: 'usb_c_desc', accent: '#FF6B00' },
-  { Icon: Plug, titleKey: 'micro_usb', descKey: 'micro_usb_desc', accent: '#EAB308' },
+  { Icon: Usb, titleKey: 'usb_a', descKey: 'usb_a_desc', accent: '#FF8C00' },
+  { Icon: Cable, titleKey: 'usb_c', descKey: 'usb_c_desc', accent: '#FF8C00' },
+  { Icon: Plug, titleKey: 'micro_usb', descKey: 'micro_usb_desc', accent: '#FF8C00' },
 ];
 
 export default function PortsVisual() {
@@ -34,11 +34,11 @@ export default function PortsVisual() {
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <div className="w-6 h-px bg-[#FF6B00]" />
+            <div className="w-6 h-px bg-[#FF8C00]" />
             <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
               {t('eyebrow')}
             </span>
-            <div className="w-6 h-px bg-[#FF6B00]" />
+            <div className="w-6 h-px bg-[#FF8C00]" />
           </div>
           <h2
             className="font-display uppercase text-white"
@@ -58,7 +58,7 @@ export default function PortsVisual() {
             className="relative rounded-2xl overflow-hidden"
             style={{
               boxShadow:
-                '0 0 0 1px rgba(255,255,255,0.05), 0 30px 60px rgba(0,0,0,0.6), 0 0 60px rgba(255,107,0,0.05)',
+                '0 0 0 1px rgba(255,255,255,0.05), 0 30px 60px rgba(0,0,0,0.6), 0 0 60px rgba(255,140,0,0.05)',
             }}
           >
             <Image
@@ -73,7 +73,7 @@ export default function PortsVisual() {
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  'radial-gradient(ellipse at 50% 60%, rgba(255,107,0,0.05) 0%, transparent 60%)',
+                  'radial-gradient(ellipse at 50% 60%, rgba(255,140,0,0.05) 0%, transparent 60%)',
               }}
             />
           </motion.div>

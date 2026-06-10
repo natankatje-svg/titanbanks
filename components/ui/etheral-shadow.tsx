@@ -53,7 +53,7 @@ const useInstanceId = (): string => {
  */
 export function EtherealShadow({
   sizing = 'fill',
-  color = 'rgba(255, 107, 0, 1)',
+  color = 'rgba(255, 140, 0, 1)',
   animation,
   noise,
   style,

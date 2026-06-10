@@ -81,7 +81,7 @@ export default function TitanFeatureCarousel() {
         className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px"
         style={{
           background:
-            'linear-gradient(to right, transparent, rgba(255,107,0,0.35), transparent)',
+            'linear-gradient(to right, transparent, rgba(255,140,0,0.35), transparent)',
         }}
         aria-hidden
       />

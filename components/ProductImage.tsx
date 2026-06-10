@@ -67,7 +67,7 @@ export default function ProductImage({
           className="absolute inset-[5%] rounded-full blur-3xl pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse at 50% 55%, rgba(255,107,0,0.18) 0%, rgba(255,107,0,0.06) 50%, transparent 75%)',
+              'radial-gradient(ellipse at 50% 55%, rgba(255,140,0,0.18) 0%, rgba(255,140,0,0.06) 50%, transparent 75%)',
           }}
         />
       )}
@@ -84,7 +84,7 @@ export default function ProductImage({
         <div
           aria-hidden
           className="absolute bottom-2 left-1/2 -translate-x-1/2 h-8 blur-2xl pointer-events-none"
-          style={{ width: '55%', background: 'rgba(255,107,0,0.20)' }}
+          style={{ width: '55%', background: 'rgba(255,140,0,0.20)' }}
         />
       )}
     </div>

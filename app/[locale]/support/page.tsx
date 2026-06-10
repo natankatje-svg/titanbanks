@@ -33,9 +33,9 @@ export default function SupportPage() {
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
           <a
             href="mailto:hello@titan-banks.com"
-            className="border border-[#2A2A2A] rounded-xl p-5 hover:border-[#FF6B00] transition-colors group"
+            className="border border-[#2A2A2A] rounded-xl p-5 hover:border-[#FF8C00] transition-colors group"
           >
-            <Mail className="w-5 h-5 text-[#FF6B00] mb-3" />
+            <Mail className="w-5 h-5 text-[#FF8C00] mb-3" />
             <p className="font-body text-white font-semibold mb-1">E-mail</p>
             <p className="text-[#888888] text-sm">hello@titan-banks.com</p>
           </a>

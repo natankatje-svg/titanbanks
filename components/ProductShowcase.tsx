@@ -8,11 +8,11 @@ import { Zap, Gauge, Sun, Link2, Check } from 'lucide-react';
 const showcaseItems = [
   {
     id: 'display',
-    eyebrow: '05 — LED-display',
+    eyebrow: 'LED-display',
     title: 'EXACT PERCENTAGE. ALTIJD.',
     description: 'LED-display met exact batterijpercentage. Geen 4-bars schatting — een nummer.',
     bullets: ['Exact percentage in één oogopslag', 'Leesbaar in donker én daglicht', 'In- en uitlaadstatus realtime'],
-    accent: '#0EB5C8',
+    accent: '#FF8C00',
     icon: Gauge,
     imageSide: 'right',
     image: '/images/product-hero.jpg',
@@ -20,11 +20,11 @@ const showcaseItems = [
   },
   {
     id: 'multidevice',
-    eyebrow: '06 — Multi-device',
+    eyebrow: 'Multi-device',
     title: 'TOT 6 DEVICES TEGELIJK.',
     description: 'Smartphone, tablet, oordopjes, camera, laptop — alles tegelijk via 4× USB-A poorten plus 2 ingebouwde kabels (USB-C en Lightning).',
     bullets: ['Tot 6 apparaten tegelijkertijd', 'Ingebouwde USB-C + Lightning kabels', '50.000 mAh capaciteit'],
-    accent: '#EAB308',
+    accent: '#FF8C00',
     icon: Zap,
     imageSide: 'left',
     image: '/images/feature-multidevice.jpg',
@@ -32,11 +32,11 @@ const showcaseItems = [
   },
   {
     id: 'strap',
-    eyebrow: '07 — Draaglus',
+    eyebrow: 'Draaglus',
     title: 'KLIK VAST. PAK MEE.',
     description: 'Oranje gevlochten draaglus met embossed "POWER BANK". Bevestigbaar aan rugzak, tas of riem.',
     bullets: ['Oranje gevlochten draaglus', 'Bevestigbaar aan rugzak of tas', 'Embossed wordmark'],
-    accent: '#FF6B00',
+    accent: '#FF8C00',
     icon: Link2,
     imageSide: 'right',
     image: '/images/product-angle.jpg',
@@ -44,11 +44,11 @@ const showcaseItems = [
   },
   {
     id: 'flashlight',
-    eyebrow: '08 — Zaklamp',
+    eyebrow: 'Zaklamp',
     title: 'INGEBOUWD. ALTIJD BIJ.',
     description: 'Krachtige ingebouwde zaklamp. Camping, pech, donker — een druk op de knop.',
     bullets: ['Krachtige LED-beam', 'Werkt onafhankelijk van laden', 'Eén druk om te activeren'],
-    accent: '#EAB308',
+    accent: '#FF8C00',
     icon: Sun,
     imageSide: 'left',
     image: '/images/feature-flashlight.jpg',
@@ -71,10 +71,6 @@ function Row({ item, index }: { item: (typeof showcaseItems)[0]; index: number }
         transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         className={`${isLeft ? 'lg:order-1' : 'lg:order-2'} relative`}
       >
-        {/* Accent line on edge */}
-        <div className={`absolute ${isLeft ? 'left-0' : 'right-0'} top-8 bottom-8 w-[2px] rounded-full`}
-          style={{ background: `linear-gradient(to bottom, transparent, ${item.accent}, transparent)` }}
-        />
         <div className="relative rounded-2xl overflow-hidden"
           style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 30px 60px rgba(0,0,0,0.6), 0 0 50px ${item.accent}0a` }}
         >
@@ -97,7 +93,7 @@ function Row({ item, index }: { item: (typeof showcaseItems)[0]; index: number }
           <span>{item.eyebrow}</span>
         </div>
 
-        <h3 className="font-display uppercase text-white leading-[0.88] mb-5 tracking-[-0.01em]"
+        <h3 className="font-display uppercase text-white leading-[0.92] mb-5 tracking-[-0.02em] [text-wrap:balance]"
           style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}
         >
           {item.title}
@@ -137,11 +133,14 @@ export default function ProductShowcase() {
           className="text-center"
         >
           <div className="section-label mb-4 flex items-center gap-3 justify-center">
-            <div className="w-6 h-px bg-[#0EB5C8]" />
-            <span>05–08 — Product Showcase</span>
+            <div className="w-6 h-px bg-[#FF8C00]" />
+            <span>Productdetails</span>
           </div>
-          <h2 className="font-display uppercase text-white" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', lineHeight: 0.88 }}>
-            ELK DETAIL <span className="text-gradient-teal">TELT</span>
+          <h2
+            className="font-display uppercase text-white tracking-[-0.035em]"
+            style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', lineHeight: 0.92 }}
+          >
+            ELK DETAIL <span className="text-gradient-orange">TELT</span>
           </h2>
         </motion.div>
 
@@ -152,9 +151,9 @@ export default function ProductShowcase() {
               <div className="flex items-center justify-center gap-3">
                 <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.04)' }} />
                 <div className="flex gap-1.5">
-                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,107,0,0.2)' }} />
-                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,107,0,0.4)' }} />
-                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,107,0,0.2)' }} />
+                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,140,0,0.2)' }} />
+                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,140,0,0.4)' }} />
+                  <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(255,140,0,0.2)' }} />
                 </div>
                 <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.04)' }} />
               </div>

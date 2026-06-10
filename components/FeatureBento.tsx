@@ -33,7 +33,7 @@ interface BentoCardProps {
 }
 
 const accentColors = {
-  orange: { text: '#FF6B00', glow: 'rgba(255,107,0,0.16)', rule: '#FF6B00' },
+  orange: { text: '#FF8C00', glow: 'rgba(255,140,0,0.16)', rule: '#FF8C00' },
   teal: { text: '#0EB5C8', glow: 'rgba(14,181,200,0.14)', rule: '#0EB5C8' },
   gold: { text: '#EAB308', glow: 'rgba(234,179,8,0.14)', rule: '#EAB308' },
   neutral: { text: '#E5E5E5', glow: 'rgba(255,255,255,0.05)', rule: 'rgba(255,255,255,0.25)' },
@@ -148,7 +148,7 @@ export default function FeatureBento() {
         className="pointer-events-none absolute inset-x-0 top-0 h-[420px]"
         style={{
           background:
-            'radial-gradient(ellipse 80% 100% at 50% 0%, rgba(255,107,0,0.04) 0%, transparent 60%)',
+            'radial-gradient(ellipse 80% 100% at 50% 0%, rgba(255,140,0,0.04) 0%, transparent 60%)',
         }}
       />
 
@@ -157,7 +157,7 @@ export default function FeatureBento() {
         <div className="grid md:grid-cols-[1fr_2fr] gap-8 mb-14 items-end">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.28em] text-[#9A9A9A]">
                 {t('eyebrow')}
               </span>

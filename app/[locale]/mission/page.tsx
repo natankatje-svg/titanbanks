@@ -24,7 +24,7 @@ export default async function MissionPage({
       <Navigation />
       <section className="pt-32 pb-24 px-6 max-w-4xl mx-auto">
         <div className="mb-5 flex items-center gap-3">
-          <div className="w-6 h-px bg-[#FF6B00]" />
+          <div className="w-6 h-px bg-[#FF8C00]" />
           <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
             {t('eyebrow')}
           </span>
@@ -47,7 +47,7 @@ export default async function MissionPage({
           <ul className="space-y-5">
             {values.map((value, i) => (
               <li key={i} className="flex items-start gap-5">
-                <span className="font-mono text-[#FF6B00] text-sm pt-1 min-w-[2rem]">
+                <span className="font-mono text-[#FF8C00] text-sm pt-1 min-w-[2rem]">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="font-body text-[#D5D5D5] text-base lg:text-lg leading-relaxed">

@@ -52,7 +52,7 @@ export default function InContextScenes() {
       {/* Subtiele top-rule + ambient warmth — sluit aan op hero-aesthetic */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px"
-        style={{ background: 'linear-gradient(to right, transparent, rgba(255,107,0,0.35), transparent)' }}
+        style={{ background: 'linear-gradient(to right, transparent, rgba(255,140,0,0.35), transparent)' }}
       />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-10">
@@ -64,7 +64,7 @@ export default function InContextScenes() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-12 lg:mb-16"
         >
-          <span className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.3em] text-[#FF6B00] mb-3">
+          <span className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.3em] text-[#FF8C00] mb-3">
             {t('eyebrow')}
           </span>
           <h2

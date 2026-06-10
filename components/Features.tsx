@@ -54,7 +54,7 @@ const features = [
     ? [
         {
           icon: Plug,
-          color: '#FF6B00',
+          color: '#FF8C00',
           title: 'Kabels aan boord',
           sub: 'Niet zoeken',
           description: 'Nooit meer een losse kabel zoeken. Ze zitten in het product.',
@@ -67,7 +67,7 @@ const features = [
     : [
         {
           icon: Plug,
-          color: '#FF6B00',
+          color: '#FF8C00',
           title: portsLabel(),
           sub: 'Connectiviteit',
           description: `${SPECS.portsUsbA.value}× USB-A poorten plus 2 ingebouwde intrekbare kabels (USB-C en Lightning). Alles wat je hebt, past.`,
@@ -108,7 +108,7 @@ export default function Features() {
       {/* Ambient top glow */}
       <div
         className="absolute -top-px left-1/2 -translate-x-1/2 w-[900px] h-[280px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.055) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.055) 0%, transparent 65%)' }}
       />
       {/* Bottom fade into FlashlightSection */}
       <div

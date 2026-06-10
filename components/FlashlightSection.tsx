@@ -38,9 +38,9 @@ export default function FlashlightSection() {
               transition={{ duration: 0.5 }}
               className="section-label mb-6 flex items-center gap-3"
             >
-              <div className="w-6 h-px bg-[#FF6B00]" />
+              <div className="w-6 h-px bg-[#FF8C00]" />
               <span>03 — LED Flashlight</span>
-              <div className="w-2 h-2 rounded-full bg-[#FF6B00]" />
+              <div className="w-2 h-2 rounded-full bg-[#FF8C00]" />
             </motion.div>
 
             {/* Headline */}
@@ -74,7 +74,7 @@ export default function FlashlightSection() {
             >
               {[
                 { Icon: Sun, label: 'LED-beam', color: '#EAB308' },
-                { Icon: Zap, label: 'Eén druk op knop', color: '#FF6B00' },
+                { Icon: Zap, label: 'Eén druk op knop', color: '#FF8C00' },
                 { Icon: Layers, label: 'Werkt onafhankelijk', color: '#0EB5C8' },
               ].map((item) => (
                 <div key={item.label}

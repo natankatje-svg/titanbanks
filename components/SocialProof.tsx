@@ -99,7 +99,7 @@ export default function SocialProof() {
       className="relative border-y border-white/[0.05] overflow-hidden"
       style={{ background: 'rgba(255,255,255,0.012)' }}
     >
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/40 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FF8C00]/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 py-9">
         <div className="grid grid-cols-2 sm:grid-cols-4">
@@ -122,7 +122,7 @@ export default function SocialProof() {
                 {s.unit && (
                   <span
                     className="font-mono text-[0.6rem] sm:text-[0.7rem] uppercase tracking-widest leading-none ml-1"
-                    style={{ color: '#FF6B00' }}
+                    style={{ color: '#FF8C00' }}
                   >
                     {s.unit}
                   </span>
@@ -136,7 +136,7 @@ export default function SocialProof() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/40 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FF8C00]/40 to-transparent" />
     </div>
   );
 }

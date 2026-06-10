@@ -59,7 +59,7 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-[#0A0A0A] border-t border-white/[0.05]">
-      <div className="h-px bg-gradient-to-r from-transparent via-[#FF6B00]/30 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#FF8C00]/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
@@ -67,7 +67,7 @@ export default function Footer() {
             <div className="mb-5">
               <FooterLogo />
             </div>
-            <p className="font-body text-[#888888] text-sm leading-relaxed max-w-xs">
+            <p className="font-body text-[#9A9A9A] text-sm leading-relaxed max-w-xs">
               {tFooter('tagline')}
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="font-body text-[#888888] hover:text-white text-sm transition-colors duration-200"
+                    className="font-body text-[#9A9A9A] hover:text-white text-sm transition-colors duration-200"
                   >
                     {tNav(item.tKey)}
                   </Link>
@@ -99,7 +99,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="font-body text-[#888888] hover:text-white text-sm transition-colors duration-200"
+                    className="font-body text-[#9A9A9A] hover:text-white text-sm transition-colors duration-200"
                   >
                     {tNav(item.tKey)}
                   </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="font-body text-[#888888] hover:text-white text-sm transition-colors duration-200"
+                    className="font-body text-[#9A9A9A] hover:text-white text-sm transition-colors duration-200"
                   >
                     {tFooter(item.tKey)}
                   </Link>
@@ -129,16 +129,16 @@ export default function Footer() {
 
         <div className="border-t border-white/[0.05] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
-            <p className="text-[#666666] text-sm">
+            <p className="text-[#8A8A8A] text-sm">
               © {new Date().getFullYear()} {BRAND.text}. {tFooter('copyright')}
             </p>
             {(kvk || address) && (
               <>
                 <span className="hidden sm:block w-px h-3.5 bg-white/[0.07]" />
-                <p className="font-mono text-[#666666] text-[0.6rem] uppercase tracking-[0.2em]">
-                  {kvk && <>KvK: <span className="text-[#888888]">{kvk}</span></>}
+                <p className="font-mono text-[#8A8A8A] text-[0.6rem] uppercase tracking-[0.2em]">
+                  {kvk && <>KvK: <span className="text-[#9A9A9A]">{kvk}</span></>}
                   {kvk && address && <span className="mx-2 opacity-40">·</span>}
-                  {address && <span className="text-[#888888]">{address}</span>}
+                  {address && <span className="text-[#9A9A9A]">{address}</span>}
                 </p>
               </>
             )}
@@ -147,7 +147,7 @@ export default function Footer() {
             <LanguageSwitcher variant="full" />
             <div className="hidden sm:flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-[#666666] text-xs">{tFooter('payment_line')}</span>
+              <span className="text-[#8A8A8A] text-xs">{tFooter('payment_line')}</span>
             </div>
           </div>
         </div>

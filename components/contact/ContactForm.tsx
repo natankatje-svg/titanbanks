@@ -81,7 +81,7 @@ export default function ContactForm() {
 
   const isSubmitting = submitState.status === 'submitting';
   const inputBase =
-    'w-full bg-white/[0.03] border border-white/[0.08] rounded-lg px-4 py-3 font-body text-white placeholder:text-[#666666] focus:outline-none focus:border-[#FF6B00] focus:bg-white/[0.05] transition-colors';
+    'w-full bg-white/[0.03] border border-white/[0.08] rounded-lg px-4 py-3 font-body text-white placeholder:text-[#666666] focus:outline-none focus:border-[#FF8C00] focus:bg-white/[0.05] transition-colors';
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>

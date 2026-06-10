@@ -43,7 +43,7 @@ export default function MoreProductsComingSoon() {
         className="absolute left-1/2 top-0 -translate-x-1/2 w-[820px] h-[280px] pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.045) 0%, transparent 65%)',
+            'radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.045) 0%, transparent 65%)',
         }}
       />
 
@@ -51,7 +51,7 @@ export default function MoreProductsComingSoon() {
         {/* Header — asymmetric: eyebrow left, volume mark right */}
         <div className="flex items-center justify-between border-b border-white/[0.06] pb-5 mb-12">
           <div className="flex items-center gap-3">
-            <div className="w-6 h-px bg-[#FF6B00]" />
+            <div className="w-6 h-px bg-[#FF8C00]" />
             <span className="font-mono text-[0.65rem] uppercase tracking-[0.28em] text-[#9A9A9A]">
               {t('eyebrow')}
             </span>
@@ -95,14 +95,14 @@ export default function MoreProductsComingSoon() {
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.55, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 className="relative grid grid-cols-[3.5rem_1fr_auto] sm:grid-cols-[5rem_1fr_auto] items-baseline gap-4 sm:gap-8 py-7 border-b border-white/[0.06]"
-                style={isActive ? { background: 'linear-gradient(to right, rgba(255,107,0,0.04), transparent 60%)' } : undefined}
+                style={isActive ? { background: 'linear-gradient(to right, rgba(255,140,0,0.04), transparent 60%)' } : undefined}
               >
                 {/* Active row accent — thin orange rule at the left edge */}
                 {isActive && (
                   <span
                     aria-hidden
                     className="absolute left-0 top-3 bottom-3 w-px"
-                    style={{ background: 'linear-gradient(to bottom, transparent, #FF6B00, transparent)' }}
+                    style={{ background: 'linear-gradient(to bottom, transparent, #FF8C00, transparent)' }}
                   />
                 )}
 
@@ -138,7 +138,7 @@ export default function MoreProductsComingSoon() {
                 {/* Status */}
                 <span
                   className={`font-mono text-[0.65rem] uppercase tracking-[0.22em] whitespace-nowrap ${
-                    isActive ? 'text-[#FF6B00]' : 'text-[#5F5F5F]'
+                    isActive ? 'text-[#FF8C00]' : 'text-[#5F5F5F]'
                   }`}
                 >
                   {item.status}
@@ -168,7 +168,7 @@ export default function MoreProductsComingSoon() {
                 </span>
               </div>
             ) : (
-              <form onSubmit={onSubmit} className="flex items-center gap-3 border-b border-white/[0.12] focus-within:border-[#FF6B00]/55 transition-colors">
+              <form onSubmit={onSubmit} className="flex items-center gap-3 border-b border-white/[0.12] focus-within:border-[#FF8C00]/55 transition-colors">
                 <input
                   type="email"
                   required
@@ -182,7 +182,7 @@ export default function MoreProductsComingSoon() {
                   type="submit"
                   disabled={state === 'submitting'}
                   aria-label={t('cta_button')}
-                  className="group flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-white hover:text-[#FF6B00] disabled:opacity-50 transition-colors py-3"
+                  className="group flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-white hover:text-[#FF8C00] disabled:opacity-50 transition-colors py-3"
                 >
                   {state === 'submitting' ? t('cta_sending') : t('cta_button')}
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
