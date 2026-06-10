@@ -54,10 +54,10 @@ export default async function ContactPage({
                 {t('direct_email_label')}
               </p>
               <a
-                href="mailto:hello@titan-banks.com"
+                href="mailto:info@titan-banks.com"
                 className="font-body text-white hover:text-[#FF8C00] transition-colors"
               >
-                hello@titan-banks.com
+                info@titan-banks.com
               </a>
             </div>
 

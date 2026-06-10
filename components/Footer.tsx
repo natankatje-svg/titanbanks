@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import { Instagram, Facebook } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import LanguageSwitcher from './LanguageSwitcher';
 import { BRAND, TBD, safe } from '@/lib/product-claims';
+import { SOCIALS } from '@/lib/brand-links';
 
 function FooterLogo() {
   return (
@@ -70,6 +72,26 @@ export default function Footer() {
             <p className="font-body text-[#9A9A9A] text-sm leading-relaxed max-w-xs">
               {tFooter('tagline')}
             </p>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href={SOCIALS.instagram}
+                target="_blank"
+                rel="noopener"
+                aria-label="TitanBanks op Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.1] text-[#9A9A9A] transition-colors hover:border-titan-accent/50 hover:text-titan-accent"
+              >
+                <Instagram className="h-4 w-4" aria-hidden />
+              </a>
+              <a
+                href={SOCIALS.facebook}
+                target="_blank"
+                rel="noopener"
+                aria-label="TitanBanks op Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.1] text-[#9A9A9A] transition-colors hover:border-titan-accent/50 hover:text-titan-accent"
+              >
+                <Facebook className="h-4 w-4" aria-hidden />
+              </a>
+            </div>
           </div>
 
           <div>

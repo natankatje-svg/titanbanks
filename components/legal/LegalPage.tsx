@@ -126,10 +126,10 @@ export default function LegalPage({ document }: LegalPageProps) {
           <p className="font-body text-sm text-[#666666] leading-relaxed">
             {t('footer_contact_prefix')}{' '}
             <a
-              href="mailto:hello@titan-banks.com"
+              href="mailto:info@titan-banks.com"
               className="text-[#FF8C00] underline underline-offset-4 hover:text-white transition-colors"
             >
-              hello@titan-banks.com
+              info@titan-banks.com
             </a>
             .
           </p>

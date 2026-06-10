@@ -1,4 +1,5 @@
 import { BRAND, SPECS, TBD, safe, capacityLabel, portsLabel } from '@/lib/product-claims';
+import { SOCIALS, CONTACT_EMAIL } from '@/lib/brand-links';
 
 const priceEur = safe(TBD.priceEur);
 
@@ -69,7 +70,13 @@ const organization = {
   name: BRAND.text,
   url: 'https://titan-banks.com',
   logo: 'https://titan-banks.com/branding/logo-white-tight.png',
-  sameAs: [],
+  sameAs: [SOCIALS.instagram, SOCIALS.facebook],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: CONTACT_EMAIL,
+    availableLanguage: ['nl', 'en', 'de'],
+  },
 };
 
 export default function JsonLd() {

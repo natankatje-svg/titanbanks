@@ -65,7 +65,7 @@ export default function FAQ() {
           <p className="font-body text-gray-400 text-lg leading-relaxed">
             Staat jouw vraag er niet bij?{' '}
             <a
-              href="mailto:hello@titan-banks.com"
+              href="mailto:info@titan-banks.com"
               className="text-titan-accent underline underline-offset-2 hover:text-white transition-colors duration-200"
             >
               Mail ons

@@ -193,7 +193,7 @@
         "eyebrow": "Zekerheid",
         "unit": "jaar",
         "title": "Fabrieksgarantie inbegrepen.",
-        "body": "Bij defect onder normaal gebruik regelen we reparatie of vervanging via de fabrikant. Mail hello@titan-banks.com — geen wachtmuziek, geen scripts."
+        "body": "Bij defect onder normaal gebruik regelen we reparatie of vervanging via de fabrikant. Mail info@titan-banks.com — geen wachtmuziek, geen scripts."
       }
     }
   },
@@ -285,7 +285,7 @@
     "form_sending": "Versturen…",
     "form_success_title": "Bericht ontvangen.",
     "form_success_body": "Dank je. We reageren binnen 1-2 werkdagen op je e-mailadres.",
-    "form_error_generic": "Er ging iets mis. Probeer het opnieuw of mail direct naar hello@titan-banks.com.",
+    "form_error_generic": "Er ging iets mis. Probeer het opnieuw of mail direct naar info@titan-banks.com.",
     "error_name_required": "Vul je naam in.",
     "error_email_invalid": "Vul een geldig e-mailadres in.",
     "error_subject_required": "Geef je bericht een kort onderwerp.",
@@ -299,7 +299,7 @@
   "faq_page": {
     "eyebrow": "Veelgestelde vragen",
     "title": "Antwoorden op de meest gestelde vragen.",
-    "intro": "Vind je het antwoord niet? Mail ons op hello@titan-banks.com — we helpen je graag verder."
+    "intro": "Vind je het antwoord niet? Mail ons op info@titan-banks.com — we helpen je graag verder."
   },
   "mission": {
     "eyebrow": "Onze missie",

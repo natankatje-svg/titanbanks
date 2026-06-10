@@ -193,7 +193,7 @@
         "eyebrow": "Peace of mind",
         "unit": "years",
         "title": "Manufacturer warranty included.",
-        "body": "If your unit fails under normal use, we arrange repair or replacement via the manufacturer. Email hello@titan-banks.com — no hold music, no scripts."
+        "body": "If your unit fails under normal use, we arrange repair or replacement via the manufacturer. Email info@titan-banks.com — no hold music, no scripts."
       }
     }
   },
@@ -285,7 +285,7 @@
     "form_sending": "Sending…",
     "form_success_title": "Message received.",
     "form_success_body": "Thanks. We will reply to your email within 1-2 business days.",
-    "form_error_generic": "Something went wrong. Try again or email hello@titan-banks.com directly.",
+    "form_error_generic": "Something went wrong. Try again or email info@titan-banks.com directly.",
     "error_name_required": "Please enter your name.",
     "error_email_invalid": "Please enter a valid email.",
     "error_subject_required": "Give your message a short subject.",
@@ -299,7 +299,7 @@
   "faq_page": {
     "eyebrow": "Frequently asked",
     "title": "Answers to the questions we get most.",
-    "intro": "Can't find your answer? Email hello@titan-banks.com — we'd love to help."
+    "intro": "Can't find your answer? Email info@titan-banks.com — we'd love to help."
   },
   "mission": {
     "eyebrow": "Our mission",

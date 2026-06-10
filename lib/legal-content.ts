@@ -53,7 +53,7 @@ const privacyNL: LegalDocument = {
     {
       heading: 'Wie is verantwoordelijk?',
       paragraphs: [
-        'TitanBanks is een handelsnaam van NamaCorp VOF, gevestigd in Nederland. Vragen over privacy kun je richten aan hello@titan-banks.com.',
+        'TitanBanks is een handelsnaam van NamaCorp VOF, gevestigd in Nederland. Vragen over privacy kun je richten aan info@titan-banks.com.',
       ],
     },
     {
@@ -144,7 +144,7 @@ const privacyNL: LegalDocument = {
     {
       heading: 'Hoe oefen je je rechten uit?',
       paragraphs: [
-        'Stuur een e-mail naar hello@titan-banks.com met je verzoek. Wij reageren binnen 30 dagen. Ben je niet tevreden over hoe wij je verzoek behandelen, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens (autoriteitpersoonsgegevens.nl).',
+        'Stuur een e-mail naar info@titan-banks.com met je verzoek. Wij reageren binnen 30 dagen. Ben je niet tevreden over hoe wij je verzoek behandelen, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens (autoriteitpersoonsgegevens.nl).',
       ],
     },
     {
@@ -174,7 +174,7 @@ const privacyEN: LegalDocument = {
     {
       heading: 'Who is responsible?',
       paragraphs: [
-        'TitanBanks is a trade name of NamaCorp VOF, established in the Netherlands. Privacy questions can be sent to hello@titan-banks.com.',
+        'TitanBanks is a trade name of NamaCorp VOF, established in the Netherlands. Privacy questions can be sent to info@titan-banks.com.',
       ],
     },
     {
@@ -261,7 +261,7 @@ const privacyEN: LegalDocument = {
     {
       heading: 'How do you exercise your rights?',
       paragraphs: [
-        'Send an email to hello@titan-banks.com with your request. We respond within 30 days. If you are not satisfied with how we handle your request, you can lodge a complaint with the Dutch Data Protection Authority (autoriteitpersoonsgegevens.nl).',
+        'Send an email to info@titan-banks.com with your request. We respond within 30 days. If you are not satisfied with how we handle your request, you can lodge a complaint with the Dutch Data Protection Authority (autoriteitpersoonsgegevens.nl).',
       ],
     },
     {
@@ -291,7 +291,7 @@ const privacyDE: LegalDocument = {
     {
       heading: 'Wer ist verantwortlich?',
       paragraphs: [
-        'TitanBanks ist eine Handelsmarke von NamaCorp VOF mit Sitz in den Niederlanden. Datenschutzanfragen können an hello@titan-banks.com gerichtet werden.',
+        'TitanBanks ist eine Handelsmarke von NamaCorp VOF mit Sitz in den Niederlanden. Datenschutzanfragen können an info@titan-banks.com gerichtet werden.',
       ],
     },
     {
@@ -375,7 +375,7 @@ const privacyDE: LegalDocument = {
     {
       heading: 'Wie machst du deine Rechte geltend?',
       paragraphs: [
-        'Sende eine E-Mail an hello@titan-banks.com mit deiner Anfrage. Wir antworten innerhalb von 30 Tagen. Bist du mit der Bearbeitung nicht zufrieden, kannst du eine Beschwerde bei der niederländischen Datenschutzbehörde (autoriteitpersoonsgegevens.nl) einreichen.',
+        'Sende eine E-Mail an info@titan-banks.com mit deiner Anfrage. Wir antworten innerhalb von 30 Tagen. Bist du mit der Bearbeitung nicht zufrieden, kannst du eine Beschwerde bei der niederländischen Datenschutzbehörde (autoriteitpersoonsgegevens.nl) einreichen.',
       ],
     },
     {
@@ -408,7 +408,7 @@ const termsNL: LegalDocument = {
     {
       heading: '1. Wie zijn wij?',
       paragraphs: [
-        'TitanBanks is een handelsnaam van NamaCorp VOF, gevestigd in Nederland. Wij verkopen premium powerbanks rechtstreeks aan consumenten via titan-banks.com. Voor vragen zijn we bereikbaar via hello@titan-banks.com.',
+        'TitanBanks is een handelsnaam van NamaCorp VOF, gevestigd in Nederland. Wij verkopen premium powerbanks rechtstreeks aan consumenten via titan-banks.com. Voor vragen zijn we bereikbaar via info@titan-banks.com.',
       ],
     },
     {
@@ -450,7 +450,7 @@ const termsNL: LegalDocument = {
     {
       heading: '8. Garantie',
       paragraphs: [
-        'Op de Titan X powerbank zit 2 jaar fabrieksgarantie bij normaal gebruik. Garantie dekt fabricage- en materiaalfouten, geen schade door val, water, ongeoorloofd openen of normale slijtage. Voor garantieclaims: hello@titan-banks.com. Zie ook /legal/policies#warranty.',
+        'Op de Titan X powerbank zit 2 jaar fabrieksgarantie bij normaal gebruik. Garantie dekt fabricage- en materiaalfouten, geen schade door val, water, ongeoorloofd openen of normale slijtage. Voor garantieclaims: info@titan-banks.com. Zie ook /legal/policies#warranty.',
       ],
     },
     {
@@ -468,7 +468,7 @@ const termsNL: LegalDocument = {
     {
       heading: '11. Klachten',
       paragraphs: [
-        'Heb je een klacht? Stuur deze binnen redelijke termijn per e-mail naar hello@titan-banks.com. Wij reageren binnen 14 dagen. Komen we er samen niet uit, dan kun je je geschil voorleggen aan het Europees ODR-platform (ec.europa.eu/consumers/odr) of de bevoegde rechter.',
+        'Heb je een klacht? Stuur deze binnen redelijke termijn per e-mail naar info@titan-banks.com. Wij reageren binnen 14 dagen. Komen we er samen niet uit, dan kun je je geschil voorleggen aan het Europees ODR-platform (ec.europa.eu/consumers/odr) of de bevoegde rechter.',
       ],
     },
     {
@@ -498,7 +498,7 @@ const termsEN: LegalDocument = {
     {
       heading: '1. Who we are',
       paragraphs: [
-        'TitanBanks is a trade name of NamaCorp VOF, established in the Netherlands. We sell premium power banks directly to consumers via titan-banks.com. Contact us at hello@titan-banks.com.',
+        'TitanBanks is a trade name of NamaCorp VOF, established in the Netherlands. We sell premium power banks directly to consumers via titan-banks.com. Contact us at info@titan-banks.com.',
       ],
     },
     {
@@ -540,7 +540,7 @@ const termsEN: LegalDocument = {
     {
       heading: '8. Warranty',
       paragraphs: [
-        'The Titan X power bank carries a 2-year manufacturer warranty under normal use. Warranty covers manufacturing and material defects, not damage from dropping, water, unauthorised opening or normal wear. For warranty claims: hello@titan-banks.com. See /legal/policies#warranty.',
+        'The Titan X power bank carries a 2-year manufacturer warranty under normal use. Warranty covers manufacturing and material defects, not damage from dropping, water, unauthorised opening or normal wear. For warranty claims: info@titan-banks.com. See /legal/policies#warranty.',
       ],
     },
     {
@@ -558,7 +558,7 @@ const termsEN: LegalDocument = {
     {
       heading: '11. Complaints',
       paragraphs: [
-        'Have a complaint? Send it within a reasonable time by email to hello@titan-banks.com. We respond within 14 days. If we cannot resolve the matter together, you can submit your dispute to the European ODR platform (ec.europa.eu/consumers/odr) or the competent court.',
+        'Have a complaint? Send it within a reasonable time by email to info@titan-banks.com. We respond within 14 days. If we cannot resolve the matter together, you can submit your dispute to the European ODR platform (ec.europa.eu/consumers/odr) or the competent court.',
       ],
     },
     {
@@ -588,7 +588,7 @@ const termsDE: LegalDocument = {
     {
       heading: '1. Wer wir sind',
       paragraphs: [
-        'TitanBanks ist eine Handelsmarke von NamaCorp VOF mit Sitz in den Niederlanden. Wir verkaufen Premium-Powerbanks direkt an Endkunden über titan-banks.com. Kontakt: hello@titan-banks.com.',
+        'TitanBanks ist eine Handelsmarke von NamaCorp VOF mit Sitz in den Niederlanden. Wir verkaufen Premium-Powerbanks direkt an Endkunden über titan-banks.com. Kontakt: info@titan-banks.com.',
       ],
     },
     {
@@ -630,7 +630,7 @@ const termsDE: LegalDocument = {
     {
       heading: '8. Garantie',
       paragraphs: [
-        'Auf die Titan X Powerbank gewähren wir 2 Jahre Herstellergarantie bei normalem Gebrauch. Die Garantie deckt Fabrikations- und Materialfehler, nicht jedoch Schäden durch Stürze, Wasser, unbefugtes Öffnen oder normale Abnutzung. Für Garantieansprüche: hello@titan-banks.com. Siehe /legal/policies#warranty.',
+        'Auf die Titan X Powerbank gewähren wir 2 Jahre Herstellergarantie bei normalem Gebrauch. Die Garantie deckt Fabrikations- und Materialfehler, nicht jedoch Schäden durch Stürze, Wasser, unbefugtes Öffnen oder normale Abnutzung. Für Garantieansprüche: info@titan-banks.com. Siehe /legal/policies#warranty.',
       ],
     },
     {
@@ -648,7 +648,7 @@ const termsDE: LegalDocument = {
     {
       heading: '11. Beschwerden',
       paragraphs: [
-        'Hast du eine Beschwerde? Sende sie innerhalb angemessener Frist per E-Mail an hello@titan-banks.com. Wir antworten innerhalb von 14 Tagen. Können wir uns nicht einigen, kannst du den Streit der EU-ODR-Plattform (ec.europa.eu/consumers/odr) oder dem zuständigen Gericht vorlegen.',
+        'Hast du eine Beschwerde? Sende sie innerhalb angemessener Frist per E-Mail an info@titan-banks.com. Wir antworten innerhalb von 14 Tagen. Können wir uns nicht einigen, kannst du den Streit der EU-ODR-Plattform (ec.europa.eu/consumers/odr) oder dem zuständigen Gericht vorlegen.',
       ],
     },
     {
@@ -696,7 +696,7 @@ const policiesNL: LegalDocument = {
         'Rest EU (FR, ES, IT, etc.) — tarief bij checkout, 3-5 werkdagen.',
         'UK, Zwitserland, Noorwegen — tarief bij checkout, 5-7 werkdagen, incl. douaneformaliteiten.',
         'VS & Canada — tarief bij checkout, 7-10 werkdagen, douanekosten voor rekening ontvanger.',
-        'Rest van de wereld — op aanvraag, neem contact op via hello@titan-banks.com.',
+        'Rest van de wereld — op aanvraag, neem contact op via info@titan-banks.com.',
       ],
     },
     {
@@ -707,7 +707,7 @@ const policiesNL: LegalDocument = {
       ],
       list: [
         'Het product is ongebruikt en in originele verpakking, met alle accessoires.',
-        'Je meldt het retour aan via hello@titan-banks.com binnen 14 dagen.',
+        'Je meldt het retour aan via info@titan-banks.com binnen 14 dagen.',
         'Je verstuurt het product binnen 14 dagen na aanmelding.',
         'Retourkosten zijn voor jouw rekening, tenzij wij anders aangeven (bv. defect bij ontvangst).',
         'Wij betalen het volledige aankoopbedrag terug binnen 14 dagen na ontvangst van het geretourneerde product.',
@@ -717,7 +717,7 @@ const policiesNL: LegalDocument = {
       id: 'warranty',
       heading: 'Garantie',
       paragraphs: [
-        'Op de Titan X powerbank zit 2 jaar fabrieksgarantie bij normaal gebruik. Bij defect of storing nemen wij of de fabrikant de reparatie of vervanging op ons. Wij werken nog uit of TitanBanks of de fabrikant de claim afhandelt — tot dan: meld een claim via hello@titan-banks.com en wij coördineren het proces.',
+        'Op de Titan X powerbank zit 2 jaar fabrieksgarantie bij normaal gebruik. Bij defect of storing nemen wij of de fabrikant de reparatie of vervanging op ons. Wij werken nog uit of TitanBanks of de fabrikant de claim afhandelt — tot dan: meld een claim via info@titan-banks.com en wij coördineren het proces.',
       ],
       list: [
         'Garantie geldt 2 jaar vanaf aankoopdatum (factuur).',
@@ -770,7 +770,7 @@ const policiesEN: LegalDocument = {
         'Rest of EU (FR, ES, IT, etc.) — rate at checkout, 3-5 business days.',
         'UK, Switzerland, Norway — rate at checkout, 5-7 business days, incl. customs handling.',
         'USA & Canada — rate at checkout, 7-10 business days, customs duties for the recipient.',
-        'Rest of world — on request, contact hello@titan-banks.com.',
+        'Rest of world — on request, contact info@titan-banks.com.',
       ],
     },
     {
@@ -781,7 +781,7 @@ const policiesEN: LegalDocument = {
       ],
       list: [
         'The product is unused and in its original packaging, with all accessories.',
-        'You notify us of the return via hello@titan-banks.com within 14 days.',
+        'You notify us of the return via info@titan-banks.com within 14 days.',
         'You ship the product within 14 days of notification.',
         'Return shipping is at your expense, unless we state otherwise (e.g. defective on arrival).',
         'We refund the full purchase amount within 14 days after we receive the returned product.',
@@ -791,7 +791,7 @@ const policiesEN: LegalDocument = {
       id: 'warranty',
       heading: 'Warranty',
       paragraphs: [
-        'The Titan X power bank carries a 2-year manufacturer warranty under normal use. If a unit fails, we or the manufacturer take care of repair or replacement. We are still working out whether TitanBanks or the manufacturer handles claims — for now, file a claim via hello@titan-banks.com and we coordinate the process.',
+        'The Titan X power bank carries a 2-year manufacturer warranty under normal use. If a unit fails, we or the manufacturer take care of repair or replacement. We are still working out whether TitanBanks or the manufacturer handles claims — for now, file a claim via info@titan-banks.com and we coordinate the process.',
       ],
       list: [
         'Warranty is valid 2 years from the date of purchase (invoice).',
@@ -844,7 +844,7 @@ const policiesDE: LegalDocument = {
         'Rest EU (FR, ES, IT etc.) — Tarif im Checkout, 3-5 Werktage.',
         'UK, Schweiz, Norwegen — Tarif im Checkout, 5-7 Werktage, inkl. Zollformalitäten.',
         'USA & Kanada — Tarif im Checkout, 7-10 Werktage, Zollgebühren zu Lasten des Empfängers.',
-        'Restliche Welt — auf Anfrage, kontaktiere hello@titan-banks.com.',
+        'Restliche Welt — auf Anfrage, kontaktiere info@titan-banks.com.',
       ],
     },
     {
@@ -855,7 +855,7 @@ const policiesDE: LegalDocument = {
       ],
       list: [
         'Das Produkt ist unbenutzt und in der Originalverpackung, mit allem Zubehör.',
-        'Du meldest die Rücksendung innerhalb von 14 Tagen unter hello@titan-banks.com.',
+        'Du meldest die Rücksendung innerhalb von 14 Tagen unter info@titan-banks.com.',
         'Du versendest das Produkt innerhalb von 14 Tagen nach der Anmeldung.',
         'Die Rücksendekosten trägst du, außer wir teilen anderes mit (z.B. Defekt bei Erhalt).',
         'Wir erstatten den vollen Kaufpreis innerhalb von 14 Tagen nach Eingang der Rücksendung.',
@@ -865,7 +865,7 @@ const policiesDE: LegalDocument = {
       id: 'warranty',
       heading: 'Garantie',
       paragraphs: [
-        'Auf die Titan X Powerbank gewähren wir 2 Jahre Herstellergarantie bei normalem Gebrauch. Bei Defekt übernehmen wir oder der Hersteller die Reparatur oder den Austausch. Wir klären gerade, ob TitanBanks oder der Hersteller Garantieansprüche bearbeitet — bis dahin: melde dich via hello@titan-banks.com, wir koordinieren den Prozess.',
+        'Auf die Titan X Powerbank gewähren wir 2 Jahre Herstellergarantie bei normalem Gebrauch. Bei Defekt übernehmen wir oder der Hersteller die Reparatur oder den Austausch. Wir klären gerade, ob TitanBanks oder der Hersteller Garantieansprüche bearbeitet — bis dahin: melde dich via info@titan-banks.com, wir koordinieren den Prozess.',
       ],
       list: [
         'Garantie gilt 2 Jahre ab Kaufdatum (Rechnung).',

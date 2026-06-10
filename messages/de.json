@@ -193,7 +193,7 @@
         "eyebrow": "Sicherheit",
         "unit": "Jahre",
         "title": "Herstellergarantie inklusive.",
-        "body": "Bei Defekt unter normalem Gebrauch organisieren wir Reparatur oder Ersatz über den Hersteller. Schreib an hello@titan-banks.com — keine Warteschleife, keine Skripte."
+        "body": "Bei Defekt unter normalem Gebrauch organisieren wir Reparatur oder Ersatz über den Hersteller. Schreib an info@titan-banks.com — keine Warteschleife, keine Skripte."
       }
     }
   },
@@ -285,7 +285,7 @@
     "form_sending": "Wird gesendet…",
     "form_success_title": "Nachricht erhalten.",
     "form_success_body": "Danke. Wir antworten innerhalb von 1-2 Werktagen an deine E-Mail-Adresse.",
-    "form_error_generic": "Etwas ist schiefgelaufen. Versuche es erneut oder schreib direkt an hello@titan-banks.com.",
+    "form_error_generic": "Etwas ist schiefgelaufen. Versuche es erneut oder schreib direkt an info@titan-banks.com.",
     "error_name_required": "Bitte gib deinen Namen ein.",
     "error_email_invalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
     "error_subject_required": "Gib deiner Nachricht einen kurzen Betreff.",
@@ -299,7 +299,7 @@
   "faq_page": {
     "eyebrow": "Häufig gefragt",
     "title": "Antworten auf die meistgestellten Fragen.",
-    "intro": "Antwort nicht gefunden? Schreib an hello@titan-banks.com — wir helfen gerne weiter."
+    "intro": "Antwort nicht gefunden? Schreib an info@titan-banks.com — wir helfen gerne weiter."
   },
   "mission": {
     "eyebrow": "Unsere Mission",
