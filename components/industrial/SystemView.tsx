@@ -55,7 +55,7 @@ export default function SystemView() {
               Tot 6 devices <span className="text-titan-accent">tegelijk.</span>
             </h2>
             <p className="mt-5 font-body text-base leading-relaxed text-[#9C9C9C]">
-              Smartphone, tablet, oordopjes, camera, laptop — alles tegelijk via 4× USB-A poorten
+              Smartphone, tablet, oordopjes, camera — alles tegelijk via 4× USB-A poorten
               plus 2 ingebouwde kabels (USB-C en Lightning).
             </p>
             <ul className="mt-7 space-y-0 border-t border-white/[0.08]">

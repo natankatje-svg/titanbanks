@@ -31,7 +31,7 @@ const STAGES = [
     id: 'multidevice',
     eyebrow: 'Multi-device',
     title: 'TOT 6 DEVICES TEGELIJK.',
-    description: 'Smartphone, tablet, oordopjes, camera, laptop — alles tegelijk via 4× USB-A poorten plus 2 ingebouwde kabels (USB-C en Lightning).',
+    description: 'Smartphone, tablet, oordopjes, camera — alles tegelijk via 4× USB-A poorten plus 2 ingebouwde kabels (USB-C en Lightning).',
     bullets: ['Tot 6 apparaten tegelijkertijd', 'Ingebouwde USB-C + Lightning kabels', '50.000 mAh capaciteit'],
     image: '/images/titanx/gallery/v2/cables-cinematic.webp',
     imageAlt: 'Titan X met beide ingebouwde kabels uitgetrokken, cinematisch licht',

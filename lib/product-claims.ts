@@ -247,6 +247,16 @@ export const FORBIDDEN_PHRASES = [
   '10.000+ klanten',
   '10000+ klanten',
   '10.000+ tevreden',
+
+  // Laptops opladen — KAN NIET met dit product (Natan-correctie 2026-06-10).
+  // Nooit claimen dat de Titan X laptops laadt, ook niet "via USB-C".
+  'laadt ook laptops',
+  'laptops via USB-C',
+  'laptop 1-2 keer',
+  'laptop 1–2 keer',
+  'charge laptops',
+  'charges laptops',
+  'Laptops laden',
 ];
 
 // =============================================

@@ -15,11 +15,11 @@ import {
 const faqs = [
   {
     q: 'Hoe vaak kan ik mijn devices opladen met Titan X?',
-    a: 'Titan X heeft een capaciteit van 50.000 mAh — voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele, en voor moderne laptops 1–2 keer via de ingebouwde USB-C kabel.',
+    a: 'Titan X heeft een capaciteit van 50.000 mAh — voor de meeste smartphones meerdere volledige laadbeurten en voor tablets enkele.',
   },
   {
     q: 'Welke apparaten kan ik opladen?',
-    a: 'Vrijwel alle USB-apparaten. Via de 4× USB-A poorten en de 2 ingebouwde intrekbare kabels (USB-C en Lightning) laad je tot 6 devices tegelijk: smartphones (iPhone via Lightning, Android via USB-C), tablets, laptops via USB-C, oordopjes, smartwatches, camera\'s en meer.',
+    a: 'Vrijwel alle USB-apparaten. Via de 4× USB-A poorten en de 2 ingebouwde intrekbare kabels (USB-C en Lightning) laad je tot 6 devices tegelijk: smartphones (iPhone via Lightning, Android via USB-C), tablets, oordopjes, smartwatches, camera\'s en meer.',
   },
   {
     q: 'Hoe snel laadt Titan X mijn devices?',

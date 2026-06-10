@@ -37,12 +37,12 @@
       "capacity": {
         "name": "Kapazität",
         "title": "50.000 mAh in Mattschwarz.",
-        "description": "Ein Pack, tagelang Strom. LED-Display zeigt den exakten Prozentwert — kein 4-Balken-Raten. Genug, um ein Smartphone mehrmals voll zu laden oder einen Laptop 1-2 Mal."
+        "description": "Ein Pack, tagelang Strom. LED-Display zeigt den exakten Prozentwert — kein 4-Balken-Raten. Genug, um ein Smartphone mehrmals voll zu laden."
       },
       "devices": {
         "name": "Multi-Device",
         "title": "6 Geräte gleichzeitig laden.",
-        "description": "4× USB-A Anschlüsse plus 2 integrierte einziehbare Kabel — USB-C für Android, Tablets und Laptops; Lightning für iPhone. Niemand wartet auf seinen Turn."
+        "description": "4× USB-A Anschlüsse plus 2 integrierte einziehbare Kabel — USB-C für Android und Tablets; Lightning für iPhone. Niemand wartet auf seinen Turn."
       },
       "fastcharge": {
         "name": "Fast Charge",

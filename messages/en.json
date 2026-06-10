@@ -37,12 +37,12 @@
       "capacity": {
         "name": "Capacity",
         "title": "50,000 mAh in matte black.",
-        "description": "One pack, days of power. LED display shows the exact percentage — no 4-bar guessing. Enough to fully charge a smartphone multiple times or a laptop 1-2 times."
+        "description": "One pack, days of power. LED display shows the exact percentage — no 4-bar guessing. Enough to fully charge a smartphone multiple times."
       },
       "devices": {
         "name": "Multi-device",
         "title": "6 devices charging at once.",
-        "description": "4× USB-A ports plus 2 built-in retractable cables — USB-C for Android, tablets and laptops; Lightning for iPhone. No one waits their turn."
+        "description": "4× USB-A ports plus 2 built-in retractable cables — USB-C for Android and tablets; Lightning for iPhone. No one waits their turn."
       },
       "fastcharge": {
         "name": "Fast charge",

@@ -32,7 +32,7 @@ const faqSchema = {
       name: `Hoe vaak laadt ${BRAND.product} mijn devices op?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `${BRAND.product} heeft een capaciteit van ${capacityLabel()}. Voor de meeste smartphones meerdere volledige laadbeurten, voor tablets enkele en voor moderne laptops 1–2 keer via USB-C.`,
+        text: `${BRAND.product} heeft een capaciteit van ${capacityLabel()}. Voor de meeste smartphones meerdere volledige laadbeurten en voor tablets enkele.`,
       },
     },
     {
@@ -40,7 +40,7 @@ const faqSchema = {
       name: `Welke apparaten kan ${BRAND.product} opladen?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Vrijwel alle USB-apparaten: smartphones, tablets, laptops via USB-C, oordopjes, smartwatches, camera's en meer. Via ${portsLabel()} laad je tot ${SPECS.simultaneousDevices.value} devices tegelijk.`,
+        text: `Vrijwel alle USB-apparaten: smartphones, tablets, oordopjes, smartwatches, camera's en meer. Via ${portsLabel()} laad je tot ${SPECS.simultaneousDevices.value} devices tegelijk.`,
       },
     },
     {

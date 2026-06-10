@@ -54,9 +54,9 @@ const TILES: Tile[] = [
   {
     kind: 'photo',
     title: 'Werk & school',
-    desc: 'Laptop bijna leeg in de trein? Laadt ook laptops via de ingebouwde USB-C kabel.',
+    desc: 'Telefoon bijna leeg in de trein? Snellaad via de ingebouwde USB-C kabel.',
     src: '/images/titanx/gallery/v2/life-train.webp',
-    alt: `${BRAND.product} naast een laptop in de trein`,
+    alt: `${BRAND.product} in de trein`,
     span: 'lg:col-span-2',
     aspect: 'aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5]',
     pos: 'object-center',

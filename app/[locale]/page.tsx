@@ -83,12 +83,12 @@ export default function Home() {
       />
       <AtmosFeature
         kicker="Werk & school"
-        title="Laptop bijna leeg"
+        title="Telefoon bijna leeg"
         accent="in de trein?"
-        body="Laadt ook laptops via de ingebouwde USB-C kabel."
+        body="Snellaad via de ingebouwde USB-C kabel."
         atmosphere="/images/atmosphere/rain.webp"
         product="/images/titanx/gallery/v2/life-train.webp"
-        productAlt="naast een laptop in de trein"
+        productAlt="in de trein"
       />
       <AtmosBreak
         atmosphere="/images/atmosphere/mountains.webp"

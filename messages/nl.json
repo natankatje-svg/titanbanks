@@ -37,12 +37,12 @@
       "capacity": {
         "name": "Capaciteit",
         "title": "50.000 mAh in matte black.",
-        "description": "Eén pack, dagen aan power. LED-display toont het exacte percentage — geen 4-bars gok. Genoeg om een smartphone meerdere keren vol te laden of een laptop 1-2 keer."
+        "description": "Eén pack, dagen aan power. LED-display toont het exacte percentage — geen 4-bars gok. Genoeg om een smartphone meerdere keren vol te laden."
       },
       "devices": {
         "name": "Multi-device",
         "title": "6 devices tegelijk laden.",
-        "description": "4× USB-A poorten plus 2 ingebouwde intrekbare kabels — USB-C voor Android, tablets en laptops; Lightning voor iPhone. Niemand wacht op zijn beurt."
+        "description": "4× USB-A poorten plus 2 ingebouwde intrekbare kabels — USB-C voor Android en tablets; Lightning voor iPhone. Niemand wacht op zijn beurt."
       },
       "fastcharge": {
         "name": "Snel laden",

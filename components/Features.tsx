@@ -154,7 +154,7 @@ export default function Features() {
             />
             <div className="relative h-60 lg:h-72 overflow-hidden flex-shrink-0">
               <motion.div style={{ y: cardImgY }} className="absolute inset-0 scale-[1.12]">
-                <Image src="/images/feature-multidevice.jpg" alt="Titan X 50.000mAh powerbank laadt smartphone, tablet, laptop en camera tegelijk op" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover object-center" />
+                <Image src="/images/feature-multidevice.jpg" alt="Titan X 50.000mAh powerbank laadt smartphone, tablet en camera tegelijk op" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover object-center" />
               </motion.div>
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 60%, #111111)' }} />
             </div>

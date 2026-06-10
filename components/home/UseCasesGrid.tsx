@@ -52,9 +52,9 @@ const USE_CASES = [
   },
   {
     title: 'Werk & school',
-    desc: 'Laptop bijna leeg in de trein? Laadt ook laptops via USB-C.',
+    desc: 'Telefoon bijna leeg in de trein? Snellaad via de ingebouwde USB-C kabel.',
     src: '/images/titanx/gallery/werk.webp',
-    alt: 'Titan X naast een laptop in een café',
+    alt: 'Titan X in een café',
     span: 'lg:col-span-2',
     aspect: 'aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5]',
     pos: 'object-center',

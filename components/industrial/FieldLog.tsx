@@ -28,9 +28,9 @@ const ENTRIES = [
   },
   {
     title: 'Werk & school',
-    desc: 'Laptop bijna leeg in de trein? Laadt ook laptops via de ingebouwde USB-C kabel.',
+    desc: 'Telefoon bijna leeg in de trein? Snellaad via de ingebouwde USB-C kabel.',
     src: '/images/titanx/gallery/v2/life-train.webp',
-    alt: `${BRAND.product} naast een laptop in de trein`,
+    alt: `${BRAND.product} in de trein`,
   },
   {
     title: 'Outdoor',
