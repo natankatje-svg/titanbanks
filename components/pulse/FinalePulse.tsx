@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Check, Minus, Plus } from 'lucide-react';
 import { useEcwid } from '@/components/EcwidProvider';
 import { SPECS, TBD, LAUNCH_STATE, priceLabel, safe } from '@/lib/product-claims';
+import Kicker from '@/components/pulse/Kicker';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const PAYMENT_METHODS = ['iDEAL', 'Apple Pay', 'Klarna', 'Visa', 'Mastercard', 'PayPal'];
@@ -50,9 +51,7 @@ export default function FinalePulse() {
         transition={{ duration: 0.7, ease: EASE }}
         className="relative mx-auto flex max-w-2xl flex-col items-center px-6 text-center"
       >
-        <span className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-titan-accent">
-          Eerste batch · {SPECS.warrantyYears.value} jaar garantie
-        </span>
+        <Kicker>Eerste batch · {SPECS.warrantyYears.value} jaar garantie</Kicker>
         <h2
           className="mt-4 font-display uppercase leading-[1.06] text-white [text-wrap:balance]"
           style={{ fontSize: 'clamp(2.2rem, 4.8vw, 4rem)', textShadow: '0 2px 40px rgba(0,0,0,0.7)' }}

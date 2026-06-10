@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useEcwid } from '@/components/EcwidProvider';
 import { LAUNCH_STATE, BRAND } from '@/lib/product-claims';
 import { TiltCard, ParallaxImg } from '@/components/pulse/motion';
+import Kicker from '@/components/pulse/Kicker';
 import { ArrowRight } from 'lucide-react';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -81,7 +82,7 @@ export default function AtmosFeature({
             transition={{ duration: 0.6, ease: EASE }}
             className={flip ? 'lg:order-2' : ''}
           >
-            <span className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-titan-accent">{kicker}</span>
+            <Kicker>{kicker}</Kicker>
             <h2 className="mt-3 font-display uppercase leading-[1.06] text-white [text-wrap:balance]" style={{ fontSize: 'clamp(1.9rem, 4vw, 3.2rem)', ...(atmosphere ? { textShadow: '0 2px 30px rgba(0,0,0,0.6)' } : {}) }}>
               {title} <span className="text-titan-accent">{accent}</span>
             </h2>

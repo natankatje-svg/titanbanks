@@ -12,6 +12,7 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel';
 import { BRAND, SPECS, capacityLabel, portsLabelCompact } from '@/lib/product-claims';
+import Kicker from '@/components/pulse/Kicker';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -102,9 +103,7 @@ export default function PulseGallery() {
           className="mb-10 flex flex-col gap-4 lg:mb-12 lg:flex-row lg:items-end lg:justify-between"
         >
           <div>
-            <span className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-titan-accent">
-              Ons product
-            </span>
+            <Kicker>Ons product</Kicker>
             <h2 className="mt-3 font-display uppercase leading-[1.05] text-white" style={{ fontSize: 'clamp(1.8rem, 3.8vw, 3rem)' }}>
               Eén powerbank. <span className="text-titan-accent">Geen compromis.</span>
             </h2>

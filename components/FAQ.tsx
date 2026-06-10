@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import Kicker from '@/components/pulse/Kicker';
 
 // FAQ-antwoorden zijn handmatig geredigeerd om verzonnen claims te vermijden.
 // Geen specifieke aantallen "12× smartphone", geen SOS-modus tot bevestigd,
@@ -38,7 +39,7 @@ export default function FAQ() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="faq" ref={ref} className="relative py-20 lg:py-32 bg-titan-surface overflow-hidden border-t border-white/[0.06]">
+    <section id="faq" ref={ref} className="relative py-20 lg:py-28 bg-titan-surface overflow-hidden border-t border-white/[0.07]">
       {/* Partikel-sfeer — heel stil als onderlaag */}
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.13]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -54,9 +55,7 @@ export default function FAQ() {
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-14"
         >
-          <span className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-titan-accent">
-            FAQ
-          </span>
+          <Kicker>FAQ</Kicker>
           <h2
             className="font-display uppercase text-white mt-3 mb-5 [text-wrap:balance]"
             style={{ fontSize: 'clamp(1.8rem, 3.8vw, 3rem)', lineHeight: 1.08 }}

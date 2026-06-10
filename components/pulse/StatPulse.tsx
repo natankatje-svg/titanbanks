@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, useInView, useReducedMotion, animate } from 'framer-motion';
 import { SPECS } from '@/lib/product-claims';
+import Kicker from '@/components/pulse/Kicker';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -90,7 +91,7 @@ function Cell({ cell, index }: { cell: (typeof CELLS)[number]; index: number }) 
 export default function StatPulse() {
   const reduce = useReducedMotion();
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.07] bg-[#080808] py-16 lg:py-24">
+    <section className="relative overflow-hidden border-t border-white/[0.07] bg-[#080808] py-20 lg:py-28">
       {/* weave-textuur — heel subtiel */}
       <div aria-hidden className="absolute inset-0 opacity-[0.16]">
         <Image src="/images/atmosphere/weave.webp" alt="" fill sizes="100vw" className="object-cover" />
@@ -106,9 +107,7 @@ export default function StatPulse() {
           className="mb-10 flex flex-col gap-4 lg:mb-12 lg:flex-row lg:items-end lg:justify-between"
         >
           <div>
-            <span className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-titan-accent">
-              Wat erin zit
-            </span>
+            <Kicker>Wat erin zit</Kicker>
             <h2 className="mt-3 font-display uppercase leading-[1.05] text-white" style={{ fontSize: 'clamp(1.8rem, 3.8vw, 3rem)' }}>
               Pure <span className="text-titan-accent">capaciteit.</span>
             </h2>

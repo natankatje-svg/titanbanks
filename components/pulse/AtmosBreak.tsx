@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ParallaxImg } from '@/components/pulse/motion';
+import Kicker from '@/components/pulse/Kicker';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -22,7 +23,7 @@ export default function AtmosBreak({
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.07] py-24 lg:py-32">
+    <section className="relative overflow-hidden border-t border-white/[0.07] py-24 lg:py-36">
       <div aria-hidden className="absolute inset-0">
         <ParallaxImg className="h-full">
           <Image src={atmosphere} alt="" fill sizes="100vw" className="object-cover" />
@@ -37,7 +38,7 @@ export default function AtmosBreak({
         transition={{ duration: 0.6, ease: EASE }}
         className="relative mx-auto max-w-3xl px-6 text-center"
       >
-        <span className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-titan-accent">{kicker}</span>
+        <Kicker>{kicker}</Kicker>
         <p
           className="mt-4 font-display uppercase leading-[1.15] text-white [text-wrap:balance]"
           style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.6rem)', textShadow: '0 2px 30px rgba(0,0,0,0.7)' }}

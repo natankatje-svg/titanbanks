@@ -8,6 +8,7 @@ import {
   capacityLabel,
   portsLabel,
 } from '@/lib/product-claims';
+import Kicker from '@/components/pulse/Kicker';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const PAYMENT_METHODS = ['iDEAL', 'Apple Pay', 'Klarna', 'Visa', 'Mastercard', 'PayPal'];
@@ -41,7 +42,7 @@ export default function SpecsPulse() {
   const mid = Math.ceil(rows.length / 2);
 
   return (
-    <section id="specs" className="relative scroll-mt-20 border-t border-white/[0.07] bg-[#080808] py-16 lg:py-24">
+    <section id="specs" className="relative scroll-mt-20 border-t border-white/[0.07] bg-[#080808] py-20 lg:py-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 22 }}
@@ -50,7 +51,7 @@ export default function SpecsPulse() {
           transition={{ duration: 0.55, ease: EASE }}
           className="mb-10 lg:mb-12"
         >
-          <span className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-titan-accent">Specs</span>
+          <Kicker>Specs</Kicker>
           <h2 className="mt-3 font-display uppercase leading-[1.05] text-white" style={{ fontSize: 'clamp(1.8rem, 3.8vw, 3rem)' }}>
             Elk detail <span className="text-titan-accent">telt.</span>
           </h2>
