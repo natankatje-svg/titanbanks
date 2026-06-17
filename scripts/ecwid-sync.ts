@@ -44,10 +44,29 @@ import {
   portsLabel,
   safe,
 } from '../lib/product-claims';
+import { ECWID_PRODUCT_ID } from '../lib/ecwid-config';
 
+// ─── Veiligheidsmodel (build/pulse, audit/nl-webshop) ───────────────────────
+// De LIVE Ecwid-admin is sinds de "full live"-keuze de single source of truth:
+// het Titan X product (id 838059778, SKU = EAN 8720892270740) is handmatig in
+// Ecwid samengesteld (prijs, voorraad, 8 images, attributes). De site LEEST die
+// data live (zie lib/ecwid-storefront.ts). Dit script mag die curated product
+// daarom NIET overschrijven of dupliceren.
+//
+//   - Default run  = READ-ONLY verify (geen POST/PUT). Vergelijkt SSOT vs live.
+//   - --push       = expliciet, DESTRUCTIEF: PUT-update van het bestaande
+//                    product met product-claims-data (overschrijft o.a. voorraad
+//                    en images). Alleen bewust gebruiken.
+//   - NOOIT create : vindt het script het product niet, dan stopt het — het
+//                    maakt nooit een tweede (duplicaat) product aan.
 const DRY_RUN = process.argv.includes('--dry') || process.argv.includes('--dry-run');
+const PUSH = process.argv.includes('--push');
+const WRITES_ENABLED = PUSH && !DRY_RUN;
 const CATEGORY_NAME = 'Power Banks';
-const SKU = 'TITANX-50K-MB-001';
+// EAN/barcode van het live product — exact wat in Ecwid staat (geverifieerd
+// 2026-06-16 via REST API). NIET de oude interne code 'TITANX-50K-MB-001', die
+// matchte niets live → veroorzaakte duplicaat-creatie.
+const SKU = '8720892270740';
 const ROOT = resolve(__dirname, '..');
 const LOG_PATH = resolve(ROOT, 'outputs', 'ecwid-sync.log');
 const CONFIG_PATH = resolve(ROOT, 'lib', 'ecwid-config.ts');
@@ -157,8 +176,8 @@ async function ensureCategory(): Promise<EcwidCategory> {
     log(`✓ Categorie bestond al (id: ${existing.id})`);
     return existing;
   }
-  if (DRY_RUN) {
-    log(`[dry] zou POST /categories met name='${CATEGORY_NAME}'`);
+  if (!WRITES_ENABLED) {
+    log(`[read-only] zou POST /categories met name='${CATEGORY_NAME}' (geen --push)`);
     return { id: -1, name: CATEGORY_NAME };
   }
   const created = await ecwidPost<EcwidCategory>('/categories', {
@@ -170,34 +189,48 @@ async function ensureCategory(): Promise<EcwidCategory> {
 }
 
 async function findExistingProduct(): Promise<EcwidProduct | null> {
+  // Primair op het bekende product-id (robuust, los van SKU-drift); fallback
+  // op SKU-lookup. Zo vinden we het curated live product altijd terug.
+  try {
+    const byId = await ecwidGet<EcwidProduct>(`/products/${ECWID_PRODUCT_ID}`);
+    if (byId && byId.id) return byId;
+  } catch {
+    /* val terug op SKU-lookup */
+  }
   const res = await ecwidGet<EcwidProductsResponse>('/products', { sku: SKU });
-  const match = res.items.find((p) => p.sku === SKU);
-  return match ?? null;
+  return res.items.find((p) => p.sku === SKU) ?? null;
 }
 
 async function upsertProduct(categoryId: number): Promise<number> {
-  const payload = buildProductPayload(categoryId);
   const existing = await findExistingProduct();
 
-  if (existing) {
-    log(`→ Product bestond (id: ${existing.id}) — PUT update`);
-    if (DRY_RUN) {
-      log(`[dry] zou PUT /products/${existing.id}`);
-      return existing.id;
-    }
-    await ecwidPut(`/products/${existing.id}`, payload);
-    log(`✓ Product ${existing.id} ge-update`);
+  // GUARD: nooit een nieuw product aanmaken. Het live product is de SSOT;
+  // niet-vinden duidt op een config-fout, niet op "moet aangemaakt worden".
+  if (!existing) {
+    throw new Error(
+      `Live product niet gevonden (id ${ECWID_PRODUCT_ID} / SKU ${SKU}). ` +
+        `Dit script maakt NOOIT een nieuw product aan (anti-duplicaat). ` +
+        `Controleer ECWID_PRODUCT_ID in lib/ecwid-config.ts en de SKU in Ecwid.`,
+    );
+  }
+
+  log(`✓ Live product gevonden (id: ${existing.id}, SKU: ${existing.sku})`);
+
+  if (!WRITES_ENABLED) {
+    log(
+      `→ READ-ONLY (geen --push): geen wijzigingen weggeschreven. ` +
+        `Live = SSOT. Gebruik --push alleen bewust om te overschrijven.`,
+    );
     return existing.id;
   }
 
-  log(`→ Product bestond niet — POST create`);
-  if (DRY_RUN) {
-    log(`[dry] zou POST /products met SKU=${SKU}`);
-    return -1;
-  }
-  const created = await ecwidPost<{ id: number }>('/products', payload);
-  log(`✓ Product aangemaakt (id: ${created.id})`);
-  return created.id;
+  // DESTRUCTIEF pad — expliciet via --push. Overschrijft o.a. voorraad/images
+  // met product-claims-data. Bewust gekozen.
+  const payload = buildProductPayload(categoryId);
+  log(`→ --push: PUT /products/${existing.id} (overschrijft live product!)`);
+  await ecwidPut(`/products/${existing.id}`, payload);
+  log(`✓ Product ${existing.id} ge-update`);
+  return existing.id;
 }
 
 async function uploadImages(productId: number): Promise<void> {
@@ -266,19 +299,21 @@ function persistIdsToConfig(productId: number): void {
 // ─── Main ──────────────────────────────────────────────────────────────────
 
 async function main() {
-  log(`═══ Ecwid sync gestart ${DRY_RUN ? '[DRY-RUN]' : ''} ═══`);
-  log(`SKU: ${SKU} · Category: ${CATEGORY_NAME}`);
+  const mode = WRITES_ENABLED ? '[--push DESTRUCTIEF]' : '[READ-ONLY verify]';
+  log(`═══ Ecwid sync gestart ${mode} ═══`);
+  log(`SKU: ${SKU} · Product-id: ${ECWID_PRODUCT_ID} · Category: ${CATEGORY_NAME}`);
 
   try {
     const category = await ensureCategory();
     const productId = await upsertProduct(category.id);
-    if (productId > 0) {
+    // Image-upload + config-rewrite zijn óók destructief → alleen onder --push.
+    if (WRITES_ENABLED && productId > 0) {
       // Persist FIRST — zodat zelfs als image-uploads later falen, de
       // cart-button live-gewired is met de juiste Product ID.
       persistIdsToConfig(productId);
       await uploadImages(productId);
     }
-    log(`═══ Sync ${DRY_RUN ? 'dry-run ' : ''}voltooid ═══\n`);
+    log(`═══ Sync ${WRITES_ENABLED ? '' : 'read-only '}voltooid ═══\n`);
   } catch (e) {
     log(`✗ FATAAL: ${(e as Error).message}`);
     log(`═══ Sync gestopt ═══\n`);

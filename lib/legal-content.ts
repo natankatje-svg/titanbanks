@@ -451,7 +451,7 @@ const termsNL: LegalDocument = {
         'Modelformulier voor herroeping — vul dit alleen in en stuur het terug als je de overeenkomst wilt herroepen:',
       ],
       list: [
-        'Aan: NamaCorp VOF (handelsnaam TitanBanks), e-mail info@titan-banks.com, adres {{ZAKELIJK_ADRES}}',
+        'Aan: NamaCorp VOF (handelsnaam TitanBanks), per e-mail: info@titan-banks.com',
         'Ik/Wij (*) deel/delen (*) u hierbij mede dat ik/wij (*) onze overeenkomst betreffende de verkoop van het volgende product herroep/herroepen (*): Titan X 50.000 mAh power bank',
         'Besteld op (*) / ontvangen op (*): [datum]',
         'Naam consument(en): [naam]',
