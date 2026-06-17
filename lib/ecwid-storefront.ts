@@ -82,6 +82,23 @@ interface EcwidFullProduct {
 
 const REVALIDATE_SECONDS = 300; // 5 min ISR — prijs/voorraad vers genoeg, geen live-hammering
 
+// Fallback-foto's = de echte live Ecwid listing-beelden (CDN), zodat de
+// product-carousel ÓÓK laadt als de server-side REST-token ontbreekt (bv.
+// ECWID_ACCESS_TOKEN nog niet als Vercel env-var gezet). Zodra de token er is,
+// gebruikt getLiveProduct() de échte live media (incl. nieuwe foto's). Bron:
+// /products/838059778 media.images, orderBy-gesorteerd, 2026-06-17.
+const FALLBACK_ALT = 'Titan X 50.000 mAh power bank — matte black';
+const FALLBACK_IMAGES: LiveImage[] = [
+  { url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5789289063.jpg', urlLarge: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5789289059.jpg', alt: FALLBACK_ALT, isMain: true },
+  { url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821693545.jpg', urlLarge: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821693544.jpg', alt: FALLBACK_ALT, isMain: false },
+  { url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821680816.jpg', urlLarge: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821680815.jpg', alt: FALLBACK_ALT, isMain: false },
+  { url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821693557.jpg', urlLarge: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821693556.jpg', alt: FALLBACK_ALT, isMain: false },
+  { url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821681880.jpg', urlLarge: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821681879.jpg', alt: FALLBACK_ALT, isMain: false },
+  { url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821680828.jpg', urlLarge: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821680827.jpg', alt: FALLBACK_ALT, isMain: false },
+  { url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821681886.jpg', urlLarge: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821681885.jpg', alt: FALLBACK_ALT, isMain: false },
+  { url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821680834.jpg', urlLarge: 'https://d2j6dbq0eux0bg.cloudfront.net/images/136509793/products/838059778/5821680833.jpg', alt: FALLBACK_ALT, isMain: false },
+];
+
 /** Fallback op de CONFIRMED claims — gebruikt als Ecwid onbereikbaar is. */
 function fallbackProduct(): LiveProduct {
   const price = safe(TBD.priceEur) ?? 0;
@@ -95,7 +112,7 @@ function fallbackProduct(): LiveProduct {
     quantity: null,
     name: `${BRAND.product} ${capacityLabel()} Power Bank — ${SPECS.finish.value}`,
     descriptionHtml: '',
-    images: [],
+    images: FALLBACK_IMAGES,
     attributes: [],
   };
 }
@@ -118,7 +135,9 @@ export async function getLiveProduct(): Promise<LiveProduct> {
       .map((m) => ({
         url: m.image800pxUrl ?? m.image1500pxUrl ?? m.imageOriginalUrl ?? '',
         urlLarge: m.image1500pxUrl ?? m.imageOriginalUrl ?? m.image800pxUrl ?? '',
-        alt: m.alt ?? p.name,
+        // Ecwid geeft alt soms als object ({translated:{}}) i.p.v. string —
+        // alleen een echte string gebruiken, anders de productnaam.
+        alt: typeof m.alt === 'string' && m.alt ? m.alt : p.name,
         isMain: m.isMain ?? false,
       }))
       .filter((m) => m.url);
