@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import JsonLd from '@/components/JsonLd';
 import PageShell from '@/components/pulse/PageShell';
 import FeatureRows, { type FeatureRow } from '@/components/pulse/FeatureRows';
 import SpecsPulse from '@/components/pulse/SpecsPulse';
@@ -12,17 +11,17 @@ import type { Locale } from '@/i18n/routing';
 // "powerbank met ingebouwde kabels" — claims komen uit de SSOT-teksten.
 const META: Record<string, { title: string; description: string }> = {
   nl: {
-    title: 'Technologie — powerbank 50.000 mAh met ingebouwde kabels | TITANBANKS',
+    title: 'Powerbank 50.000 mAh met ingebouwde kabels | TitanBanks',
     description:
       'De techniek achter de Titan X: 50.000 mAh capaciteit, 4× USB-A plus ingebouwde USB-C en Lightning kabels, LED-display met exact percentage en zaklamp.',
   },
   en: {
-    title: 'Technology — 50,000 mAh power bank with built-in cables | TITANBANKS',
+    title: '50,000 mAh power bank with built-in cables | TitanBanks',
     description:
       'The engineering behind the Titan X: 50,000 mAh capacity, 4× USB-A plus built-in USB-C and Lightning cables, LED display with exact percentage and flashlight.',
   },
   de: {
-    title: 'Technologie — 50.000 mAh Powerbank mit integrierten Kabeln | TITANBANKS',
+    title: '50.000 mAh Powerbank mit integrierten Kabeln | TitanBanks',
     description:
       'Die Technik hinter der Titan X: 50.000 mAh Kapazität, 4× USB-A plus integrierte USB-C- und Lightning-Kabel, LED-Display mit exaktem Prozentwert und Taschenlampe.',
   },
@@ -120,7 +119,6 @@ export default async function TechnologyPage({
       intro={hero.intro}
       orderBand={hero.band}
     >
-      <JsonLd />
       <FeatureRows rows={rows} />
       <SpecsPulse />
     </PageShell>

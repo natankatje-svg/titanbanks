@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEcwid } from '@/components/EcwidProvider';
+import { useLiveProduct } from '@/components/LiveProductProvider';
 import EmberDrift from '@/components/home/EmberDrift';
 import {
   BRAND,
@@ -38,7 +39,10 @@ export default function PulseHero() {
   };
 
   const capacityFormatted = SPECS.capacityMah.value.toLocaleString(locale);
-  const price = priceLabel();
+  // LIVE prijs uit Ecwid (val terug op product-claims als context/Ecwid down).
+  const live = useLiveProduct();
+  const price = live?.priceFormatted || priceLabel();
+  const comparePrice = live?.compareAtFormatted ?? null;
 
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-[#080808]">
@@ -78,7 +82,14 @@ export default function PulseHero() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <button onClick={onBuy} className="btn-pulse group" aria-label={`${isWaitlist ? t('cta_waitlist') : t('cta_buy_now')} ${price ?? ''}`}>
               <span>{isWaitlist ? t('cta_waitlist') : t('cta_buy_now')}</span>
-              {price && <span className="opacity-80">· {price}</span>}
+              {price && (
+                <span className="opacity-80">
+                  · {price}
+                  {comparePrice && (
+                    <span className="ml-1.5 text-white/45 line-through">{comparePrice}</span>
+                  )}
+                </span>
+              )}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
             </button>
             <a href="#specs" className="btn-pulse-ghost">

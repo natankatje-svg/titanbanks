@@ -52,7 +52,7 @@ export default function LanguageSwitcher({ variant = 'compact' }: LanguageSwitch
         onClick={() => setOpen((v) => !v)}
         aria-label={t('language')}
         aria-expanded={open}
-        className="flex items-center gap-1.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[#888888] hover:text-white transition-colors"
+        className="flex items-center gap-1.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[#A0A0A0] hover:text-white transition-colors"
       >
         <Globe className="w-3.5 h-3.5" />
         <span>{variant === 'full' ? LOCALE_FULL[locale] : LOCALE_LABEL[locale]}</span>

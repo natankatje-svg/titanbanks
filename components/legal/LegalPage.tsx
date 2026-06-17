@@ -17,7 +17,7 @@ export default function LegalPage({ document }: LegalPageProps) {
         {/* Eyebrow */}
         <div className="mb-5 flex items-center gap-3">
           <div className="w-6 h-px bg-[#FF8C00]" />
-          <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#888888]">
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-[#A0A0A0]">
             {document.eyebrow}
           </span>
         </div>
@@ -31,7 +31,7 @@ export default function LegalPage({ document }: LegalPageProps) {
         </h1>
 
         {/* Last updated */}
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#666666] mb-8">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#9C9C9C] mb-8">
           {t('last_updated')}: {document.lastUpdated}
         </p>
 
@@ -64,7 +64,7 @@ export default function LegalPage({ document }: LegalPageProps) {
             aria-label={t('toc_label')}
             className="mb-12 border border-white/[0.08] bg-white/[0.02] rounded-lg p-5"
           >
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#888888] mb-3">
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#A0A0A0] mb-3">
               {t('toc_label')}
             </p>
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
@@ -123,7 +123,7 @@ export default function LegalPage({ document }: LegalPageProps) {
 
         {/* Footer note */}
         <div className="mt-16 pt-8 border-t border-white/[0.06]">
-          <p className="font-body text-sm text-[#666666] leading-relaxed">
+          <p className="font-body text-sm text-[#9C9C9C] leading-relaxed">
             {t('footer_contact_prefix')}{' '}
             <a
               href="mailto:info@titan-banks.com"

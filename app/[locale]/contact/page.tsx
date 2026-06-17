@@ -98,7 +98,7 @@ export default async function ContactPage({
                   <a href={SOCIALS.facebook} target="_blank" rel="noopener" aria-label="TitanBanks op Facebook" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.1] text-[#9A9A9A] transition-colors hover:border-titan-accent/50 hover:text-titan-accent">
                     <Facebook className="h-4 w-4" aria-hidden />
                   </a>
-                  <span className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-[#8A8A8A]">@thetitanbanks</span>
+                  <span className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-[#A0A0A0]">@thetitanbanks</span>
                 </div>
               </div>
             </div>

@@ -1,12 +1,23 @@
 import type { Metadata } from 'next';
 import LegalPage from '@/components/legal/LegalPage';
 import { getPrivacyContent } from '@/lib/legal-content';
+import { buildPageMetadata } from '@/lib/seo';
 import type { Locale } from '@/i18n/routing';
 
-export const metadata: Metadata = {
-  title: 'Privacy | TITANBANKS',
-  alternates: { canonical: 'https://titan-banks.com/legal/privacy' },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const doc = getPrivacyContent(locale);
+  return buildPageMetadata({
+    locale,
+    path: 'legal/privacy',
+    title: `${doc.title} | TITANBANKS`,
+    description: (doc.intro ?? doc.title).slice(0, 155),
+  });
+}
 
 export default async function PrivacyPage({
   params,

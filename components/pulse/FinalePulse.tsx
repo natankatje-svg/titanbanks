@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Check, Minus, Plus } from 'lucide-react';
 import { useEcwid } from '@/components/EcwidProvider';
-import { SPECS, TBD, LAUNCH_STATE, priceLabel, safe } from '@/lib/product-claims';
+import { useLiveProduct } from '@/components/LiveProductProvider';
+import { SPECS, LAUNCH_STATE, priceLabel } from '@/lib/product-claims';
 import Kicker from '@/components/pulse/Kicker';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -20,7 +21,9 @@ export default function FinalePulse() {
   const reduce = useReducedMotion();
   const { addToCart } = useEcwid();
   const [qty, setQty] = useState(1);
-  const price = priceLabel();
+  const live = useLiveProduct();
+  const price = live?.priceFormatted || priceLabel();
+  const comparePrice = live?.compareAtFormatted ?? null;
   const isWaitlist = LAUNCH_STATE.waitlistMode;
 
   const onBuy = () => {
@@ -51,7 +54,7 @@ export default function FinalePulse() {
         transition={{ duration: 0.7, ease: EASE }}
         className="relative mx-auto flex max-w-2xl flex-col items-center px-6 text-center"
       >
-        <Kicker>Eerste batch · {SPECS.warrantyYears.value} jaar garantie</Kicker>
+        <Kicker>Eerste batch · beperkte oplage</Kicker>
         <h2
           className="mt-4 font-display uppercase leading-[1.06] text-white [text-wrap:balance]"
           style={{ fontSize: 'clamp(2.2rem, 4.8vw, 4rem)', textShadow: '0 2px 40px rgba(0,0,0,0.7)' }}
@@ -63,7 +66,14 @@ export default function FinalePulse() {
           batch — bestel nu en raak nooit meer zonder stroom.
         </p>
 
-        {price && <div className="mt-9 font-display text-4xl text-white lg:text-5xl">{price}</div>}
+        {price && (
+          <div className="mt-9 flex items-baseline gap-3">
+            <span className="font-display text-4xl text-white lg:text-5xl">{price}</span>
+            {comparePrice && (
+              <span className="font-display text-2xl text-white/40 line-through lg:text-3xl">{comparePrice}</span>
+            )}
+          </div>
+        )}
         <span className="mt-1.5 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-white/45">incl. BTW</span>
 
         <div className="mt-7 flex flex-col items-center gap-4 sm:flex-row">
@@ -101,7 +111,7 @@ export default function FinalePulse() {
         </div>
         <p className="mt-4 font-body text-[11px] leading-relaxed text-[#B5B5B5]">
           <Check className="mr-1 inline h-3 w-3 text-emerald-400" aria-hidden />
-          {safe(TBD.returnPolicyDays) ?? 14} dagen retour · {SPECS.warrantyYears.value} jaar garantie · veilig betalen
+          Veilig betalen · verzending vanuit Nederland
         </p>
       </motion.div>
     </section>

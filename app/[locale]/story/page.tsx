@@ -149,7 +149,7 @@ export default async function StoryPage({
               <p className="mt-1.5 font-body text-sm leading-relaxed text-[#9A9A9A]">{story.warrantyBody}</p>
             </div>
           </div>
-          <p className="mt-6 font-body text-sm text-[#8A8A8A]">
+          <p className="mt-6 font-body text-sm text-[#A0A0A0]">
             {BRAND.text} · NamaCorp VOF · KvK {safe(TBD.kvkNumber) ?? '—'}
           </p>
         </div>

@@ -34,10 +34,6 @@ export default function SpecsPulse() {
     ...(safe(TBD.certifications)
       ? [{ label: 'Certificeringen', value: TBD.certifications.value.join(' · ') }]
       : []),
-    { label: 'Garantie', value: `${SPECS.warrantyYears.value} jaar fabrieksgarantie` },
-    ...(safe(TBD.returnPolicyDays)
-      ? [{ label: 'Retour', value: `${TBD.returnPolicyDays.value} dagen` }]
-      : []),
   ];
   const mid = Math.ceil(rows.length / 2);
 
@@ -76,7 +72,7 @@ export default function SpecsPulse() {
         </div>
 
         <p className="mt-9 text-center font-mono text-[0.62rem] uppercase tracking-[0.16em] leading-loose text-white/45">
-          {safe(TBD.returnPolicyDays) ?? 14} dagen retour · {SPECS.warrantyYears.value} jaar fabrieksgarantie · Verzending NL 1-3 werkdagen
+          Verzending vanuit Nederland · 1-3 werkdagen
           <span className="mx-2.5 text-titan-accent">●</span>
           {PAYMENT_METHODS.join(' · ')}
         </p>

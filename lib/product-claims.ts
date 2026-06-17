@@ -172,13 +172,33 @@ export const TBD = {
   kvkNumber: {
     value: '88305139',
     status: 'CONFIRMED',
-    source: 'Telegram checkpoint 1, vraag 7 — Namacorp VOF',
+    source: 'Telegram checkpoint 1, vraag 7 — NamaCorp VOF',
   } satisfies ProductClaim<string>,
 
+  /** BTW-identificatienummer — verplichte vermelding (e-commerce informatieplicht). */
+  btwNumber: {
+    value: 'NL864572566B01',
+    status: 'CONFIRMED',
+    source: 'audit-briefing 2026-06-16 — bedrijfsgegevens',
+  } satisfies ProductClaim<string>,
+
+  /** Juridische entiteit. NamaCorp VOF = registratie; TitanBanks = handelsnaam
+   *  (zie BRAND.text). Keuze Natan 2026-06-16. */
+  legalEntity: {
+    value: 'NamaCorp VOF',
+    status: 'CONFIRMED',
+    source: 'audit-keuze Natan 2026-06-16 — NamaCorp VOF is de entiteit, TitanBanks de handelsnaam',
+  } satisfies ProductClaim<string>,
+
+  // LET OP: dit is het HUISADRES van de eigenaar. Keuze Natan (audit 2026-06-16):
+  // NIET publiek tonen op de site (footer/legal). Bewust niet renderen. De
+  // e-commerce informatieplicht eist wél een bereikbaar geografisch adres →
+  // pre-launch blocker: zakelijk/virtueel postadres regelen. Constante blijft
+  // hier voor interne referentie, maar mag NERGENS in de UI verschijnen.
   businessAddress: {
     value: 'De Twee Gebroeders 37, 9207 CL Drachten',
     status: 'CONFIRMED',
-    source: 'Telegram checkpoint 1, vraag 7',
+    source: 'Telegram checkpoint 1, vraag 7 — HUISADRES, niet publiek tonen',
   } satisfies ProductClaim<string>,
 
   certifications: {
@@ -312,7 +332,7 @@ export function portsLabelCompact(): string {
 }
 
 /** Format euro met NL-conventie (€59,99 of €89 voor ronde getallen) */
-function formatEuro(amount: number): string {
+export function formatEuro(amount: number): string {
   if (Number.isInteger(amount)) return `€${amount}`;
   return `€${amount.toFixed(2).replace('.', ',')}`;
 }

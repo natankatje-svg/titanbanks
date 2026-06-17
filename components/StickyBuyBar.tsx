@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { useEcwid } from './EcwidProvider';
+import { useLiveProduct } from './LiveProductProvider';
 import {
   BRAND,
   LAUNCH_STATE,
@@ -22,8 +23,9 @@ export default function StickyBuyBar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const price = priceLabel();
-  const anchor = anchorPriceLabel();
+  const live = useLiveProduct();
+  const price = live?.priceFormatted || priceLabel();
+  const anchor = live?.compareAtFormatted ?? anchorPriceLabel();
   const isWaitlist = LAUNCH_STATE.waitlistMode;
 
   const handleCta = () => {
@@ -60,7 +62,7 @@ export default function StickyBuyBar() {
                   <div className="flex items-baseline gap-2">
                     <span className="font-display text-white text-xl leading-none">{price}</span>
                     {anchor && (
-                      <span className="font-body text-gray-600 text-sm line-through leading-none">
+                      <span className="font-body text-gray-400 text-sm line-through leading-none">
                         {anchor}
                       </span>
                     )}

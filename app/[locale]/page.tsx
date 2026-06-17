@@ -3,8 +3,8 @@ import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import MaisonNav from '@/components/atelier/MaisonNav';
 import PulseHero from '@/components/pulse/PulseHero';
+import ProductListing from '@/components/pulse/ProductListing';
 import StatPulse from '@/components/pulse/StatPulse';
-import PulseGalleryLazy from '@/components/pulse/PulseGalleryLazy';
 import MarqueeBand from '@/components/industrial/MarqueeBand';
 import AtmosFeature from '@/components/pulse/AtmosFeature';
 import AtmosBreak from '@/components/pulse/AtmosBreak';
@@ -20,17 +20,17 @@ const HOME_META: Record<string, { title: string; description: string }> = {
   nl: {
     title: 'Titan X — 50.000 mAh power bank | TITANBANKS',
     description:
-      '50.000 mAh. Tot 6 apparaten tegelijk laden. Matte black premium power bank van TITANBANKS — bestel nu.',
+      '50.000 mAh power bank met ingebouwde USB-C + Lightning kabels en LED-display. Laad tot 6 apparaten tegelijk. Matte black, direct uit voorraad leverbaar.',
   },
   en: {
     title: 'Titan X — 50,000 mAh power bank | TITANBANKS',
     description:
-      '50,000 mAh. Charge up to 6 devices at once. Matte black premium power bank by TITANBANKS — order now.',
+      '50,000 mAh power bank with built-in USB-C + Lightning cables and an LED display. Charge up to 6 devices at once. Matte black, in stock and ships fast.',
   },
   de: {
     title: 'Titan X — 50.000 mAh Powerbank | TITANBANKS',
     description:
-      '50.000 mAh. Bis zu 6 Geräte gleichzeitig laden. Mattschwarze Premium-Powerbank von TITANBANKS — jetzt bestellen.',
+      '50.000 mAh Powerbank mit integrierten USB-C- und Lightning-Kabeln und LED-Display. Lade bis zu 6 Geräte gleichzeitig. Mattschwarz, sofort lieferbar.',
   },
 };
 
@@ -58,8 +58,10 @@ export default function Home() {
       <JsonLd />
       <MaisonNav />
       <PulseHero />
+      {/* Volledige live Ecwid product-listing (galerij + prijs + specs +
+          beschrijving + CTA) direct onder de hero. */}
+      <ProductListing />
       <StatPulse />
-      <PulseGalleryLazy />
       <MarqueeBand />
       <AtmosFeature
         kicker="Road trips"

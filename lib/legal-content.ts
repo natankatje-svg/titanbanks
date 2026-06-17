@@ -108,6 +108,8 @@ const privacyNL: LegalDocument = {
       list: [
         'Vercel Inc. — hosting van titan-banks.com.',
         'Ecwid (Lightspeed) — e-commerce backend en orderafhandeling.',
+        'ChannelDock — order- en voorraadbeheer; verstuurt orders naar ons fulfilmentcentrum (3PL).',
+        'Ons fulfilmentcentrum (3PL) — opslag, verpakking en verzending van bestellingen.',
         'Mailchimp (Intuit) — e-mailcommunicatie en nieuwsbrief.',
         'Cloudflare — DNS en bescherming tegen aanvallen.',
         'Betaaldienstverleners (Mollie / Stripe) — bij checkout.',
@@ -444,7 +446,19 @@ const termsNL: LegalDocument = {
     {
       heading: '7. Herroepingsrecht (14 dagen)',
       paragraphs: [
-        'Je hebt het recht je bestelling binnen 14 dagen na ontvangst zonder opgaaf van redenen te herroepen. Het product moet ongebruikt en in originele verpakking zijn. De kosten van retourzending zijn voor jouw rekening, tenzij wij anders aangeven. Volledige procedure: /legal/policies#returns.',
+        'Je hebt het recht je bestelling binnen 14 dagen na ontvangst zonder opgaaf van redenen te herroepen. De bedenktijd gaat in op de dag na ontvangst. Je kunt ons binnen die termijn informeren per e-mail (info@titan-banks.com) of met het onderstaande modelformulier. Na herroeping heb je nog 14 dagen om het product ongebruikt en in originele verpakking terug te sturen.',
+        'De kosten van retourzending zijn voor jouw rekening, tenzij wij anders aangeven. Wij betalen het aankoopbedrag (inclusief de standaard verzendkosten) binnen 14 dagen terug, nadat wij het product retour hebben ontvangen of je hebt aangetoond dat je het hebt teruggestuurd. Volledige procedure: /legal/policies#returns.',
+        'Modelformulier voor herroeping — vul dit alleen in en stuur het terug als je de overeenkomst wilt herroepen:',
+      ],
+      list: [
+        'Aan: NamaCorp VOF (handelsnaam TitanBanks), e-mail info@titan-banks.com, adres {{ZAKELIJK_ADRES}}',
+        'Ik/Wij (*) deel/delen (*) u hierbij mede dat ik/wij (*) onze overeenkomst betreffende de verkoop van het volgende product herroep/herroepen (*): Titan X 50.000 mAh power bank',
+        'Besteld op (*) / ontvangen op (*): [datum]',
+        'Naam consument(en): [naam]',
+        'Adres consument(en): [adres]',
+        'Datum: [datum]',
+        'Handtekening consument(en) (alleen bij indiening op papier)',
+        '(*) Doorhalen wat niet van toepassing is.',
       ],
     },
     {

@@ -44,12 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency,
           priority,
           alternates: {
-            languages: Object.fromEntries(
-              routing.locales.map((l) => [
-                l,
-                `${BASE_URL}/${l}${pathPart}`,
-              ])
-            ),
+            languages: {
+              ...Object.fromEntries(
+                routing.locales.map((l) => [l, `${BASE_URL}/${l}${pathPart}`])
+              ),
+              'x-default': `${BASE_URL}/${routing.defaultLocale}${pathPart}`,
+            },
           },
         };
       })

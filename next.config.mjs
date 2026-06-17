@@ -14,7 +14,11 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   images: {
-    remotePatterns: [],
+    // Ecwid product-media (CDN) — live listing-foto's uit de catalogus worden
+    // server-side gelezen (lib/ecwid-storefront.ts) en via next/image getoond.
+    remotePatterns: [
+      { protocol: 'https', hostname: 'd2j6dbq0eux0bg.cloudfront.net' },
+    ],
     // AVIF/WebP first: next/image serveert deze automatisch i.p.v. de zware
     // bron-PNG/JPG. AVIF eerst (kleinst), WebP als fallback.
     formats: ['image/avif', 'image/webp'],

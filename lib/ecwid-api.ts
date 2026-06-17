@@ -15,18 +15,16 @@
 
 import { readFileSync } from 'node:fs';
 
-const STORE_ID = process.env.ECWID_STORE_ID;
-const TOKEN = process.env.ECWID_ACCESS_TOKEN;
-
-if (!STORE_ID || !TOKEN) {
-  // Lazy throw — alleen wanneer iemand de client daadwerkelijk gebruikt.
-  // Permits importing during type-checking without env-vars set.
-}
-
-const BASE = STORE_ID ? `https://app.ecwid.com/api/v3/${STORE_ID}` : '';
-
+/**
+ * Leest de creds LAZY uit process.env bij élke call (niet op module-load).
+ * Cruciaal: scripts laden .env.local pas ná de imports (dotenv), en in
+ * Next zijn env-vars pas op runtime beschikbaar — module-level capture zou
+ * undefined "bevriezen". Daarom hier per-call uitlezen.
+ */
 function requireCreds(): { base: string; token: string } {
-  if (!STORE_ID || !TOKEN) {
+  const storeId = process.env.ECWID_STORE_ID;
+  const token = process.env.ECWID_ACCESS_TOKEN;
+  if (!storeId || !token) {
     throw new Error(
       'Ecwid creds ontbreken. Zet ECWID_STORE_ID en ECWID_ACCESS_TOKEN in .env.local.\n' +
         '  1. my.ecwid.com → My profile → Develop apps → Create app\n' +
@@ -34,7 +32,7 @@ function requireCreds(): { base: string; token: string } {
         '  3. Get authorization → kopieer token + store-id naar .env.local',
     );
   }
-  return { base: BASE, token: TOKEN };
+  return { base: `https://app.ecwid.com/api/v3/${storeId}`, token };
 }
 
 interface EcwidError {
@@ -53,10 +51,16 @@ async function handleResponse<T>(res: Response, label: string): Promise<T> {
   return body ? (JSON.parse(body) as T) : ({} as T);
 }
 
-/** GET helper — query-string optioneel als plain object. */
+/**
+ * GET helper — query-string optioneel als plain object.
+ * `opts.revalidate` zet Next.js ISR-caching (seconden) zodat server-side reads
+ * gecached worden i.p.v. elke request live naar Ecwid. In plain Node (scripts)
+ * negeert fetch de `next`-optie zonder fout.
+ */
 export async function ecwidGet<T>(
   path: string,
   query?: Record<string, string | number>,
+  opts?: { revalidate?: number },
 ): Promise<T> {
   const { base, token } = requireCreds();
   const qs = query
@@ -64,6 +68,7 @@ export async function ecwidGet<T>(
     : '';
   const res = await fetch(`${base}${path}${qs}`, {
     headers: { Authorization: `Bearer ${token}` },
+    ...(opts?.revalidate !== undefined ? { next: { revalidate: opts.revalidate } } : {}),
   });
   return handleResponse<T>(res, `GET ${path}`);
 }

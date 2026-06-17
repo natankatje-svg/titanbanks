@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useEcwid } from '@/components/EcwidProvider';
+import { useLiveProduct } from '@/components/LiveProductProvider';
 import { LAUNCH_STATE, priceLabel } from '@/lib/product-claims';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -17,7 +18,9 @@ export default function OrderBand({ title, accent }: { title: string; accent: st
   const t = useTranslations('hero');
   const reduce = useReducedMotion();
   const { addToCart } = useEcwid();
-  const price = priceLabel();
+  const live = useLiveProduct();
+  const price = live?.priceFormatted || priceLabel();
+  const comparePrice = live?.compareAtFormatted ?? null;
 
   const onBuy = () => {
     if (LAUNCH_STATE.waitlistMode) {
@@ -47,7 +50,12 @@ export default function OrderBand({ title, accent }: { title: string; accent: st
         <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
           <button onClick={onBuy} className="btn-pulse group" aria-label={`${t('cta_buy_now')} ${price ?? ''}`}>
             <span>{t('cta_buy_now')}</span>
-            {price && <span className="opacity-80">· {price}</span>}
+            {price && (
+              <span className="opacity-80">
+                · {price}
+                {comparePrice && <span className="ml-1.5 text-white/45 line-through">{comparePrice}</span>}
+              </span>
+            )}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
           </button>
         </div>

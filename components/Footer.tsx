@@ -52,7 +52,10 @@ export default function Footer() {
   const tNav = useTranslations('navigation');
   const tFooter = useTranslations('footer');
   const kvk = safe(TBD.kvkNumber);
-  const address = safe(TBD.businessAddress);
+  const btw = safe(TBD.btwNumber);
+  const entity = safe(TBD.legalEntity);
+  // Bewust GEEN adres: TBD.businessAddress is het huisadres en mag niet publiek
+  // (keuze Natan). Zakelijk postadres volgt vóór publieke launch.
 
   return (
     <footer className="relative bg-[#0A0A0A] border-t border-white/[0.05]">
@@ -146,16 +149,22 @@ export default function Footer() {
 
         <div className="border-t border-white/[0.05] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
-            <p className="text-[#8A8A8A] text-sm">
+            <p className="text-[#A0A0A0] text-sm">
               © {new Date().getFullYear()} {BRAND.text}. {tFooter('copyright')}
             </p>
-            {(kvk || address) && (
+            {(entity || kvk || btw) && (
               <>
                 <span className="hidden sm:block w-px h-3.5 bg-white/[0.07]" />
-                <p className="font-mono text-[#8A8A8A] text-[0.6rem] uppercase tracking-[0.2em]">
+                <p className="font-mono text-[#A0A0A0] text-[0.6rem] uppercase tracking-[0.2em]">
+                  {entity && (
+                    <span className="text-[#9A9A9A]">
+                      {entity} <span className="opacity-60">(h.o.d.n. {BRAND.wordmark})</span>
+                    </span>
+                  )}
+                  {entity && kvk && <span className="mx-2 opacity-40">·</span>}
                   {kvk && <>KvK: <span className="text-[#9A9A9A]">{kvk}</span></>}
-                  {kvk && address && <span className="mx-2 opacity-40">·</span>}
-                  {address && <span className="text-[#9A9A9A]">{address}</span>}
+                  {kvk && btw && <span className="mx-2 opacity-40">·</span>}
+                  {btw && <>BTW: <span className="text-[#9A9A9A]">{btw}</span></>}
                 </p>
               </>
             )}
@@ -164,7 +173,7 @@ export default function Footer() {
             <LanguageSwitcher variant="full" />
             <div className="hidden sm:flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-[#8A8A8A] text-xs">{tFooter('payment_line')}</span>
+              <span className="text-[#A0A0A0] text-xs">{tFooter('payment_line')}</span>
             </div>
           </div>
         </div>

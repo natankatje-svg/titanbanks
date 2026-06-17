@@ -5,6 +5,9 @@ import { getLocale, getMessages } from 'next-intl/server';
 import EcwidProvider from '@/components/EcwidProvider';
 import GA4Loader from '@/components/GA4Loader';
 import ConsentBanner from '@/components/ConsentBanner';
+import { LiveProductProvider } from '@/components/LiveProductProvider';
+import ThirdPartyErrorGuard from '@/components/ThirdPartyErrorGuard';
+import { getLiveProduct } from '@/lib/ecwid-storefront';
 import './globals.css';
 
 // PULSE type-systeem (build/pulse):
@@ -73,13 +76,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // messages krijgt — die vallen terug naar NL via i18n/request.ts.
   const locale = await getLocale();
   const messages = await getMessages();
+  // Eén live read per render (ISR-gecached 300s in getLiveProduct) — gedeeld
+  // met alle client-componenten via de provider. Valt intern terug op
+  // product-claims als Ecwid down is.
+  const liveProduct = await getLiveProduct();
   return (
     <html lang={locale} className={`${unbounded.variable} ${figtree.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-black text-white antialiased">
+        <ThirdPartyErrorGuard />
         <GA4Loader />
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <EcwidProvider>{children}</EcwidProvider>
-          <ConsentBanner />
+          <LiveProductProvider value={liveProduct}>
+            <EcwidProvider>{children}</EcwidProvider>
+            <ConsentBanner />
+          </LiveProductProvider>
         </NextIntlClientProvider>
       </body>
     </html>
