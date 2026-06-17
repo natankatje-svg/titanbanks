@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Minus, Plus, Truck } from 'lucide-react';
+import { ChevronDown, ChevronLeft, ChevronRight, Minus, Plus, Truck } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEcwid } from '@/components/EcwidProvider';
 import { useLiveProduct } from '@/components/LiveProductProvider';
@@ -30,6 +30,7 @@ export default function ProductListing() {
 
   const [active, setActive] = useState(0);
   const [qty, setQty] = useState(1);
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   const images = live?.images ?? [];
   const hasImages = images.length > 0;
@@ -221,15 +222,31 @@ export default function ProductListing() {
         </div>
       </motion.div>
 
-      {/* ── Live productbeschrijving uit Ecwid ── */}
+      {/* ── Live productbeschrijving uit Ecwid (uitklapbaar) ── */}
       {live?.descriptionHtml && (
-        <div className="relative mx-auto mt-14 max-w-[820px] px-6 lg:mt-20 lg:px-10">
-          <div className="mb-6 flex items-center gap-3">
-            <span className="h-px w-6 bg-titan-accent" />
-            <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-white/55">Productdetails</span>
-          </div>
+        <div className="relative mx-auto mt-12 max-w-[820px] px-6 lg:mt-16 lg:px-10">
+          <button
+            type="button"
+            onClick={() => setDetailsOpen((v) => !v)}
+            aria-expanded={detailsOpen}
+            aria-controls="product-details-body"
+            className="group flex w-full items-center justify-between gap-3 border-y border-white/[0.08] py-5 text-left transition-colors hover:border-white/[0.18]"
+          >
+            <span className="flex items-center gap-3">
+              <span className="h-px w-6 bg-titan-accent" />
+              <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-white/70 transition-colors group-hover:text-white">
+                Productdetails &amp; specs
+              </span>
+            </span>
+            <ChevronDown
+              className={`h-4 w-4 shrink-0 text-white/55 transition-transform duration-300 group-hover:text-white ${detailsOpen ? 'rotate-180' : ''}`}
+              aria-hidden
+            />
+          </button>
           <div
-            className="font-body text-[#B5B5B5] [&_a]:text-titan-accent [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-xl [&_h2]:text-white [&_h3]:mb-2 [&_h3]:mt-7 [&_h3]:font-display [&_h3]:text-lg [&_h3]:text-white [&_li]:relative [&_li]:mb-1.5 [&_li]:pl-4 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.7em] [&_li]:before:h-px [&_li]:before:w-2 [&_li]:before:bg-titan-accent [&_p]:mb-4 [&_p]:leading-relaxed [&_ul]:mb-5 [&_ul]:mt-2"
+            id="product-details-body"
+            hidden={!detailsOpen}
+            className="pt-6 pb-2 font-body text-[#B5B5B5] [&_a]:text-titan-accent [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-xl [&_h2]:text-white [&_h3]:mb-2 [&_h3]:mt-7 [&_h3]:font-display [&_h3]:text-lg [&_h3]:text-white [&_li]:relative [&_li]:mb-1.5 [&_li]:pl-4 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.7em] [&_li]:before:h-px [&_li]:before:w-2 [&_li]:before:bg-titan-accent [&_p]:mb-4 [&_p]:leading-relaxed [&_ul]:mb-5 [&_ul]:mt-2"
             dangerouslySetInnerHTML={{ __html: live.descriptionHtml }}
           />
         </div>
