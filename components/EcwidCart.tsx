@@ -15,53 +15,77 @@ declare global {
 
 const STORE_CONTAINER_ID = `ecwid-store-${ECWID_STORE_ID}`;
 
+// Storefront-pagina's die op de cart-subpagina niet thuishoren: zodra Ecwid er
+// een laadt (leeg mandje dat terugvalt naar de winkel, of een race bij het
+// eerste renderen), sturen we terug naar de winkelwagen.
+const CATALOG_PAGE_TYPES = new Set(['CATEGORY', 'PRODUCT', 'SEARCH']);
+
 /**
  * EcwidCart — toont de volledige Ecwid-winkelwagen inline op de cart-pagina.
  *
- * Aanpak (in de browser geverifieerd): het sitebrede Ecwid-script (zie
- * <EcwidProvider> in de root layout) laadt de storefront-engine + de
- * `x*`-widgetfuncties. We renderen hier expliciet een storefront-widget via
- * `xProductBrowser` in een eigen container — dezelfde store-instance als de
- * (verborgen) minicart van de provider, dus de cart-inhoud klopt.
+ * Het sitebrede Ecwid-script (zie <EcwidProvider> in de root layout) laadt de
+ * storefront-engine + de `x*`-widgetfuncties. We renderen hier expliciet een
+ * storefront-widget via `xProductBrowser` in een eigen container — dezelfde
+ * store-instance als de (verborgen) minicart van de provider, dus de
+ * cart-inhoud klopt.
  *
- * `Ecwid.openPage('cart')` zónder storefront-widget op de pagina laat Ecwid
- * naar de geconfigureerde storefront-URL (de homepage) redirecten → dan
- * verlies je deze subpagina. Daarom forceren we de cart-weergave pas in
- * `OnPageLoaded`: dat event vuurt NA de eerste render van de widget, dus de
- * context bestaat en openPage navigeert binnen de widget (hash `#!/~/cart`),
- * op deze route — geen redirect.
+ * `Ecwid.openPage('cart')` zónder storefront-widget redirect naar de
+ * geconfigureerde storefront-URL (de homepage). Daarom renderen we eerst de
+ * widget; die opent direct op de cart-pagina (hash `#!/~/cart`).
+ *
+ * De storefront is een volledige winkel — hij zou ook de catalogus kunnen
+ * tonen. Op een cart-pagina willen we dat NOOIT. Twee verdedigingen:
+ *   1) komt er toch een catalogus-/product-/zoekpagina langs → meteen terug
+ *      naar de cart (begrensd tegen loops);
+ *   2) CSS in globals.css verbergt die pagina-varianten sowieso (vangnet +
+ *      geen flits tijdens laden). Een leeg mandje toont Ecwids eigen
+ *      "winkelmandje is leeg"-pagina (de CART-pagina), niet de catalogus.
  */
 export default function EcwidCart() {
   useEffect(() => {
     let cancelled = false;
     let started = false;
-    let forced = false;
+    let forceCount = 0;
+
+    const w = window as unknown as {
+      xProductBrowser?: (...args: string[]) => void;
+      location: Location;
+      history: History;
+      Ecwid?: {
+        openPage: (p: string) => void;
+        OnPageLoaded: { add: (cb: (page: { type?: string }) => void) => void };
+      };
+    };
 
     const start = (triesLeft: number) => {
       if (cancelled || started) return;
 
-      const w = window as unknown as {
-        xProductBrowser?: (...args: string[]) => void;
-        Ecwid?: {
-          openPage: (p: string) => void;
-          OnPageLoaded: { add: (cb: (page: { type?: string }) => void) => void };
-        };
-      };
-
       if (typeof w.xProductBrowser === 'function' && w.Ecwid) {
         started = true;
 
-        // Forceer eenmalig de cart-weergave zodra de storefront een pagina
-        // heeft geladen (widget-context bestaat → openPage redirect niet).
+        // Houd de storefront op de winkelwagen. forceCount begrenst tegen een
+        // theoretische loop; in de praktijk valt een leeg mandje terug op de
+        // CART-pagina (niet de catalogus), dus dit convergeert meteen.
         try {
           w.Ecwid.OnPageLoaded.add((page) => {
-            if (cancelled || forced) return;
-            forced = true;
-            if (page?.type !== 'CART') w.Ecwid!.openPage('cart');
+            if (cancelled) return;
+            if (page?.type && CATALOG_PAGE_TYPES.has(page.type) && forceCount < 5) {
+              forceCount += 1;
+              w.Ecwid!.openPage('cart');
+            }
           });
         } catch {
-          /* OnPageLoaded niet beschikbaar — storefront opent dan op de
-             catalogus; de cart blijft bereikbaar via de minicart in de widget. */
+          /* OnPageLoaded niet beschikbaar — CSS verbergt de catalogus alsnog. */
+        }
+
+        // Laat de storefront meteen op de cart-pagina starten (geen flits).
+        if (!w.location.hash) {
+          const base = w.location.pathname + w.location.search;
+          try {
+            w.history.replaceState(null, '', `${base}#!/~/cart`);
+          } catch {
+            w.location.hash = '!/~/cart';
+          }
         }
 
         w.xProductBrowser(

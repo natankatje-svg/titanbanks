@@ -688,3 +688,17 @@ body::after {
   .pulse-ring, .pulse-ring-rev { animation: none !important; }
   .card-shine::after { display: none; }
 }
+
+/* ── Ecwid-winkelwagen (/[locale]/cart) ──
+   De cart-pagina rendert de volledige Ecwid-storefront, maar mag NOOIT de
+   catalogus/product/zoek-pagina tonen — alleen de winkelwagen + checkout.
+   Ecwid zet een page-type-class op `.ecwid-productBrowser`; we verbergen de
+   catalogus-varianten (vangnet naast de openPage('cart')-redirect in
+   EcwidCart, zodat er ook geen flits is tijdens het laden). De selector matcht
+   alleen de cart-container (`id="ecwid-store-…"`); de minicart van
+   EcwidProvider gebruikt `id="my-store-…"` en blijft ongemoeid. */
+[id^='ecwid-store-'] .ecwid-productBrowser-CategoryPage,
+[id^='ecwid-store-'] .ecwid-productBrowser-ProductPage,
+[id^='ecwid-store-'] .ecwid-productBrowser-SearchPage {
+  display: none !important;
+}
