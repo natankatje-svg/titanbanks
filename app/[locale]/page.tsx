@@ -51,11 +51,16 @@ export async function generateMetadata({
  * gallery; parallax-sfeerbanden (productloze Higgsfield-beelden) met
  * zwevende productfoto's; pulserende CTA's. Copy/claims/logo ongewijzigd.
  */
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     // GEEN overflow-x-hidden op main (breekt position:sticky); body clipt op X.
     <main className="relative bg-titan-bg">
-      <JsonLd />
+      <JsonLd locale={locale} />
       <MaisonNav />
       <PulseHero />
       {/* Volledige live Ecwid product-listing (galerij + prijs + specs +

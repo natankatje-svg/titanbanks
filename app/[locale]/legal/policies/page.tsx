@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import LegalPage from '@/components/legal/LegalPage';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { getPoliciesContent } from '@/lib/legal-content';
 import { buildPageMetadata } from '@/lib/seo';
 import type { Locale } from '@/i18n/routing';
@@ -26,5 +27,10 @@ export default async function PoliciesPage({
 }) {
   const { locale } = await params;
   const document = getPoliciesContent(locale);
-  return <LegalPage document={document} />;
+  return (
+    <>
+      <BreadcrumbJsonLd locale={locale} trail={[{ name: document.title, path: 'legal/policies' }]} />
+      <LegalPage document={document} />
+    </>
+  );
 }

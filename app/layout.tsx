@@ -7,6 +7,7 @@ import GA4Loader from '@/components/GA4Loader';
 import ConsentBanner from '@/components/ConsentBanner';
 import { LiveProductProvider } from '@/components/LiveProductProvider';
 import ThirdPartyErrorGuard from '@/components/ThirdPartyErrorGuard';
+import SiteJsonLd from '@/components/SiteJsonLd';
 import { getLiveProduct } from '@/lib/ecwid-storefront';
 import './globals.css';
 
@@ -83,6 +84,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={locale} className={`${unbounded.variable} ${figtree.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-black text-white antialiased">
+        <SiteJsonLd locale={locale} />
         <ThirdPartyErrorGuard />
         <GA4Loader />
         <NextIntlClientProvider locale={locale} messages={messages}>

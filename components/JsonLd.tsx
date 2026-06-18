@@ -1,14 +1,24 @@
 import { BRAND, SPECS, capacityLabel, portsLabel } from '@/lib/product-claims';
-import { SOCIALS, CONTACT_EMAIL } from '@/lib/brand-links';
 import { getLiveProduct } from '@/lib/ecwid-storefront';
+import { BASE_URL } from '@/lib/seo';
+
+// Product-beschrijving per locale. Het FAQPage-schema hieronder blijft NL omdat
+// de zichtbare FAQ (components/FAQ.tsx) nog NL is op álle locales — Google eist
+// dat FAQ-schema exact matcht met de zichtbare content. Zodra de FAQ vertaald is,
+// moet ook faqSchema gelokaliseerd worden.
+const PRODUCT_DESCRIPTION: Record<string, string> = {
+  nl: `${capacityLabel()} power bank in matte black. ${portsLabel()}. LED-display met exact percentage, ingebouwde zaklamp. Tot ${SPECS.simultaneousDevices.value} devices tegelijk laden.`,
+  en: `${capacityLabel()} power bank in matte black. 4× USB-A plus built-in USB-C and Lightning cables. LED display with exact percentage and a built-in flashlight. Charge up to ${SPECS.simultaneousDevices.value} devices at once.`,
+  de: `${capacityLabel()} Powerbank in Mattschwarz. 4× USB-A plus integrierte USB-C- und Lightning-Kabel. LED-Display mit exaktem Prozentwert und integrierter Taschenlampe. Lade bis zu ${SPECS.simultaneousDevices.value} Geräte gleichzeitig.`,
+};
 
 /** Bouwt het Product-schema met LIVE prijs + voorraad uit Ecwid (E-2). */
-function buildProductSchema(price: number, inStock: boolean) {
+function buildProductSchema(price: number, inStock: boolean, locale: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: `${BRAND.text} ${BRAND.product} — ${capacityLabel()} power bank`,
-    description: `${capacityLabel()} power bank in matte black. ${portsLabel()}. LED-display met exact percentage, ingebouwde zaklamp. Tot ${SPECS.simultaneousDevices.value} devices tegelijk laden.`,
+    description: PRODUCT_DESCRIPTION[locale] ?? PRODUCT_DESCRIPTION.nl,
     brand: { '@type': 'Brand', name: BRAND.text },
     // Schoon productbeeld (lichte achtergrond, product gecentreerd) — geschikt
     // voor rich results én Google Merchant Center.
@@ -25,7 +35,8 @@ function buildProductSchema(price: number, inStock: boolean) {
         : 'https://schema.org/OutOfStock',
       itemCondition: 'https://schema.org/NewCondition',
       // Eén product → de homepage ís de productpagina (/shop is opgeheven).
-      url: 'https://titan-banks.com/nl',
+      // Per-locale URL zodat de offer naar de juiste taalvariant wijst.
+      url: `${BASE_URL}/${locale}`,
       seller: { '@type': 'Organization', name: BRAND.text },
       // Verzending — alleen NL hard gedeclareerd (gratis, zeker). Andere zones
       // ("tarief bij checkout") horen in de Merchant Center-verzendinstellingen,
@@ -94,24 +105,12 @@ const faqSchema = {
   ],
 };
 
-const organization = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: BRAND.text,
-  url: 'https://titan-banks.com',
-  logo: 'https://titan-banks.com/branding/logo-white-tight.png',
-  sameAs: [SOCIALS.instagram, SOCIALS.facebook],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'customer service',
-    email: CONTACT_EMAIL,
-    availableLanguage: ['nl', 'en', 'de'],
-  },
-};
+// Organization + WebSite zijn naar components/SiteJsonLd.tsx verhuisd (in de
+// root-layout) zodat ze op élke URL staan, niet alleen op de homepage.
 
-export default async function JsonLd() {
+export default async function JsonLd({ locale }: { locale: string }) {
   const live = await getLiveProduct();
-  const product = buildProductSchema(live.priceEur, live.inStock);
+  const product = buildProductSchema(live.priceEur, live.inStock, locale);
   return (
     <>
       <script
@@ -121,10 +120,6 @@ export default async function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
       />
     </>
   );

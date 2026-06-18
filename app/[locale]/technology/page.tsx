@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import PageShell from '@/components/pulse/PageShell';
 import FeatureRows, { type FeatureRow } from '@/components/pulse/FeatureRows';
 import SpecsPulse from '@/components/pulse/SpecsPulse';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { BRAND } from '@/lib/product-claims';
 import { buildPageMetadata } from '@/lib/seo';
 import type { Locale } from '@/i18n/routing';
@@ -119,6 +120,7 @@ export default async function TechnologyPage({
       intro={hero.intro}
       orderBand={hero.band}
     >
+      <BreadcrumbJsonLd locale={locale} trail={[{ name: hero.kicker, path: 'technology' }]} />
       <FeatureRows rows={rows} />
       <SpecsPulse />
     </PageShell>

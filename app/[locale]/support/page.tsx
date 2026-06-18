@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Mail, Shield, RefreshCcw, Package } from 'lucide-react';
 import PageShell from '@/components/pulse/PageShell';
 import FAQ from '@/components/FAQ';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { SPECS, TBD, safe } from '@/lib/product-claims';
 import { CONTACT_EMAIL } from '@/lib/brand-links';
 import { buildPageMetadata } from '@/lib/seo';
@@ -90,6 +91,7 @@ export default async function SupportPage({
       accent={hero.accent}
       intro={tFaq('intro')}
     >
+      <BreadcrumbJsonLd locale={locale} trail={[{ name: hero.kicker, path: 'support' }]} />
       <section className="relative border-t border-white/[0.07] bg-[#080808] py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
