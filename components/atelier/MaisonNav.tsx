@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
@@ -81,18 +81,38 @@ export default function MaisonNav() {
           {RIGHT_LINKS.map((l) => (
             <NavA key={l.href} {...l} />
           ))}
+          <Link
+            href="/cart"
+            aria-label={t('cart')}
+            className={`transition-colors ${
+              pathname.startsWith('/cart') ? 'text-titan-accent' : 'text-white/65 hover:text-white'
+            }`}
+          >
+            <ShoppingCart className="h-[1.05rem] w-[1.05rem]" aria-hidden />
+          </Link>
           <LanguageSwitcher />
           <button onClick={() => addToCart()} className="link-hairline" style={{ paddingBottom: '0.25rem' }}>
             {t('cta_buy')}
           </button>
         </div>
-        <button
-          onClick={() => addToCart()}
-          className="link-hairline justify-self-end md:hidden"
-          style={{ paddingBottom: '0.2rem', fontSize: '0.62rem' }}
-        >
-          {t('cta_buy')}
-        </button>
+        <div className="flex items-center gap-3 justify-self-end md:hidden">
+          <Link
+            href="/cart"
+            aria-label={t('cart')}
+            className={`p-1 transition-colors ${
+              pathname.startsWith('/cart') ? 'text-titan-accent' : 'text-white/80 hover:text-titan-accent'
+            }`}
+          >
+            <ShoppingCart className="h-5 w-5" aria-hidden />
+          </Link>
+          <button
+            onClick={() => addToCart()}
+            className="link-hairline"
+            style={{ paddingBottom: '0.2rem', fontSize: '0.62rem' }}
+          >
+            {t('cta_buy')}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
