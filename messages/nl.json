@@ -12,7 +12,8 @@
     "in_use": "In gebruik",
     "cta_buy": "Bestel Titan X",
     "cta_waitlist": "Join waitlist",
-    "language": "Taal"
+    "language": "Taal",
+    "cart": "Winkelwagen"
   },
   "footer": {
     "tagline": "Premium power banks. Gebouwd voor wie niet kan stoppen.",
@@ -323,5 +324,10 @@
     "cta_view": "Bekijk Titan X",
     "current_label": "Nu verkrijgbaar",
     "soon_label": "Binnenkort"
+  },
+  "cart": {
+    "eyebrow": "Winkelwagen",
+    "title": "Jouw winkelwagen",
+    "intro": "Controleer je bestelling en reken veilig af. Verzending binnen Nederland is gratis."
   }
 }

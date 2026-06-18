@@ -12,7 +12,8 @@
     "in_use": "Im Einsatz",
     "cta_buy": "Titan X bestellen",
     "cta_waitlist": "Auf die Warteliste",
-    "language": "Sprache"
+    "language": "Sprache",
+    "cart": "Warenkorb"
   },
   "footer": {
     "tagline": "Premium-Powerbanks. Für die, die nicht aufhören.",
@@ -323,5 +324,10 @@
     "cta_view": "Titan X ansehen",
     "current_label": "Jetzt verfügbar",
     "soon_label": "Demnächst"
+  },
+  "cart": {
+    "eyebrow": "Warenkorb",
+    "title": "Dein Warenkorb",
+    "intro": "Überprüfe deine Bestellung und bezahle sicher. Kostenloser Versand innerhalb der Niederlande."
   }
 }

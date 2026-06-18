@@ -12,7 +12,8 @@
     "in_use": "In Use",
     "cta_buy": "Buy Titan X",
     "cta_waitlist": "Join waitlist",
-    "language": "Language"
+    "language": "Language",
+    "cart": "Cart"
   },
   "footer": {
     "tagline": "Premium power banks. Built for people who can't stop.",
@@ -323,5 +324,10 @@
     "cta_view": "View Titan X",
     "current_label": "Available now",
     "soon_label": "Coming soon"
+  },
+  "cart": {
+    "eyebrow": "Cart",
+    "title": "Your cart",
+    "intro": "Review your order and check out securely. Free shipping within the Netherlands."
   }
 }
