@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import PageShell from '@/components/pulse/PageShell';
 import Kicker from '@/components/pulse/Kicker';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { BRAND, TBD, SPECS, safe } from '@/lib/product-claims';
 import { buildPageMetadata } from '@/lib/seo';
 import type { Locale } from '@/i18n/routing';
@@ -98,6 +99,7 @@ export default async function StoryPage({
       accent={story.accent}
       orderBand={story.band}
     >
+      <BreadcrumbJsonLd locale={locale} trail={[{ name: story.kicker, path: 'story' }]} />
       {/* verhaal */}
       <section className="relative border-t border-white/[0.07] bg-[#080808] py-16 lg:py-20">
         <div className="mx-auto max-w-3xl px-6 space-y-6">

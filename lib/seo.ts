@@ -71,7 +71,7 @@ export function buildPageMetadata({
       title,
       description,
       locale: OG_LOCALE[locale] ?? OG_LOCALE.nl,
-      images: [{ url: OG_IMAGE, alt: ogAlt }],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: ogAlt }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -79,5 +79,43 @@ export function buildPageMetadata({
       description,
       images: [OG_IMAGE],
     },
+  };
+}
+
+// =============================================
+// BreadcrumbList JSON-LD — gelokaliseerde kruimels per inner page
+// =============================================
+// Google toont breadcrumb rich results en gebruikt de trail om site-structuur
+// te begrijpen. De homepage-kruimel wordt automatisch vooraan toegevoegd, dus
+// pages geven alleen de diepere kruimel(s) mee.
+
+/** Gelokaliseerd label voor de homepage-kruimel. */
+const HOME_CRUMB: Record<string, string> = { nl: 'Home', en: 'Home', de: 'Startseite' };
+
+export interface BreadcrumbItem {
+  /** Zichtbare naam van de kruimel (matcht de page-titel/kicker). */
+  name: string;
+  /** Pad zonder locale-prefix ('' = homepage, 'technology' = /technology). */
+  path: string;
+}
+
+/**
+ * Bouwt het BreadcrumbList-schema voor een inner page. `trail` bevat alleen de
+ * kruimels ná de homepage (die wordt automatisch als positie 1 toegevoegd).
+ */
+export function buildBreadcrumbJsonLd(locale: string, trail: BreadcrumbItem[]) {
+  const items: BreadcrumbItem[] = [
+    { name: HOME_CRUMB[locale] ?? HOME_CRUMB.nl, path: '' },
+    ...trail,
+  ];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: `${BASE_URL}/${locale}${item.path ? `/${item.path}` : ''}`,
+    })),
   };
 }

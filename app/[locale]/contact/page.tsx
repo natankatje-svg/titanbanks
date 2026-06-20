@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Mail, Clock, HelpCircle, Instagram, Facebook } from 'lucide-react';
 import PageShell from '@/components/pulse/PageShell';
 import ContactForm from '@/components/contact/ContactForm';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { CONTACT_EMAIL, SOCIALS } from '@/lib/brand-links';
 import { buildPageMetadata } from '@/lib/seo';
 import { Link } from '@/i18n/routing';
@@ -46,6 +47,7 @@ export default async function ContactPage({
 
   return (
     <PageShell kicker={t('eyebrow')} title={t('title')} intro={t('intro')}>
+      <BreadcrumbJsonLd locale={locale} trail={[{ name: t('eyebrow'), path: 'contact' }]} />
       <section className="relative border-t border-white/[0.07] bg-[#080808] py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">

@@ -317,41 +317,29 @@ body::after {
   .font-mono-titan { font-family: var(--font-mono), monospace; }
 }
 
-/* ── Reduced motion — accessibility ── */
+/* ── Reduced motion — accessibility ──
+   Universele reset: neutraliseert ÉLKE CSS-keyframe-animatie en transitie i.p.v.
+   een handmatige klassenlijst (die accordion, chevron-rotatie en btn-transities
+   miste). Framer-Motion-animaties worden los afgevangen via <MotionConfig
+   reducedMotion="user"> in components/MotionProvider.tsx. */
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
   html { scroll-behavior: auto; }
 
-  .ring-pulse-inner,
-  .ring-pulse-outer,
-  .glow-pulse,
-  .shimmer-text,
-  .border-glow-orange::after {
-    animation: none !important;
-  }
-
-  /* Tailwind animation utilities */
-  .animate-float,
-  .animate-float-delayed,
-  .animate-pulse-glow,
-  .animate-shimmer,
-  .animate-ping,
-  .animate-pulse,
-  .animate-bounce,
-  .animate-spin,
-  .ember-particle {
-    animation: none !important;
-  }
+  /* Zwevende sfeer-vonkjes volledig verbergen (mogen niet blijven "hangen"). */
   .ember-particle { opacity: 0 !important; }
 
-  /* Preserve instant state for pulsing indicators so they stay visible */
-  .animate-ping  { opacity: 0.6; }
-  .animate-pulse { opacity: 1; }
-
-  .btn-orange,
-  .btn-ghost,
-  .glass-card {
-    transition: none !important;
-  }
+  /* Pulserende indicatoren in zichtbare eindstaat houden i.p.v. onzichtbaar. */
+  .animate-ping  { opacity: 0.6 !important; }
+  .animate-pulse { opacity: 1 !important; }
 }
 
 .card-image {
