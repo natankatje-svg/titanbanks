@@ -75,6 +75,7 @@ export default function LanguageSwitcher({ variant = 'compact' }: LanguageSwitch
               <button
                 key={l}
                 onClick={() => switchTo(l)}
+                aria-current={active ? 'true' : undefined}
                 className={`w-full px-3 py-2 text-left flex items-center justify-between gap-3 hover:bg-white/[0.04] transition-colors ${
                   active ? 'text-white' : 'text-[#A0A0A0]'
                 }`}
